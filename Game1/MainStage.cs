@@ -1,21 +1,47 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Game1.Controller;
+using Game1.Sprite;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 namespace Game1
 {
     /// <summary>
-    /// This is the main type for your game.
+    /// Yan Zhang
     /// </summary>
-    public class Game1 : Game
+    public class MainStage : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
 
-        public Game1()
+        private SpriteFont font;
+        private Texture2D SmileyWalk;
+        private AnimatedSprite animatedSprite;
+
+        private IController kbdController;
+        private IController mouseController;
+
+        private Sprite1 s1;
+        private Sprite2 s2;
+        private Sprite3 s3;
+        private Sprite4 s4;
+        private TextSprite sText;
+
+        public MainStage()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            graphics.PreferredBackBufferWidth = GlobalDefinitions.GraphicsWidth;
+            graphics.PreferredBackBufferHeight = GlobalDefinitions.GraphicsHeight;
+
+            mouseController = new MouseController(this);
         }
 
         /// <summary>
@@ -39,7 +65,10 @@ namespace Game1
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            SmileyWalk = Content.Load<Texture2D>("images/SmileyWalk");
+            animatedSprite = new AnimatedSprite(SmileyWalk, 4, 4);
 
+            font = Content.Load<SpriteFont>("Strings");
             // TODO: use this.Content to load your game content here
         }
 
@@ -61,7 +90,7 @@ namespace Game1
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
+            animatedSprite.Update();
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -74,8 +103,10 @@ namespace Game1
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
+            spriteBatch.Begin();
+            animatedSprite.Draw(spriteBatch, new Vector2(300, 200));
+            spriteBatch.DrawString(font, "Credits\nProgram Made By: Yan Zhang\nSprites from: http://rbwhitaker.wdfiles.com/local--files/monogame-texture-atlases-1/SmileyWalk.png", new Vector2(50, 400), Color.Black);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }

@@ -41,9 +41,23 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Game1.cs" />
+    <Compile Include="Command\QuitGameCommand.cs" />
+    <Compile Include="Command\SetSprite.cs" />
+    <Compile Include="GlobalDefinitions.cs" />
+    <Compile Include="Sprite\AnimatedSprite.cs" />
+    <Compile Include="Controller\KeyboardController.cs" />
+    <Compile Include="Controller\MouseController.cs" />
+    <Compile Include="Command\ICommand.cs" />
+    <Compile Include="Controller\IController.cs" />
+    <Compile Include="Sprite\ISprite.cs" />
+    <Compile Include="MainStage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sprite\Sprite2.cs" />
+    <Compile Include="Sprite\Sprite1.cs" />
+    <Compile Include="Sprite\Sprite3.cs" />
+    <Compile Include="Sprite\Sprite4.cs" />
+    <Compile Include="Sprite\TextSprite.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
