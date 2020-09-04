@@ -24,6 +24,12 @@ namespace Game1
         /// </summary>
         private ISprite ActiveSprite { get; set; }
 
+        /// <summary>
+        /// A list that holds all loaded sprites.
+        /// 
+        /// </summary>
+        public ISprite[] LoadedSprites { get; }
+
         public MainStage()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -39,7 +45,11 @@ namespace Game1
             };
 
             staticTextSprite = new TextSprite(this);
-            animatedFixedSprite = new AnimatedDynamicSprite(this);
+            LoadedSprites = new ISprite[(int) GlobalDefinitions.SpriteModes.Invalid];
+            LoadedSprites[(int)GlobalDefinitions.SpriteModes.StaticFixed] = new StaticFixedSprite(this);
+            LoadedSprites[(int)GlobalDefinitions.SpriteModes.StaticVerticalMoving] = new StaticVerticalMovingSprite(this);
+            LoadedSprites[(int)GlobalDefinitions.SpriteModes.AnimatedFixed] = new AnimatedFixedSprite(this);
+            LoadedSprites[(int)GlobalDefinitions.SpriteModes.AnimatedHorizontalMoving] = new AnimatedHorizontalMovingSprite(this);
         }
 
         /// <summary>
@@ -67,9 +77,13 @@ namespace Game1
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             staticTextSprite.LoadResources();
-            animatedFixedSprite.LoadResources();
+            for (int i = 1; i < (int) GlobalDefinitions.SpriteModes.Invalid; i++)
+            {
+                LoadedSprites[i].LoadResources();
+            }
 
-            ActiveSprite = animatedFixedSprite;
+            // Set default sprite
+            ActiveSprite = LoadedSprites[(int) GlobalDefinitions.SpriteModes.StaticFixed];
         }
 
         /// <summary>

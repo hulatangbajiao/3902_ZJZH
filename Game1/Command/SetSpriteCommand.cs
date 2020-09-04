@@ -1,6 +1,6 @@
 ﻿namespace Game1.Command
 {
-    class SetSprite : ICommand
+    class SetSpriteCommand : ICommand
     {
         public void Execute() 
         {
