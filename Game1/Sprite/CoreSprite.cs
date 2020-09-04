@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
 
 namespace Game1
 {
-    class AnimatedSprite
+    class CoreSprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
@@ -16,7 +11,7 @@ namespace Game1
         private int currentFrame;
         private int totalFrames;
 
-        public AnimatedSprite(Texture2D texture, int rows, int columns)
+        public CoreSprite(Texture2D texture, int rows, int columns)
         {
             Texture = texture;
             Rows = rows;
@@ -29,7 +24,9 @@ namespace Game1
         {
             currentFrame++;
             if (currentFrame == totalFrames)
+            {
                 currentFrame = 0;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
@@ -42,10 +39,7 @@ namespace Game1
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
             Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width, height);
 
-            
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            
         }
-
     }
 }

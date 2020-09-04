@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework.Graphics;
 
-namespace Game1.Interface
+namespace Game1.Sprite
 {
-        public interface ISprite
-        {
-            void move(Boolean b1);
-            void animated(Boolean b2);
-        }
-
+    public interface ISprite
+    {
+        void LoadResources();
+        void Update();
+        void Draw(SpriteBatch spriteBatch);
+    }
 }

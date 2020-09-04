@@ -17,6 +17,13 @@ namespace Game1.Controller
         public void Update()
         {
             MouseState state = Mouse.GetState();
+
+            // Mouse event should only respond within the window area
+            if (state.X < 0 || state.Y > GlobalDefinitions.GraphicsWidth ||
+                state.Y < 0 || state.Y < GlobalDefinitions.GraphicsHeight)
+            {
+                return;
+            }
             
             // If the right button is clicked, exit the game
             if (state.RightButton == ButtonState.Pressed)

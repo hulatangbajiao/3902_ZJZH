@@ -44,7 +44,9 @@
     <Compile Include="Command\QuitGameCommand.cs" />
     <Compile Include="Command\SetSprite.cs" />
     <Compile Include="GlobalDefinitions.cs" />
-    <Compile Include="Sprite\AnimatedSprite.cs" />
+    <Compile Include="Sprite\AnimatedDynamicSprite.cs" />
+    <Compile Include="Sprite\AnimatedFixedSprite.cs" />
+    <Compile Include="Sprite\CoreSprite.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
     <Compile Include="Controller\MouseController.cs" />
     <Compile Include="Command\ICommand.cs" />
@@ -53,10 +55,8 @@
     <Compile Include="MainStage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sprite\Sprite2.cs" />
-    <Compile Include="Sprite\Sprite1.cs" />
-    <Compile Include="Sprite\Sprite3.cs" />
-    <Compile Include="Sprite\Sprite4.cs" />
+    <Compile Include="Sprite\StaticDynamicSprite.cs" />
+    <Compile Include="Sprite\StaticFixedSprite.cs" />
     <Compile Include="Sprite\TextSprite.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Game1.Controller;
+﻿using Game1.Controller;
 using Game1.Sprite;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
+using System.Collections.Generic;
 
 namespace Game1
 {
@@ -20,18 +14,15 @@ namespace Game1
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
 
-        private SpriteFont font;
-        private Texture2D SmileyWalk;
-        private AnimatedSprite animatedSprite;
+        private List<IController> controllers;
 
-        private IController kbdController;
-        private IController mouseController;
+        private ISprite staticTextSprite;
+        private ISprite animatedFixedSprite;
 
-        private Sprite1 s1;
-        private Sprite2 s2;
-        private Sprite3 s3;
-        private Sprite4 s4;
-        private TextSprite sText;
+        /// <summary>
+        /// Active sprite. Exposed as a class property
+        /// </summary>
+        private ISprite ActiveSprite { get; set; }
 
         public MainStage()
         {
@@ -41,7 +32,14 @@ namespace Game1
             graphics.PreferredBackBufferWidth = GlobalDefinitions.GraphicsWidth;
             graphics.PreferredBackBufferHeight = GlobalDefinitions.GraphicsHeight;
 
-            mouseController = new MouseController(this);
+            controllers = new List<IController>
+            {
+                new MouseController(this),
+                new KeyboardController()
+            };
+
+            staticTextSprite = new TextSprite(this);
+            animatedFixedSprite = new AnimatedDynamicSprite(this);
         }
 
         /// <summary>
@@ -52,8 +50,10 @@ namespace Game1
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            // Explicitly set mouse visible option to make the game intuitive
+            this.IsMouseVisible = true;
 
+            // Create instances and register commands
             base.Initialize();
         }
 
@@ -65,11 +65,11 @@ namespace Game1
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            SmileyWalk = Content.Load<Texture2D>("images/SmileyWalk");
-            animatedSprite = new AnimatedSprite(SmileyWalk, 4, 4);
 
-            font = Content.Load<SpriteFont>("Strings");
-            // TODO: use this.Content to load your game content here
+            staticTextSprite.LoadResources();
+            animatedFixedSprite.LoadResources();
+
+            ActiveSprite = animatedFixedSprite;
         }
 
         /// <summary>
@@ -88,11 +88,12 @@ namespace Game1
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-            animatedSprite.Update();
-            // TODO: Add your update logic here
+            foreach (var controller in controllers)
+            {
+                controller.Update();
+            }
 
+            ActiveSprite?.Update();
             base.Update(gameTime);
         }
 
@@ -104,10 +105,11 @@ namespace Game1
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
-            animatedSprite.Draw(spriteBatch, new Vector2(300, 200));
-            spriteBatch.DrawString(font, "Credits\nProgram Made By: Yan Zhang\nSprites from: http://rbwhitaker.wdfiles.com/local--files/monogame-texture-atlases-1/SmileyWalk.png", new Vector2(50, 400), Color.Black);
-            spriteBatch.End();
 
+            ActiveSprite?.Draw(spriteBatch);
+            staticTextSprite.Draw(spriteBatch);
+
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
