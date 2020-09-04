@@ -17,12 +17,11 @@ namespace Game1
         private List<IController> controllers;
 
         private ISprite staticTextSprite;
-        private ISprite animatedFixedSprite;
 
         /// <summary>
         /// Active sprite. Exposed as a class property
         /// </summary>
-        private ISprite ActiveSprite { get; set; }
+        public ISprite ActiveSprite { get; set; }
 
         /// <summary>
         /// A list that holds all loaded sprites.
@@ -38,18 +37,18 @@ namespace Game1
             graphics.PreferredBackBufferWidth = GlobalDefinitions.GraphicsWidth;
             graphics.PreferredBackBufferHeight = GlobalDefinitions.GraphicsHeight;
 
-            controllers = new List<IController>
-            {
-                new MouseController(this),
-                new KeyboardController()
-            };
-
             staticTextSprite = new TextSprite(this);
             LoadedSprites = new ISprite[(int) GlobalDefinitions.SpriteModes.Invalid];
             LoadedSprites[(int)GlobalDefinitions.SpriteModes.StaticFixed] = new StaticFixedSprite(this);
             LoadedSprites[(int)GlobalDefinitions.SpriteModes.StaticVerticalMoving] = new StaticVerticalMovingSprite(this);
             LoadedSprites[(int)GlobalDefinitions.SpriteModes.AnimatedFixed] = new AnimatedFixedSprite(this);
             LoadedSprites[(int)GlobalDefinitions.SpriteModes.AnimatedHorizontalMoving] = new AnimatedHorizontalMovingSprite(this);
+
+            controllers = new List<IController>
+            {
+                new MouseController(this),
+                new KeyboardController(this)
+            };
         }
 
         /// <summary>
