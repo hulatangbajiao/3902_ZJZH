@@ -18,8 +18,8 @@ namespace Game1.Sprite
 
         public void LoadResources()
         {
-            texture = gameInstance.Content.Load<Texture2D>("images/SmileyWalk");
-            sprite = new CoreSprite(texture, 4, 4);
+            texture = gameInstance.Content.Load<Texture2D>("images/Link");
+            sprite = new CoreSprite(texture, 1, 6);
             // Update it once. The actual update function is a no-op for static sprite
             sprite.Update();
         }

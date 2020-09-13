@@ -8,7 +8,7 @@ namespace Game1.Sprite
         private SpriteFont font;
         private Game gameInstance;
 
-        private const string CreditsText = "Credits\nProgram Made By: Yan Zhang\nSprites from: http://rbwhitaker.wdfiles.com/local--files/monogame-texture-atlases-1/SmileyWalk.png";
+        private const string CreditsText = "Credits\nProgram Made By: Yan Zhang\nSprites from: https://www.spriters-resource.com/nes/legendofzelda/sheet/8366/";
 
         public TextSprite(Game instance)
         {

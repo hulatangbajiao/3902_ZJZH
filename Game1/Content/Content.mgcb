@@ -20,7 +20,7 @@
 /processorParam:TextureFormat=Compressed
 /build:File.spritefont;Strings.spritefont
 
-#begin images/SmileyWalk.png
+#begin images/Link.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -30,5 +30,17 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:images/SmileyWalk.png
+/build:images/Link.png
+
+#begin images/NES - The Legend of Zelda - Link.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/NES - The Legend of Zelda - Link.png
 
