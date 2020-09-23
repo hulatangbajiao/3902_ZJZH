@@ -41,8 +41,9 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Command\Set.cs" />
     <Compile Include="Command\QuitGameCommand.cs" />
-    <Compile Include="Command\SetSpriteCommand.cs" />
+    <Compile Include="Command\SetLinkCommand.cs" />
     <Compile Include="DownIdleState.cs" />
     <Compile Include="DownMovingState.cs" />
     <Compile Include="GlobalDefinitions.cs" />
