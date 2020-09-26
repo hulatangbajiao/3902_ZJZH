@@ -43,16 +43,17 @@
   <ItemGroup>
     <Compile Include="Command\QuitGameCommand.cs" />
     <Compile Include="Command\SetSpriteCommand.cs" />
-    <Compile Include="DownIdleState.cs" />
-    <Compile Include="DownMovingState.cs" />
+    <Compile Include="States\IdleState\DownIdleState.cs" />
+    <Compile Include="States\Item State\UpItemState.cs" />
+    <Compile Include="States\Moving State\DownMovingState.cs" />
     <Compile Include="GlobalDefinitions.cs" />
-    <Compile Include="ILinkState.cs" />
-    <Compile Include="IPlayer.cs" />
-    <Compile Include="LeftIdleState.cs" />
-    <Compile Include="LeftMovingState.cs" />
-    <Compile Include="Link.cs" />
-    <Compile Include="RightIdleState.cs" />
-    <Compile Include="RightMovingState.cs" />
+    <Compile Include="Interfaces\ILinkState.cs" />
+    <Compile Include="Interfaces\IPlayer.cs" />
+    <Compile Include="States\IdleState\LeftIdleState.cs" />
+    <Compile Include="States\Moving State\LeftMovingState.cs" />
+    <Compile Include="Characters\Link.cs" />
+    <Compile Include="States\IdleState\RightIdleState.cs" />
+    <Compile Include="States\Moving State\RightMovingState.cs" />
     <Compile Include="Sprite\AnimatedHorizontalMovingSprite.cs" />
     <Compile Include="Sprite\AnimatedFixedSprite.cs" />
     <Compile Include="Sprite\CoreSprite.cs" />
@@ -67,12 +68,12 @@
     <Compile Include="Sprite\StaticVerticalMovingSprite.cs" />
     <Compile Include="Sprite\StaticFixedSprite.cs" />
     <Compile Include="Sprite\TextSprite.cs" />
-    <Compile Include="StandingMagicalRodState.cs" />
-    <Compile Include="UpIdleLinkSprite.cs" />
-    <Compile Include="UpIdleState.cs" />
-    <Compile Include="StandingWhiteSwordState.cs" />
-    <Compile Include="StandingWoodenSwordState.cs" />
-    <Compile Include="UpMovingState.cs" />
+    <Compile Include="States\Sword Attack State\StandingMagicalRodState.cs" />
+    <Compile Include="Sprite_\UpIdleLinkSprite.cs" />
+    <Compile Include="States\IdleState\UpIdleState.cs" />
+    <Compile Include="States\Sword Attack State\StandingWhiteSwordState.cs" />
+    <Compile Include="States\Sword Attack State\StandingWoodenSwordState.cs" />
+    <Compile Include="States\Moving State\UpMovingState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
