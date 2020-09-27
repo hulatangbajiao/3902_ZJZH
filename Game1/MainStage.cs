@@ -29,6 +29,8 @@ namespace Game1
         /// </summary>
         public ISprite[] LoadedSprites { get; }
 
+        public ILinkState[] Linkstates { get; }
+
         public MainStage()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -38,15 +40,19 @@ namespace Game1
             graphics.PreferredBackBufferHeight = GlobalDefinitions.GraphicsHeight;
 
             staticTextSprite = new TextSprite(this);
+
             LoadedSprites = new ISprite[(int) GlobalDefinitions.SpriteModes.Invalid];
             LoadedSprites[(int)GlobalDefinitions.SpriteModes.StaticFixed] = new StaticFixedSprite(this);
             LoadedSprites[(int)GlobalDefinitions.SpriteModes.StaticVerticalMoving] = new StaticVerticalMovingSprite(this);
             LoadedSprites[(int)GlobalDefinitions.SpriteModes.AnimatedFixed] = new AnimatedFixedSprite(this);
             LoadedSprites[(int)GlobalDefinitions.SpriteModes.AnimatedHorizontalMoving] = new AnimatedHorizontalMovingSprite(this);
 
+           
+
+
+
             controllers = new List<IController>
             {
-                new MouseController(this),
                 new KeyboardController(this)
             };
         }

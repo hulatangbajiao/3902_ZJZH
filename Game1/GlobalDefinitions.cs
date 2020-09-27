@@ -5,7 +5,7 @@
         public const int GraphicsWidth = 800;
         public const int GraphicsHeight = 500;
 
-        public enum LinkModes
+        public enum LinkStates
         {
             UpIdleState = 1,
             LeftIdleState = 2,
