@@ -2,7 +2,8 @@
 {
     internal class UpIdleState : ILinkState
     {
-        private Link link;
+        public Link link;
+        MainStage game;
 
         public UpIdleLinkSprite GetSprite { get; set; }
         public UpIdleState(Link link)
@@ -12,6 +13,11 @@
             
         }
         //link has already faced up so no code for MoveUp()
+
+        public void TakeDamage()
+        {
+            //remains to be discussed
+        }
         public void MoveUp()
         {
         }

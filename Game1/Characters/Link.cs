@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game1
 {
-    class Link
+    class Link : ILink
     {
         public ILinkState state;
 
@@ -20,6 +20,10 @@ namespace Game1
             state.MoveUp();
         }
 
+        public void TakeDamage()
+        {
+            state.TakeDamage();
+        }
         //if 'w'key is being pressed for a long time(more than once in one Update cycle), link will be animated and move up in y axis.
         public void KeepMoveUp()
         {
