@@ -42,6 +42,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Characters\Link.cs" />
+    <Compile Include="Command\BlockPreviousCommand.cs" />
+    <Compile Include="Command\UpMovingCommand.cs" />
+    <Compile Include="Command\LeftMovingCommand.cs" />
+    <Compile Include="Command\RightMovingCommand.cs" />
+    <Compile Include="Command\DownMovingCommand.cs" />
+    <Compile Include="Command\StandingMagicalRodCommand.cs" />
+    <Compile Include="Command\StandingWhiteSwordCommand.cs" />
+    <Compile Include="Command\StandingWoodenSwordCommand.cs" />
+    <Compile Include="Command\DamagedCommand.cs" />
     <Compile Include="Command\ResetGameCommand.cs" />
     <Compile Include="Command\QuitGameCommand.cs" />
     <Compile Include="GlobalDefinitions.cs" />
