@@ -5,13 +5,21 @@
         public const int GraphicsWidth = 800;
         public const int GraphicsHeight = 500;
 
-        public enum SpriteModes
+        public enum LinkStates
         {
-            StaticFixed = 1,
-            AnimatedFixed = 2,
-            StaticVerticalMoving = 3,
-            AnimatedHorizontalMoving = 4,
-            Invalid = 5
+            UpIdleState = 1,
+            LeftIdleState = 2,
+            RightIdleState = 3,
+            DownIdleState = 4,
+            UpMovingState = 5,
+            LeftMovingState = 6,
+            RightMovingState = 7,
+            DownMovingState = 8,
+            StandingMagicalRodState = 9,
+            StandingWhiteSwordState = 10,
+            StandingWoodenSwordState = 11,
+            damaged = 12
         }
+        
     }
 }
