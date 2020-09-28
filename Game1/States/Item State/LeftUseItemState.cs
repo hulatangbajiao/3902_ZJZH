@@ -6,39 +6,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Game1.State
 {
-    internal class LeftMovingState : ILinkState
+    internal class LeftUseItemState : ILinkState
     {
         private Link link;
 
-        public LeftMovingLinkSprite GetSprite { get; set; }
-        public LeftMovingState(Link link)
+        public LeftUseItemSprite GetSprite { get; set; }
+        public LeftUseItemState(Link link)
         {
             this.link = link;
-            GetSprite = new LeftMovingLinkSprite(link.position);
+            GetSprite = new LeftUseItemSprite(link.position);
 
         }
         //link has already faced up so no code for MoveUp()
         public void MoveUp()
         {
-            link.state = new UpMovingState(link);
+            
         }
 
         public void MoveDown()
         {
-            link.state = new DownMovingState(link);
+            
 
         }
 
         public void MoveLeft()
         {
-            link.state = new LeftMovingState(link);
+            
         }
 
         public void MoveRight()
         {
-            link.state = new RightMovingState(link);
+            
         }
 
         public void Stop()
@@ -47,21 +48,20 @@ namespace Game1.State
         }
         public void Attack()
         {
-            link.state = new LeftAttackState(link);
+            
         }
 
 
 
         public void UseItem()
         {
-            link.state = new LeftUseItemState(link);
+            
         }
-        
+
 
         public void Update()
         {
-            link.PositionMoveLeft();
+
         }
     }
 }
-

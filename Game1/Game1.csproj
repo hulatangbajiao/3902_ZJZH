@@ -74,14 +74,18 @@
     <Compile Include="States\IdleState\LeftIdleState.cs" />
     <Compile Include="States\IdleState\RightIdleState.cs" />
     <Compile Include="States\IdleState\UpIdleState.cs" />
-    <Compile Include="States\Item State\UpItemState.cs" />
+    <Compile Include="States\Item State\DownUseItemState.cs" />
+    <Compile Include="States\Item State\LeftUseItemState.cs" />
+    <Compile Include="States\Item State\RightUseItemState.cs" />
+    <Compile Include="States\Item State\UpUseItemState.cs" />
     <Compile Include="States\Moving State\DownMovingState.cs" />
     <Compile Include="States\Moving State\LeftMovingState.cs" />
     <Compile Include="States\Moving State\RightMovingState.cs" />
     <Compile Include="States\Moving State\UpMovingState.cs" />
-    <Compile Include="States\Sword Attack State\StandingMagicalRodState.cs" />
-    <Compile Include="States\Sword Attack State\StandingWhiteSwordState.cs" />
-    <Compile Include="States\Sword Attack State\StandingWoodenSwordState.cs" />
+    <Compile Include="States\Sword Attack State\DownAttackState.cs" />
+    <Compile Include="States\Sword Attack State\LeftAttackState.cs" />
+    <Compile Include="States\Sword Attack State\RightAttackState.cs" />
+    <Compile Include="States\Sword Attack State\UpAttackState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
