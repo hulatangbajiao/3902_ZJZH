@@ -4,18 +4,24 @@
     {
         public Link link;
         MainStage game;
-
+        int timer = 100;
         public UpIdleLinkSprite GetSprite { get; set; }
         public UpIdleState(Link link)
         {
             this.link = link;
-            GetSprite = new UpIdleLinkSprite();
+            GetSprite = new UpIdleLinkSprite(this.link.position);
             
         }
         //link has already faced up so no code for MoveUp()
 
         public void TakeDamage()
         {
+            GetSprite = new DamagedUpIdleLinkSprite(this.link.position);
+            timer--;
+            if (timer == 0)
+            {
+                GetSprite = new UpIdleLinkSprite(this.link.position);
+            }
             //remains to be discussed
         }
         public void MoveUp()
