@@ -30,6 +30,8 @@ namespace Game1
         /// 
         /// </summary>
 
+        public ILinkState[] Linkstates { get; }
+
         public MainStage()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -37,8 +39,6 @@ namespace Game1
 
             graphics.PreferredBackBufferWidth = GlobalDefinitions.GraphicsWidth;
             graphics.PreferredBackBufferHeight = GlobalDefinitions.GraphicsHeight;
-
-            
 
             controllers = new List<IController>
             {

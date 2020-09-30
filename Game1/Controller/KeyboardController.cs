@@ -11,6 +11,7 @@ namespace Game1.Controller
         public static Keys lastPressedKey;
         private Dictionary<Keys, ICommand> controllerMappings;
 
+
         public KeyboardController(MainStage instance)
         {
             controllerMappings = new Dictionary<Keys, ICommand>();
@@ -79,7 +80,6 @@ namespace Game1.Controller
                     lastPressedKey = key;
                 }
             }
-
         }
     }
-}
+

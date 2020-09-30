@@ -22,5 +22,6 @@ namespace Game1
             StandingWoodenSwordState = 11,
             damaged = 12
         }
+        
     }
 }
