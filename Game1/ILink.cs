@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Game1
 {
-    interface ILink
+    public interface ILink
     {
+        public ILinkState state;
         void TakeDamage();
         void MoveLeft();
         void KeepMoveLeft();

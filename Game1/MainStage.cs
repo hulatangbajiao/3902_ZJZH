@@ -13,6 +13,7 @@ namespace Game1
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
+        
 
         private List<IController> controllers;
 
@@ -23,6 +24,8 @@ namespace Game1
         /// </summary>
         public ISprite ActiveSprite { get; set; }
 
+        //Link class
+        public ILink Link { get; set; }
         /// <summary>
         /// A list that holds all loaded sprites.
         /// 
@@ -49,6 +52,7 @@ namespace Game1
                 new MouseController(this),
                 new KeyboardController(this)
             };
+            Link = new Link(this);
         }
 
         /// <summary>
@@ -106,7 +110,7 @@ namespace Game1
                 controller.Update();
             }
 
-            ActiveSprite?.Update();
+            Link.Update();
             base.Update(gameTime);
         }
 
@@ -119,7 +123,7 @@ namespace Game1
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
 
-            ActiveSprite?.Draw(spriteBatch);
+            Link.state.GetSprite.draw(spriteBatch, Link.position);
             staticTextSprite.Draw(spriteBatch);
 
             spriteBatch.End();

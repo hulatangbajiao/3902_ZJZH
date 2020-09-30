@@ -3,11 +3,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1
 {
-     public class DamagedUpIdleLinkSprite : ISprite
+     public class DamagedLinkSprite : ISprite
     {
         private Vector2 location;
 
-        public DamagedUpIdleLinkSprite(Vector2 location)
+        public DamagedLinkSprite(Vector2 location)
         {
             this.location = location;
 

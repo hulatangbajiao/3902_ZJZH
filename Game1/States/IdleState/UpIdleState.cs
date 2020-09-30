@@ -2,13 +2,14 @@
 {
     internal class UpIdleState : ILinkState
     {
-        public Link link;
+        public ILink link;
         MainStage game;
         int timer = 100;
         public UpIdleLinkSprite GetSprite { get; set; }
-        public UpIdleState(Link link)
+        public UpIdleState(Link link, MainStage game)
         {
             this.link = link;
+            this.game = game;
             GetSprite = new UpIdleLinkSprite(this.link.position);
             
         }
@@ -16,7 +17,8 @@
 
         public void TakeDamage()
         {
-            GetSprite = new DamagedUpIdleLinkSprite(this.link.position);
+            link = new DamagedLink(link, game);
+            GetSprite = new DamagedLinkSprite(this.link.position);
             timer--;
             if (timer == 0)
             {
@@ -30,55 +32,55 @@
         //if 'w'key is being pressed for a long time(more than once in one Update cycle), link will be animated and move up in y axis.
         public void KeepMoveUp()
         {
-            link.state = new UpMovingState(link);
+            link.state = new UpMovingState((Link)link);
 
         }
 
         public void MoveDown()
         {
-            link.state = new DownIdleState(link);
+            link.state = new DownIdleState((Link)link);
 
         }
 
         public void KeepMoveDown()
         {
-            link.state = new DownMovingState(link);
+            link.state = new DownMovingState((Link)link);
         }
         public void MoveLeft()
         {
-            link.state = new LeftIdleState(link);
+            link.state = new LeftIdleState((Link)link);
         }
         public void KeepMoveLeft()
         {
-            link.state = new LeftMovingState(link);
+            link.state = new LeftMovingState((Link)link);
         }
 
         public void MoveRight()
         {
-            link.state = new RightIdleState(link);
+            link.state = new RightIdleState((Link)link);
         }
         public void KeepMoveRight()
         {
-            link.state = new RightMovingState(link);
+            link.state = new RightMovingState((Link)link);
         }
         public void UseWoodenSword()
         {
-            link.state = new UpWoodenSwordState(link);
+            link.state = new UpWoodenSwordState((Link)link);
         }
 
         public void UseWhiteSword()
         {
-            link.state = new UpWhiteSwordState(link);
+            link.state = new UpWhiteSwordState((Link)link);
         }
 
         public void UseMagicalRod()
         {
-            link.state = new UpMagicalRodState(link);
+            link.state = new UpMagicalRodState((Link)link);
         }
 
         public void UseItem()
         {
-            link.state = new UpItemState(link);
+            link.state = new UpItemState((Link)link);
         }
     }
 }
