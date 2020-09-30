@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game1.Sprite_
+namespace Game1
 {
     public class UpMovingLinkSprite
     {

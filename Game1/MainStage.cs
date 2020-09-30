@@ -1,6 +1,8 @@
 ﻿using Game1.Controller;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using System;
 using System.Collections.Generic;
 
 namespace Game1
@@ -12,7 +14,7 @@ namespace Game1
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-        
+        private Keys testKey;
 
         private List<IController> controllers;
 
@@ -40,7 +42,6 @@ namespace Game1
 
             controllers = new List<IController>
             {
-                new MouseController(this),
                 new KeyboardController(this)
             };
             Link = new Link(this);

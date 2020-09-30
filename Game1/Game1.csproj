@@ -41,14 +41,24 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DamagedLinkState.cs" />
+    <Compile Include="Command\BlockPreviousCommand.cs" />
+    <Compile Include="Command\DamagedCommand.cs" />
+    <Compile Include="Command\DownMovingCommand.cs" />
+    <Compile Include="Command\QuitGameCommand.cs" />
+    <Compile Include="Command\ResetGameCommand.cs" />
+    <Compile Include="Controller\LeftMovingCommand.cs" />
+    <Compile Include="Controller\RightMovingCommand.cs" />
+    <Compile Include="Controller\StandingMagicalRodCommand.cs" />
+    <Compile Include="Controller\StandingWhiteSwordCommand.cs" />
+    <Compile Include="Controller\StandingWoodenSwordCommand.cs" />
+    <Compile Include="Command\UpMovingCommand.cs" />
+    <Compile Include="Sprite_\UpMovingLinkSprite.cs" />
+    <Compile Include="States\DamagedLinkState.cs" />
     <Compile Include="Sprite_\DamgedLinkSprite.cs" />
     <Compile Include="Texture2DStorage.cs" />
-    <Compile Include="Command\QuitGameCommand.cs" />
-    <Compile Include="Command\SetSpriteCommand.cs" />
-    <Compile Include="DamagedLink.cs" />
-    <Compile Include="ILink.cs" />
-    <Compile Include="ISprite.cs" />
+    <Compile Include="Characters\DamagedLink.cs" />
+    <Compile Include="Interfaces\ILink.cs" />
+    <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="States\IdleState\DownIdleState.cs" />
     <Compile Include="States\Item State\UpItemState.cs" />
     <Compile Include="States\Moving State\DownMovingState.cs" />
@@ -61,7 +71,6 @@
     <Compile Include="States\IdleState\RightIdleState.cs" />
     <Compile Include="States\Moving State\RightMovingState.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
-    <Compile Include="Controller\MouseController.cs" />
     <Compile Include="Command\ICommand.cs" />
     <Compile Include="Controller\IController.cs" />
     <Compile Include="MainStage.cs" />

@@ -9,7 +9,7 @@
         {
             this.Link = link;
             this.game = game;
-            GetSprite = new UpIdleLinkSprite(link.Position);
+            GetSprite = new UpMovingLinkSprite(link.Position);
 
         }
         //link has already faced up so no code for MoveUp()
