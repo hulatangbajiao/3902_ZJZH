@@ -1,14 +1,18 @@
 ﻿using Game1.Command;
 using Microsoft.Xna.Framework.Input;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Game1.Controller
 {
     class KeyboardController : IController
     {
+        public static Keys lastPressedKey;
         private Dictionary<Keys, ICommand> controllerMappings;
 
-        public KeyboardController(MainStage instance, IPlayer Link)
+
+        public KeyboardController(MainStage instance)
         {
             controllerMappings = new Dictionary<Keys, ICommand>();
 
@@ -18,9 +22,9 @@ namespace Game1.Controller
 
             // Link
             //Arrow and "wasd" keys should move Link and change his facing direction.
-            controllerMappings.Add(Keys.W, new UpMovingCommand(Link));
-            controllerMappings.Add(Keys.PageUp, new UpMovingCommand(Link));
-            controllerMappings.Add(Keys.A, new LeftMovingCommand(Link));
+            controllerMappings.Add(Keys.W, new UpMovingCommand(instance.Link));
+            controllerMappings.Add(Keys.PageUp, new UpMovingCommand(instance.Link));
+            /*controllerMappings.Add(Keys.A, new LeftMovingCommand(Link));
             controllerMappings.Add(Keys.Home, new LeftMovingCommand(Link));
             controllerMappings.Add(Keys.S, new DownMovingCommand(Link));
             controllerMappings.Add(Keys.PageDown, new DownMovingCommand(Link));
@@ -56,13 +60,24 @@ namespace Game1.Controller
             //Use keys "o" and "p" to cycle between which enemy or npc is currently being shown 
             controllerMappings.Add(Keys.O, new SetNPCommand(instance, GlobalDefinitions.NPCModes.previous));
             controllerMappings.Add(Keys.P, new SetNPCCommand(instance, GlobalDefinitions.NPCModes.next));
+        }*/
         }
-            public void Update() {
-                var pressedKeys = Keyboard.GetState().GetPressedKeys();
+        public void Update()
+        {
+            
+            var keyArray = new Keys[2] { Keys.W, Keys.PageUp };
 
-                foreach (Keys key in pressedKeys)
+            if (keyArray.Contains(lastPressedKey) && Keyboard.GetState().IsKeyUp(lastPressedKey))
+            {
+                controllerMappings[lastPressedKey]?.Stop();
+            }
+            foreach (Keys key in keyArray)
+            {
+                //if the keys in the keyArray are pressed, execute corresponding command
+                if (Keyboard.GetState().IsKeyDown(key))
                 {
                     controllerMappings[key]?.Execute();
+                    lastPressedKey = key;
                 }
             }
         }

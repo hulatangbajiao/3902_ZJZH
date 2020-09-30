@@ -1,7 +1,8 @@
 ﻿using Game1.Controller;
-using Game1.Sprite;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using System;
 using System.Collections.Generic;
 
 namespace Game1
@@ -13,21 +14,21 @@ namespace Game1
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
+        private Keys testKey;
 
         private List<IController> controllers;
 
-        private ISprite staticTextSprite;
 
         /// <summary>
         /// Active sprite. Exposed as a class property
         /// </summary>
-        public ISprite ActiveSprite { get; set; }
 
+        //Link class
+        public ILink Link { get; set; }
         /// <summary>
         /// A list that holds all loaded sprites.
         /// 
         /// </summary>
-        public ISprite[] LoadedSprites { get; }
 
         public ILinkState[] Linkstates { get; }
 
@@ -39,22 +40,11 @@ namespace Game1
             graphics.PreferredBackBufferWidth = GlobalDefinitions.GraphicsWidth;
             graphics.PreferredBackBufferHeight = GlobalDefinitions.GraphicsHeight;
 
-            staticTextSprite = new TextSprite(this);
-
-            LoadedSprites = new ISprite[(int) GlobalDefinitions.SpriteModes.Invalid];
-            LoadedSprites[(int)GlobalDefinitions.SpriteModes.StaticFixed] = new StaticFixedSprite(this);
-            LoadedSprites[(int)GlobalDefinitions.SpriteModes.StaticVerticalMoving] = new StaticVerticalMovingSprite(this);
-            LoadedSprites[(int)GlobalDefinitions.SpriteModes.AnimatedFixed] = new AnimatedFixedSprite(this);
-            LoadedSprites[(int)GlobalDefinitions.SpriteModes.AnimatedHorizontalMoving] = new AnimatedHorizontalMovingSprite(this);
-
-           
-
-
-
             controllers = new List<IController>
             {
                 new KeyboardController(this)
             };
+            Link = new Link(this);
         }
 
         /// <summary>
@@ -76,20 +66,7 @@ namespace Game1
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
         /// </summary>
-        protected override void LoadContent()
-        {
-            // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            staticTextSprite.LoadResources();
-            for (int i = 1; i < (int) GlobalDefinitions.SpriteModes.Invalid; i++)
-            {
-                LoadedSprites[i].LoadResources();
-            }
-
-            // Set default sprite
-            ActiveSprite = LoadedSprites[(int) GlobalDefinitions.SpriteModes.StaticFixed];
-        }
+        
 
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
@@ -112,7 +89,7 @@ namespace Game1
                 controller.Update();
             }
 
-            ActiveSprite?.Update();
+            Link.Update();
             base.Update(gameTime);
         }
 
@@ -125,8 +102,7 @@ namespace Game1
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
 
-            ActiveSprite?.Draw(spriteBatch);
-            staticTextSprite.Draw(spriteBatch);
+            Link.State.GetSprite.Draw(spriteBatch, Link.Position);
 
             spriteBatch.End();
             base.Draw(gameTime);

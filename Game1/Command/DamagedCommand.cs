@@ -8,17 +8,18 @@ namespace Game1.Command
 {
     class DamagedCommand : ICommand
     {
-        private IPlayer player;
+        private ILink Link;
 
-        public DamagedCommand(IPlayer Link)
+        public DamagedCommand(ILink Link)
         {
-            player = Link;
+            this.Link = Link;
         }
 
         public void Execute()
         {
-            Link.damaged();
+            Link.TakeDamage();
         }
     }
-    
+
 }
+          

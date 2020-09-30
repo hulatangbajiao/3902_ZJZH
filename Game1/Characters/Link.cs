@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,72 +7,61 @@ using System.Threading.Tasks;
 
 namespace Game1
 {
-    class Link
+    public class Link : ILink
     {
-        public ILinkState state;
+        
+        public ILinkState State { get; set; }
+        public Vector2 Position { get; set; }
 
-        public Link()
+        public Link(MainStage game)
         {
-            state = new UpIdleState(this);
+            State = new UpIdleState(this, game);
+        }
+
+        public void TakeDamage()
+        {
+            State.TakeDamage();
         }
 
         public void MoveUp()
         {
-            state.MoveUp();
+            State.MoveUp();
         }
 
-        //if 'w'key is being pressed for a long time(more than once in one Update cycle), link will be animated and move up in y axis.
-        public void KeepMoveUp()
-        {
-            state.KeepMoveUp();
-        }
 
         public void MoveDown()
         {
-            state.MoveDown();
-        }
-        
-        public void KeepMoveDown()
-        {
-            state.KeepMoveDown();
-        }
-        public void MoveLeft()
-        {
-            state.MoveLeft();
-        }
-        public void KeepMoveLeft()
-        {
-            state.KeepMoveLeft();
-        }
-        public void MoveRight()
-        {
-            state.MoveRight();
-        }
-        public void KeepMoveRight()
-        {
-            state.KeepMoveRight();
+            State.MoveDown();
         }
 
-        //press 'z' and 'n' key to use sword to attack
-        //when player press '1' then call UseWoodenSword() to attack,
-        //                  '2' then call UseWhiteSword()
-        //                  '3'           UseMagicalRod()
-        public void UseWoodenSword()
+        public void MoveLeft()
         {
-            state.UseWoodenSword();
+            State.MoveLeft();
         }
-        public void UseWhiteSword()
+
+        public void MoveRight()
         {
-            state.UseWhiteSword();
+            State.MoveRight();
         }
-        public void UseMagicalRod()
+
+        public void Stop()
         {
-            state.UseMagicalRod();
+            State.Stop();
+        }
+
+        public void Attack()
+        {
+            State.Attack();
         }
 
         public void UseItem()
         {
-            state.UseItem();
+            State.UseItem();
+        }
+
+        public void Update()
+        {
+            State.Update();
         }
 
 

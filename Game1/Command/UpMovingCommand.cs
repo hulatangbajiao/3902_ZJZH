@@ -8,16 +8,21 @@ namespace Game1.Command
 {
     class UpMovingCommand : ICommand
     {
-        private IPlayer player;
+        private ILink Link;
 
-    public UpMovingCommand(IPlayer Link)
-    {
-        player = Link;
-    }
+        public UpMovingCommand(ILink Link)
+        {
+            this.Link = Link;
+        }
 
-    public void Execute()
-    {
-        Link.KeepMoveUp();
-        Link.MoveUp();
+        public void Execute()
+        {
+            Link.MoveUp();
+        }
+
+        public void Stop()
+        {
+            Link.Stop();
+        }
     }
 }

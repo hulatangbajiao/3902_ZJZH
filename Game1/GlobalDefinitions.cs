@@ -1,4 +1,6 @@
-﻿namespace Game1
+﻿using Microsoft.Xna.Framework.Input;
+
+namespace Game1
 {
     public static class GlobalDefinitions
     {

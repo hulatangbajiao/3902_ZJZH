@@ -11,7 +11,7 @@ namespace Game1.Command
         {
             gameInstance = instance ?? throw new ArgumentNullException(nameof(instance));
         }
-        
+
         public void Execute()
         {
             gameInstance.Exit();
