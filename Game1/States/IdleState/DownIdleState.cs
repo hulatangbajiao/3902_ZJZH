@@ -60,7 +60,7 @@ namespace Game1.State
 
         public void Update()
         {
-
+            GetSprite.Update();
         }
     }
 }

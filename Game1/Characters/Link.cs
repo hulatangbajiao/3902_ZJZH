@@ -78,6 +78,11 @@ namespace Game1
             state.UseItem();
         }
         
+        
+
+        public void Update()
+        {
+            state.Update();
         }
 
 

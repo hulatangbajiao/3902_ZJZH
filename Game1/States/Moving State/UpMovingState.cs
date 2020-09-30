@@ -61,6 +61,7 @@ namespace Game1
         public void Update()
         {
             link.PositionMoveUp();
+            GetSprite.Update();
         }
     }
 }

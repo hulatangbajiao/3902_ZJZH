@@ -61,7 +61,7 @@ namespace Game1
 
         public void Update()
         {
-            
+            GetSprite.Update();
         }
     }
 }
