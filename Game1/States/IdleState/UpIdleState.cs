@@ -6,9 +6,8 @@ namespace Game1
     {
         public ILink Link { get; set; }
         MainStage game;
-        int timer = 100;
-        public UpIdleLinkSprite GetSprite { get; set; }
-        public UpIdleState(Link link, MainStage game)
+        public ISprite GetSprite { get; set; }
+        public UpIdleState(ILink link, MainStage game)
         {
             this.Link = link;
             this.game = game;
@@ -25,7 +24,7 @@ namespace Game1
         }
         public void MoveUp()
         {
-            Link.State = new UpMovingState((Link)Link);
+            Link.State = new UpMovingState((Link)Link, game);
         }
         //if 'w'key is being pressed for a long time(more than once in one Update cycle), link will be animated and move up in y axis.
      

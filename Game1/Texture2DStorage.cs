@@ -13,7 +13,7 @@ namespace Game1
 		{
 			// Note that we are not using Game1's ContentLoader here (outside the scope of class methods) since it has not been instantiated yet
 			private static Texture2D UpIdleLinkSpriteSheet;
-			private static Texture2D enemyBossSpriteSheet;
+			private static Texture2D UpMovingLinkSpriteSheet;
 			// More private static Texture2D fields follow
 			// ...
 
@@ -21,7 +21,7 @@ namespace Game1
 			public static void LoadAllTextures(ContentManager content)
 			{
 				UpIdleLinkSpriteSheet = content.Load<Texture2D>("images/UpIdle.png");
-
+			UpMovingLinkSpriteSheet = content.Load<Texture2D>("images/UpMoving.png");
 				// More Content.Load calls follow
 				//...
 			}
@@ -36,14 +36,12 @@ namespace Game1
 				return UpIdleLinkSpriteSheet;
 			}
 
-			public static Texture2D GetBossSpriteSheet()
+			public static Texture2D GetUpMovingLinkSpriteSheet()
 			{
-				return enemyBossSpriteSheet;
+				return UpMovingLinkSpriteSheet;
 			}
 
-			// More public static Texture2D returning methods follow
-			// ...
 
-		}
+	}
 	
 }
