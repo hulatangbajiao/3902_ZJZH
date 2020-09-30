@@ -1,23 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Game1.Command;
 
-namespace Game1.Command
+namespace Game1.Controller
 {
-    class StandingMagicalRodCommand : ICommand
+    internal class StandingMagicalRodCommand : ICommand
     {
-        private IPlayer player;
+        private IPlayer link;
 
-        public StandingMagicalRodCommand(IPlayer Link)
+        public StandingMagicalRodCommand(IPlayer link)
         {
-            player = Link;
-        }
-
-        public void Execute()
-        {
-            Link.UseMagicalRod();
+            this.link = link;
         }
     }
 }

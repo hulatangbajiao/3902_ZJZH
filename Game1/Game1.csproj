@@ -46,13 +46,13 @@
     <Compile Include="Command\DownMovingCommand.cs" />
     <Compile Include="Command\QuitGameCommand.cs" />
     <Compile Include="Command\ResetGameCommand.cs" />
-    <Compile Include="Controller\LeftMovingCommand.cs" />
-    <Compile Include="Controller\RightMovingCommand.cs" />
-    <Compile Include="Controller\StandingMagicalRodCommand.cs" />
-    <Compile Include="Controller\StandingWhiteSwordCommand.cs" />
-    <Compile Include="Controller\StandingWoodenSwordCommand.cs" />
+    <Compile Include="Command\LeftMovingCommand.cs" />
+    <Compile Include="Command\RightMovingCommand.cs" />
+    <Compile Include="Command\StandingMagicalRodCommand.cs" />
+    <Compile Include="Command\StandingWhiteSwordCommand.cs" />
+    <Compile Include="Command\StandingWoodenSwordCommand.cs" />
     <Compile Include="Command\UpMovingCommand.cs" />
-    <Compile Include="Sprite_\UpMovingLinkSprite.cs" />
+    <Compile Include="UpMovingLinkSprite.cs" />
     <Compile Include="States\DamagedLinkState.cs" />
     <Compile Include="Sprite_\DamgedLinkSprite.cs" />
     <Compile Include="Texture2DStorage.cs" />
@@ -81,7 +81,7 @@
     <Compile Include="States\IdleState\UpIdleState.cs" />
     <Compile Include="States\Sword Attack State\StandingWhiteSwordState.cs" />
     <Compile Include="States\Sword Attack State\StandingWoodenSwordState.cs" />
-    <Compile Include="States\Moving State\UpMovingState.cs" />
+    <Compile Include="UpMovingState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

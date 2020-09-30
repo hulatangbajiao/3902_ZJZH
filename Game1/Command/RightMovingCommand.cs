@@ -1,25 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Game1.Command;
 
-namespace Game1.Command
+namespace Game1.Controller
 {
-    class RightMovingCommand : ICommand
+    internal class RightMovingCommand : ICommand
     {
-        private IPlayer player;
+        private IPlayer link;
 
-        public RightMovingCommand(IPlayer Link)
+        public RightMovingCommand(IPlayer link)
         {
-            player = Link;
-        }
-
-        public void Execute()
-        {
-            Link.KeepMoveRight();
-            Link.MoveRight();
+            this.link = link;
         }
     }
-   
 }

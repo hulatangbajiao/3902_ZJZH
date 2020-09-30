@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Game1
 {
-    public class UpMovingLinkSprite
+    public class UpMovingLinkSprite : ISprite
     {
         private Vector2 location;
         private int currentFrame = 0;

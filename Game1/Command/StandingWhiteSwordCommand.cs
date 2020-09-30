@@ -1,24 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Game1.Command;
 
-namespace Game1.Command
+namespace Game1.Controller
 {
-    class StandingWhiteSwordCommand : ICommand
+    internal class StandingWhiteSwordCommand : ICommand
     {
-        private IPlayer player;
+        private IPlayer link;
 
-        public StandingWhiteSwordCommand(IPlayer Link)
+        public StandingWhiteSwordCommand(IPlayer link)
         {
-            player = Link;
-        }
-
-        public void Execute()
-        {
-            Link.UseWhiteSword();
+            this.link = link;
         }
     }
-   
 }

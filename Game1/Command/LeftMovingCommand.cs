@@ -1,24 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Game1.Command;
 
-namespace Game1.Command
+namespace Game1.Controller
 {
-    class LeftMovingCommand : ICommand
+    internal class LeftMovingCommand : ICommand
     {
-        private IPlayer player;
+        private IPlayer link;
 
-        public LeftMovingCommand(IPlayer Link)
+        public LeftMovingCommand(IPlayer link)
         {
-            player = Link;
-        }
-
-        public void Execute()
-        {
-            Link.KeepMoveLeft();
-            Link.MoveLeft();
+            this.link = link;
         }
     }
 }
