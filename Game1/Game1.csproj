@@ -41,8 +41,14 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DamagedLinkState.cs" />
+    <Compile Include="Sprite_\DamgedLinkSprite.cs" />
+    <Compile Include="Texture2DStorage.cs" />
     <Compile Include="Command\QuitGameCommand.cs" />
     <Compile Include="Command\SetSpriteCommand.cs" />
+    <Compile Include="DamagedLink.cs" />
+    <Compile Include="ILink.cs" />
+    <Compile Include="ISprite.cs" />
     <Compile Include="States\IdleState\DownIdleState.cs" />
     <Compile Include="States\Item State\UpItemState.cs" />
     <Compile Include="States\Moving State\DownMovingState.cs" />
@@ -54,20 +60,13 @@
     <Compile Include="Characters\Link.cs" />
     <Compile Include="States\IdleState\RightIdleState.cs" />
     <Compile Include="States\Moving State\RightMovingState.cs" />
-    <Compile Include="Sprite\AnimatedHorizontalMovingSprite.cs" />
-    <Compile Include="Sprite\AnimatedFixedSprite.cs" />
-    <Compile Include="Sprite\CoreSprite.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
     <Compile Include="Controller\MouseController.cs" />
     <Compile Include="Command\ICommand.cs" />
     <Compile Include="Controller\IController.cs" />
-    <Compile Include="Sprite\ISprite.cs" />
     <Compile Include="MainStage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sprite\StaticVerticalMovingSprite.cs" />
-    <Compile Include="Sprite\StaticFixedSprite.cs" />
-    <Compile Include="Sprite\TextSprite.cs" />
     <Compile Include="States\Sword Attack State\StandingMagicalRodState.cs" />
     <Compile Include="Sprite_\UpIdleLinkSprite.cs" />
     <Compile Include="States\IdleState\UpIdleState.cs" />

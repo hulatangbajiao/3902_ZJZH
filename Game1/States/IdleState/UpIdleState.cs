@@ -1,86 +1,69 @@
-﻿namespace Game1
+﻿using Microsoft.Xna.Framework;
+
+namespace Game1
 {
-    internal class UpIdleState : ILinkState
+    public class UpIdleState : ILinkState
     {
-        public ILink link;
+        public ILink Link { get; set; }
         MainStage game;
         int timer = 100;
         public UpIdleLinkSprite GetSprite { get; set; }
         public UpIdleState(Link link, MainStage game)
         {
-            this.link = link;
+            this.Link = link;
             this.game = game;
-            GetSprite = new UpIdleLinkSprite(this.link.position);
+            GetSprite = new UpIdleLinkSprite(link.Position);
             
         }
         //link has already faced up so no code for MoveUp()
 
         public void TakeDamage()
         {
-            link = new DamagedLink(link, game);
-            GetSprite = new DamagedLinkSprite(this.link.position);
-            timer--;
-            if (timer == 0)
-            {
-                GetSprite = new UpIdleLinkSprite(this.link.position);
-            }
+            Link = new DamagedLink((Link)Link, game);
+            
             //remains to be discussed
         }
         public void MoveUp()
         {
+            Link.State = new UpMovingState((Link)Link);
         }
         //if 'w'key is being pressed for a long time(more than once in one Update cycle), link will be animated and move up in y axis.
-        public void KeepMoveUp()
-        {
-            link.state = new UpMovingState((Link)link);
-
-        }
-
+     
         public void MoveDown()
         {
-            link.state = new DownIdleState((Link)link);
+            Link.State = new DownIdleState((Link)Link);
 
         }
 
-        public void KeepMoveDown()
-        {
-            link.state = new DownMovingState((Link)link);
-        }
+        
         public void MoveLeft()
         {
-            link.state = new LeftIdleState((Link)link);
+            Link.State = new LeftIdleState((Link)Link);
         }
-        public void KeepMoveLeft()
-        {
-            link.state = new LeftMovingState((Link)link);
-        }
+        
 
         public void MoveRight()
         {
-            link.state = new RightIdleState((Link)link);
+            Link.State = new RightIdleState((Link)Link);
         }
-        public void KeepMoveRight()
+        
+        public void Stop()
         {
-            link.state = new RightMovingState((Link)link);
-        }
-        public void UseWoodenSword()
-        {
-            link.state = new UpWoodenSwordState((Link)link);
+            // no-op
         }
 
-        public void UseWhiteSword()
+        public void Attack()
         {
-            link.state = new UpWhiteSwordState((Link)link);
+            Link.State = new UpWoodenSwordState((Link)Link);
         }
-
-        public void UseMagicalRod()
-        {
-            link.state = new UpMagicalRodState((Link)link);
-        }
-
         public void UseItem()
         {
-            link.state = new UpItemState((Link)link);
+            Link.State = new UpItemState((Link)Link);
+        }
+
+        public void Update()
+        {
+            GetSprite.Update();
         }
     }
 }
