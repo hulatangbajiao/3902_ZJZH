@@ -64,7 +64,7 @@ namespace Game1.Controller
         }
         public void Update()
         {
-            
+
             var keyArray = new Keys[2] { Keys.W, Keys.PageUp };
 
             if (keyArray.Contains(lastPressedKey) && Keyboard.GetState().IsKeyUp(lastPressedKey))
@@ -82,4 +82,5 @@ namespace Game1.Controller
             }
         }
     }
+}
 

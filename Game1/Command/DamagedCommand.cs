@@ -19,6 +19,11 @@ namespace Game1.Command
         {
             Link.TakeDamage();
         }
+
+        public void Stop()
+        {
+
+        }
     }
 
 }

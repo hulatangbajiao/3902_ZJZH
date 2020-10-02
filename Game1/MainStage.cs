@@ -14,9 +14,10 @@ namespace Game1
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-        private Keys testKey;
 
         private List<IController> controllers;
+
+       
 
 
         /// <summary>
@@ -40,6 +41,7 @@ namespace Game1
             graphics.PreferredBackBufferWidth = GlobalDefinitions.GraphicsWidth;
             graphics.PreferredBackBufferHeight = GlobalDefinitions.GraphicsHeight;
 
+            
             controllers = new List<IController>
             {
                 new KeyboardController(this)
@@ -66,7 +68,7 @@ namespace Game1
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
         /// </summary>
-        
+
 
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
@@ -75,6 +77,7 @@ namespace Game1
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
+            spriteBatch = new SpriteBatch(GraphicsDevice);
         }
 
         /// <summary>

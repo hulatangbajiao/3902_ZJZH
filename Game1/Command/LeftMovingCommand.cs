@@ -1,18 +1,3 @@
-﻿using Game1.Command;
-
-namespace Game1.Controller
-{
-    internal class LeftMovingCommand : ICommand
-    {
-        private IPlayer link;
-
-        public LeftMovingCommand(IPlayer link)
-        {
-            this.link = link;
-        }
-    }
-}
-=======
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,17 +8,21 @@ namespace Game1.Command
 {
     class LeftMovingCommand : ICommand
     {
-        private IPlayer player;
+        private ILink Link;
 
-        public LeftMovingCommand(IPlayer Link)
+        public LeftMovingCommand(ILink Link)
         {
-            player = Link;
+            this.Link = Link;
         }
 
         public void Execute()
         {
-            Link.KeepMoveLeft();
             Link.MoveLeft();
+        }
+
+        public void Stop()
+        {
+            Link.Stop();
         }
     }
 }

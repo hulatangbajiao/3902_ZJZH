@@ -8,16 +8,21 @@ namespace Game1.Command
 {
     class StandingWoodenSwordCommand : ICommand
     {
-        private IPlayer player;
+        private ILink Link;
 
-        public StandingWoodenSwordCommand(IPlayer Link)
+        public StandingWoodenSwordCommand(ILink Link)
         {
-            player = Link;
+            this.Link = Link;
         }
 
         public void Execute()
         {
-            Link.UseWoodenSword();
+            Link.UseItem();
+        }
+
+        public void Stop()
+        {
+            Link.Stop();
         }
     }
    

@@ -8,16 +8,21 @@ namespace Game1.Command
 {
     class StandingMagicalRodCommand : ICommand
     {
-        private IPlayer player;
+        private ILink Link;
 
-        public StandingMagicalRodCommand(IPlayer Link)
+        public StandingMagicalRodCommand(ILink Link)
         {
-            player = Link;
+            this.Link = Link;
         }
 
         public void Execute()
         {
-            Link.UseMagicalRod();
+            Link.UseItem();
+        }
+
+        public void Stop()
+        {
+            Link.Stop();
         }
     }
 }

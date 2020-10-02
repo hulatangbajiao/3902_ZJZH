@@ -8,16 +8,21 @@ namespace Game1.Command
 {
     class DownMovingCommand : ICommand
     {
-        private IPlayer player;
-        public DownMovingStateCommand(IPlayer Link)
+        private ILink Link;
+
+        public DownMovingCommand(ILink Link)
         {
-            player = Link;
+            this.Link = Link;
         }
 
         public void Execute()
         {
-            Link.KeepMoveDown();
             Link.MoveDown();
+        }
+
+        public void Stop()
+        {
+            Link.Stop();
         }
     }
 }

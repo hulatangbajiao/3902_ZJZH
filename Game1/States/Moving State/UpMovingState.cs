@@ -22,25 +22,24 @@
         }
         public void MoveUp()
         {
+
         }
         //if 'w'key is being pressed for a long time(more than once in one Update cycle), link will be animated and move up in y axis.
 
         public void MoveDown()
         {
-            Link.State = new DownIdleState((Link)Link);
-
+            
         }
-
 
         public void MoveLeft()
         {
-            Link.State = new LeftIdleState((Link)Link);
+            
         }
 
 
         public void MoveRight()
         {
-            Link.State = new RightIdleState((Link)Link);
+            
         }
 
         public void Stop()
@@ -50,11 +49,11 @@
 
         public void Attack()
         {
-            Link.State = new UpWoodenSwordState((Link)Link);
+           
         }
         public void UseItem()
         {
-            Link.State = new UpItemState((Link)Link);
+            
         }
 
         public void Update()
