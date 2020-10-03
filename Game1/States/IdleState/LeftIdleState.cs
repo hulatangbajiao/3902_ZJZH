@@ -20,7 +20,7 @@ namespace Game1
 
         public void TakeDamage()
         {
-            Link = new DamagedLink(decoratedLink, game);
+            game.Link = new DamagedLink(decoratedLink, game);
 
             //remains to be discussed
         }

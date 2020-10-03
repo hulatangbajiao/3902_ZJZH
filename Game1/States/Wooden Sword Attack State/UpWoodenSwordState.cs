@@ -13,11 +13,11 @@ namespace Game1
             GetSprite = new UpWoodenSwordLinkSprite();
 
         }
-        //link has already faced up so no code for MoveUp()
+        //link has already faced up so now code for MoveUp()
 
         public void TakeDamage()
         {
-            Link = new DamagedLink((Link)Link, game);
+            game.Link = new DamagedLink((Link)Link, game);
 
             //remains to be discussed
         }

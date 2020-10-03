@@ -18,7 +18,7 @@ namespace Game1
 
         public void TakeDamage()
         {
-            Link = new DamagedLink((Link)Link, game);
+            game.Link = new DamagedLink((Link)Link, game);
 
             //remains to be discussed
         }
@@ -51,7 +51,7 @@ namespace Game1
 
         public void Attack()
         {
-            //Link.State = new UpWoodenSwordState(Link, game);
+            Link.State = new UpWoodenSwordState(Link, game);
         }
         public void UseItem()
         {

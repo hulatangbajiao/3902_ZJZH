@@ -6,34 +6,23 @@ using System.Threading.Tasks;
 
 namespace Game1.Command
 {
-    class StandingWoodenSwordCommand : ICommand
+    class DownMovingCommand : ICommand
     {
-
-        private IPlayer player;
-
-        public StandingWoodenSwordCommand(IPlayer Link)
-        {
-            player = Link;
-        }
         private ILink Link;
 
-        public StandingWoodenSwordCommand(ILink Link)
+        public DownMovingCommand(ILink Link)
         {
             this.Link = Link;
-
         }
 
         public void Execute()
         {
-
-            Link.Attack();
+            Link.MoveDown();
         }
 
         public void Stop()
         {
             Link.Stop();
-
         }
     }
-   
 }

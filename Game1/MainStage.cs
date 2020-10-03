@@ -42,10 +42,9 @@ namespace Game1
 
             graphics.PreferredBackBufferWidth = GlobalDefinitions.GraphicsWidth;
             graphics.PreferredBackBufferHeight = GlobalDefinitions.GraphicsHeight;
-<<<<<<< Updated upstream
-=======
+
             this.Link = new Link(this);
->>>>>>> Stashed changes
+
 
             controllers = new List<IController>
             {

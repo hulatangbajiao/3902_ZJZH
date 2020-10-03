@@ -86,8 +86,6 @@ namespace Game1.Controller
             }
         }
     }
-<<<<<<< Updated upstream
-=======
+
 }
->>>>>>> Stashed changes
 

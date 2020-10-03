@@ -11,7 +11,7 @@ namespace Game1
     {
         MainStage game;
         ILink decoratedLink;
-        int timer = 200;
+        int timer = 20;
 
 
         public ILinkState State { get; set; }
@@ -38,7 +38,7 @@ namespace Game1
                 RemoveDecorator();
             }
 
-            decoratedLink.Update();//method needs to be added
+            //method needs to be added
         }
         
         public void RemoveDecorator()
