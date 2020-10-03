@@ -14,6 +14,13 @@ namespace Game1.Command
 
         public void Execute()
         {
+<<<<<<< Updated upstream
+=======
+            
+        }
+        public void Stop()
+        {
+>>>>>>> Stashed changes
         }
     }
 }

@@ -6,25 +6,23 @@ using System.Threading.Tasks;
 
 namespace Game1.Command
 {
-    class DamagedCommand : ICommand
+    class LeftMovingCommand : ICommand
     {
         private ILink Link;
 
-        public DamagedCommand(ILink Link)
+        public LeftMovingCommand(ILink Link)
         {
             this.Link = Link;
         }
 
         public void Execute()
         {
-            Link.TakeDamage();
+            Link.MoveLeft();
         }
 
         public void Stop()
         {
-
+            Link.Stop();
         }
     }
-
 }
-          

@@ -6,11 +6,9 @@ namespace Game1
     public class UpIdleLinkSprite : ISprite
     {
 
-        private Vector2 location;
       
-        public UpIdleLinkSprite(Vector2 location)
+        public UpIdleLinkSprite()
         {
-            this.location = location;
 
         }
 
@@ -20,10 +18,10 @@ namespace Game1
 
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch)
         {
             Rectangle sourceRectangle = new Rectangle(0, 0, 216, 218);
-            Rectangle destinationRectangle = new Rectangle((int)this.location.X, (int)this.location.Y, 216, 218);
+            Rectangle destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 100, 100);
             //use texture2dStorage to get the texture2d of the sprite
             spriteBatch.Draw(Texture2DStorage.GetUpIdleLinkSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
         }

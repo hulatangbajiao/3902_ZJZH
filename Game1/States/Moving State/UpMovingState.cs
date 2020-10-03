@@ -1,18 +1,17 @@
 ﻿using Game1.Command;
-using Game1.Sprite_;
 
 namespace Game1
 {
-    public class RightMovingState : ILinkState
+    public class UpMovingState : ILinkState
     {
         public ILink Link { get; set; }
         MainStage game;
         public ISprite GetSprite { get; set; }
-        public RightMovingState(ILink link, MainStage game)
+        public UpMovingState(ILink link, MainStage game)
         {
             this.Link = link;
             this.game = game;
-            GetSprite = new RightMovingLinkSprite();
+            GetSprite = new UpMovingLinkSprite();
 
         }
         //link has already faced up so no code for MoveUp()
@@ -25,7 +24,7 @@ namespace Game1
         }
         public void MoveUp()
         {
-            Link.State = new UpMovingState(Link, game);
+
         }
         //if 'w'key is being pressed for a long time(more than once in one Update cycle), link will be animated and move up in y axis.
 
@@ -42,20 +41,21 @@ namespace Game1
 
         public void MoveRight()
         {
+            Link.State = new RightMovingState(Link, game);
         }
 
         public void Stop()
         {
-            Link.State = new RightIdleState(Link, game); //when call stop(), the moving state transforms to idle state
+            Link.State = new UpIdleState(Link, game); //when call stop(), the moving state transforms to idle state
         }
 
         public void Attack()
         {
-            Link.State = new RightWoodenSwordState(Link, game);
+            //Link.State = new UpWoodenSwordState(Link, game);
         }
         public void UseItem()
         {
-
+            
         }
 
         public void Update()

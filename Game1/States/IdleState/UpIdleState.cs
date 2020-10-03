@@ -5,47 +5,52 @@ namespace Game1
     public class UpIdleState : ILinkState
     {
         public ILink Link { get; set; }
+        private Link decoratedLink;
         MainStage game;
         public ISprite GetSprite { get; set; }
         public UpIdleState(ILink link, MainStage game)
         {
             this.Link = link;
+            this.decoratedLink = (Link)link;
             this.game = game;
-            GetSprite = new UpIdleLinkSprite(link.Position);
-            
+            GetSprite = new UpIdleLinkSprite();
+
         }
         //link has already faced up so no code for MoveUp()
 
         public void TakeDamage()
         {
-            Link = new DamagedLink((Link)Link, game);
-            
+            Link = new DamagedLink(decoratedLink, game);
+
             //remains to be discussed
         }
         public void MoveUp()
         {
-            Link.State = new UpMovingState((Link)Link, game);
+            Link.State = new UpMovingState(Link, game);
         }
         //if 'w'key is being pressed for a long time(more than once in one Update cycle), link will be animated and move up in y axis.
-     
+
         public void MoveDown()
         {
-            Link.State = new DownIdleState((Link)Link);
+            Link.State = new DownMovingState(Link, game);
+
 
         }
 
-        
+
         public void MoveLeft()
         {
-            Link.State = new LeftIdleState((Link)Link);
+            Link.State = new LeftMovingState(Link, game);
+
         }
-        
+
 
         public void MoveRight()
         {
-            Link.State = new RightIdleState((Link)Link);
+            Link.State = new RightMovingState(Link, game);
+
         }
-        
+
         public void Stop()
         {
             // no-op
@@ -53,11 +58,12 @@ namespace Game1
 
         public void Attack()
         {
-            Link.State = new UpWoodenSwordState((Link)Link);
+            Link.State = new UpWoodenSwordState(Link, game);
+
         }
         public void UseItem()
         {
-            Link.State = new UpItemState((Link)Link);
+
         }
 
         public void Update()

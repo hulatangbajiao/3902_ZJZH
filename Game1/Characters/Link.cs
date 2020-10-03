@@ -11,11 +11,10 @@ namespace Game1
     {
         
         public ILinkState State { get; set; }
-        public Vector2 Position { get; set; }
-
         public Link(MainStage game)
         {
             State = new UpIdleState(this, game);
+            GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
         }
 
         public void TakeDamage()

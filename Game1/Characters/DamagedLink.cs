@@ -11,7 +11,7 @@ namespace Game1
     {
         MainStage game;
         ILink decoratedLink;
-        int timer = 1000;
+        int timer = 200;
 
 
         public ILinkState State { get; set; }

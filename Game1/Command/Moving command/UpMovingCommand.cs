@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game1.Command
 {
-    class UpMovingCommand : ICommand
+    public class UpMovingCommand : ICommand
     {
         private ILink Link;
 

@@ -1,5 +1,6 @@
 ﻿using Game1.Controller;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -14,9 +15,10 @@ namespace Game1
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-        private Keys testKey;
 
         private List<IController> controllers;
+
+       
 
 
         /// <summary>
@@ -35,16 +37,20 @@ namespace Game1
         public MainStage()
         {
             graphics = new GraphicsDeviceManager(this);
+
             Content.RootDirectory = "Content";
 
             graphics.PreferredBackBufferWidth = GlobalDefinitions.GraphicsWidth;
             graphics.PreferredBackBufferHeight = GlobalDefinitions.GraphicsHeight;
+<<<<<<< Updated upstream
+=======
+            this.Link = new Link(this);
+>>>>>>> Stashed changes
 
             controllers = new List<IController>
             {
                 new KeyboardController(this)
             };
-            Link = new Link(this);
         }
 
         /// <summary>
@@ -57,6 +63,10 @@ namespace Game1
         {
             // Explicitly set mouse visible option to make the game intuitive
             this.IsMouseVisible = true;
+            this.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 100.0f);
+            this.IsFixedTimeStep = false;
+            graphics.SynchronizeWithVerticalRetrace = false;
+
 
             // Create instances and register commands
             base.Initialize();
@@ -66,7 +76,15 @@ namespace Game1
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
         /// </summary>
-        
+
+        protected override void LoadContent()
+        {
+            // Create a new SpriteBatch, which can be used to draw textures.
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+            
+            Texture2DStorage.LoadAllTextures(this.Content);
+
+        }
 
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
@@ -102,10 +120,12 @@ namespace Game1
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
 
-            Link.State.GetSprite.Draw(spriteBatch, Link.Position);
+            Link.State.GetSprite.Draw(spriteBatch);
 
             spriteBatch.End();
             base.Draw(gameTime);
         }
+
+        
     }
 }

@@ -10,13 +10,12 @@ namespace Game1
 {
     public class UpMovingLinkSprite : ISprite
     {
-        private Vector2 location;
         private int currentFrame = 0;
         private int totalFrame = 2;
 
-        public UpMovingLinkSprite(Vector2 location)
+        public UpMovingLinkSprite()
         {
-            this.location = location;
+            
 
         }
 
@@ -26,30 +25,30 @@ namespace Game1
             if (currentFrame == totalFrame)
                 currentFrame = 0;
 
-            location.Y = location.Y - (float)1; //change the x axis position of Link
-            if (location.Y == 0)
+            GlobalDefinitions.Position.Y = GlobalDefinitions.Position.Y - (float)1; //change the y axis position of Link
+            if (GlobalDefinitions.Position.Y == 0)
             {
-                location.Y = (float)GlobalDefinitions.GraphicsHeight;
+                GlobalDefinitions.Position.Y = (float)GlobalDefinitions.GraphicsHeight;
             }
 
         }
 
-        public void Draw(SpriteBatch spriteBatch, Vector2 location)
+        public void Draw(SpriteBatch spriteBatch)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
             if (currentFrame == 0)
             {
-                sourceRectangle = new Rectangle(0, 0, 512, 525);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 512, 525);
+                sourceRectangle = new Rectangle(0, 0, 155, 208);
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 90, 100);//I don't understand why the width of destinationRectangle has to be like this.
             }
             
 
             else
             {
-                sourceRectangle = new Rectangle(512, 0, 512, 525);
-                destinationRectangle = new Rectangle((int)location.X, (int)location.Y, 512, 525);
+                sourceRectangle = new Rectangle(527, 0, 691, 208);
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 400, 100);
             }
 
             spriteBatch.Draw(Texture2DStorage.GetUpMovingLinkSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);//use Texture2DStorage class to load texture2D

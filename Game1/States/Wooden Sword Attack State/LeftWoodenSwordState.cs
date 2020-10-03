@@ -1,18 +1,16 @@
 ﻿using Game1.Command;
-using Game1.Sprite_;
-
 namespace Game1
 {
-    public class RightMovingState : ILinkState
+    public class LeftWoodenSwordState : ILinkState
     {
         public ILink Link { get; set; }
         MainStage game;
         public ISprite GetSprite { get; set; }
-        public RightMovingState(ILink link, MainStage game)
+        public LeftWoodenSwordState(ILink link, MainStage game)
         {
             this.Link = link;
             this.game = game;
-            GetSprite = new RightMovingLinkSprite();
+            GetSprite = new LeftWoodenSwordLinkSprite();
 
         }
         //link has already faced up so no code for MoveUp()
@@ -23,6 +21,7 @@ namespace Game1
 
             //remains to be discussed
         }
+        //Link will move up if 'w' was pressed while pressing 'z'
         public void MoveUp()
         {
             Link.State = new UpMovingState(Link, game);
@@ -42,16 +41,16 @@ namespace Game1
 
         public void MoveRight()
         {
+            Link.State = new RightMovingState(Link, game);
         }
 
         public void Stop()
         {
-            Link.State = new RightIdleState(Link, game); //when call stop(), the moving state transforms to idle state
+            Link.State = new LeftIdleState(Link, game); //when call stop(), the moving state transforms to idle state
         }
 
         public void Attack()
         {
-            Link.State = new RightWoodenSwordState(Link, game);
         }
         public void UseItem()
         {

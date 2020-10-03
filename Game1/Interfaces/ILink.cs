@@ -10,7 +10,6 @@ namespace Game1
     public interface ILink
     {
          ILinkState State { get; set; }
-        Vector2 Position { get; set; }
         void TakeDamage();
         void MoveLeft();
         void MoveUp();
