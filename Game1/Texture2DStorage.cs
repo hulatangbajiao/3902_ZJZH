@@ -14,19 +14,53 @@ namespace Game1
 			// Note that we are not using Game1's ContentLoader here (outside the scope of class methods) since it has not been instantiated yet
 			private static Texture2D UpIdleLinkSpriteSheet;
 			private static Texture2D UpMovingLinkSpriteSheet;
-			// More private static Texture2D fields follow
-			// ...
 
-			// static classes have no constructor, but we need a method to initialize the Texture2D fields
-			public static void LoadAllTextures(ContentManager content)
+		private static Texture2D DownIdleLinkSpriteSheet;
+		private static Texture2D DownMovingLinkSpriteSheet;
+
+		private static Texture2D LeftIdleLinkSpriteSheet;
+		private static Texture2D LeftMovingLinkSpriteSheet;
+
+		private static Texture2D RightIdleLinkSpriteSheet;
+		private static Texture2D RightMovingLinkSpriteSheet;
+
+		private static Texture2D UpWoodenSwordLinkSpriteSheet;
+		private static Texture2D DownWoodenSwordLinkSpriteSheet;
+		private static Texture2D LeftWoodenSwordLinkSpriteSheet;
+		private static Texture2D RightWoodenSwordLinkSpriteSheet;
+
+
+
+
+		// More private static Texture2D fields follow
+		// ...
+
+		// static classes have no constructor, but we need a method to initialize the Texture2D fields
+		public static void LoadAllTextures(ContentManager content)
 			{
-				UpIdleLinkSpriteSheet = content.Load<Texture2D>("images/UpIdle.png");
-			UpMovingLinkSpriteSheet = content.Load<Texture2D>("images/UpMoving.png");
-				// More Content.Load calls follow
-				//...
-			}
+				UpIdleLinkSpriteSheet = content.Load<Texture2D>("images/UpIdle");
+			UpMovingLinkSpriteSheet = content.Load<Texture2D>("images/UpMoving");
 
-			public static void UnloadAllTextures()
+			LeftIdleLinkSpriteSheet = content.Load<Texture2D>("images/LeftIdle");
+			LeftMovingLinkSpriteSheet = content.Load<Texture2D>("images/LeftMoving");
+
+			DownIdleLinkSpriteSheet = content.Load<Texture2D>("images/DownIdle");
+			DownMovingLinkSpriteSheet = content.Load<Texture2D>("images/DownMoving");
+
+			RightIdleLinkSpriteSheet = content.Load<Texture2D>("images/RightIdle");
+			RightMovingLinkSpriteSheet = content.Load<Texture2D>("images/RightMoving");
+
+			UpWoodenSwordLinkSpriteSheet = content.Load<Texture2D>("images/UpWoodenSword");
+			DownWoodenSwordLinkSpriteSheet = content.Load<Texture2D>("images/DownWoodenSword");
+			LeftWoodenSwordLinkSpriteSheet = content.Load<Texture2D>("images/LeftWoodenSword");
+			RightWoodenSwordLinkSpriteSheet = content.Load<Texture2D>("images/RightWoodenSword");
+
+
+			// More Content.Load calls follow
+			//...
+		}
+
+		public static void UnloadAllTextures()
 			{
 				// unload all the Texture2Ds - not needed for the scope of this project
 			}
@@ -40,6 +74,56 @@ namespace Game1
 			{
 				return UpMovingLinkSpriteSheet;
 			}
+
+		public static Texture2D GetDownIdleLinkSpriteSheet()
+		{
+			return DownIdleLinkSpriteSheet;
+		}
+
+		public static Texture2D GetDownMovingLinkSpriteSheet()
+		{
+			return DownMovingLinkSpriteSheet;
+		}
+
+		public static Texture2D GetLeftIdleLinkSpriteSheet()
+		{
+			return LeftIdleLinkSpriteSheet;
+		}
+
+		public static Texture2D GetLeftMovingLinkSpriteSheet()
+		{
+			return LeftMovingLinkSpriteSheet;
+		}
+
+		public static Texture2D GetRightIdleLinkSpriteSheet()
+		{
+			return RightIdleLinkSpriteSheet;
+		}
+
+		public static Texture2D GetRightMovingLinkSpriteSheet()
+		{
+			return RightMovingLinkSpriteSheet;
+		}
+
+		public static Texture2D GetUpWoodenSwordLinkSpriteSheet()
+		{
+			return UpWoodenSwordLinkSpriteSheet;
+		}
+
+		public static Texture2D GetDownWoodenSwordLinkSpriteSheet()
+		{
+			return DownWoodenSwordLinkSpriteSheet;
+		}
+
+		public static Texture2D GetLeftWoodenSwordLinkSpriteSheet()
+		{
+			return LeftWoodenSwordLinkSpriteSheet;
+		}
+
+		public static Texture2D GetRightWoodenSwordLinkSpriteSheet()
+		{
+			return RightWoodenSwordLinkSpriteSheet;
+		}
 
 
 	}

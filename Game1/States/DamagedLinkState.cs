@@ -9,7 +9,7 @@
         {
             this.decoratedLink = decoratedLink;
             this.game = game;
-            GetSprite = new DamagedLinkSprite(decoratedLink.Position);
+            GetSprite = new DamagedLinkSprite();
         }
 
         public void TakeDamage()

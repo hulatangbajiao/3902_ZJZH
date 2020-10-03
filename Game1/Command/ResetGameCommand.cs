@@ -14,10 +14,11 @@ namespace Game1.Command
 
         public void Execute()
         {
-            
+
         }
         public void Stop()
         {
+
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Game1
     {
         void Update();
 
-        void Draw(SpriteBatch spriteBatch, Vector2 location);
+        void Draw(SpriteBatch spriteBatch);
 
     }
 }

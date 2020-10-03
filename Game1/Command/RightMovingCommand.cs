@@ -8,21 +8,17 @@ namespace Game1.Command
 {
     class RightMovingCommand : ICommand
     {
-        private ILink Link;
+        private IPlayer player;
 
-        public RightMovingCommand(ILink Link)
+        public RightMovingCommand(IPlayer Link)
         {
-            this.Link = Link;
+            player = Link;
         }
 
         public void Execute()
         {
+            Link.KeepMoveRight();
             Link.MoveRight();
-            
-        }
-        public void Stop()
-        {
-            Link.Stop();
         }
     }
    

@@ -1,22 +1,24 @@
-﻿namespace Game1
+﻿using Game1.Command;
+
+namespace Game1
 {
     public class UpMovingState : ILinkState
     {
         public ILink Link { get; set; }
         MainStage game;
         public ISprite GetSprite { get; set; }
-        public UpMovingState(Link link, MainStage game)
+        public UpMovingState(ILink link, MainStage game)
         {
             this.Link = link;
             this.game = game;
-            GetSprite = new UpMovingLinkSprite(link.Position);
+            GetSprite = new UpMovingLinkSprite();
 
         }
         //link has already faced up so no code for MoveUp()
 
         public void TakeDamage()
         {
-            Link = new DamagedLink((Link)Link, game);
+            game.Link = new DamagedLink((Link)Link, game);
 
             //remains to be discussed
         }
@@ -28,18 +30,18 @@
 
         public void MoveDown()
         {
-            
+            Link.State = new DownMovingState(Link, game);
         }
 
         public void MoveLeft()
         {
-            
+            Link.State = new LeftMovingState(Link, game);
         }
 
 
         public void MoveRight()
         {
-            
+            Link.State = new RightMovingState(Link, game);
         }
 
         public void Stop()
@@ -49,7 +51,7 @@
 
         public void Attack()
         {
-           
+            Link.State = new UpWoodenSwordState(Link, game);
         }
         public void UseItem()
         {
