@@ -2,29 +2,34 @@
 
 namespace Game1
 {
-    public class UpMovingState : ILinkState
+    public class DownWoodenSwordState : ILinkState
     {
         public ILink Link { get; set; }
         MainStage game;
         public ISprite GetSprite { get; set; }
-        public UpMovingState(ILink link, MainStage game)
+        public DownWoodenSwordState(ILink link, MainStage game)
         {
             this.Link = link;
             this.game = game;
-            GetSprite = new UpMovingLinkSprite();
+            GetSprite = new DownWoodenSwordLinkSprite();
 
         }
         //link has already faced up so no code for MoveUp()
 
         public void TakeDamage()
         {
+<<<<<<< HEAD
             game.Link = new DamagedLink((Link)Link, game);
+=======
+            Link = new DamagedLink((Link)Link, game);
+>>>>>>> 7138942d4ffb4ce348a80ca24494c5f810f3311e
 
             //remains to be discussed
         }
+        //Link will move up if 'w' was pressed while pressing 'z'
         public void MoveUp()
         {
-
+            Link.State = new UpMovingState(Link, game);
         }
         //if 'w'key is being pressed for a long time(more than once in one Update cycle), link will be animated and move up in y axis.
 
@@ -46,20 +51,15 @@ namespace Game1
 
         public void Stop()
         {
-            Link.State = new UpIdleState(Link, game); //when call stop(), the moving state transforms to idle state
+            Link.State = new DownIdleState(Link, game); //when call stop(), the moving state transforms to idle state
         }
 
         public void Attack()
         {
-<<<<<<< HEAD:Game1/States/Moving State/UpMovingState.cs
-            Link.State = new UpWoodenSwordState(Link, game);
-=======
-            //Link.State = new UpWoodenSwordState(Link, game);
->>>>>>> 7138942d4ffb4ce348a80ca24494c5f810f3311e:Game1/UpMovingState.cs
         }
         public void UseItem()
         {
-            
+
         }
 
         public void Update()

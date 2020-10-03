@@ -1,6 +1,7 @@
 ﻿using Game1.Controller;
 using Game1.Sprite;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
@@ -16,7 +17,12 @@ namespace Game1
 
         private List<IController> controllers;
 
+<<<<<<< Updated upstream
         private ISprite staticTextSprite;
+=======
+       
+
+>>>>>>> Stashed changes
 
         /// <summary>
         /// Active sprite. Exposed as a class property
@@ -34,10 +40,18 @@ namespace Game1
         public MainStage()
         {
             graphics = new GraphicsDeviceManager(this);
+
             Content.RootDirectory = "Content";
 
             graphics.PreferredBackBufferWidth = GlobalDefinitions.GraphicsWidth;
             graphics.PreferredBackBufferHeight = GlobalDefinitions.GraphicsHeight;
+<<<<<<< Updated upstream
+=======
+            this.Link = new Link(this);
+>>>>>>> Stashed changes
+
+            this.Link = new Link(this);
+
 
             staticTextSprite = new TextSprite(this);
 
@@ -67,6 +81,10 @@ namespace Game1
         {
             // Explicitly set mouse visible option to make the game intuitive
             this.IsMouseVisible = true;
+            this.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 100.0f);
+            this.IsFixedTimeStep = false;
+            graphics.SynchronizeWithVerticalRetrace = false;
+
 
             // Create instances and register commands
             base.Initialize();
@@ -76,10 +94,15 @@ namespace Game1
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
         /// </summary>
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+<<<<<<< Updated upstream
 
             staticTextSprite.LoadResources();
             for (int i = 1; i < (int) GlobalDefinitions.SpriteModes.Invalid; i++)
@@ -89,6 +112,11 @@ namespace Game1
 
             // Set default sprite
             ActiveSprite = LoadedSprites[(int) GlobalDefinitions.SpriteModes.StaticFixed];
+=======
+            
+            Texture2DStorage.LoadAllTextures(this.Content);
+
+>>>>>>> Stashed changes
         }
 
         /// <summary>
@@ -125,11 +153,17 @@ namespace Game1
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
 
+<<<<<<< Updated upstream
             ActiveSprite?.Draw(spriteBatch);
             staticTextSprite.Draw(spriteBatch);
+=======
+            Link.State.GetSprite.Draw(spriteBatch);
+>>>>>>> Stashed changes
 
             spriteBatch.End();
             base.Draw(gameTime);
         }
+
+        
     }
 }

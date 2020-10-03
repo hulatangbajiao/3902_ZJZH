@@ -16,10 +16,19 @@ namespace Game1
         public int equipmentItem3;
         public int weapon;
         
+<<<<<<< Updated upstream
 
         public Link()
         {
             state = new UpIdleState(this);
+=======
+        public ILinkState State { get; set; }
+        public Link(MainStage game)
+        {
+            State = new UpIdleState(this, game);
+            GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
+        }
+>>>>>>> Stashed changes
 
             position = new Vector2(0, 0);
         }

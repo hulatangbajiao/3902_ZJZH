@@ -24,5 +24,9 @@ namespace Game1.Command
         {
 
         }
+        public void Stop()
+        {
+
+        }
     }
 }

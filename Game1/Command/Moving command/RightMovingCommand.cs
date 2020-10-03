@@ -6,24 +6,25 @@ using System.Threading.Tasks;
 
 namespace Game1.Command
 {
-    class DamagedCommand : ICommand
+    class RightMovingCommand : ICommand
     {
-        private IPlayer player;
+        private ILink Link;
 
-        public DamagedCommand(IPlayer Link)
+        public RightMovingCommand(ILink Link)
         {
-            player = Link;
+            this.Link = Link;
         }
 
         public void Execute()
         {
-            Link.damaged();
+            Link.MoveRight();
+            
         }
-
         public void Stop()
         {
-
+            Link.Stop();
         }
     }
-    
+   
 }
+

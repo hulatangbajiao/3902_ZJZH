@@ -16,5 +16,8 @@ namespace Game1.Command
         {
             gameInstance.Exit();
         }
+        public void Stop()
+        {
+        }
     }
 }

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿using Game1.Sprite;
 using Game1.State;
 using System;
@@ -8,11 +9,81 @@ using System.Threading.Tasks;
 
 
 namespace Game1.State
-{
-    internal class LeftIdleState : ILinkState
-    {
-        private Link link;
+=======
+﻿using Microsoft.Xna.Framework;
 
+namespace Game1
+>>>>>>> Stashed changes
+{
+    public class LeftIdleState : ILinkState
+    {
+        public ILink Link { get; set; }
+        private Link decoratedLink;
+        MainStage game;
+        public ISprite GetSprite { get; set; }
+        public LeftIdleState(ILink link, MainStage game)
+        {
+            this.Link = link;
+            this.decoratedLink = (Link)link;
+            this.game = game;
+            GetSprite = new LeftIdleLinkSprite();
+
+        }
+        //link has already faced up so no code for MoveUp()
+
+        public void TakeDamage()
+        {
+<<<<<<< HEAD
+            game.Link = new DamagedLink(decoratedLink, game);
+=======
+            Link = new DamagedLink(decoratedLink, game);
+>>>>>>> 7138942d4ffb4ce348a80ca24494c5f810f3311e
+
+            //remains to be discussed
+        }
+        public void MoveUp()
+        {
+            Link.State = new UpMovingState(Link, game);
+        }
+        //if 'w'key is being pressed for a long time(more than once in one Update cycle), link will be animated and move up in y axis.
+
+        public void MoveDown()
+        {
+            Link.State = new DownMovingState(Link, game);
+
+
+        }
+
+
+        public void MoveLeft()
+        {
+            Link.State = new LeftMovingState(Link, game);
+
+        }
+
+
+        public void MoveRight()
+        {
+            Link.State = new RightMovingState(Link, game);
+
+        }
+
+        public void Stop()
+        {
+            // no-op
+        }
+
+        public void Attack()
+        {
+            Link.State = new LeftWoodenSwordState(Link, game);
+
+        }
+        public void UseItem()
+        {
+
+        }
+
+<<<<<<< Updated upstream
         public LeftIdleLinkSprite GetSprite { get; set; }
         public LeftIdleState(Link link)
         {
@@ -62,6 +133,10 @@ namespace Game1.State
 
         public void Update()
         {
+=======
+        public void Update()
+        {
+>>>>>>> Stashed changes
             GetSprite.Update();
         }
     }
