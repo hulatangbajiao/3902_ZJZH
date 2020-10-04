@@ -193,18 +193,6 @@
 /processorParam:TextureFormat=Color
 /build:Images/LinkUseWoodenSword/WoodenSwordAttackUp.png
 
-#begin images/Npc/GP.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:images/Npc/GP.png
-
 #begin images/Npc/OldMan.png
 /importer:TextureImporter
 /processor:TextureProcessor
