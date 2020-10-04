@@ -104,6 +104,7 @@ namespace Game1
 
 
 
+        private static Texture2D DamagedLinkSpriteSheet;
 
         // More private static Texture2D fields follow
         // ...
@@ -210,6 +211,8 @@ namespace Game1
             MerchantPSpriteSheet = content.Load<Texture2D>("images/Npc/MerchantP");
             MerchantGSpriteSheet = content.Load<Texture2D>("images/Npc/MerchantG");
             FireBallSpriteSheet = content.Load<Texture2D>("images/projectile/flame");
+            DamagedLinkSpriteSheet = content.Load<Texture2D>("images/DamagedLink");
+
 
             // More Content.Load calls follow
             //...
@@ -585,6 +588,10 @@ namespace Game1
         public static Texture2D GetMerchantGSpriteSheet()
         {
             return MerchantGSpriteSheet;
+        }
+        public static Texture2D GetDamagedLinkSpriteSheet()
+        {
+            return DamagedLinkSpriteSheet;
         }
 
 
