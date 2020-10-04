@@ -13,8 +13,6 @@
 
 #---------------------------------- Content ---------------------------------#
 
-<<<<<<< HEAD
-=======
 #begin images/arrow/DownArrow.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -99,7 +97,6 @@
 /processorParam:TextureFormat=Color
 /build:images/Block/BlueStoneBlock.png
 
->>>>>>> master
 #begin images/DamagedLink.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -148,11 +145,7 @@
 /processorParam:TextureFormat=Color
 /build:images/DownWoodenSword.png
 
-<<<<<<< HEAD
-#begin images/Enemy/BlueM/ArrH.png
-=======
 #begin images/Enemy/Aquamentus/AquamentusLeft.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -162,15 +155,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:images/Enemy/BlueM/ArrH.png
-
-#begin images/Enemy/BlueM/ArrVer.png
-=======
 /build:images/Enemy/Aquamentus/AquamentusLeft.png
 
 #begin images/Enemy/Aquamentus/AquamentusRight.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -180,15 +167,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:images/Enemy/BlueM/ArrVer.png
-
-#begin images/Enemy/BlueM/blueMDown.png
-=======
 /build:images/Enemy/Aquamentus/AquamentusRight.png
 
 #begin images/Enemy/Aquamentus/DragonFireballsB.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -198,15 +179,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:images/Enemy/BlueM/blueMDown.png
-
-#begin images/Enemy/BlueM/blueMleft.png
-=======
 /build:images/Enemy/Aquamentus/DragonFireballsB.png
 
 #begin images/Enemy/Aquamentus/DragonFireballsG.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -216,15 +191,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:images/Enemy/BlueM/blueMleft.png
-
-#begin images/Enemy/BlueM/blueMRight.png
-=======
 /build:images/Enemy/Aquamentus/DragonFireballsG.png
 
 #begin images/Enemy/Aquamentus/DragonFireballsG2.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -234,15 +203,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:images/Enemy/BlueM/blueMRight.png
-
-#begin images/Enemy/BlueM/blueMUp.png
-=======
 /build:images/Enemy/Aquamentus/DragonFireballsG2.png
 
 #begin images/Enemy/Aquamentus/DragoniFreballsR.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -252,15 +215,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:images/Enemy/BlueM/blueMUp.png
-
-#begin images/Enemy/Octorok/blueLeft.png
-=======
 /build:images/Enemy/Aquamentus/DragoniFreballsR.png
 
 #begin images/Enemy/BlueBat/BlueBatDown.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -270,15 +227,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:images/Enemy/Octorok/blueLeft.png;images/Enemy/Octorok/BlueOctorokLeft.png
-
-#begin images/Enemy/Octorok/blueODown.png
-=======
 /build:images/Enemy/BlueBat/BlueBatDown.png
 
 #begin images/Enemy/BlueBat/BlueBatLeft.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -288,15 +239,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:images/Enemy/Octorok/blueODown.png;images/Enemy/Octorok/BlueOctorokDown.png
-
-#begin images/Enemy/Octorok/blueORight.png
-=======
 /build:images/Enemy/BlueBat/BlueBatLeft.png
 
 #begin images/Enemy/BlueBat/BlueBatRight.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -306,15 +251,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:images/Enemy/Octorok/blueORight.png;images/Enemy/Octorok/BlueOctorokRight.png
-
-#begin images/Enemy/Octorok/blueUp.png
-=======
 /build:images/Enemy/BlueBat/BlueBatRight.png
 
 #begin images/Enemy/BlueBat/BlueBatUp.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -324,15 +263,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:images/Enemy/Octorok/blueUp.png;images/Enemy/Octorok/BlueOctorokUp.png
-
-#begin images/Enemy/Octorok/OcP.png
-=======
 /build:images/Enemy/BlueBat/BlueBatUp.png
 
 #begin images/Enemy/BlueGoriya/BlueGoriyaDown.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -342,15 +275,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:images/Enemy/Octorok/OcP.png
-
-#begin images/Enemy/Octorok/OctorokDown.png
-=======
 /build:images/Enemy/BlueGoriya/BlueGoriyaDown.png
 
 #begin images/Enemy/BlueGoriya/BlueGoriyaLeft.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -360,15 +287,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:images/Enemy/Octorok/OctorokDown.png
-
-#begin images/Enemy/Octorok/OctorokLeft.png
-=======
 /build:images/Enemy/BlueGoriya/BlueGoriyaLeft.png
 
 #begin images/Enemy/BlueGoriya/BlueGoriyaRight.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -378,15 +299,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:images/Enemy/Octorok/OctorokLeft.png
-
-#begin images/Enemy/Octorok/OctorokRight.png
-=======
 /build:images/Enemy/BlueGoriya/BlueGoriyaRight.png
 
 #begin images/Enemy/BlueGoriya/BlueGoriyaUp.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -396,15 +311,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:images/Enemy/Octorok/OctorokRight.png
-
-#begin images/Enemy/Octorok/OctorokUp.png
-=======
 /build:images/Enemy/BlueGoriya/BlueGoriyaUp.png
 
 #begin images/Enemy/BlueM/ArrH.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -414,15 +323,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:images/Enemy/Octorok/OctorokUp.png
-
-#begin images/LeftIdle.png
-=======
 /build:images/Enemy/BlueM/ArrH.png
 
 #begin images/Enemy/BlueM/ArrVer.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -432,15 +335,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:images/LeftIdle.png
-
-#begin images/LeftMoving.png
-=======
 /build:images/Enemy/BlueM/ArrVer.png
 
 #begin images/Enemy/BlueM/blueMDown.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -450,15 +347,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:images/LeftMoving.png
-
-#begin images/LeftWoodenSword.png
-=======
 /build:images/Enemy/BlueM/blueMDown.png
 
 #begin images/Enemy/BlueM/blueMleft.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -468,11 +359,6 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:images/LeftWoodenSword.png
-
-#begin Images/LinkDeathHurt/LinkHurt.png
-=======
 /build:images/Enemy/BlueM/blueMleft.png
 
 #begin images/Enemy/BlueM/blueMRight.png
@@ -488,7 +374,6 @@
 /build:images/Enemy/BlueM/blueMRight.png
 
 #begin images/Enemy/BlueM/blueMUp.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -498,23 +383,6 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-<<<<<<< HEAD
-/build:Images/LinkDeathHurt/LinkHurt.png
-
-#begin images/LinkUseItem.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:images/LinkUseItem.png
-
-#begin Images/LinkUseWoodenSword/WoodenSwordAttackDown.png
-=======
 /build:images/Enemy/BlueM/blueMUp.png
 
 #begin images/Enemy/Octorok/blueLeft.png
@@ -950,7 +818,6 @@
 /build:images/LeftWoodenSword.png
 
 #begin images/LinkUseItem.png
->>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1023,6 +890,7 @@
 /processorParam:TextureFormat=Color
 /build:images/Npc/MerchantP.png
 
+<<<<<<< HEAD
 #begin images/Npc/MerchantR.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -1035,6 +903,8 @@
 /processorParam:TextureFormat=Color
 /build:images/Npc/MerchantR.png
 
+=======
+>>>>>>> updated linkAttack sprite, change link images
 #begin images/Npc/OldMan.png
 /importer:TextureImporter
 /processor:TextureProcessor
