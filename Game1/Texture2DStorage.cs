@@ -37,6 +37,8 @@ namespace Game1
         private static Texture2D OldManSpriteSheet;
         private static Texture2D OldWomanSpriteSheet;
 
+        private static Texture2D DamagedLinkSpriteSheet;
+
         // More private static Texture2D fields follow
         // ...
 
@@ -67,6 +69,7 @@ namespace Game1
 
             OldManSpriteSheet = content.Load<Texture2D>("images/Npc/OldMan");
             OldWomanSpriteSheet = content.Load<Texture2D>("images/Npc/OldWoman");
+            DamagedLinkSpriteSheet = content.Load<Texture2D>("images/DamagedLink");
 
 
             // More Content.Load calls follow
@@ -166,6 +169,11 @@ namespace Game1
         public static Texture2D GetOldWomanSpriteSheet()
         {
             return OldWomanSpriteSheet;
+        }
+
+        public static Texture2D GetDamagedLinkSpriteSheet()
+        {
+            return DamagedLinkSpriteSheet;
         }
 
 
