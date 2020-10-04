@@ -15,8 +15,6 @@ namespace Game1
 
         public LeftWoodenSwordLinkSprite()
         {
-
-
         }
 
         public void Update()
