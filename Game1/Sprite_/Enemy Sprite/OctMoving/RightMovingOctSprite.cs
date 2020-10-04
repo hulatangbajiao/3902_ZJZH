@@ -6,32 +6,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game1.Sprite_
+namespace Game1.Sprite_.Enemy_Sprite.OctMoving
 {
-    public class LeftMovingLinkSprite : ISprite
+    class RightMovingOctSprite : RightMovingLinkSprite
     {
         private int currentFrame = 0;
         private int totalFrame = 10;
 
-        public LeftMovingLinkSprite()
+        public RightMovingOctSprite()
         {
         }
 
-        public void Update()
-        {
-            currentFrame++;
-            if (currentFrame == totalFrame)
-                currentFrame = 0;
-
-            GlobalDefinitions.Position.X = GlobalDefinitions.Position.X - (float)1; //change the y axis position of Link
-            if (GlobalDefinitions.Position.X == 0)
-            {
-                GlobalDefinitions.Position.X = (float)GlobalDefinitions.GraphicsWidth;
-            }
-
-        }
-
-        public virtual void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
@@ -48,8 +34,7 @@ namespace Game1.Sprite_
                 sourceRectangle = new Rectangle(96, 0, 192, 96);
                 destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 192, 96);
             }
-
-            spriteBatch.Draw(Texture2DStorage.GetLeftMovingLinkSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);//use Texture2DStorage class to load texture2D
+            spriteBatch.Draw(Texture2DStorage.GetRightMovingOctorokSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
         }
     }
 }
