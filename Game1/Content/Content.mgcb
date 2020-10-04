@@ -13,6 +13,93 @@
 
 #---------------------------------- Content ---------------------------------#
 
+<<<<<<< HEAD
+=======
+#begin images/arrow/DownArrow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/arrow/DownArrow.png
+
+#begin images/arrow/LeftArrow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/arrow/LeftArrow.png
+
+#begin images/arrow/RightArrow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/arrow/RightArrow.png
+
+#begin images/arrow/UpArrow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/arrow/UpArrow.png
+
+#begin images/Block/BlueBlock.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Block/BlueBlock.png
+
+#begin images/Block/BlueFaceBlock.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Block/BlueFaceBlock.png
+
+#begin images/Block/BlueStoneBlock.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Block/BlueStoneBlock.png
+
+>>>>>>> master
 #begin images/DamagedLink.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -61,7 +148,11 @@
 /processorParam:TextureFormat=Color
 /build:images/DownWoodenSword.png
 
+<<<<<<< HEAD
 #begin images/Enemy/BlueM/ArrH.png
+=======
+#begin images/Enemy/Aquamentus/AquamentusLeft.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -71,9 +162,15 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
 /build:images/Enemy/BlueM/ArrH.png
 
 #begin images/Enemy/BlueM/ArrVer.png
+=======
+/build:images/Enemy/Aquamentus/AquamentusLeft.png
+
+#begin images/Enemy/Aquamentus/AquamentusRight.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -83,9 +180,15 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
 /build:images/Enemy/BlueM/ArrVer.png
 
 #begin images/Enemy/BlueM/blueMDown.png
+=======
+/build:images/Enemy/Aquamentus/AquamentusRight.png
+
+#begin images/Enemy/Aquamentus/DragonFireballsB.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -95,9 +198,15 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
 /build:images/Enemy/BlueM/blueMDown.png
 
 #begin images/Enemy/BlueM/blueMleft.png
+=======
+/build:images/Enemy/Aquamentus/DragonFireballsB.png
+
+#begin images/Enemy/Aquamentus/DragonFireballsG.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -107,6 +216,263 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
+/build:images/Enemy/BlueM/blueMleft.png
+
+#begin images/Enemy/BlueM/blueMRight.png
+=======
+/build:images/Enemy/Aquamentus/DragonFireballsG.png
+
+#begin images/Enemy/Aquamentus/DragonFireballsG2.png
+>>>>>>> master
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+<<<<<<< HEAD
+/build:images/Enemy/BlueM/blueMRight.png
+
+#begin images/Enemy/BlueM/blueMUp.png
+=======
+/build:images/Enemy/Aquamentus/DragonFireballsG2.png
+
+#begin images/Enemy/Aquamentus/DragoniFreballsR.png
+>>>>>>> master
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+<<<<<<< HEAD
+/build:images/Enemy/BlueM/blueMUp.png
+
+#begin images/Enemy/Octorok/blueLeft.png
+=======
+/build:images/Enemy/Aquamentus/DragoniFreballsR.png
+
+#begin images/Enemy/BlueBat/BlueBatDown.png
+>>>>>>> master
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+<<<<<<< HEAD
+/build:images/Enemy/Octorok/blueLeft.png;images/Enemy/Octorok/BlueOctorokLeft.png
+
+#begin images/Enemy/Octorok/blueODown.png
+=======
+/build:images/Enemy/BlueBat/BlueBatDown.png
+
+#begin images/Enemy/BlueBat/BlueBatLeft.png
+>>>>>>> master
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+<<<<<<< HEAD
+/build:images/Enemy/Octorok/blueODown.png;images/Enemy/Octorok/BlueOctorokDown.png
+
+#begin images/Enemy/Octorok/blueORight.png
+=======
+/build:images/Enemy/BlueBat/BlueBatLeft.png
+
+#begin images/Enemy/BlueBat/BlueBatRight.png
+>>>>>>> master
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+<<<<<<< HEAD
+/build:images/Enemy/Octorok/blueORight.png;images/Enemy/Octorok/BlueOctorokRight.png
+
+#begin images/Enemy/Octorok/blueUp.png
+=======
+/build:images/Enemy/BlueBat/BlueBatRight.png
+
+#begin images/Enemy/BlueBat/BlueBatUp.png
+>>>>>>> master
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+<<<<<<< HEAD
+/build:images/Enemy/Octorok/blueUp.png;images/Enemy/Octorok/BlueOctorokUp.png
+
+#begin images/Enemy/Octorok/OcP.png
+=======
+/build:images/Enemy/BlueBat/BlueBatUp.png
+
+#begin images/Enemy/BlueGoriya/BlueGoriyaDown.png
+>>>>>>> master
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+<<<<<<< HEAD
+/build:images/Enemy/Octorok/OcP.png
+
+#begin images/Enemy/Octorok/OctorokDown.png
+=======
+/build:images/Enemy/BlueGoriya/BlueGoriyaDown.png
+
+#begin images/Enemy/BlueGoriya/BlueGoriyaLeft.png
+>>>>>>> master
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+<<<<<<< HEAD
+/build:images/Enemy/Octorok/OctorokDown.png
+
+#begin images/Enemy/Octorok/OctorokLeft.png
+=======
+/build:images/Enemy/BlueGoriya/BlueGoriyaLeft.png
+
+#begin images/Enemy/BlueGoriya/BlueGoriyaRight.png
+>>>>>>> master
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+<<<<<<< HEAD
+/build:images/Enemy/Octorok/OctorokLeft.png
+
+#begin images/Enemy/Octorok/OctorokRight.png
+=======
+/build:images/Enemy/BlueGoriya/BlueGoriyaRight.png
+
+#begin images/Enemy/BlueGoriya/BlueGoriyaUp.png
+>>>>>>> master
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+<<<<<<< HEAD
+/build:images/Enemy/Octorok/OctorokRight.png
+
+#begin images/Enemy/Octorok/OctorokUp.png
+=======
+/build:images/Enemy/BlueGoriya/BlueGoriyaUp.png
+
+#begin images/Enemy/BlueM/ArrH.png
+>>>>>>> master
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+<<<<<<< HEAD
+/build:images/Enemy/Octorok/OctorokUp.png
+
+#begin images/LeftIdle.png
+=======
+/build:images/Enemy/BlueM/ArrH.png
+
+#begin images/Enemy/BlueM/ArrVer.png
+>>>>>>> master
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+<<<<<<< HEAD
+/build:images/LeftIdle.png
+
+#begin images/LeftMoving.png
+=======
+/build:images/Enemy/BlueM/ArrVer.png
+
+#begin images/Enemy/BlueM/blueMDown.png
+>>>>>>> master
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+<<<<<<< HEAD
+/build:images/LeftMoving.png
+
+#begin images/LeftWoodenSword.png
+=======
+/build:images/Enemy/BlueM/blueMDown.png
+
+#begin images/Enemy/BlueM/blueMleft.png
+>>>>>>> master
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+<<<<<<< HEAD
+/build:images/LeftWoodenSword.png
+
+#begin Images/LinkDeathHurt/LinkHurt.png
+=======
 /build:images/Enemy/BlueM/blueMleft.png
 
 #begin images/Enemy/BlueM/blueMRight.png
@@ -122,6 +488,7 @@
 /build:images/Enemy/BlueM/blueMRight.png
 
 #begin images/Enemy/BlueM/blueMUp.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -131,6 +498,23 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
+/build:Images/LinkDeathHurt/LinkHurt.png
+
+#begin images/LinkUseItem.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/LinkUseItem.png
+
+#begin Images/LinkUseWoodenSword/WoodenSwordAttackDown.png
+=======
 /build:images/Enemy/BlueM/blueMUp.png
 
 #begin images/Enemy/Octorok/blueLeft.png
@@ -143,7 +527,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:images/Enemy/Octorok/blueLeft.png;images/Enemy/Octorok/BlueOctorokLeft.png
+/build:images/Enemy/Octorok/blueLeft.png
 
 #begin images/Enemy/Octorok/blueODown.png
 /importer:TextureImporter
@@ -155,7 +539,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:images/Enemy/Octorok/blueODown.png;images/Enemy/Octorok/BlueOctorokDown.png
+/build:images/Enemy/Octorok/blueODown.png
 
 #begin images/Enemy/Octorok/blueORight.png
 /importer:TextureImporter
@@ -167,7 +551,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:images/Enemy/Octorok/blueORight.png;images/Enemy/Octorok/BlueOctorokRight.png
+/build:images/Enemy/Octorok/blueORight.png
 
 #begin images/Enemy/Octorok/blueUp.png
 /importer:TextureImporter
@@ -179,7 +563,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:images/Enemy/Octorok/blueUp.png;images/Enemy/Octorok/BlueOctorokUp.png
+/build:images/Enemy/Octorok/blueUp.png
 
 #begin images/Enemy/Octorok/OcP.png
 /importer:TextureImporter
@@ -241,6 +625,294 @@
 /processorParam:TextureFormat=Color
 /build:images/Enemy/Octorok/OctorokUp.png
 
+#begin images/Enemy/RedBat/RedBatDown.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Enemy/RedBat/RedBatDown.png
+
+#begin images/Enemy/RedBat/RedBatLeft.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Enemy/RedBat/RedBatLeft.png
+
+#begin images/Enemy/RedBat/RedBatRight.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Enemy/RedBat/RedBatRight.png
+
+#begin images/Enemy/RedBat/RedBatUp.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Enemy/RedBat/RedBatUp.png
+
+#begin images/Enemy/RedGoriya/RedGoriyaDown.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Enemy/RedGoriya/RedGoriyaDown.png
+
+#begin images/Enemy/RedGoriya/RedGoriyaLeft.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Enemy/RedGoriya/RedGoriyaLeft.png
+
+#begin images/Enemy/RedGoriya/RedGoriyaRight.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Enemy/RedGoriya/RedGoriyaRight.png
+
+#begin images/Enemy/RedGoriya/RedGoriyaUp.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Enemy/RedGoriya/RedGoriyaUp.png
+
+#begin images/Item/Arrow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Item/Arrow.png
+
+#begin images/Item/Bomb.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Item/Bomb.png
+
+#begin images/Item/Boomerang.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Item/Boomerang.png
+
+#begin images/Item/Bow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Item/Bow.png
+
+#begin images/Item/Clock.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Item/Clock.png
+
+#begin images/Item/Compass.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Item/Compass.png
+
+#begin images/Item/Fairy.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Item/Fairy.png
+
+#begin images/Item/Heart.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Item/Heart.png
+
+#begin images/Item/HeartContainer.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Item/HeartContainer.png
+
+#begin images/Item/Key.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Item/Key.png
+
+#begin images/Item/Map.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Item/Map.png
+
+#begin images/Item/Rupy.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Item/Rupy.png
+
+#begin images/Item/Triforce.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Item/Triforce.png
+
+#begin images/Item/ZeldaSpriteArrow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Item/ZeldaSpriteArrow.png
+
+#begin images/Item/ZeldaSpriteBomb.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Item/ZeldaSpriteBomb.png
+
+#begin images/Item/ZeldaSpriteFairy.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Item/ZeldaSpriteFairy.png
+
 #begin images/LeftIdle.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -277,19 +949,8 @@
 /processorParam:TextureFormat=Color
 /build:images/LeftWoodenSword.png
 
-#begin Images/LinkDeathHurt/LinkHurt.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Images/LinkDeathHurt/LinkHurt.png
-
 #begin images/LinkUseItem.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -301,7 +962,7 @@
 /processorParam:TextureFormat=Color
 /build:images/LinkUseItem.png
 
-#begin Images/LinkUseWoodenSword/WoodenSwordAttackDown.png
+#begin images/MagicalRodLeftt.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -311,9 +972,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/LinkUseWoodenSword/WoodenSwordAttackDown.png
+/build:images/MagicalRodLeftt.png
 
-#begin Images/LinkUseWoodenSword/WoodenSwordAttackLeft.png
+#begin images/Npc/MerchantG.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -323,9 +984,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/LinkUseWoodenSword/WoodenSwordAttackLeft.png
+/build:images/Npc/MerchantG.png
 
-#begin Images/LinkUseWoodenSword/WoodenSwordAttackRight.png
+#begin images/Npc/MerchantP.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -335,20 +996,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/LinkUseWoodenSword/WoodenSwordAttackRight.png
+/build:images/Npc/MerchantP.png
 
-#begin Images/LinkUseWoodenSword/WoodenSwordAttackUp.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Images/LinkUseWoodenSword/WoodenSwordAttackUp.png
-
+<<<<<<< HEAD
 #begin images/Npc/MerchantG.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -410,6 +1060,9 @@
 /build:images/Npc/OldWoman.png
 
 #begin Images/PickUpItem/PickUpItem.png
+=======
+#begin images/Npc/MerchantR.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -419,9 +1072,13 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/PickUpItem/PickUpItem.png
+/build:images/Npc/MerchantR.png
 
+<<<<<<< HEAD
 #begin images/projectile/arrow/DownArrow.png
+=======
+#begin images/Npc/OldMan.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -431,9 +1088,15 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
 /build:images/projectile/arrow/DownArrow.png
 
 #begin images/projectile/arrow/LeftArrow.png
+=======
+/build:images/Npc/OldMan.png
+
+#begin images/Npc/OldWoman.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -443,9 +1106,15 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
 /build:images/projectile/arrow/LeftArrow.png
 
 #begin images/projectile/arrow/RightArrow.png
+=======
+/build:images/Npc/OldWoman.png
+
+#begin images/projectile/arrow/DownArrow.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -455,9 +1124,15 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
 /build:images/projectile/arrow/RightArrow.png
 
 #begin images/projectile/arrow/UpArrow.png
+=======
+/build:images/projectile/arrow/DownArrow.png
+
+#begin images/projectile/arrow/LeftArrow.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -467,9 +1142,15 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
 /build:images/projectile/arrow/UpArrow.png
 
 #begin images/projectile/bomb.png
+=======
+/build:images/projectile/arrow/LeftArrow.png
+
+#begin images/projectile/arrow/RightArrow.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -479,9 +1160,15 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
 /build:images/projectile/bomb.png
 
 #begin images/projectile/Boomerang.png
+=======
+/build:images/projectile/arrow/RightArrow.png
+
+#begin images/projectile/arrow/UpArrow.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -491,9 +1178,15 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
 /build:images/projectile/Boomerang.png
 
 #begin images/RIghtIdle.png
+=======
+/build:images/projectile/arrow/UpArrow.png
+
+#begin images/projectile/bomb.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -503,9 +1196,15 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
 /build:images/RIghtIdle.png;images/RightIdle.png
 
 #begin images/RIghtMoving.png
+=======
+/build:images/projectile/bomb.png
+
+#begin images/projectile/Boomerang.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -515,9 +1214,15 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
 /build:images/RIghtMoving.png;images/RightMoving.png
 
 #begin images/RightWoodenSword.png
+=======
+/build:images/projectile/Boomerang.png
+
+#begin images/projectile/flame.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -527,9 +1232,15 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
 /build:images/RightWoodenSword.png
 
 #begin Images/Stand/StandFaceBack.png
+=======
+/build:images/projectile/flame.png
+
+#begin images/RIghtIdle.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -539,9 +1250,15 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
 /build:Images/Stand/StandFaceBack.png
 
 #begin Images/Stand/StandFaceFront.png
+=======
+/build:images/RIghtIdle.png
+
+#begin images/RIghtMoving.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -551,9 +1268,15 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
 /build:Images/Stand/StandFaceFront.png
 
 #begin Images/Stand/StandFaceLeft.png
+=======
+/build:images/RIghtMoving.png
+
+#begin images/RightWoodenSword.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -563,9 +1286,15 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
 /build:Images/Stand/StandFaceLeft.png
 
 #begin Images/Stand/StandFaceRight.png
+=======
+/build:images/RightWoodenSword.png
+
+#begin images/UpIdle.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -575,9 +1304,15 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
 /build:Images/Stand/StandFaceRight.png
 
 #begin images/UpIdle.png
+=======
+/build:images/UpIdle.png
+
+#begin images/UpMoving.png
+>>>>>>> master
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -587,6 +1322,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+<<<<<<< HEAD
 /build:images/UpIdle.png
 
 #begin images/UpMoving.png
@@ -612,8 +1348,11 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:images/UpWoodenSword.png
+=======
+/build:images/UpMoving.png
+>>>>>>> master
 
-#begin Images/UseItemWeapon/UseItemWeaponBack.png
+#begin images/UpWoodenSword.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -623,9 +1362,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/UseItemWeapon/UseItemWeaponBack.png
+/build:images/UpWoodenSword.png
 
-#begin Images/UseItemWeapon/UseItemWeaponFront.png
+#begin images/UseItemWeapon/UseItemWeaponBack.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -635,9 +1374,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/UseItemWeapon/UseItemWeaponFront.png
+/build:images/UseItemWeapon/UseItemWeaponBack.png
 
-#begin Images/UseItemWeapon/UseItemWeaponLeft.png
+#begin images/UseItemWeapon/UseItemWeaponFront.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -647,9 +1386,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/UseItemWeapon/UseItemWeaponLeft.png
+/build:images/UseItemWeapon/UseItemWeaponFront.png
 
-#begin Images/UseItemWeapon/UseItemWeaponRight.png
+#begin images/UseItemWeapon/UseItemWeaponLeft.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -659,9 +1398,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/UseItemWeapon/UseItemWeaponRight.png
+/build:images/UseItemWeapon/UseItemWeaponLeft.png
 
-#begin Images/Walk/MoveAnimatedBack.png
+#begin images/UseItemWeapon/UseItemWeaponRight.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -671,9 +1410,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/Walk/MoveAnimatedBack.png
+/build:images/UseItemWeapon/UseItemWeaponRight.png
 
-#begin Images/Walk/MoveAnimatedFront.png
+#begin images/WhiteSword/DownWhiteSword.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -683,9 +1422,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/Walk/MoveAnimatedFront.png
+/build:images/WhiteSword/DownWhiteSword.png
 
-#begin Images/Walk/MoveAnimatedLeft.png
+#begin images/WhiteSword/LeftWhiteSword.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -695,9 +1434,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/Walk/MoveAnimatedLeft.png
+/build:images/WhiteSword/LeftWhiteSword.png
 
-#begin Images/Walk/MoveAnimatedRight.png
+#begin images/WhiteSword/RightWhiteSword.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -707,9 +1446,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Images/Walk/MoveAnimatedRight.png
+/build:images/WhiteSword/RightWhiteSword.png
 
-#begin PrincessPeach.png
+#begin images/WhiteSword/UpWhiteSword.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -719,5 +1458,5 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:PrincessPeach.png
+/build:images/WhiteSword/UpWhiteSword.png
 

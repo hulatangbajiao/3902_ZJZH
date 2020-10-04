@@ -13,6 +13,7 @@ namespace Game1
         ILink decoratedLink;
         int timer = 20;
 
+        public int Item { get; set; }
         public ILinkState State { get; set; }
 
         public Vector2 Position { get; set; }
@@ -75,7 +76,7 @@ namespace Game1
 
         }
 
-        public void UseItem()
+        public void UseItem(int Item)
         {
         }
 
