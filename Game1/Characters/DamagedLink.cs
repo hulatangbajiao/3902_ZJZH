@@ -13,10 +13,10 @@ namespace Game1
         ILink decoratedLink;
         int timer = 20;
 
-
         public ILinkState State { get; set; }
 
         public Vector2 Position { get; set; }
+
         public DamagedLink(Link decoratedLink, MainStage game)
         {
             this.decoratedLink = decoratedLink;
@@ -77,6 +77,11 @@ namespace Game1
 
         public void UseItem()
         {
+        }
+
+        public void Reset()
+        {
+            // Not required yet...?
         }
     }
 }

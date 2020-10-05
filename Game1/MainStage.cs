@@ -8,18 +8,13 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-    /// <summary>
-    /// Yan Zhang
-    /// </summary>
+ 
     public class MainStage : Game
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
 
         private List<IController> controllers;
-
-       
-
 
         /// <summary>
         /// Active sprite. Exposed as a class property
@@ -45,11 +40,18 @@ namespace Game1
 
             this.Link = new Link(this);
 
-
             controllers = new List<IController>
             {
                 new KeyboardController(this)
             };
+        }
+
+        /// <summary>
+        /// Reset all sprites to a known state
+        /// </summary>
+        public void ResetState()
+        {
+            Link.Reset();
         }
 
         /// <summary>
@@ -65,7 +67,6 @@ namespace Game1
             this.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 100.0f);
             this.IsFixedTimeStep = false;
             graphics.SynchronizeWithVerticalRetrace = false;
-
 
             // Create instances and register commands
             base.Initialize();
@@ -124,7 +125,5 @@ namespace Game1
             spriteBatch.End();
             base.Draw(gameTime);
         }
-
-        
     }
 }
