@@ -11,12 +11,12 @@ namespace Game1
     {
         MainStage game;
         ILink decoratedLink;
-        int timer = 1000;
-
+        int timer = 20;
 
         public ILinkState State { get; set; }
 
         public Vector2 Position { get; set; }
+
         public DamagedLink(Link decoratedLink, MainStage game)
         {
             this.decoratedLink = decoratedLink;
@@ -38,7 +38,7 @@ namespace Game1
                 RemoveDecorator();
             }
 
-            decoratedLink.Update();//method needs to be added
+            //method needs to be added
         }
         
         public void RemoveDecorator()
@@ -77,6 +77,11 @@ namespace Game1
 
         public void UseItem()
         {
+        }
+
+        public void Reset()
+        {
+            // Not required yet...?
         }
     }
 }

@@ -12,13 +12,12 @@ namespace Game1
             this.Link = link;
             this.game = game;
             GetSprite = new DownIdleLinkSprite();
-
         }
         //link has already faced up so no code for MoveUp()
 
         public void TakeDamage()
         {
-            Link = new DamagedLink((Link)Link, game);
+            game.Link = new DamagedLink((Link)Link, game);
 
             //remains to be discussed
         }
@@ -31,8 +30,6 @@ namespace Game1
         public void MoveDown()
         {
             Link.State = new DownMovingState(Link, game);
-
-
         }
 
 
@@ -56,16 +53,10 @@ namespace Game1
 
         public void Attack()
         {
-            //Link.State = new DownWoodenSwordState(Link, game);
+            Link.State = new DownWoodenSwordState(Link, game);
 
         }
-
-        /*xin zhao add code for item here*/
-        public void UseArrow()
-        {
-
-        }
-        public void UseBomb()
+        public void UseItem()
         {
 
         }

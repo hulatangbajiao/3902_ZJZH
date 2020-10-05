@@ -9,7 +9,8 @@ namespace Game1
 {
     public interface ILink
     {
-         ILinkState State { get; set; }
+        ILinkState State { get; set; }
+
         void TakeDamage();
         void MoveLeft();
         void MoveUp();
@@ -19,12 +20,8 @@ namespace Game1
         void Stop();
         void Attack();
         void Update();
-       
         void UseItem();
-       
 
-
-        /*xin zhao add code for item here*/
-      
+        void Reset();
     }
 }

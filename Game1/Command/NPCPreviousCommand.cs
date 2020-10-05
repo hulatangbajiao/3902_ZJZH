@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace Game1.Command
 {
-    class BlockPreviousCommand : ICommand
+    class NPCPreviousCommand : ICommand
     {
-        private IPlayer[] items;
-        private IPlayer item1;
-        private IPlayer item2;
-        private IPlayer item3;
+        private ISprite[] items;
+        private ISprite item1;
+        private ISprite item2;
+        private ISprite item3;
+        private ISprite current;
 
-        public BlockPreviousCommand(IPlayer item1, IPlayer item2, IPlayer item3)
+        public NPCPreviousCommand(ISprite item1, ISprite item2, ISprite item3, ISprite current)
         {
+            this.current = current;
             items[0] = item1;
             items[1] = item2;
             items[2] = item3;
@@ -22,11 +24,11 @@ namespace Game1.Command
 
         public void Execute()
         {
+            
 
         }
         public void Stop()
         {
-
         }
     }
 }

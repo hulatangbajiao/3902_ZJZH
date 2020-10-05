@@ -41,7 +41,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Command\BlockPreviousCommand.cs" />
+    <Compile Include="Command\NPCPreviousCommand.cs" />
     <Compile Include="Command\DamagedCommand.cs" />
     <Compile Include="Command\Moving command\DownMovingCommand.cs" />
     <Compile Include="Command\QuitGameCommand.cs" />
@@ -52,22 +52,43 @@
     <Compile Include="Command\StandingWhiteSwordCommand.cs" />
     <Compile Include="Command\StandingWoodenSwordCommand.cs" />
     <Compile Include="Command\Moving command\UpMovingCommand.cs" />
-    <Compile Include="Interfaces\Iitem.cs" />
     <Compile Include="ItemsClasses\ItemList.cs" />
-    <Compile Include="ItemsClasses\UseFairySprite.cs" />
-    <Compile Include="ItemsClasses\UseHeartContainerSprite.cs" />
-    <Compile Include="ItemsClasses\UseClockSprite.cs" />
     <Compile Include="ItemsClasses\UseArrowSprite.cs" />
+    <Compile Include="ItemsClasses\UseBombSprite.cs" />
     <Compile Include="ItemsClasses\UseBoomerangSprite.cs" />
     <Compile Include="ItemsClasses\UseBowSprite.cs" />
+    <Compile Include="ItemsClasses\UseClockSprite.cs" />
     <Compile Include="ItemsClasses\UseCompassSprite.cs" />
+    <Compile Include="ItemsClasses\UseFairySprite.cs" />
+    <Compile Include="ItemsClasses\UseHeartContainerSprite.cs" />
     <Compile Include="ItemsClasses\UseHeartSprite.cs" />
     <Compile Include="ItemsClasses\UseKeySprite.cs" />
     <Compile Include="ItemsClasses\UseMapSprite.cs" />
     <Compile Include="ItemsClasses\UseRupeeSprite.cs" />
     <Compile Include="ItemsClasses\UseTriforceSprite.cs" />
+    <Compile Include="Sprite_\Enemy Sprite\BlueMMoving\DownMovingBlueMSprite.cs" />
+    <Compile Include="Sprite_\Enemy Sprite\BlueMMoving\LeftMovingBlueMSprite.cs" />
+    <Compile Include="Sprite_\Enemy Sprite\BlueMMoving\RightMovingBlueMSprite.cs" />
+    <Compile Include="Sprite_\Enemy Sprite\BlueMMoving\UpMovingBlueMSprite.cs" />
+    <Compile Include="Sprite_\Enemy Sprite\BlueOctMoving\DownMovingBlueOctSprite.cs" />
+    <Compile Include="Sprite_\Enemy Sprite\BlueOctMoving\LeftMovingBlueOctSprite.cs" />
+    <Compile Include="Sprite_\Enemy Sprite\BlueOctMoving\RightMovingBlueOctSprite.cs" />
+    <Compile Include="Sprite_\Enemy Sprite\BlueOctMoving\UpMovingBlueOctSprite.cs" />
+    <Compile Include="Sprite_\LinkUseItemSprite.cs" />
+    <Compile Include="Sprite_\Enemy Sprite\OctMoving\UpMovingOctSprite.cs" />
+    <Compile Include="Sprite_\Enemy Sprite\OctMoving\RightMovingOctSprite.cs" />
+    <Compile Include="Sprite_\Enemy Sprite\OctMoving\LeftMovingOctSprite.cs" />
+    <Compile Include="Sprite_\Enemy Sprite\OctMoving\DownMovingOctSprite.cs" />
     <Compile Include="Sprite_\Moving Sprite\LeftMovingLinkSprite.cs" />
     <Compile Include="Sprite_\Moving Sprite\UpMovingLinkSprite.cs" />
+    <Compile Include="Sprite_\NPC Sprite\MerchantPSprite.cs" />
+    <Compile Include="Sprite_\NPC Sprite\MerchantRSprite.cs" />
+    <Compile Include="Sprite_\NPC Sprite\MerchantGSprite.cs" />
+    <Compile Include="Sprite_\NPC Sprite\OldWomanSprite.cs" />
+    <Compile Include="Sprite_\NPC Sprite\OldManSprite.cs" />
+    <Compile Include="Sprite_\Wooden Sword Sprite\LeftWoodenSwordLinkSprite.cs" />
+    <Compile Include="Sprite_\Wooden Sword Sprite\RightWoodenSwordLinkSprite.cs" />
+    <Compile Include="Sprite_\Wooden Sword Sprite\UpWoodenSwordLinkSprite.cs" />
     <Compile Include="States\DamagedLinkState.cs" />
     <Compile Include="Sprite_\DamgedLinkSprite.cs" />
     <Compile Include="Sprite_\Idle Sprite\RightIdleLinkSprite.cs" />
@@ -77,6 +98,11 @@
     <Compile Include="States\IdleState\DownIdleState.cs" />
     <Compile Include="Sprite_\Moving Sprite\RightMovingLinkSprite.cs" />
     <Compile Include="Sprite_\Moving Sprite\DownMovingLinkSprite.cs" />
+    <Compile Include="Sprite_\Wooden Sword Sprite\DownWoodenSwordLinkSprite.cs" />
+    <Compile Include="States\Wooden Sword Attack State\DownWoodenSwordState.cs" />
+    <Compile Include="States\Wooden Sword Attack State\LeftWoodenSwordState.cs" />
+    <Compile Include="States\Wooden Sword Attack State\RightWoodenSwordState.cs" />
+    <Compile Include="States\Wooden Sword Attack State\UpWoodenSwordState.cs" />
     <Compile Include="States\Moving State\DownMovingState.cs" />
     <Compile Include="States\IdleState\LeftIdleState.cs" />
     <Compile Include="States\Moving State\LeftMovingState.cs" />
@@ -98,7 +124,6 @@
     <Compile Include="Sprite_\Idle Sprite\UpIdleLinkSprite.cs" />
     <Compile Include="States\IdleState\UpIdleState.cs" />
     <Compile Include="States\Moving State\UpMovingState.cs" />
-    <Compile Include="ItemsClasses\UseBombSprite.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
@@ -115,7 +140,6 @@
     <None Include="app.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="EnemyClasses\" />
     <Folder Include="States\Item State\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

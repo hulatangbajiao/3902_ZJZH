@@ -8,19 +8,13 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-    /// <summary>
-    /// Yan Zhang
-    /// </summary>
+ 
     public class MainStage : Game
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
 
         private List<IController> controllers;
-
-        private TextureAtlas.UseFairySprite FairySpriteSheet;
-
-
 
         /// <summary>
         /// Active sprite. Exposed as a class property
@@ -38,16 +32,26 @@ namespace Game1
         public MainStage()
         {
             graphics = new GraphicsDeviceManager(this);
+
             Content.RootDirectory = "Content";
 
             graphics.PreferredBackBufferWidth = GlobalDefinitions.GraphicsWidth;
             graphics.PreferredBackBufferHeight = GlobalDefinitions.GraphicsHeight;
+
             this.Link = new Link(this);
 
             controllers = new List<IController>
             {
                 new KeyboardController(this)
             };
+        }
+
+        /// <summary>
+        /// Reset all sprites to a known state
+        /// </summary>
+        public void ResetState()
+        {
+            Link.Reset();
         }
 
         /// <summary>
@@ -60,7 +64,9 @@ namespace Game1
         {
             // Explicitly set mouse visible option to make the game intuitive
             this.IsMouseVisible = true;
-            
+            this.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 100.0f);
+            this.IsFixedTimeStep = false;
+            graphics.SynchronizeWithVerticalRetrace = false;
 
             // Create instances and register commands
             base.Initialize();
@@ -119,7 +125,5 @@ namespace Game1
             spriteBatch.End();
             base.Draw(gameTime);
         }
-
-        
     }
 }
