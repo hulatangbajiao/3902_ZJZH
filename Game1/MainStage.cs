@@ -47,6 +47,14 @@ namespace Game1
         }
 
         /// <summary>
+        /// Reset all sprites to a known state
+        /// </summary>
+        public void ResetState()
+        {
+            Link.Reset();
+        }
+
+        /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
         /// This is where it can query for any required services and load any non-graphic
         /// related content.  Calling base.Initialize will enumerate through any components
@@ -59,7 +67,6 @@ namespace Game1
             this.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 100.0f);
             this.IsFixedTimeStep = false;
             graphics.SynchronizeWithVerticalRetrace = false;
-
 
             // Create instances and register commands
             base.Initialize();

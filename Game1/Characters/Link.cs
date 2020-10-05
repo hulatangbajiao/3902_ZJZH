@@ -11,10 +11,13 @@ namespace Game1
     {
         
         public ILinkState State { get; set; }
+
+        private MainStage _game;
+
         public Link(MainStage game)
         {
-            State = new UpIdleState(this, game);
-            GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
+            _game = game;
+            Reset();
         }
 
         public void TakeDamage()
@@ -26,7 +29,6 @@ namespace Game1
         {
             State.MoveUp();
         }
-
 
         public void MoveDown()
         {
@@ -63,6 +65,10 @@ namespace Game1
             State.Update();
         }
 
-
+        public void Reset()
+        {
+            State = new UpIdleState(this, _game);
+            GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
+        }
     }
 }
