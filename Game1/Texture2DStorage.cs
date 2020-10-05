@@ -34,6 +34,11 @@ namespace Game1
         private static Texture2D LeftOctorokSpriteSheet;
         private static Texture2D RightOctorokSpriteSheet;
 
+        private static Texture2D UpBlueOctorokSpriteSheet;
+        private static Texture2D DownBlueOctorokSpriteSheet;
+        private static Texture2D LeftBlueOctorokSpriteSheet;
+        private static Texture2D RightBlueOctorokSpriteSheet;
+
         private static Texture2D OldManSpriteSheet;
         private static Texture2D OldWomanSpriteSheet;
 
@@ -67,6 +72,11 @@ namespace Game1
             DownOctorokSpriteSheet = content.Load<Texture2D>("images/Enemy/Octorok/OctorokDown");
             LeftOctorokSpriteSheet = content.Load<Texture2D>("images/Enemy/Octorok/OctorokLeft");
             RightOctorokSpriteSheet = content.Load<Texture2D>("images/Enemy/Octorok/OctorokRight");
+
+            UpBlueOctorokSpriteSheet = content.Load<Texture2D>("images/Enemy/Octorok/BlueOctorokUp");
+            DownBlueOctorokSpriteSheet = content.Load<Texture2D>("images/Enemy/Octorok/BlueOctorokDown");
+            LeftBlueOctorokSpriteSheet = content.Load<Texture2D>("images/Enemy/Octorok/BlueOctorokLeft");
+            RightBlueOctorokSpriteSheet = content.Load<Texture2D>("images/Enemy/Octorok/BlueOctorokRight");
 
             OldManSpriteSheet = content.Load<Texture2D>("images/Npc/OldMan");
             OldWomanSpriteSheet = content.Load<Texture2D>("images/Npc/OldWoman");
@@ -161,6 +171,26 @@ namespace Game1
         public static Texture2D GetRightMovingOctorokSpriteSheet()
         {
             return RightOctorokSpriteSheet;
+        }
+
+        public static Texture2D GetUpMovingBlueOctorokSpriteSheet()
+        {
+            return UpBlueOctorokSpriteSheet;
+        }
+
+        public static Texture2D GetDownMovingBlueOctorokSpriteSheet()
+        {
+            return DownBlueOctorokSpriteSheet;
+        }
+
+        public static Texture2D GetLeftMovingBlueOctorokSpriteSheet()
+        {
+            return LeftBlueOctorokSpriteSheet;
+        }
+
+        public static Texture2D GetRightMovingBlueOctorokSpriteSheet()
+        {
+            return RightBlueOctorokSpriteSheet;
         }
 
         public static Texture2D GetOldManSpriteSheet()

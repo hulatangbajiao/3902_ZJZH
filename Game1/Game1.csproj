@@ -52,6 +52,11 @@
     <Compile Include="Command\StandingWhiteSwordCommand.cs" />
     <Compile Include="Command\StandingWoodenSwordCommand.cs" />
     <Compile Include="Command\Moving command\UpMovingCommand.cs" />
+    <Compile Include="Sprite_\Enemy Sprite\BlueOctMoving\DownMovingBlueOctSprite.cs" />
+    <Compile Include="Sprite_\Enemy Sprite\BlueOctMoving\LeftMovingBlueOctSprite.cs" />
+    <Compile Include="Sprite_\Enemy Sprite\BlueOctMoving\RightMovingBlueOctSprite.cs" />
+    <Compile Include="Sprite_\Enemy Sprite\BlueOctMoving\UpMovingBlueOctSprite.cs" />
+    <Compile Include="Sprite_\LinkUseItemSprite.cs" />
     <Compile Include="Sprite_\Enemy Sprite\OctMoving\UpMovingOctSprite.cs" />
     <Compile Include="Sprite_\Enemy Sprite\OctMoving\RightMovingOctSprite.cs" />
     <Compile Include="Sprite_\Enemy Sprite\OctMoving\LeftMovingOctSprite.cs" />

@@ -8,18 +8,13 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-    /// <summary>
-    /// Yan Zhang
-    /// </summary>
+ 
     public class MainStage : Game
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
 
         private List<IController> controllers;
-
-       
-
 
         /// <summary>
         /// Active sprite. Exposed as a class property
@@ -44,7 +39,6 @@ namespace Game1
             graphics.PreferredBackBufferHeight = GlobalDefinitions.GraphicsHeight;
 
             this.Link = new Link(this);
-
 
             controllers = new List<IController>
             {
@@ -124,7 +118,5 @@ namespace Game1
             spriteBatch.End();
             base.Draw(gameTime);
         }
-
-        
     }
 }
