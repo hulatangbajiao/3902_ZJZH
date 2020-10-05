@@ -141,7 +141,8 @@ namespace Game1
 
         public void Restart()
         {
-            this.Link = new Link(this);
+            this.Link.State = new UpIdleState(this.Link, this);
+            GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
             this.ProjectileFactory = new ProjectileFactory(this);
             this.BlockList = new BlockList();
             this.ItemList = new ItemList();
