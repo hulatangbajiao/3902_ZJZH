@@ -65,22 +65,35 @@ namespace Game1.Controller
         }
         public void Update()
         {
-
+            var keyPressedArray = new Keys[8] { Keys.W, Keys.PageUp, Keys.A, Keys.Home, Keys.S, Keys.PageDown, Keys.D, Keys.End };
+            var keyOnceArray = new Keys[4] { Keys.Z, Keys.N, Keys.E, Keys.R };
             var keyArray = new Keys[12] { Keys.W, Keys.PageUp, Keys.A, Keys.Home, Keys.S, Keys.PageDown, Keys.D, Keys.End, Keys.Z, Keys.N, Keys.E, Keys.R };
 
-            if (keyArray.Contains(lastPressedKey) && Keyboard.GetState().IsKeyUp(lastPressedKey))
+         
+            
+            if (keyOnceArray.Contains(lastPressedKey))
             {
-                controllerMappings[lastPressedKey]?.Stop();
+                lastPressedKey = Keyboard.GetState().GetPressedKeys()[0];
             }
-            foreach (Keys key in keyArray)
+            else
             {
-                //if the keys in the keyArray are pressed, execute corresponding command
-                if (Keyboard.GetState().IsKeyDown(key))
+                if (keyPressedArray.Contains(lastPressedKey) && Keyboard.GetState().IsKeyUp(lastPressedKey))
                 {
-                    controllerMappings[key]?.Execute();
-                    lastPressedKey = key;
+                    controllerMappings[lastPressedKey]?.Stop();
+                }
+
+                foreach (Keys key in keyArray)
+                {
+                    //if the keys in the keyArray are pressed, execute corresponding command
+                    if (Keyboard.GetState().IsKeyDown(key))
+                    {
+                        controllerMappings[key]?.Execute();
+                        lastPressedKey = key;
+                    }
                 }
             }
+            
+            
         }
     }
 
