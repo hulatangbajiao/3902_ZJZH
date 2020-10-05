@@ -117,6 +117,7 @@ namespace Game1
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+            spriteBatch = new SpriteBatch(GraphicsDevice);
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
 

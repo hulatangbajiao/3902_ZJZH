@@ -17,8 +17,20 @@ namespace Game1.Command
 
         public void Execute()
         {
+<<<<<<< Updated upstream
             Link.MoveDown();
         }
+=======
+            
+            Link.MoveDown();
+        }
+
+        public void Stop()
+        {
+            Link.Stop();
+        }
+    }
+>>>>>>> Stashed changes
 
         public void Stop()
         {
