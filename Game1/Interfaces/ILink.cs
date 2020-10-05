@@ -9,7 +9,7 @@ namespace Game1
 {
     public interface ILink
     {
-         ILinkState State { get; set; }
+        ILinkState State { get; set; }
         int Item { get; set; }
 
         void TakeDamage();

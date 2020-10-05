@@ -9,7 +9,7 @@ namespace Game1
 {
     public class Link : ILink
     {
-        
+
         public ILinkState State { get; set; }
         public int Item { get; set; }
         public Link(MainStage game)
@@ -58,7 +58,7 @@ namespace Game1
         {
             this.Item = Item;
             State.UseItem();
-            
+
         }
 
         public void Update()
