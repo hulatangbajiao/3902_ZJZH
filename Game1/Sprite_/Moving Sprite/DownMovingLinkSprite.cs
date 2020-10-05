@@ -23,7 +23,7 @@ namespace Game1
             if (currentFrame == totalFrame)
                 currentFrame = 0;
 
-            GlobalDefinitions.Position.Y = GlobalDefinitions.Position.Y + (float)1; //change the y axis position of Link
+            GlobalDefinitions.Position.Y = GlobalDefinitions.Position.Y + (float)5; //change the y axis position of Link
             if (GlobalDefinitions.Position.Y == 0)
             {
                 GlobalDefinitions.Position.Y = (float)GlobalDefinitions.GraphicsHeight;

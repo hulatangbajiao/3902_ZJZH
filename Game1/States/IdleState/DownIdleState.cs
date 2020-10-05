@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1
 {
@@ -12,6 +14,7 @@ namespace Game1
             this.Link = link;
             this.game = game;
             GetSprite = new DownIdleLinkSprite();
+
         }
         //link has already faced up so no code for MoveUp()
 
@@ -30,6 +33,8 @@ namespace Game1
         public void MoveDown()
         {
             Link.State = new DownMovingState(Link, game);
+
+
         }
 
 
@@ -58,12 +63,17 @@ namespace Game1
         }
         public void UseItem()
         {
-
+            Link.State = new DownUseItemState(Link, game);
         }
 
         public void Update()
         {
             GetSprite.Update();
+        }
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            GetSprite.Draw(spriteBatch);
+
         }
     }
 }
