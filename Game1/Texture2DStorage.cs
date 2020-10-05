@@ -206,6 +206,11 @@ namespace Game1
             LeftAquamentusSpriteSheet = content.Load<Texture2D>("images/Enemy/Aquamentus/AquamentusLeft");
             RightAquamentusSpriteSheet = content.Load<Texture2D>("images/Enemy/Aquamentus/AquamentusRight");
 
+            UpBlueMSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueM/blueMUp");
+            DownBlueMSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueM/blueMDown");
+            LeftBlueMSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueM/blueMLeft");
+            RightBlueMSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueM/blueMRight");
+
             OldManSpriteSheet = content.Load<Texture2D>("images/Npc/OldMan");
             OldWomanSpriteSheet = content.Load<Texture2D>("images/Npc/OldWoman");
             MerchantRSpriteSheet = content.Load<Texture2D>("images/Npc/MerchantR");
@@ -591,6 +596,10 @@ namespace Game1
         {
             return MerchantGSpriteSheet;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> Implement enemy sprite, Implement NPC sprite.
         public static Texture2D GetDamagedLinkSpriteSheet()
         {
             return DamagedLinkSpriteSheet;
