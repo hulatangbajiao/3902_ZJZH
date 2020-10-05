@@ -10,9 +10,6 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-    /// <summary>
-    /// Yan Zhang
-    /// </summary>
     public class MainStage : Game
     {
         private GraphicsDeviceManager graphics;
@@ -140,6 +137,16 @@ namespace Game1
 
             spriteBatch.End();
             base.Draw(gameTime);
+        }
+
+        public void Restart()
+        {
+            this.Link = new Link(this);
+            this.ProjectileFactory = new ProjectileFactory(this);
+            this.BlockList = new BlockList();
+            this.ItemList = new ItemList();
+            this.Enemylist = new EnemyList(this);
+            Initialize();
         }
 
         

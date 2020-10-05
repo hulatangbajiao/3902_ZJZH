@@ -23,11 +23,11 @@ namespace Game1.Command
         {
 
             list.MoveToNext();
+            
         }
 
         public void Stop()
         {
-            
 
         }
     }

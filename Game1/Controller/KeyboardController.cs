@@ -33,18 +33,18 @@ namespace Game1.Controller
             controllerMappings.Add(Keys.PageDown, new DownMovingCommand(this.instance.Link));
             controllerMappings.Add(Keys.D, new RightMovingCommand(this.instance.Link));
             controllerMappings.Add(Keys.End, new RightMovingCommand(this.instance.Link));
-            
+
             controllerMappings.Add(Keys.Z, new StandingWoodenSwordCommand(this.instance.Link));
             controllerMappings.Add(Keys.N, new StandingWoodenSwordCommand(this.instance.Link));
-            
-            
 
-            
+
+
+
             controllerMappings.Add(Keys.E, new DamagedCommand(this.instance.Link));
-            
+
             //Block/obstacle controls
             //TODO: need to modify, Use keys "t" and "y" to cycle between which block is currently being shown
-            
+
             controllerMappings.Add(Keys.T, new NextBlockCommand(this.instance.BlockList));
             controllerMappings.Add(Keys.Y, new PreviousBlockCommand(this.instance.BlockList));
 
@@ -66,12 +66,12 @@ namespace Game1.Controller
             controllerMappings.Add(Keys.O, new PreviousEnemyCommand(this.instance.Enemylist));
             controllerMappings.Add(Keys.P, new NextEnemyCommand(this.instance.Enemylist));
 
-        
+
         }
         public void Update()
         {
 
-            var keyArray = new Keys[25] { Keys.W, Keys.PageUp, Keys.A, Keys.Home, Keys.S, Keys.PageDown, Keys.D, Keys.End, Keys.Z, Keys.N, Keys.E, Keys.NumPad1, Keys.D1, Keys.NumPad2, Keys.D2, Keys.NumPad3, Keys.D3, Keys.Y, Keys.T, Keys.U, Keys.I, Keys.Q, Keys.R, Keys.O, Keys.P};
+            var keyArray = new Keys[25] { Keys.W, Keys.PageUp, Keys.A, Keys.Home, Keys.S, Keys.PageDown, Keys.D, Keys.End, Keys.Z, Keys.N, Keys.E, Keys.NumPad1, Keys.D1, Keys.NumPad2, Keys.D2, Keys.NumPad3, Keys.D3, Keys.Y, Keys.T, Keys.U, Keys.I, Keys.Q, Keys.R, Keys.O, Keys.P };
 
 
             if (keyArray.Contains(lastPressedKey) && Keyboard.GetState().IsKeyUp(lastPressedKey))
