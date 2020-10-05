@@ -18,7 +18,8 @@ namespace Game1
 
         private List<IController> controllers;
 
-       
+        private TextureAtlas.UseFairySprite FairySpriteSheet;
+
 
 
         /// <summary>
@@ -37,14 +38,11 @@ namespace Game1
         public MainStage()
         {
             graphics = new GraphicsDeviceManager(this);
-
             Content.RootDirectory = "Content";
 
             graphics.PreferredBackBufferWidth = GlobalDefinitions.GraphicsWidth;
             graphics.PreferredBackBufferHeight = GlobalDefinitions.GraphicsHeight;
-
             this.Link = new Link(this);
-
 
             controllers = new List<IController>
             {
@@ -62,10 +60,7 @@ namespace Game1
         {
             // Explicitly set mouse visible option to make the game intuitive
             this.IsMouseVisible = true;
-            this.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 100.0f);
-            this.IsFixedTimeStep = false;
-            graphics.SynchronizeWithVerticalRetrace = false;
-
+            
 
             // Create instances and register commands
             base.Initialize();

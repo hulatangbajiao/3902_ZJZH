@@ -19,7 +19,7 @@ namespace Game1
 
         public void TakeDamage()
         {
-            game.Link = new DamagedLink((Link)Link, game);
+            Link = new DamagedLink((Link)Link, game);
 
             //remains to be discussed
         }
@@ -51,13 +51,18 @@ namespace Game1
 
         public void Attack()
         {
-            Link.State = new RightWoodenSwordState(Link, game);
+            //Link.State = new RightWoodenSwordState(Link, game);
         }
-        public void UseItem()
+
+        /*xin zhao add code for item here*/
+        public void UseArrow()
         {
 
         }
+        public void UseBomb()
+        {
 
+        }
         public void Update()
         {
             GetSprite.Update();

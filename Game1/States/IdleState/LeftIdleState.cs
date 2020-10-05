@@ -5,13 +5,11 @@ namespace Game1
     public class LeftIdleState : ILinkState
     {
         public ILink Link { get; set; }
-        private Link decoratedLink;
         MainStage game;
         public ISprite GetSprite { get; set; }
         public LeftIdleState(ILink link, MainStage game)
         {
             this.Link = link;
-            this.decoratedLink = (Link)link;
             this.game = game;
             GetSprite = new LeftIdleLinkSprite();
 
@@ -20,7 +18,7 @@ namespace Game1
 
         public void TakeDamage()
         {
-            game.Link = new DamagedLink(decoratedLink, game);
+            Link = new DamagedLink((Link)Link, game);
 
             //remains to be discussed
         }
@@ -58,14 +56,19 @@ namespace Game1
 
         public void Attack()
         {
-            Link.State = new LeftWoodenSwordState(Link, game);
+            //Link.State = new LeftWoodenSwordState(Link, game);
 
         }
-        public void UseItem()
+
+        /*xin zhao add code for item here*/
+        public void UseArrow()
         {
 
         }
+        public void UseBomb()
+        {
 
+        }
         public void Update()
         {
             GetSprite.Update();

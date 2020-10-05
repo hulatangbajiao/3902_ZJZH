@@ -55,8 +55,9 @@ namespace Game1
 
         public void UseItem()
         {
-            State.UseItem();
+           
         }
+
 
         public void Update()
         {

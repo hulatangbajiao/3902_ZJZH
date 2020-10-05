@@ -1,8 +1,10 @@
 ﻿using Game1.Command;
+using Game1.ItemsClasses;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TextureAtlas;
 
 namespace Game1.Controller
 {
@@ -11,7 +13,6 @@ namespace Game1.Controller
         public static Keys lastPressedKey;
         private Dictionary<Keys, ICommand> controllerMappings;
         private MainStage instance;
-
 
 
         public KeyboardController(MainStage instance)
@@ -33,19 +34,14 @@ namespace Game1.Controller
             controllerMappings.Add(Keys.PageDown, new DownMovingCommand(this.instance.Link));
             controllerMappings.Add(Keys.D, new RightMovingCommand(this.instance.Link));
             controllerMappings.Add(Keys.End, new RightMovingCommand(this.instance.Link));
-            
-            controllerMappings.Add(Keys.Z, new StandingWoodenSwordCommand(this.instance.Link));
-            controllerMappings.Add(Keys.N, new StandingWoodenSwordCommand(this.instance.Link));
-            
-            
 
-            
-            controllerMappings.Add(Keys.E, new DamagedCommand(this.instance.Link));
+   
+            //Item controller
+
             /*
-            //Block/obstacle controls
-            //TODO: need to modify, Use keys "t" and "y" to cycle between which block is currently being shown
-            controllerMappings.Add(Keys.T, new SetBlockCommand(instance, GlobalDefinitions.BlockModes.previous));
-            controllerMappings.Add(Keys.Y, new SetBlockCommand(instance, GlobalDefinitions.BlockModes.next));
+            //The 'z' and 'n' key should cause Link to attack using his sword.
+            controllerMappings.Add(Keys.Z, new StandingWoodenSwordCommand(Link));
+            controllerMappings.Add(Keys.N, new StandingWoodenSwordCommand(Link));
 
             //Number keys (1, 2, 3, etc.) should be used to have Link use a different item 
             controllerMappings.Add(Keys.NumPad1, new StandingWoodenSwordCommand(Link));
@@ -54,6 +50,14 @@ namespace Game1.Controller
             controllerMappings.Add(Keys.D1, new StandingWoodenSwordCommand(Link));
             controllerMappings.Add(Keys.D2, new StandingWhiteSwordCommand(Link));
             controllerMappings.Add(Keys.D3, new StandingMagicalRodCommand(Link));
+
+            //Use 'e' to cause Link to become damaged.
+            controllerMappings.Add(Keys.E, new DamagedCommand(Link));
+
+            //Block/obstacle controls
+            //TODO: need to modify, Use keys "t" and "y" to cycle between which block is currently being shown
+            controllerMappings.Add(Keys.T, new SetBlockCommand(instance, GlobalDefinitions.BlockModes.previous));
+            controllerMappings.Add(Keys.Y, new SetBlockCommand(instance, GlobalDefinitions.BlockModes.next));
 
             //Item controls
             //Use keys "u" and "i" to cycle between which item is currently being shown
@@ -69,7 +73,7 @@ namespace Game1.Controller
         public void Update()
         {
 
-            var keyArray = new Keys[11] { Keys.W, Keys.PageUp, Keys.A, Keys.Home, Keys.S, Keys.PageDown, Keys.D, Keys.End, Keys.Z, Keys.N, Keys.E};
+            var keyArray = new Keys[8] { Keys.W, Keys.PageUp, Keys.A, Keys.Home, Keys.S, Keys.PageDown, Keys.D, Keys.End};
 
             if (keyArray.Contains(lastPressedKey) && Keyboard.GetState().IsKeyUp(lastPressedKey))
             {
@@ -86,6 +90,5 @@ namespace Game1.Controller
             }
         }
     }
-
 }
 

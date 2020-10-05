@@ -13,6 +13,12 @@
         void Attack();
 
         void Update();
+        /*
         void UseItem();
+        */
+
+        /*xin zhao add code for item here*/
+        void UseArrow();
+        void UseBomb();
     }
 }

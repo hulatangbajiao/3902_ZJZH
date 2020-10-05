@@ -18,12 +18,11 @@ namespace Game1.Command
         public void Execute()
         {
             Link.MoveDown();
-
         }
+
         public void Stop()
         {
             Link.Stop();
         }
     }
-
 }
