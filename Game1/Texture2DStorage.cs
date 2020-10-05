@@ -39,8 +39,17 @@ namespace Game1
         private static Texture2D LeftBlueOctorokSpriteSheet;
         private static Texture2D RightBlueOctorokSpriteSheet;
 
+        private static Texture2D UpBlueMSpriteSheet;
+        private static Texture2D DownBlueMSpriteSheet;
+        private static Texture2D LeftBlueMSpriteSheet;
+        private static Texture2D RightBlueMSpriteSheet;
+
         private static Texture2D OldManSpriteSheet;
         private static Texture2D OldWomanSpriteSheet;
+
+        private static Texture2D MerchantRSpriteSheet;
+        private static Texture2D MerchantPSpriteSheet;
+        private static Texture2D MerchantGSpriteSheet;
 
         private static Texture2D DamagedLinkSpriteSheet;
         private static Texture2D LinkUseItemSpriteSheet;
@@ -78,8 +87,17 @@ namespace Game1
             LeftBlueOctorokSpriteSheet = content.Load<Texture2D>("images/Enemy/Octorok/BlueOctorokLeft");
             RightBlueOctorokSpriteSheet = content.Load<Texture2D>("images/Enemy/Octorok/BlueOctorokRight");
 
+            UpBlueMSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueM/blueMUp");
+            DownBlueMSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueM/blueMDown");
+            LeftBlueMSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueM/blueMLeft");
+            RightBlueMSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueM/blueMRight");
+
             OldManSpriteSheet = content.Load<Texture2D>("images/Npc/OldMan");
             OldWomanSpriteSheet = content.Load<Texture2D>("images/Npc/OldWoman");
+            MerchantRSpriteSheet = content.Load<Texture2D>("images/Npc/MerchantR");
+            MerchantPSpriteSheet = content.Load<Texture2D>("images/Npc/MerchantP");
+            MerchantGSpriteSheet = content.Load<Texture2D>("images/Npc/MerchantG");
+
             DamagedLinkSpriteSheet = content.Load<Texture2D>("images/DamagedLink");
             LinkUseItemSpriteSheet = content.Load<Texture2D>("images/LinkUseItem");
 
@@ -193,6 +211,26 @@ namespace Game1
             return RightBlueOctorokSpriteSheet;
         }
 
+        public static Texture2D GetUpMovingBlueMSpriteSheet()
+        {
+            return UpBlueMSpriteSheet;
+        }
+
+        public static Texture2D GetDownMovingBlueMSpriteSheet()
+        {
+            return DownBlueMSpriteSheet;
+        }
+
+        public static Texture2D GetLeftMovingBlueMSpriteSheet()
+        {
+            return LeftBlueMSpriteSheet;
+        }
+
+        public static Texture2D GetRightMovingBlueMSpriteSheet()
+        {
+            return RightBlueMSpriteSheet;
+        }
+
         public static Texture2D GetOldManSpriteSheet()
         {
             return OldManSpriteSheet;
@@ -201,6 +239,21 @@ namespace Game1
         public static Texture2D GetOldWomanSpriteSheet()
         {
             return OldWomanSpriteSheet;
+        }
+
+        public static Texture2D GetMerchantRSpriteSheet()
+        {
+            return MerchantRSpriteSheet;
+        }
+
+        public static Texture2D GetMerchantPSpriteSheet()
+        {
+            return MerchantPSpriteSheet;
+        }
+
+        public static Texture2D GetMerchantGSpriteSheet()
+        {
+            return MerchantGSpriteSheet;
         }
 
         public static Texture2D GetDamagedLinkSpriteSheet()
