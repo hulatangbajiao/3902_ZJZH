@@ -12,7 +12,6 @@ namespace Game1
             this.Link = link;
             this.game = game;
             GetSprite = new DownIdleLinkSprite();
-
         }
         //link has already faced up so no code for MoveUp()
 
@@ -31,8 +30,6 @@ namespace Game1
         public void MoveDown()
         {
             Link.State = new DownMovingState(Link, game);
-
-
         }
 
 

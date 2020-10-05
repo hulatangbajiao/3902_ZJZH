@@ -13,7 +13,6 @@ namespace Game1.Controller
         private MainStage instance;
 
 
-
         public KeyboardController(MainStage instance)
         {
             this.instance = instance;
@@ -37,10 +36,8 @@ namespace Game1.Controller
             controllerMappings.Add(Keys.Z, new StandingWoodenSwordCommand(this.instance.Link));
             controllerMappings.Add(Keys.N, new StandingWoodenSwordCommand(this.instance.Link));
             
-            
-
-            
             controllerMappings.Add(Keys.E, new DamagedCommand(this.instance.Link));
+
             /*
             //Block/obstacle controls
             //TODO: need to modify, Use keys "t" and "y" to cycle between which block is currently being shown
@@ -69,7 +66,7 @@ namespace Game1.Controller
         public void Update()
         {
 
-            var keyArray = new Keys[11] { Keys.W, Keys.PageUp, Keys.A, Keys.Home, Keys.S, Keys.PageDown, Keys.D, Keys.End, Keys.Z, Keys.N, Keys.E};
+            var keyArray = new Keys[12] { Keys.W, Keys.PageUp, Keys.A, Keys.Home, Keys.S, Keys.PageDown, Keys.D, Keys.End, Keys.Z, Keys.N, Keys.E, Keys.R };
 
             if (keyArray.Contains(lastPressedKey) && Keyboard.GetState().IsKeyUp(lastPressedKey))
             {
