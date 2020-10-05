@@ -8,13 +8,25 @@ using System.Threading.Tasks;
 
 namespace Game1.Sprite_.Enemy_Sprite.OctMoving
 {
-    class UpMovingBlueOctSprite : UpMovingLinkSprite
+    class UpMovingBlueOctSprite : ISprite
     {
         private int currentFrame = 0;
         private int totalFrame = 10;
 
         public UpMovingBlueOctSprite()
         {
+        }
+        public void Update()
+        {
+            currentFrame++;
+            if (currentFrame == totalFrame)
+                currentFrame = 0;
+
+            GlobalDefinitions.OctPosition.Y = GlobalDefinitions.OctPosition.Y - (float)1; //change the y axis position of Link
+            if (GlobalDefinitions.OctPosition.Y == 0)
+            {
+                GlobalDefinitions.OctPosition.Y = (float)GlobalDefinitions.GraphicsHeight;
+            }
         }
         public override void Draw(SpriteBatch spriteBatch)
         {

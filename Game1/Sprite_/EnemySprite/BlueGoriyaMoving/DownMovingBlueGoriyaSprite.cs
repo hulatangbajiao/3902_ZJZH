@@ -6,16 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game1.Sprite_.Enemy_Sprite.OctMoving
+namespace Game1.Sprite_.Enemy_Sprite.BlueGoriyaMoving
 {
-    class DownMovingBlueMSprite : ISprite
+    class DownMovingBlueGoriyaSprite : ISprite
     {
         private int currentFrame = 0;
         private int totalFrame = 10;
-
-        public DownMovingBlueMSprite()
+        public DownMovingBlueGoriyaSprite()
         {
         }
+
         public void Update()
         {
             currentFrame++;
@@ -28,8 +28,7 @@ namespace Game1.Sprite_.Enemy_Sprite.OctMoving
                 GlobalDefinitions.OctPosition.Y = 0;
             }
         }
-
-        public override void Draw(SpriteBatch spriteBatch)
+        public  void Draw(SpriteBatch spriteBatch)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
@@ -37,17 +36,17 @@ namespace Game1.Sprite_.Enemy_Sprite.OctMoving
             if (currentFrame < 5)
             {
                 sourceRectangle = new Rectangle(0, 0, 96, 96);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.OctPosition.X, (int)GlobalDefinitions.OctPosition.Y, 96, 96);
             }
 
 
             else
             {
-                sourceRectangle = new Rectangle(96, 0, 192, 96);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 192, 96);
+                sourceRectangle = new Rectangle(100, 0, 192, 96);
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.OctPosition.X, (int)GlobalDefinitions.OctPosition.Y, 192, 96);
             }
 
-            spriteBatch.Draw(Texture2DStorage.GetDownMovingBlueMSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(Texture2DStorage.GetDownMovingBlueGoriyaSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
 
         }
     }

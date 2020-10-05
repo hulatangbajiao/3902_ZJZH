@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Game1.Sprite_.Enemy_Sprite.OctMoving
 {
-    class LeftMovingBlueMSprite : ISprite
+    class LeftMovingBlueBatSprite : ISprite
     {
         private int currentFrame = 0;
         private int totalFrame = 10;
 
-        public LeftMovingBlueMSprite()
+        public LeftMovingBlueBatSprite()
         {
 
         }
@@ -30,25 +30,25 @@ namespace Game1.Sprite_.Enemy_Sprite.OctMoving
                 GlobalDefinitions.OctPosition.X = (float)GlobalDefinitions.GraphicsWidth;
             }
         }
-        public override void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
             if (currentFrame < 5)
             {
-                sourceRectangle = new Rectangle(0, 0, 96, 96);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);//I don't understand why the width of destinationRectangle has to be like this.
+                sourceRectangle = new Rectangle(0, 0, 100, 96);
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.OctPosition.X, (int)GlobalDefinitions.OctPosition.Y, 96, 96);//I don't understand why the width of destinationRectangle has to be like this.
             }
 
 
             else
             {
-                sourceRectangle = new Rectangle(96, 0, 192, 96);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 192, 96);
+                sourceRectangle = new Rectangle(0, 96, 96, 192);
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.OctPosition.X, (int)GlobalDefinitions.OctPosition.Y, 192, 96);
             }
 
-            spriteBatch.Draw(Texture2DStorage.GetLeftMovingBlueMSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(Texture2DStorage.GetLeftMovingBlueBatSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
         }
 
     }

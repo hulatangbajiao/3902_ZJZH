@@ -71,8 +71,32 @@ namespace Game1
         private static Texture2D LeftBlueMSpriteSheet;
         private static Texture2D RightBlueMSpriteSheet;
 
+        private static Texture2D UpRedBatSpriteSheet;
+        private static Texture2D DownRedBatSpriteSheet;
+        private static Texture2D LeftRedBatSpriteSheet;
+        private static Texture2D RightRedBatSpriteSheet;
+
+        private static Texture2D UpBlueBatSpriteSheet;
+        private static Texture2D DownBlueBatSpriteSheet;
+        private static Texture2D LeftBlueBatSpriteSheet;
+        private static Texture2D RightBlueBatSpriteSheet;
+
+        private static Texture2D UpBlueGoriyaSpriteSheet;
+        private static Texture2D DownBlueGoriyaSpriteSheet;
+        private static Texture2D LeftBlueGoriyaSpriteSheet;
+        private static Texture2D RightBlueGoriyaSpriteSheet;
+
+        private static Texture2D UpRedGoriyaSpriteSheet;
+        private static Texture2D DownRedGoriyaSpriteSheet;
+        private static Texture2D LeftRedGoriyaSpriteSheet;
+        private static Texture2D RightRedGoriyaSpriteSheet;
+
+        private static Texture2D LeftAquamentusSpriteSheet;
+        private static Texture2D RightAquamentusSpriteSheet;
+
         private static Texture2D OldManSpriteSheet;
         private static Texture2D OldWomanSpriteSheet;
+        private static Texture2D FlameSpriteSheet;
 
         private static Texture2D MerchantRSpriteSheet;
         private static Texture2D MerchantPSpriteSheet;
@@ -157,11 +181,36 @@ namespace Game1
             LeftBlueMSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueM/blueMLeft");
             RightBlueMSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueM/blueMRight");
 
+            UpBlueBatSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueBat/BlueBatUp");
+            DownBlueBatSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueBat/blueMDown");
+            LeftBlueBatSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueBat/blueMLeft");
+            RightBlueBatSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueBat/blueMRight");
+
+            UpRedBatSpriteSheet = content.Load<Texture2D>("images/Enemy/RedBat/RedBatUp");
+            DownRedBatSpriteSheet = content.Load<Texture2D>("images/Enemy/RedBat/RedBatDown");
+            LeftRedBatSpriteSheet = content.Load<Texture2D>("images/Enemy/RedBat/RedBatLeft");
+            RightRedBatSpriteSheet = content.Load<Texture2D>("images/Enemy/RedBat/RedBatRight");
+
+
+            UpBlueGoriyaSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueGoriya/BlueGoriyaUp");
+            DownBlueGoriyaSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueGoriya/BlueGoriyaDown");
+            LeftBlueGoriyaSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueGoriya/BlueGoriyaLeft");
+            RightBlueGoriyaSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueGoriya/BlueGoriyaRight");
+
+            UpRedGoriyaSpriteSheet = content.Load<Texture2D>("images/Enemy/RedGoriya/RedGoriyaUp");
+            DownRedGoriyaSpriteSheet = content.Load<Texture2D>("images/Enemy/RedGoriya/RedGoriyaDown");
+            LeftRedGoriyaSpriteSheet = content.Load<Texture2D>("images/Enemy/RedGoriya/RedGoriyaLeft");
+            RightRedGoriyaSpriteSheet = content.Load<Texture2D>("images/Enemy/RedGoriya/RedGoriyaRight");
+
+            LeftAquamentusSpriteSheet = content.Load<Texture2D>("images/Enemy/Aquamentus/AquamentusLeft");
+            RightAquamentusSpriteSheet = content.Load<Texture2D>("images/Enemy/Aquamentus/AquamentusRight");
+
             OldManSpriteSheet = content.Load<Texture2D>("images/Npc/OldMan");
             OldWomanSpriteSheet = content.Load<Texture2D>("images/Npc/OldWoman");
             MerchantRSpriteSheet = content.Load<Texture2D>("images/Npc/MerchantR");
             MerchantPSpriteSheet = content.Load<Texture2D>("images/Npc/MerchantP");
             MerchantGSpriteSheet = content.Load<Texture2D>("images/Npc/MerchantG");
+            MerchantGSpriteSheet = content.Load<Texture2D>("images/Npc/Flame");
 
 
             // More Content.Load calls follow
@@ -423,6 +472,98 @@ namespace Game1
             return RightBlueMSpriteSheet;
         }
 
+        public static Texture2D GetUpMovingBlueBatSpriteSheet()
+        {
+            return UpBlueBatSpriteSheet;
+        }
+
+        public static Texture2D GetDownMovingBlueBatSpriteSheet()
+        {
+            return DownBlueBatSpriteSheet;
+        }
+
+        public static Texture2D GetLeftMovingBlueBatSpriteSheet()
+        {
+            return LeftBlueBatSpriteSheet;
+        }
+
+        public static Texture2D GetRightMovingBlueBatSpriteSheet()
+        {
+            return RightBlueBatSpriteSheet;
+        }
+
+
+        public static Texture2D GetUpMovingBlueGoriyaSpriteSheet()
+        {
+            return UpBlueGoriyaSpriteSheet;
+        }
+
+        public static Texture2D GetDownMovingBlueGoriyaSpriteSheet()
+        {
+            return DownBlueGoriyaSpriteSheet;
+        }
+
+        public static Texture2D GetLeftMovingBlueGoriyaSpriteSheet()
+        {
+            return LeftBlueGoriyaSpriteSheet;
+        }
+
+        public static Texture2D GetRightMovingBlueGoriyaSpriteSheet()
+        {
+            return RightBlueGoriyaSpriteSheet;
+        }
+
+        public static Texture2D GetUpMovingRedGoriyaSpriteSheet()
+        {
+            return UpRedGoriyaSpriteSheet;
+        }
+
+        public static Texture2D GetDownMovingRedGoriyaSpriteSheet()
+        {
+            return DownRedGoriyaSpriteSheet;
+        }
+
+        public static Texture2D GetLeftMovingRedGoriyaSpriteSheet()
+        {
+            return LeftRedGoriyaSpriteSheet;
+        }
+
+        public static Texture2D GetRightMovingRedGoriyaSpriteSheet()
+        {
+            return RightRedGoriyaSpriteSheet;
+        }
+
+        public static Texture2D GetLeftMovingAquamentusSpriteSheet()
+        {
+            return LeftAquamentusSpriteSheet;
+        }
+
+        public static Texture2D GetRightMovingAquamentusSpriteSheet()
+        {
+            return RightAquamentusSpriteSheet;
+        }
+
+
+        public static Texture2D GetUpMovingRedBatSpriteSheet()
+        {
+            return UpRedBatSpriteSheet;
+        }
+
+        public static Texture2D GetDownMovingRedBatSpriteSheet()
+        {
+            return DownRedBatSpriteSheet;
+        }
+
+        public static Texture2D GetLeftMovingRedBatSpriteSheet()
+        {
+            return LeftRedBatSpriteSheet;
+        }
+
+        public static Texture2D GetRightMovingRedBatSpriteSheet()
+        {
+            return RightRedBatSpriteSheet;
+        }
+
         public static Texture2D GetOldManSpriteSheet()
         {
             return OldManSpriteSheet;
@@ -446,6 +587,11 @@ namespace Game1
         public static Texture2D GetMerchantGSpriteSheet()
         {
             return MerchantGSpriteSheet;
+        }
+
+        public static Texture2D GetFlameSpriteSheet()
+        {
+            return FlameSpriteSheet;
         }
     }
 
