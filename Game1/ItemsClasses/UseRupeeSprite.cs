@@ -21,11 +21,11 @@ namespace Game1.ItemsClasses
         private int x = 450;
         private int y = 150;
 
-        public UseRupeeSprite(Texture2D RupeeSpriteSheet, int rows, int columns)
+        public UseRupeeSprite(Texture2D RupeeSpriteSheet)
         {
             Texture = RupeeSpriteSheet;
-            Rows = rows;
-            Columns = columns;
+            Rows = 1;
+            Columns = 2;
             currentFrame = 0;
             totalFrames = Rows * Columns;
         }

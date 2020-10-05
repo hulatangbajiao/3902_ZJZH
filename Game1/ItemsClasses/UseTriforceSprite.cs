@@ -21,11 +21,11 @@ namespace Game1.ItemsClasses
         private int x = 450;
         private int y = 150;
 
-        public UseTriforceSprite(Texture2D TriforceSpriteSheet, int rows, int columns)
+        public UseTriforceSprite(Texture2D TriforceSpriteSheet)
         {
             Texture = TriforceSpriteSheet;
-            Rows = rows;
-            Columns = columns;
+            Rows = 1;
+            Columns = 2;
             currentFrame = 0;
             totalFrames = Rows * Columns;
         }

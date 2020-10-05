@@ -21,11 +21,11 @@ namespace Game1.ItemsClasses
         private int x = 450;
         private int y = 150;
 
-        public UseHeartSprite(Texture2D HeartSpriteSheet, int rows, int columns)
+        public UseHeartSprite(Texture2D HeartSpriteSheet)
         {
             Texture = HeartSpriteSheet;
-            Rows = rows;
-            Columns = columns;
+            Rows = 1;
+            Columns = 2;
             currentFrame = 0;
             totalFrames = Rows * Columns;
         }

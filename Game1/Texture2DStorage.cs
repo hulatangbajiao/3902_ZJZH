@@ -128,13 +128,16 @@ namespace Game1
 
 
 
-	
-		/*
-	public static Texture2D GetBombSpriteSheet()
-	{
-		return BombSpriteSheet;
-	}
-	public static Texture2D GetBoomerangSpriteSheet()
+		public static Texture2D GetArrowSpriteSheet()
+		{
+			return ArrowSpriteSheet;
+		}
+
+		public static Texture2D GetBombSpriteSheet()
+		{
+			return BombSpriteSheet;
+		}
+		public static Texture2D GetBoomerangSpriteSheet()
 	{
 		return BoomerangSpriteSheet;
 	}
@@ -165,7 +168,25 @@ namespace Game1
 	{
 		return MapSpriteSheet;
 	}
-	*/
+
+
+		public static Texture2D GetFairySpriteSheet()
+		{
+			return FairySpriteSheet;
+		}
+		public static Texture2D GetHeartSpriteSheet()
+		{
+			return HeartSpriteSheet;
+		}
+		public static Texture2D GetRupeeSpriteSheet()
+		{
+			return RupeeSpriteSheet;
+		}
+		public static Texture2D GetTriforceSpriteSheet()
+		{
+			return TriforceSpriteSheet;
+		}
+
 
 
 	}
