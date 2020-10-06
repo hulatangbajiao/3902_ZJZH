@@ -1,4 +1,5 @@
 ﻿using Game1.Command;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1
 {
@@ -55,12 +56,17 @@ namespace Game1
         }
         public void UseItem()
         {
-            
+            Link.State = new UpUseItemState(Link, game);
         }
 
         public void Update()
         {
             GetSprite.Update();
+        }
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            GetSprite.Draw(spriteBatch);
+
         }
     }
 }

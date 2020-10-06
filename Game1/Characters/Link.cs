@@ -11,8 +11,10 @@ namespace Game1
     {
         
         public ILinkState State { get; set; }
+        public int Item { get; set; }
         public Link(MainStage game)
         {
+            Item = 0;
             State = new UpIdleState(this, game);
             GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
         }
@@ -53,9 +55,11 @@ namespace Game1
             State.Attack();
         }
 
-        public void UseItem()
+        public void UseItem(int Item)
         {
+            this.Item = Item;
             State.UseItem();
+            
         }
 
         public void Update()

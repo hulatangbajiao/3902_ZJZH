@@ -11,12 +11,10 @@ namespace Game1
     public class LeftWoodenSwordLinkSprite : ISprite
     {
         private int currentFrame = 0;
-        private int totalFrame = 4;
+        private int totalFrame = 12;
 
         public LeftWoodenSwordLinkSprite()
         {
-
-
         }
 
         public void Update()
@@ -31,25 +29,25 @@ namespace Game1
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
 
-            if (currentFrame == 0)
+            if (currentFrame < 3)
             {
-                sourceRectangle = new Rectangle(160, 160, 230, 230);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 100, 100);//I don't understand why the width of destinationRectangle has to be like this.
+                sourceRectangle = new Rectangle(0, 0, 114, 102);
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X-144+96, (int)GlobalDefinitions.Position.Y, 114, 102);//I don't understand why the width of destinationRectangle has to be like this.
             }
-            else if (currentFrame == 1)
+            else if (3 <= currentFrame && currentFrame < 6)
             {
-                sourceRectangle = new Rectangle(550, 150, 370, 230);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X - 90, (int)GlobalDefinitions.Position.Y, 190, 100);
+                sourceRectangle = new Rectangle(114, 0, 138, 102);
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X-138+96, (int)GlobalDefinitions.Position.Y, 138, 102);
             }
-            else if (currentFrame == 2)
+            else if (6 <= currentFrame && currentFrame < 9)
             {
-                sourceRectangle = new Rectangle(60, 690, 320, 230);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X - 50, (int)GlobalDefinitions.Position.Y, 150, 100);
+                sourceRectangle = new Rectangle(252, 0, 162, 102);
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X-162+96, (int)GlobalDefinitions.Position.Y, 162, 102);
             }
             else
             {
-                sourceRectangle = new Rectangle(650, 690, 270, 230);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X - 20, (int)GlobalDefinitions.Position.Y, 120, 100);
+                sourceRectangle = new Rectangle(414, 0, 96, 102);
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X-96+96, (int)GlobalDefinitions.Position.Y, 96, 102);
             }
 
             spriteBatch.Draw(Texture2DStorage.GetLeftWoodenSwordLinkSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);//use Texture2DStorage class to load texture2D

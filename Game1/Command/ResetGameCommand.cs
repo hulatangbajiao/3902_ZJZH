@@ -5,16 +5,16 @@ namespace Game1.Command
 {
     class ResetGameCommand : ICommand
     {
-        private Game gameInstance;
+        private MainStage game;
 
-        public ResetGameCommand(Game instance)
+        public ResetGameCommand(MainStage game)
         {
-            gameInstance = instance ?? throw new ArgumentNullException(nameof(instance));
+            this.game = game;
         }
 
         public void Execute()
         {
-
+            game.Restart();
         }
         public void Stop()
         {

@@ -1,4 +1,6 @@
-﻿using Game1.Controller;
+﻿using Game1.Block;
+using Game1.Controller;
+using Game1.ItemsClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -8,9 +10,6 @@ using System.Collections.Generic;
 
 namespace Game1
 {
-    /// <summary>
-    /// Yan Zhang
-    /// </summary>
     public class MainStage : Game
     {
         private GraphicsDeviceManager graphics;
@@ -18,7 +17,7 @@ namespace Game1
 
         private List<IController> controllers;
 
-       
+
 
 
         /// <summary>
@@ -31,8 +30,12 @@ namespace Game1
         /// A list that holds all loaded sprites.
         /// 
         /// </summary>
-
+        //Projectile Factory
+        public IProjectileFactory ProjectileFactory { get; set; }
+        public IBlockList BlockList { get; set; }
+        public IItemList ItemList { get; set; }
         public ILinkState[] Linkstates { get; }
+        public EnemyList Enemylist { get; set; }
 
         public MainStage()
         {
@@ -44,6 +47,10 @@ namespace Game1
             graphics.PreferredBackBufferHeight = GlobalDefinitions.GraphicsHeight;
 
             this.Link = new Link(this);
+            this.ProjectileFactory = new ProjectileFactory(this);
+            this.BlockList = new BlockList();
+            this.ItemList = new ItemList();
+            this.Enemylist = new EnemyList(this);
 
 
             controllers = new List<IController>
@@ -65,12 +72,13 @@ namespace Game1
             this.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 100.0f);
             this.IsFixedTimeStep = false;
             graphics.SynchronizeWithVerticalRetrace = false;
+            this.ProjectileFactory.Initialize();
 
 
             // Create instances and register commands
             base.Initialize();
         }
-
+        
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
@@ -105,8 +113,11 @@ namespace Game1
             {
                 controller.Update();
             }
-
+            this.ProjectileFactory.Update();
+            this.BlockList.Update(this);
+            this.ItemList.Update(this);
             Link.Update();
+            this.Enemylist.Update(this);
             base.Update(gameTime);
         }
 
@@ -117,12 +128,26 @@ namespace Game1
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            this.ItemList.Draw(spriteBatch);
             spriteBatch.Begin();
-
-            Link.State.GetSprite.Draw(spriteBatch);
+            this.ProjectileFactory.Draw(spriteBatch);
+            this.BlockList.Draw(spriteBatch);
+            this.Enemylist.Draw(spriteBatch);
+            Link.State.Draw(spriteBatch);
 
             spriteBatch.End();
             base.Draw(gameTime);
+        }
+
+        public void Restart()
+        {
+            this.Link.State = new UpIdleState(this.Link, this);
+            GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
+            this.ProjectileFactory = new ProjectileFactory(this);
+            this.BlockList = new BlockList();
+            this.ItemList = new ItemList();
+            this.Enemylist = new EnemyList(this);
+            Initialize();
         }
 
         
