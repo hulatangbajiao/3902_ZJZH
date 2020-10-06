@@ -112,8 +112,8 @@
     <Compile Include="Sprite_\EnemySprite\BlueGoriyaMoving\LeftMovingBlueGoriyaSprite.cs" />
     <Compile Include="Sprite_\EnemySprite\BlueGoriyaMoving\RightMovingBlueGoriyaSprite.cs" />
     <Compile Include="Sprite_\EnemySprite\BlueGoriyaMoving\UpMovingBlueGoriyaSprite.cs" />
-    <Compile Include="Sprite_\EnemySprite\AquamentusMoving\LeftMovingRedGoriyaSprite.cs" />
-    <Compile Include="Sprite_\EnemySprite\AquamentusMoving\RightMovingRedGoriyaSprite.cs" />
+    <Compile Include="Sprite_\EnemySprite\AquamentusMoving\LeftMovingAquamentusSprite.cs" />
+    <Compile Include="Sprite_\EnemySprite\AquamentusMoving\RightMovingAquamentusSprite.cs" />
     <Compile Include="Sprite_\EnemySprite\RedGoriyaMoving\DownMovingRedGoriyaSprite.cs" />
     <Compile Include="Sprite_\EnemySprite\RedGoriyaMoving\LeftMovingRedGoriyaSprite.cs" />
     <Compile Include="Sprite_\EnemySprite\RedGoriyaMoving\RightMovingRedGoriyaSprite.cs" />

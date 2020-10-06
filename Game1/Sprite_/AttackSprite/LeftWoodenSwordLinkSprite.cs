@@ -32,7 +32,7 @@ namespace Game1
             if (currentFrame < 3)
             {
                 sourceRectangle = new Rectangle(0, 0, 114, 102);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X-144+96, (int)GlobalDefinitions.Position.Y, 114, 102);//I don't understand why the width of destinationRectangle has to be like this.
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X-144+96, (int)GlobalDefinitions.Position.Y, 114, 102); 
             }
             else if (3 <= currentFrame && currentFrame < 6)
             {

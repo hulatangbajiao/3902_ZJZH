@@ -38,7 +38,7 @@ namespace Game1
 
 
             sourceRectangle = new Rectangle(currentFrame * Texture.Width / 3, 0, Texture.Width/3, Texture.Height);
-            destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, 40, 40);//I don't understand why the width of destinationRectangle has to be like this.
+            destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, 40, 40); 
             
 
 
