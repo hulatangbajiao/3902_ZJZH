@@ -12,18 +12,18 @@ namespace Game1
     {
         private int currentFrame = 0;
         private int totalFrame = 12;
+        private ILink Link;
 
-        public UpWoodenSwordLinkSprite()
+        public UpWoodenSwordLinkSprite(MainStage game)
         {
-
+            Link = game.Link;
 
         }
 
         public void Update()
         {
             currentFrame++;
-            if (currentFrame == totalFrame)
-                currentFrame = 0;
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -34,7 +34,7 @@ namespace Game1
             if (currentFrame < 3)
             {
                 sourceRectangle = new Rectangle(0, 0, 96, 162);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y-162+96, 96, 162);//I don't understand why the width of destinationRectangle has to be like this.
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y - 162 + 96, 96, 162);   
             }
             else if (3 <= currentFrame && currentFrame < 6)
             {
@@ -53,6 +53,10 @@ namespace Game1
             }
 
             spriteBatch.Draw(Texture2DStorage.GetUpWoodenSwordLinkSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);//use Texture2DStorage class to load texture2D
+            if (currentFrame == totalFrame)
+            {
+                Link.State.Stop();
+            }
         }
     }
 }

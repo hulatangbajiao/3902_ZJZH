@@ -42,7 +42,7 @@ namespace Game1.Sprite_.Enemy_Sprite.OctMoving
 
             else
             {
-                sourceRectangle = new Rectangle(100, 0, 192, 96);
+                sourceRectangle = new Rectangle(96, 0, 192, 96);
                 destinationRectangle = new Rectangle((int)GlobalDefinitions.OctPosition.X, (int)GlobalDefinitions.OctPosition.Y, 192, 96);
             }
 

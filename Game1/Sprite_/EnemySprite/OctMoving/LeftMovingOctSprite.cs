@@ -38,7 +38,7 @@ namespace Game1.Sprite_.Enemy_Sprite.OctMoving
             if (currentFrame < 5)
             {
                 sourceRectangle = new Rectangle(0, 0, 100, 96);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.OctPosition.X, (int)GlobalDefinitions.OctPosition.Y, 96, 96);//I don't understand why the width of destinationRectangle has to be like this.
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.OctPosition.X, (int)GlobalDefinitions.OctPosition.Y, 96, 96);   
             }
 
 

@@ -30,6 +30,13 @@ namespace Game1
             enemyList.Add(new MerchantP());
             enemyList.Add(new MerchantR());
             enemyList.Add(new MerchantG());
+            enemyList.Add(new BlueOct(game));
+            enemyList.Add(new BlueM(game));
+            enemyList.Add(new BlueGoriya(game));
+            enemyList.Add(new BlueBat(game));
+            enemyList.Add(new RedGoriya(game));
+            enemyList.Add(new RedBat(game));
+
 
 
         }

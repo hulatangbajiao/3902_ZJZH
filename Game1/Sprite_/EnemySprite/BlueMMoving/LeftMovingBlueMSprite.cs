@@ -15,7 +15,6 @@ namespace Game1.Sprite_.Enemy_Sprite.OctMoving
 
         public LeftMovingBlueMSprite()
         {
-
         }
 
         public void Update()
@@ -24,13 +23,13 @@ namespace Game1.Sprite_.Enemy_Sprite.OctMoving
             if (currentFrame == totalFrame)
                 currentFrame = 0;
 
-            GlobalDefinitions.OctPosition.X = GlobalDefinitions.OctPosition.X - (float)1; //change the y axis position of Link
-            if (GlobalDefinitions.OctPosition.X == 0)
+            GlobalDefinitions.BlueMPosition.X = GlobalDefinitions.BlueMPosition.X - (float)1; //change the y axis position of Link
+            if (GlobalDefinitions.BlueMPosition.X == GlobalDefinitions.GraphicsHeight)
             {
-                GlobalDefinitions.OctPosition.X = (float)GlobalDefinitions.GraphicsWidth;
+                GlobalDefinitions.BlueMPosition.X = 0;
             }
         }
-        public override void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
@@ -38,18 +37,18 @@ namespace Game1.Sprite_.Enemy_Sprite.OctMoving
             if (currentFrame < 5)
             {
                 sourceRectangle = new Rectangle(0, 0, 96, 96);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);//I don't understand why the width of destinationRectangle has to be like this.
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.BlueMPosition.X, (int)GlobalDefinitions.BlueMPosition.Y, 96, 96);
             }
 
 
             else
             {
-                sourceRectangle = new Rectangle(96, 0, 192, 96);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 192, 96);
+                sourceRectangle = new Rectangle(100, 0, 192, 96);
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.BlueMPosition.X, (int)GlobalDefinitions.BlueMPosition.Y, 192, 96);
             }
 
             spriteBatch.Draw(Texture2DStorage.GetLeftMovingBlueMSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
-        }
 
+        }
     }
 }

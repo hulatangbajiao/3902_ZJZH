@@ -37,7 +37,7 @@ namespace Game1
 
         public void MoveRight()
         {
-            Oct.State = new OctUpMovingState(Oct, game);
+            Oct.State = new OctRightMovingState(Oct, game);
         }
 
         public void Update()

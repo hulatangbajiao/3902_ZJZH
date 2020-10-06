@@ -12,7 +12,7 @@ namespace Game1
         {
             this.Link = link;
             this.game = game;
-            GetSprite = new DownWoodenSwordLinkSprite();
+            GetSprite = new DownWoodenSwordLinkSprite(game);
 
         }
         //link has already faced up so no code for MoveUp()

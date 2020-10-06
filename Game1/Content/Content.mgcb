@@ -97,7 +97,7 @@
 /processorParam:TextureFormat=Color
 /build:images/DownWoodenSword.png
 
-#begin images/Enemy/Aquamentus/AquamentusLeft.png
+#begin images/Enemy/BlueBat/BlueBatDownt.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -107,79 +107,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:images/Enemy/Aquamentus/AquamentusLeft.png
-
-#begin images/Enemy/Aquamentus/AquamentusRight.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:images/Enemy/Aquamentus/AquamentusRight.png
-
-#begin images/Enemy/Aquamentus/DragonFireballsB.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:images/Enemy/Aquamentus/DragonFireballsB.png
-
-#begin images/Enemy/Aquamentus/DragonFireballsG.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:images/Enemy/Aquamentus/DragonFireballsG.png
-
-#begin images/Enemy/Aquamentus/DragonFireballsG2.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:images/Enemy/Aquamentus/DragonFireballsG2.png
-
-#begin images/Enemy/Aquamentus/DragoniFreballsR.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:images/Enemy/Aquamentus/DragoniFreballsR.png
-
-#begin images/Enemy/BlueBat/BlueBatDown.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:images/Enemy/BlueBat/BlueBatDown.png
+/build:images/Enemy/BlueBat/BlueBatDownt.png;images/Enemy/BlueBat/BlueBatDown.png
 
 #begin images/Enemy/BlueBat/BlueBatLeft.png
 /importer:TextureImporter
@@ -455,7 +383,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:images/Enemy/RedBat/RedBatDownt.png
+/build:images/Enemy/RedBat/RedBatDownt.png;images/Enemy/RedBat/RedBatDown.png
 
 #begin images/Enemy/RedBat/RedBatLeft.png
 /importer:TextureImporter
@@ -744,18 +672,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:images/LinkUseItem.png
-
-#begin images/Npc/flame.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:images/Npc/flame.png
 
 #begin images/Npc/MerchantG.png
 /importer:TextureImporter

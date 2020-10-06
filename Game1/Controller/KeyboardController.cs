@@ -12,10 +12,12 @@ namespace Game1.Controller
         private Dictionary<Keys, ICommand> controllerMappings;
         private MainStage instance;
 
-
+        static KeyboardState currentKeyState;
+        static KeyboardState previousKeyState;
 
         public KeyboardController(MainStage instance)
         {
+            lastPressedKey = Keys.Q;
             this.instance = instance;
             controllerMappings = new Dictionary<Keys, ICommand>();
 
@@ -26,13 +28,13 @@ namespace Game1.Controller
             // Link
             //Arrow and "wasd" keys should move Link and change his facing direction.
             controllerMappings.Add(Keys.W, new UpMovingCommand(this.instance.Link));
-            controllerMappings.Add(Keys.PageUp, new UpMovingCommand(this.instance.Link));
+            controllerMappings.Add(Keys.Up, new UpMovingCommand(this.instance.Link));
             controllerMappings.Add(Keys.A, new LeftMovingCommand(this.instance.Link));
-            controllerMappings.Add(Keys.Home, new LeftMovingCommand(this.instance.Link));
+            controllerMappings.Add(Keys.Left, new LeftMovingCommand(this.instance.Link));
             controllerMappings.Add(Keys.S, new DownMovingCommand(this.instance.Link));
-            controllerMappings.Add(Keys.PageDown, new DownMovingCommand(this.instance.Link));
+            controllerMappings.Add(Keys.Down, new DownMovingCommand(this.instance.Link));
             controllerMappings.Add(Keys.D, new RightMovingCommand(this.instance.Link));
-            controllerMappings.Add(Keys.End, new RightMovingCommand(this.instance.Link));
+            controllerMappings.Add(Keys.Right, new RightMovingCommand(this.instance.Link));
 
             controllerMappings.Add(Keys.Z, new StandingWoodenSwordCommand(this.instance.Link));
             controllerMappings.Add(Keys.N, new StandingWoodenSwordCommand(this.instance.Link));
@@ -71,20 +73,55 @@ namespace Game1.Controller
         public void Update()
         {
 
-            var keyArray = new Keys[25] { Keys.W, Keys.PageUp, Keys.A, Keys.Home, Keys.S, Keys.PageDown, Keys.D, Keys.End, Keys.Z, Keys.N, Keys.E, Keys.NumPad1, Keys.D1, Keys.NumPad2, Keys.D2, Keys.NumPad3, Keys.D3, Keys.Y, Keys.T, Keys.U, Keys.I, Keys.Q, Keys.R, Keys.O, Keys.P };
+            var keyArray = new Keys[25] { Keys.W, Keys.Up, Keys.A, Keys.Left, Keys.S, Keys.Down, Keys.D, Keys.Right, Keys.Z, Keys.N, Keys.E, Keys.NumPad1, Keys.D1, Keys.NumPad2, Keys.D2, Keys.NumPad3, Keys.D3, Keys.Y, Keys.T, Keys.U, Keys.I, Keys.Q, Keys.R, Keys.O, Keys.P };
+            var OnceKeyArray = new Keys[15] { Keys.E, Keys.NumPad1, Keys.D1, Keys.NumPad2, Keys.D2, Keys.NumPad3, Keys.D3, Keys.Y, Keys.T, Keys.U, Keys.I, Keys.Q, Keys.R, Keys.O, Keys.P };
+            var AttackArray = new Keys[2] { Keys.Z, Keys.N };
+            previousKeyState = currentKeyState;
+            currentKeyState = Keyboard.GetState();
 
-
-            if (keyArray.Contains(lastPressedKey) && Keyboard.GetState().IsKeyUp(lastPressedKey))
+            if (OnceKeyArray.Contains<Keys>(lastPressedKey))
             {
                 controllerMappings[lastPressedKey]?.Stop();
             }
+            else if (AttackArray.Contains<Keys>(lastPressedKey))
+            {
+            }
+            else if (keyArray.Contains<Keys>(lastPressedKey) && (!currentKeyState.IsKeyDown(lastPressedKey)))
+            {
+                controllerMappings[lastPressedKey]?.Stop();
+            }
+
             foreach (Keys key in keyArray)
             {
                 //if the keys in the keyArray are pressed, execute corresponding command
-                if (Keyboard.GetState().IsKeyDown(key))
+
+                if (OnceKeyArray.Contains<Keys>(key))
                 {
-                    controllerMappings[key]?.Execute();
-                    lastPressedKey = key;
+                    if (currentKeyState.IsKeyDown(key) && !previousKeyState.IsKeyDown(key))
+                    {
+                        controllerMappings[key]?.Execute();
+                        lastPressedKey = key;
+
+                    }
+
+                }
+                else if (AttackArray.Contains<Keys>(key))
+                {
+                    if (currentKeyState.IsKeyDown(key) && !previousKeyState.IsKeyDown(key))
+                    {
+                        controllerMappings[key]?.Execute();
+                        lastPressedKey = key;
+
+                    }
+                }
+                else if (keyArray.Contains<Keys>(key))
+                {
+                    if (currentKeyState.IsKeyDown(key))
+
+                    {
+                        controllerMappings[key]?.Execute();
+                        lastPressedKey = key;
+                    }
                 }
             }
         }

@@ -43,7 +43,7 @@ namespace Game1.Sprite_.Enemy_Sprite.OctMoving
             else
             {
                 sourceRectangle = new Rectangle(0, 96, 96, 192);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.OctPosition.X, (int)GlobalDefinitions.OctPosition.Y, 192, 97);
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.OctPosition.X, (int)GlobalDefinitions.OctPosition.Y, 96, 192);
             }
             spriteBatch.Draw(Texture2DStorage.GetRightMovingRedBatSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
         }

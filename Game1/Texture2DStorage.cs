@@ -91,12 +91,8 @@ namespace Game1
         private static Texture2D LeftRedGoriyaSpriteSheet;
         private static Texture2D RightRedGoriyaSpriteSheet;
 
-        private static Texture2D LeftAquamentusSpriteSheet;
-        private static Texture2D RightAquamentusSpriteSheet;
-
         private static Texture2D OldManSpriteSheet;
         private static Texture2D OldWomanSpriteSheet;
-        private static Texture2D FlameSpriteSheet;
 
         private static Texture2D MerchantRSpriteSheet;
         private static Texture2D MerchantPSpriteSheet;
@@ -182,9 +178,9 @@ namespace Game1
             RightBlueMSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueM/blueMRight");
 
             UpBlueBatSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueBat/BlueBatUp");
-            DownBlueBatSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueBat/blueMDown");
-            LeftBlueBatSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueBat/blueMLeft");
-            RightBlueBatSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueBat/blueMRight");
+            DownBlueBatSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueBat/BlueBatDown");
+            LeftBlueBatSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueBat/BlueBatLeft");
+            RightBlueBatSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueBat/BlueBatRight");
 
             UpRedBatSpriteSheet = content.Load<Texture2D>("images/Enemy/RedBat/RedBatUp");
             DownRedBatSpriteSheet = content.Load<Texture2D>("images/Enemy/RedBat/RedBatDown");
@@ -202,15 +198,11 @@ namespace Game1
             LeftRedGoriyaSpriteSheet = content.Load<Texture2D>("images/Enemy/RedGoriya/RedGoriyaLeft");
             RightRedGoriyaSpriteSheet = content.Load<Texture2D>("images/Enemy/RedGoriya/RedGoriyaRight");
 
-            LeftAquamentusSpriteSheet = content.Load<Texture2D>("images/Enemy/Aquamentus/AquamentusLeft");
-            RightAquamentusSpriteSheet = content.Load<Texture2D>("images/Enemy/Aquamentus/AquamentusRight");
-
             OldManSpriteSheet = content.Load<Texture2D>("images/Npc/OldMan");
             OldWomanSpriteSheet = content.Load<Texture2D>("images/Npc/OldWoman");
             MerchantRSpriteSheet = content.Load<Texture2D>("images/Npc/MerchantR");
             MerchantPSpriteSheet = content.Load<Texture2D>("images/Npc/MerchantP");
             MerchantGSpriteSheet = content.Load<Texture2D>("images/Npc/MerchantG");
-            MerchantGSpriteSheet = content.Load<Texture2D>("images/Npc/Flame");
 
 
             // More Content.Load calls follow
@@ -533,16 +525,6 @@ namespace Game1
             return RightRedGoriyaSpriteSheet;
         }
 
-        public static Texture2D GetLeftMovingAquamentusSpriteSheet()
-        {
-            return LeftAquamentusSpriteSheet;
-        }
-
-        public static Texture2D GetRightMovingAquamentusSpriteSheet()
-        {
-            return RightAquamentusSpriteSheet;
-        }
-
 
         public static Texture2D GetUpMovingRedBatSpriteSheet()
         {
@@ -587,11 +569,6 @@ namespace Game1
         public static Texture2D GetMerchantGSpriteSheet()
         {
             return MerchantGSpriteSheet;
-        }
-
-        public static Texture2D GetFlameSpriteSheet()
-        {
-            return FlameSpriteSheet;
         }
     }
 
