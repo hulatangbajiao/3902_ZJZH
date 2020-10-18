@@ -1,4 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Game1.Collision;
+using Game1.Collision;
+using Game1.Interfaces;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,20 +12,47 @@ namespace Game1.Detection
 {
     class EnemyBlockDetection : IDetection
     {
-        private IEnemy enemy;
-        private IBlock block;
-        public EnemyBlockDetection()
+        public IEnemyList enemyList;
+        public IBlockList blockList;
+        public EnemyBlockDetection(IEnemyList enemyList, IBlockList blockList)
         {
-            this.enemy = enemy;
-            this.block = block;
+            this.enemyList = enemyList;
+            this.blockList = blockList;
         }
         public void update()
         {
-            Rectangle ifCollision = new Rectangle();
-            ifCollision = Rectangle.Intersect(enemy.rectangle, block.rectangle);
-            if (!ifCollision.IsEmpty)
+            
+            foreach (IEnemy enemy in enemyList)
             {
-                new EnemyBlockCollisionHandler(enemy, block, side);
+                foreach (IBlock block in blockList)
+                {
+                    Rectangle ifCollision = new Rectangle();
+                    ifCollision = Rectangle.Intersect(enemy.rectangle, block.rectangle);
+                    if (!ifCollision.IsEmpty)
+                    {
+                        ICollision side = new NullCollision(ifCollision);
+                        if (ifCollision.Height > ifCollision.Width && enemy.X < block.X)
+                        {
+                            side = new LeftCollision(ifCollision);
+                            new EnemyBlockCollisionHandler(enemy, block, side).Execute();
+                        } else if (ifCollision.Height > ifCollision.Width && enemy.X > block.X)
+                        {
+                            side = new RightCollision(ifCollision);
+                            new EnemyBlockCollisionHandler(enemy, block, side).Execute();
+                        } else if (ifCollision.Height < ifCollision.Width && enemy.Y > block.Y)
+                        {
+                            side = new TopCollision(ifCollision);
+                            new EnemyBlockCollisionHandler(enemy, block, side).Execute();
+                        } else if (ifCollision.Height < ifCollision.Width && enemy.Y < block.Y)
+                        {
+                            side = new BottomCollision(ifCollision);
+                            new EnemyBlockCollisionHandler(enemy, block, side).Execute();
+                        } else
+                        {
+                            new EnemyBlockCollisionHandler(enemy, block, side).Execute();
+                        }
+                    }
+                }
             }
         }
     }

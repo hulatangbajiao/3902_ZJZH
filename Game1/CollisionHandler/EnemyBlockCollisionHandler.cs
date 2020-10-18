@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game1.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +11,10 @@ namespace Game1.Collision
     {
         
         private ICollision side;
+        private IEnemy enemy;
+        private IBlock block;
 
-        public LinkEnemyCollisionHandler(IEnemy enemy, IBlock block, ICollison side)
+        public EnemyBlockCollisionHandler(IEnemy enemy, IBlock block, ICollision side)
         {
             this.enemy = enemy;
             this.block = block;
@@ -20,11 +23,20 @@ namespace Game1.Collision
 
         public void Execute()
         {
-            if (side == left)
+            String s = side.Getside();
+            if (side.Equals("Left"))
             {
-                enemy.State = new EnemyMovingRight();
-            }
-
+                enemy.moveLeft();
+            } else if (side.Equals("Right"))
+            {
+                enemy.moveRight();
+            } else if (side.Equals("Bottom"))
+            {
+                enemy.movedown();
+            } else if (side.Equals("Top"))
+            {
+                enemy.moveUp();
+            } 
         }
     }
 }

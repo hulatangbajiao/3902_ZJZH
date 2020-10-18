@@ -8,6 +8,6 @@ namespace Game1.Collision
 {
     public interface ICollision
     {
-        void side();
+        String Getside();
     }
 }

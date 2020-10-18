@@ -45,6 +45,11 @@
     <Compile Include="CollisionHandler\EnemyBlockCollisionHandler.cs" />
     <Compile Include="CollisionHandler\LinkEnemyCollisionHandler.cs" />
     <Compile Include="CollisionHandler\LinkBlockCollisionHandler.cs" />
+    <Compile Include="Collision\BottomCollision.cs" />
+    <Compile Include="Collision\NullCollision.cs" />
+    <Compile Include="Collision\TopCollision.cs" />
+    <Compile Include="Collision\RightCollision.cs" />
+    <Compile Include="Collision\LeftCollision.cs" />
     <Compile Include="Collision\ICollision.cs" />
     <Compile Include="Command\DamagedCommand.cs" />
     <Compile Include="Command\EnemyCommand\PreviousEnemyCommand.cs" />
