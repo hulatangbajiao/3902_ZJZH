@@ -39,7 +39,7 @@ namespace Game1.Sprite_
             if (currentFrame < 5)
             {
                 sourceRectangle = new Rectangle(0, 0, 96, 96);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96); 
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);
             }
 
 

@@ -218,6 +218,7 @@
 /build:images/Enemy/Aquamentus/DragoniFreballsR.png
 
 #begin images/Enemy/BlueBat/BlueBatDown.png
+#begin images/Enemy/Octorok/OctorokDown.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -230,6 +231,9 @@
 /build:images/Enemy/BlueBat/BlueBatDown.png
 
 #begin images/Enemy/BlueBat/BlueBatLeft.png
+/build:images/Enemy/Octorok/OctorokDown.png
+
+#begin images/Enemy/Octorok/OctorokLeft.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -242,6 +246,9 @@
 /build:images/Enemy/BlueBat/BlueBatLeft.png
 
 #begin images/Enemy/BlueBat/BlueBatRight.png
+/build:images/Enemy/Octorok/OctorokLeft.png
+
+#begin images/Enemy/Octorok/OctorokRight.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -254,6 +261,9 @@
 /build:images/Enemy/BlueBat/BlueBatRight.png
 
 #begin images/Enemy/BlueBat/BlueBatUp.png
+/build:images/Enemy/Octorok/OctorokRight.png
+
+#begin images/Enemy/Octorok/OctorokUp.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -326,6 +336,9 @@
 /build:images/Enemy/BlueM/ArrH.png
 
 #begin images/Enemy/BlueM/ArrVer.png
+/build:images/Enemy/Octorok/OctorokUp.png
+
+#begin images/LeftIdle.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -338,6 +351,9 @@
 /build:images/Enemy/BlueM/ArrVer.png
 
 #begin images/Enemy/BlueM/blueMDown.png
+/build:images/LeftIdle.png
+
+#begin images/LeftMoving.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -350,6 +366,9 @@
 /build:images/Enemy/BlueM/blueMDown.png
 
 #begin images/Enemy/BlueM/blueMleft.png
+/build:images/LeftMoving.png
+
+#begin images/LeftWoodenSword.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -374,6 +393,9 @@
 /build:images/Enemy/BlueM/blueMRight.png
 
 #begin images/Enemy/BlueM/blueMUp.png
+/build:images/LeftWoodenSword.png
+
+#begin Images/LinkDeathHurt/LinkHurt.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -816,6 +838,7 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:images/LeftWoodenSword.png
+/build:Images/LinkDeathHurt/LinkHurt.png
 
 #begin images/LinkUseItem.png
 /importer:TextureImporter
@@ -866,6 +889,7 @@
 /build:images/Npc/MerchantP.png
 
 #begin images/Npc/MerchantR.png
+#begin images/Npc/GP.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -876,6 +900,7 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:images/Npc/MerchantR.png
+/build:images/Npc/GP.png
 
 #begin images/Npc/OldMan.png
 /importer:TextureImporter
@@ -914,6 +939,7 @@
 /build:images/projectile/arrow/DownArrow.png
 
 #begin images/projectile/arrow/LeftArrow.png
+#begin Images/PickUpItem/PickUpItem.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -926,6 +952,9 @@
 /build:images/projectile/arrow/LeftArrow.png
 
 #begin images/projectile/arrow/RightArrow.png
+/build:Images/PickUpItem/PickUpItem.png
+
+#begin images/RIghtIdle.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -938,6 +967,9 @@
 /build:images/projectile/arrow/RightArrow.png
 
 #begin images/projectile/arrow/UpArrow.png
+/build:images/RIghtIdle.png;images/RightIdle.png
+
+#begin images/RIghtMoving.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -950,6 +982,9 @@
 /build:images/projectile/arrow/UpArrow.png
 
 #begin images/projectile/bomb.png
+/build:images/RIghtMoving.png;images/RightMoving.png
+
+#begin images/RightWoodenSword.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -962,6 +997,9 @@
 /build:images/projectile/bomb.png
 
 #begin images/projectile/Boomerang.png
+/build:images/RightWoodenSword.png
+
+#begin Images/Stand/StandFaceBack.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -974,6 +1012,9 @@
 /build:images/projectile/Boomerang.png
 
 #begin images/projectile/flame.png
+/build:Images/Stand/StandFaceBack.png
+
+#begin Images/Stand/StandFaceFront.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -986,6 +1027,9 @@
 /build:images/projectile/flame.png
 
 #begin images/RIghtIdle.png
+/build:Images/Stand/StandFaceFront.png
+
+#begin Images/Stand/StandFaceLeft.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -998,6 +1042,9 @@
 /build:images/RIghtIdle.png
 
 #begin images/RIghtMoving.png
+/build:Images/Stand/StandFaceLeft.png
+
+#begin Images/Stand/StandFaceRight.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1010,6 +1057,9 @@
 /build:images/RIghtMoving.png
 
 #begin images/RightWoodenSword.png
+/build:Images/Stand/StandFaceRight.png
+
+#begin images/UpIdle.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -1022,15 +1072,6 @@
 /build:images/RightWoodenSword.png
 
 #begin images/UpIdle.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
 /build:images/UpIdle.png
 
 #begin images/UpMoving.png
@@ -1043,7 +1084,23 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
+/build:images/UpIdle.png
+
+#begin images/UpMoving.png
 /build:images/UpMoving.png
+
+#begin images/UpWoodenSword.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/UpMoving.png
+/build:images/UpWoodenSword.png
 
 #begin images/UpWoodenSword.png
 /importer:TextureImporter
