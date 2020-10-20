@@ -1,5 +1,4 @@
 ﻿using Game1.Collision;
-using Game1.Collision;
 using Game1.Interfaces;
 using Microsoft.Xna.Framework;
 using System;
@@ -14,6 +13,7 @@ namespace Game1.Detection
     {
         public IEnemyList enemyList;
         public IBlockList blockList;
+
         public EnemyBlockDetection(IEnemyList enemyList, IBlockList blockList)
         {
             this.enemyList = enemyList;
@@ -21,16 +21,15 @@ namespace Game1.Detection
         }
         public void update()
         {
-            
             foreach (IEnemy enemy in enemyList)
             {
-                foreach (IBlock block in blockList)
+                foreach (IBlock block in blockList.blockList)
                 {
                     Rectangle ifCollision = new Rectangle();
                     ifCollision = Rectangle.Intersect(enemy.rectangle, block.rectangle);
+                    ICollision side = new NullCollision(ifCollision);
                     if (!ifCollision.IsEmpty)
                     {
-                        ICollision side = new NullCollision(ifCollision);
                         if (ifCollision.Height > ifCollision.Width && enemy.X < block.X)
                         {
                             side = new LeftCollision(ifCollision);
