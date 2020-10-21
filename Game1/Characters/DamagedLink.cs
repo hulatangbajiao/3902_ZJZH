@@ -78,15 +78,6 @@ namespace Game1
         public void UseItem(int Item)
         {
         }
-
-        public void Reset()
-        {
-            // Not required yet...?
-        }
-
-        public void Reset()
-        {
-            // Not required yet...?
-        }
+        
     }
 }
