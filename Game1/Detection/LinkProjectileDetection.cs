@@ -14,7 +14,6 @@ namespace Game1.Detection
         private ILink link;
         private IProjectile projectile;
 
-
         public LinkProjectileDetection(ILink link, IProjectile projectile)
         {
             this.link = link;
@@ -23,27 +22,29 @@ namespace Game1.Detection
         }
         public void update()
         {
+            Rectangle LinkRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);
+            Rectangle projectileRectangle = new Rectangle((int)GlobalDefinitions.OctPosition.X, (int)GlobalDefinitions.OctPosition.Y, 96, 96);
             Rectangle ifCollision = new Rectangle();
-            ifCollision = Rectangle.Intersect(link.rectangle, projectile.rectangle);
+            ifCollision = Rectangle.Intersect(LinkRectangle, projectileRectangle);
             ICollision side = new NullCollision(ifCollision);
             if (!ifCollision.IsEmpty)
             {
-                if (ifCollision.Height > ifCollision.Width && link.X < projectile.X)
+                if (ifCollision.Height > ifCollision.Width && LinkRectangle.X < projectileRectangle.X)
                 {
                     side = new LeftCollision(ifCollision);
                     new LinkProjectileCollisonHandler(link, projectile, side).Execute();
                 }
-                else if (ifCollision.Height > ifCollision.Width && link.X > projectile.X)
+                else if (ifCollision.Height > ifCollision.Width && LinkRectangle.X > projectileRectangle.X)
                 {
                     side = new RightCollision(ifCollision);
                     new LinkProjectileCollisonHandler(link, projectile, side).Execute();
                 }
-                else if (ifCollision.Height < ifCollision.Width && link.Y > projectile.Y)
+                else if (ifCollision.Height < ifCollision.Width && LinkRectangle.Y > projectileRectangle.Y)
                 {
                     side = new TopCollision(ifCollision);
                     new LinkProjectileCollisonHandler(link, projectile, side).Execute();
                 }
-                else if (ifCollision.Height < ifCollision.Width && link.Y < projectile.Y)
+                else if (ifCollision.Height < ifCollision.Width && LinkRectangle.Y < projectileRectangle.Y)
                 {
                     side = new BottomCollision(ifCollision);
                     new LinkProjectileCollisonHandler(link, projectile, side).Execute();
@@ -56,5 +57,4 @@ namespace Game1.Detection
         }
     }
 }
-    }
-}
+ 

@@ -37,6 +37,7 @@ namespace Game1
         public IItemList ItemList { get; set; }
         public ILinkState[] Linkstates { get; }
         public EnemyList Enemylist { get; set; }
+        public IDetection LinkProjectileDetection { get; set; }
 
         public MainStage()
         {
@@ -52,7 +53,7 @@ namespace Game1
             this.BlockList = new BlockList();
             this.ItemList = new ItemList();
             this.Enemylist = new EnemyList(this);
-
+            this.LinkProjectileDetection = new LinkProjectileDetection(this.Link, );
 
             controllers = new List<IController>
             {
@@ -119,6 +120,7 @@ namespace Game1
             this.ItemList.Update(this);
             Link.Update();
             this.Enemylist.Update(this);
+            this.LinkProjectileDetection.update();
             base.Update(gameTime);
         }
 

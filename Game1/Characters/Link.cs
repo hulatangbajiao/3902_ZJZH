@@ -29,6 +29,7 @@ namespace Game1
             State.MoveUp();
         }
 
+
         public void MoveDown()
         {
             State.MoveDown();
@@ -66,10 +67,6 @@ namespace Game1
             State.Update();
         }
 
-        public void Reset()
-        {
-            State = new UpIdleState(this, _game);
-            GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
-        }
+
     }
 }
