@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Block\BlockList.cs" />
+    <Compile Include="CollisionHandler\LinkProjectileCollisonHandler.cs" />
     <Compile Include="CollisionHandler\EnemyBlockCollisionHandler.cs" />
     <Compile Include="CollisionHandler\LinkEnemyCollisionHandler.cs" />
     <Compile Include="CollisionHandler\LinkBlockCollisionHandler.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Command\UseBombCommand.cs" />
     <Compile Include="Command\BlockCommand\PreviousBlockCommand.cs" />
     <Compile Include="Command\UseBoomerCommand.cs" />
+    <Compile Include="Detection\LinkProjectileDetection.cs" />
     <Compile Include="Detection\EnemyBlockDetection.cs" />
     <Compile Include="Detection\LinkBlockDetection.cs" />
     <Compile Include="Detection\LinkEnemyDetection.cs" />
