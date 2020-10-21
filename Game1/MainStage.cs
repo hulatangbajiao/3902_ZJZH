@@ -52,11 +52,18 @@ namespace Game1
             this.ItemList = new ItemList();
             this.Enemylist = new EnemyList(this);
 
-
             controllers = new List<IController>
             {
                 new KeyboardController(this)
             };
+        }
+
+        /// <summary>
+        /// Reset all sprites to a known state
+        /// </summary>
+        public void ResetState()
+        {
+            Link.Reset();
         }
 
         /// <summary>
@@ -74,11 +81,10 @@ namespace Game1
             graphics.SynchronizeWithVerticalRetrace = false;
             this.ProjectileFactory.Initialize();
 
-
             // Create instances and register commands
             base.Initialize();
         }
-        
+
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
@@ -88,7 +94,7 @@ namespace Game1
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            
+
             Texture2DStorage.LoadAllTextures(this.Content);
 
         }
@@ -138,18 +144,5 @@ namespace Game1
             spriteBatch.End();
             base.Draw(gameTime);
         }
-
-        public void Restart()
-        {
-            this.Link.State = new UpIdleState(this.Link, this);
-            GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
-            this.ProjectileFactory = new ProjectileFactory(this);
-            this.BlockList = new BlockList();
-            this.ItemList = new ItemList();
-            this.Enemylist = new EnemyList(this);
-            Initialize();
-        }
-
-        
     }
 }

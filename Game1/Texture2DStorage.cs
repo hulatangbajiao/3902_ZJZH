@@ -104,6 +104,8 @@ namespace Game1
 
 
 
+        private static Texture2D DamagedLinkSpriteSheet;
+        private static Texture2D LinkUseItemSpriteSheet;
 
         // More private static Texture2D fields follow
         // ...
@@ -204,12 +206,20 @@ namespace Game1
             LeftAquamentusSpriteSheet = content.Load<Texture2D>("images/Enemy/Aquamentus/AquamentusLeft");
             RightAquamentusSpriteSheet = content.Load<Texture2D>("images/Enemy/Aquamentus/AquamentusRight");
 
+            UpBlueMSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueM/blueMUp");
+            DownBlueMSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueM/blueMDown");
+            LeftBlueMSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueM/blueMLeft");
+            RightBlueMSpriteSheet = content.Load<Texture2D>("images/Enemy/BlueM/blueMRight");
+
             OldManSpriteSheet = content.Load<Texture2D>("images/Npc/OldMan");
             OldWomanSpriteSheet = content.Load<Texture2D>("images/Npc/OldWoman");
             MerchantRSpriteSheet = content.Load<Texture2D>("images/Npc/MerchantR");
             MerchantPSpriteSheet = content.Load<Texture2D>("images/Npc/MerchantP");
             MerchantGSpriteSheet = content.Load<Texture2D>("images/Npc/MerchantG");
             FireBallSpriteSheet = content.Load<Texture2D>("images/projectile/flame");
+            DamagedLinkSpriteSheet = content.Load<Texture2D>("images/DamagedLink");
+            LinkUseItemSpriteSheet = content.Load<Texture2D>("images/LinkUseItem");
+
 
             // More Content.Load calls follow
             //...
@@ -585,6 +595,15 @@ namespace Game1
         public static Texture2D GetMerchantGSpriteSheet()
         {
             return MerchantGSpriteSheet;
+        }
+        public static Texture2D GetDamagedLinkSpriteSheet()
+        {
+            return DamagedLinkSpriteSheet;
+        }
+
+        public static Texture2D GetLinkUseItemSpriteSheet()
+        {
+            return LinkUseItemSpriteSheet;
         }
 
 
