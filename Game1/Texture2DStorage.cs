@@ -596,10 +596,6 @@ namespace Game1
         {
             return MerchantGSpriteSheet;
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> Implement enemy sprite, Implement NPC sprite.
         public static Texture2D GetDamagedLinkSpriteSheet()
         {
             return DamagedLinkSpriteSheet;
