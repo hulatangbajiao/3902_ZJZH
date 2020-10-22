@@ -148,6 +148,7 @@
     <Compile Include="Sprite_\BlockSprite\BombedDoorRightSprite.cs" />
     <Compile Include="Sprite_\BlockSprite\BombedDoorUpSprite.cs" />
     <Compile Include="Sprite_\BlockSprite\BrickTileSprite.cs" />
+    <Compile Include="Sprite_\BlockSprite\FireSprite.cs" />
     <Compile Include="Sprite_\BlockSprite\GapTileSprite.cs" />
     <Compile Include="Sprite_\BlockSprite\LadderTileSprite.cs" />
     <Compile Include="Sprite_\BlockSprite\LockedDoorDownSprite.cs" />
