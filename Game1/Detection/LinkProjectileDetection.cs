@@ -56,5 +56,4 @@ namespace Game1.Detection
         }
     }
 }
-    }
-}
+
