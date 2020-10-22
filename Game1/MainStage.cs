@@ -1,4 +1,7 @@
-﻿using Game1.Controller;
+﻿using Game1.Block;
+using Game1.Controller;
+using Game1.Detection;
+using Game1.ItemsClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -8,12 +11,10 @@ using System.Collections.Generic;
 
 namespace Game1
 {
- 
     public class MainStage : Game
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-
         private List<IController> controllers;
 
         /// <summary>
@@ -26,8 +27,13 @@ namespace Game1
         /// A list that holds all loaded sprites.
         /// 
         /// </summary>
-
+        //Projectile Factory
+        public IProjectileFactory ProjectileFactory { get; set; }
+        public IBlockList BlockList { get; set; }
+        public IItemList ItemList { get; set; }
         public ILinkState[] Linkstates { get; }
+        public EnemyList Enemylist { get; set; }
+        public EnemyBlockDetection Enemyblockdetection { get; set; }
 
         public MainStage()
         {
@@ -39,7 +45,12 @@ namespace Game1
             graphics.PreferredBackBufferHeight = GlobalDefinitions.GraphicsHeight;
 
             this.Link = new Link(this);
+            this.ProjectileFactory = new ProjectileFactory(this);
+            this.BlockList = new BlockList();
+            this.ItemList = new ItemList();
+            this.Enemylist = new EnemyList(this);
 
+            this.Enemyblockdetection = new EnemyBlockDetection(Enemylist, BlockList);
             controllers = new List<IController>
             {
                 new KeyboardController(this)
@@ -67,6 +78,7 @@ namespace Game1
             this.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 100.0f);
             this.IsFixedTimeStep = false;
             graphics.SynchronizeWithVerticalRetrace = false;
+            this.ProjectileFactory.Initialize();
 
             // Create instances and register commands
             base.Initialize();
@@ -81,7 +93,7 @@ namespace Game1
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            
+
             Texture2DStorage.LoadAllTextures(this.Content);
 
         }
@@ -97,7 +109,7 @@ namespace Game1
 
         /// <summary>
         /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
+        /// checking for Collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
@@ -106,9 +118,14 @@ namespace Game1
             {
                 controller.Update();
             }
-
+            this.ProjectileFactory.Update();
+            this.BlockList.Update(this);
+            this.ItemList.Update(this);
             Link.Update();
+            this.Enemylist.Update(this);
+            this.Enemyblockdetection.update();
             base.Update(gameTime);
+           
         }
 
         /// <summary>
@@ -118,9 +135,12 @@ namespace Game1
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            this.ItemList.Draw(spriteBatch);
             spriteBatch.Begin();
-
-            Link.State.GetSprite.Draw(spriteBatch);
+            this.ProjectileFactory.Draw(spriteBatch);
+            this.BlockList.Draw(spriteBatch);
+            this.Enemylist.Draw(spriteBatch);
+            Link.State.Draw(spriteBatch);
 
             spriteBatch.End();
             base.Draw(gameTime);

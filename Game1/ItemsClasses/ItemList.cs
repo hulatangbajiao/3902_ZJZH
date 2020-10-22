@@ -12,7 +12,7 @@ using TextureAtlas;
 
 namespace Game1.ItemsClasses
 {
-    class ItemList
+    class ItemList : IItemList
     {
         private List<Interfaces.Iitem> itemList;
         private static int index;
@@ -22,23 +22,23 @@ namespace Game1.ItemsClasses
 
             itemList = new List<Interfaces.Iitem>();
             index = 0;
-            itemList.Add(new UseArrowSprite(Texture2DStorage.GetArrowSpriteSheet()));
-            itemList.Add(new UseBombSprite(Texture2DStorage.GetBombSpriteSheet()));
-            itemList.Add(new UseBoomerangSprite(Texture2DStorage.GetBoomerangSpriteSheet()));
+            itemList.Add(new UseArrowSprite());
+            itemList.Add(new UseBombSprite());
+            itemList.Add(new UseBoomerangSprite());
 
-            itemList.Add(new UseBowSprite(Texture2DStorage.GetBowSpriteSheet()));
-            itemList.Add(new UseClockSprite(Texture2DStorage.GetClockSpriteSheet()));
-            itemList.Add(new UseCompassSprite(Texture2DStorage.GetCompassSpriteSheet()));
+            itemList.Add(new UseBowSprite());
+            itemList.Add(new UseClockSprite());
+            itemList.Add(new UseCompassSprite());
 
-            itemList.Add(new UseFairySprite(Texture2DStorage.GetFairySpriteSheet()));
-            itemList.Add(new UseHeartContainerSprite(Texture2DStorage.GetHeartContainerSpriteSheet()));
-            itemList.Add(new UseHeartSprite(Texture2DStorage.GetHeartSpriteSheet()));
+            itemList.Add(new UseFairySprite());
+            itemList.Add(new UseHeartContainerSprite());
+            itemList.Add(new UseHeartSprite());
 
-            itemList.Add(new UseKeySprite(Texture2DStorage.GetKeySpriteSheet()));
-            itemList.Add(new UseMapSprite(Texture2DStorage.GetMapSpriteSheet()));
-            itemList.Add(new UseRupeeSprite(Texture2DStorage.GetRupeeSpriteSheet()));
+            itemList.Add(new UseKeySprite());
+            itemList.Add(new UseMapSprite());
+            itemList.Add(new UseRupeeSprite());
 
-            itemList.Add(new UseTriforceSprite(Texture2DStorage.GetTriforceSpriteSheet()));
+            itemList.Add(new UseTriforceSprite());
             
 
         }

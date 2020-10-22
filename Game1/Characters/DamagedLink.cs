@@ -40,7 +40,7 @@ namespace Game1
 
             //method needs to be added
         }
-        
+
         public void RemoveDecorator()
         {
             game.Link = decoratedLink;//parameter needs to be added
@@ -50,20 +50,20 @@ namespace Game1
         {
         }
         //if 'w'key is being pressed for a long time(more than once in one Update cycle), link will be animated and move up in y axis.
-       
+
         public void MoveDown()
         {
         }
 
-        
+
         public void MoveLeft()
         {
         }
-        
+
         public void MoveRight()
         {
         }
-       
+
 
         public void Attack()
         {
@@ -75,8 +75,13 @@ namespace Game1
 
         }
 
-        public void UseItem()
+        public void UseItem(int Item)
         {
+        }
+
+        public void Reset()
+        {
+            // Not required yet...?
         }
 
         public void Reset()

@@ -8,22 +8,15 @@ namespace Game1
         public const int GraphicsWidth = 1600;
         public const int GraphicsHeight = 1000;
         public static Vector2 Position;
-
-        public enum LinkStates
-        {
-            UpIdleState = 1,
-            LeftIdleState = 2,
-            RightIdleState = 3,
-            DownIdleState = 4,
-            UpMovingState = 5,
-            LeftMovingState = 6,
-            RightMovingState = 7,
-            DownMovingState = 8,
-            StandingMagicalRodState = 9,
-            StandingWhiteSwordState = 10,
-            StandingWoodenSwordState = 11,
-            damaged = 12
-        }
+        public static Vector2 OctPosition;
+        public static Vector2 BlueOctPosition;
+        public static Vector2 RedGoriyaPosition;
+        public static Vector2 AquamentusPosition;
+        public static Vector2 BlueGoriyaPosition;
+        public static Vector2 RedBatPosition;
+        public static Vector2 BlueBatPosition;
+        public static Vector2 BlueMPosition;
+        public static int phaseChangingSpeed = 50;
         
     }
 }
