@@ -1,4 +1,5 @@
-﻿using Game1.Interfaces;
+﻿using Game1.Enemy_NPC;
+using Game1.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,17 +24,16 @@ namespace Game1.Collision
 
         public void Execute()
         {
-            String s = side.Getside();
-            if (side.Equals("Left"))
+            if (side == ICollision.Left)
             {
                 enemy.moveLeft();
-            } else if (side.Equals("Right"))
+            } else if (side == ICollision.Right)
             {
                 enemy.moveRight();
-            } else if (side.Equals("Bottom"))
+            } else if (side == ICollision.Bottom)
             {
                 enemy.movedown();
-            } else if (side.Equals("Top"))
+            } else if (side == ICollision.Top)
             {
                 enemy.moveUp();
             } 

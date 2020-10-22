@@ -25,32 +25,27 @@ namespace Game1.Detection
         {
             Rectangle ifCollision = new Rectangle();
             ifCollision = Rectangle.Intersect(link.rectangle, projectile.rectangle);
-            ICollision side = new NullCollision(ifCollision);
             if (!ifCollision.IsEmpty)
             {
                 if (ifCollision.Height > ifCollision.Width && link.X < projectile.X)
                 {
-                    side = new LeftCollision(ifCollision);
-                    new LinkProjectileCollisonHandler(link, projectile, side).Execute();
+                    new LinkProjectileCollisonHandler(link, projectile, ICollision.Left).Execute();
                 }
                 else if (ifCollision.Height > ifCollision.Width && link.X > projectile.X)
                 {
-                    side = new RightCollision(ifCollision);
-                    new LinkProjectileCollisonHandler(link, projectile, side).Execute();
+                    new LinkProjectileCollisonHandler(link, projectile, ICollision.Right).Execute();
                 }
                 else if (ifCollision.Height < ifCollision.Width && link.Y > projectile.Y)
                 {
-                    side = new TopCollision(ifCollision);
-                    new LinkProjectileCollisonHandler(link, projectile, side).Execute();
+                    new LinkProjectileCollisonHandler(link, projectile, ICollision.Bottom).Execute();
                 }
                 else if (ifCollision.Height < ifCollision.Width && link.Y < projectile.Y)
                 {
-                    side = new BottomCollision(ifCollision);
-                    new LinkProjectileCollisonHandler(link, projectile, side).Execute();
+                    new LinkProjectileCollisonHandler(link, projectile, ICollision.Top).Execute();
                 }
                 else
                 {
-                    new LinkProjectileCollisonHandler(link, projectile, side).Execute();
+                    new LinkProjectileCollisonHandler(link, projectile, ICollision.Null).Execute();
                 }
             }
         }

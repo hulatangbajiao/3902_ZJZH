@@ -23,17 +23,17 @@ namespace Game1.Collision
 
         public void Execute()
         {
-            String s = side.Getside();
-            if (side.Equals("Left"))
+            
+            if (side == ICollision.Bottom)
             {
                 link.TakeDamage();
-            } else if (side.Equals("Right"))
+            } else if (side == ICollision.Left)
             {
                 link.TakeDamage();
-            } else if (side.Equals("Bottom"))
+            } else if (side == ICollision.Right)
             {
                 link.TakeDamage();
-            } else if (side.Equals("Top"))
+            } else if (side == ICollision.Top)
             {
                 link.TakeDamage();
             } 
