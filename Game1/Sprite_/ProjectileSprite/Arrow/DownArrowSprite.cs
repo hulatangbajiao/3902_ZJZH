@@ -38,6 +38,10 @@ namespace Game1
 
 
            
+                        
+
+
+           
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);//use Texture2DStorage class to load texture2D
         }

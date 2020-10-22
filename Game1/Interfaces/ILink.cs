@@ -11,7 +11,7 @@ namespace Game1
     {
         ILinkState State { get; set; }
         int Item { get; set; }
-
+        
         void TakeDamage();
         void MoveLeft();
         void MoveUp();

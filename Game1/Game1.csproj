@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Block\BlockList.cs" />
     <Compile Include="CollisionHandler\EnemyBlockCollisionHandler.cs" />
+    <Compile Include="CollisionHandler\LinkProjectileCollisonHandler.cs" />
     <Compile Include="CollisionHandler\LinkEnemyCollisionHandler.cs" />
     <Compile Include="CollisionHandler\LinkBlockCollisionHandler.cs" />
     <Compile Include="Collision\BottomCollision.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Detection\LinkBlockDetection.cs" />
     <Compile Include="Detection\LinkEnemyDetection.cs" />
     <Compile Include="Detection\IDetection.cs" />
+    <Compile Include="Detection\LinkProjectileDetection.cs" />
     <Compile Include="Enemy\Aquamentus.cs" />
     <Compile Include="Enemy\AquamentusLeftMovingState.cs" />
     <Compile Include="Enemy\AquamentusRightMovingState.cs" />
