@@ -13,12 +13,14 @@ using Game1.Enemy_NPC;
 
 namespace Game1
 {
-    public class EnemyList
+    public class EnemyList : IEnemyList
     {
-
         private List<IEnemy> enemyList;
         private static int index;
         private MainStage game;
+
+        List<IEnemy> IEnemyList.enemyList { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public EnemyList(MainStage game)
         {
             this.game = game;
@@ -37,10 +39,6 @@ namespace Game1
             enemyList.Add(new RedGoriya(game));
             enemyList.Add(new RedBat(game));
             enemyList.Add(new Aquamentus(game));
-
-
-
-
         }
 
 

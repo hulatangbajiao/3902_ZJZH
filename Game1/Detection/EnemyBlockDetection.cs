@@ -27,28 +27,24 @@ namespace Game1.Detection
                 {
                     Rectangle ifCollision = new Rectangle();
                     ifCollision = Rectangle.Intersect(enemy.rectangle, block.rectangle);
-                    ICollision side = new NullCollision(ifCollision);
+                    
                     if (!ifCollision.IsEmpty)
                     {
                         if (ifCollision.Height > ifCollision.Width && enemy.X < block.X)
                         {
-                            side = new LeftCollision(ifCollision);
-                            new EnemyBlockCollisionHandler(enemy, block, side).Execute();
+                            new EnemyBlockCollisionHandler(enemy, block, ICollision.Left).Execute();
                         } else if (ifCollision.Height > ifCollision.Width && enemy.X > block.X)
                         {
-                            side = new RightCollision(ifCollision);
-                            new EnemyBlockCollisionHandler(enemy, block, side).Execute();
+                            new EnemyBlockCollisionHandler(enemy, block, ICollision.Right).Execute();
                         } else if (ifCollision.Height < ifCollision.Width && enemy.Y > block.Y)
                         {
-                            side = new TopCollision(ifCollision);
-                            new EnemyBlockCollisionHandler(enemy, block, side).Execute();
+                            new EnemyBlockCollisionHandler(enemy, block, ICollision.Bottom).Execute();
                         } else if (ifCollision.Height < ifCollision.Width && enemy.Y < block.Y)
                         {
-                            side = new BottomCollision(ifCollision);
-                            new EnemyBlockCollisionHandler(enemy, block, side).Execute();
+                            new EnemyBlockCollisionHandler(enemy, block, ICollision.Top).Execute();
                         } else
                         {
-                            new EnemyBlockCollisionHandler(enemy, block, side).Execute();
+                            new EnemyBlockCollisionHandler(enemy, block, ICollision.Null).Execute();
                         }
                     }
                 }
