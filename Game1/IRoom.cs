@@ -1,4 +1,4 @@
-﻿namespace Team4_LegendOfZelda.ILevel_Classes
+﻿namespace Game1
 {
     public interface IRoom
     {
