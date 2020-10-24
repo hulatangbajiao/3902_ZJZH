@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace Team4_LegendOfZelda.ILevel_Classes
+namespace Game1
 {
-    class DungeonRoom : IRoom
+    class Room : IRoom
     {
         public ILink Link { get; set; }
         public List<IEnemy> Enemies { get; set; }
