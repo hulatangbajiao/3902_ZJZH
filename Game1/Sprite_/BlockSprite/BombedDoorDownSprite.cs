@@ -30,7 +30,7 @@ namespace Game1.Block
         public void Draw(SpriteBatch spriteBatch)
         {
 
-            Texture = Texture2DStorage.GetBlueStoneBlockSpriteSheet();
+            Texture = Texture2DStorage.GetBombedDoorDownSpriteSheet();
             Nullable<Rectangle> sourceRectangle = new Rectangle(0, 0, Texture.Width, Texture.Height);
             Rectangle destinationRectangle = new Rectangle(400, 100, Texture.Width / 2, Texture.Height / 2);
 

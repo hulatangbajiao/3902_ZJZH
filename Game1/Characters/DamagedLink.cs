@@ -83,10 +83,6 @@ namespace Game1
         {
             // Not required yet...?
         }
-
-        public void Reset()
-        {
-            // Not required yet...?
-        }
+       
     }
 }

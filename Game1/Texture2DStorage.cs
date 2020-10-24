@@ -85,6 +85,7 @@ namespace Game1
         private static Texture2D GapTileSpriteSheet;
         private static Texture2D LadderTileSpriteSheet;
         private static Texture2D StairsSpriteSheet;
+        private static Texture2D FireSpriteSheet;
 
         private static Texture2D UpOctorokSpriteSheet;
         private static Texture2D DownOctorokSpriteSheet;
@@ -227,7 +228,7 @@ namespace Game1
             GapTileSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorDown");
             LadderTileSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorLeft");
             StairsSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorRight");
-
+            FireSpriteSheet = content.Load<Texture2D>("images/Block/Fire");
             //enemy
             UpOctorokSpriteSheet = content.Load<Texture2D>("images/Enemy/Octorok/OctorokUp");
             DownOctorokSpriteSheet = content.Load<Texture2D>("images/Enemy/Octorok/OctorokDown");
@@ -585,7 +586,12 @@ namespace Game1
             return StairsSpriteSheet;
         }
 
-       
+        public static Texture2D GetFireSpriteSheet()
+        {
+            return FireSpriteSheet;
+        }
+
+
 
         //enemies
         public static Texture2D GetUpMovingOctorokSpriteSheet()
