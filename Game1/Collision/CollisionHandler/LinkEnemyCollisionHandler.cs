@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game1.CollisionHandler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Game1.Collision
 {
-    class LinkEnemyCollisionHandler
+    class LinkEnemyCollisionHandler : IHandler
     {
+
     }
 }

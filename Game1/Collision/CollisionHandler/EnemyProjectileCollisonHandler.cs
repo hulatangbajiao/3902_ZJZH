@@ -1,4 +1,6 @@
-﻿using Game1.Interfaces;
+﻿using Game1.CollisionHandler;
+using Game1.Enemy_NPC;
+using Game1.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace Game1.Collision
 {
-    class LinkProjectileCollisonHandler
+    class LinkProjectileCollisonHandler : IHandler
     {
         
         private ICollision side;
-        private ILink link;
+        private IEnemy enemy;
         private IProjectile projectile;
 
-        public LinkProjectileCollisonHandler(ILink link, IProjectile projectile, ICollision side)
+        public LinkProjectileCollisonHandler(IEnemy enemy, IProjectile projectile, ICollision side)
         {
-            this.link = link;
+            this.enemy = enemy;
             this.projectile = projectile;
             this.side = side;
         }
@@ -26,16 +28,16 @@ namespace Game1.Collision
             
             if (side == ICollision.Bottom)
             {
-                link.TakeDamage();
+                
             } else if (side == ICollision.Left)
             {
-                link.TakeDamage();
+                
             } else if (side == ICollision.Right)
             {
-                link.TakeDamage();
+                
             } else if (side == ICollision.Top)
             {
-                link.TakeDamage();
+                
             } 
         }
     }
