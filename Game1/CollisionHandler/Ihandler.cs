@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game1.Detection
+namespace Game1.CollisionHandler
 {
-    public interface IDetection
+    public interface IHandler
     {
-        void update();
+        void Execute();
     }
 }

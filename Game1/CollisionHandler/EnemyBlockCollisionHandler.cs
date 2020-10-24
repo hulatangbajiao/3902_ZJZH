@@ -1,4 +1,5 @@
-﻿using Game1.Enemy_NPC;
+﻿using Game1.CollisionHandler;
+using Game1.Enemy_NPC;
 using Game1.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Game1.Collision
 {
-    class EnemyBlockCollisionHandler 
+    class EnemyBlockCollisionHandler : IHandler
     {
         
         private ICollision side;

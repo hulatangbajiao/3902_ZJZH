@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Block\BlockList.cs" />
+    <Compile Include="CollisionHandler\Ihandler.cs" />
     <Compile Include="CollisionHandler\EnemyBlockCollisionHandler.cs" />
     <Compile Include="CollisionHandler\LinkProjectileCollisonHandler.cs" />
     <Compile Include="CollisionHandler\LinkEnemyCollisionHandler.cs" />
@@ -64,12 +65,8 @@
     <Compile Include="Command\UseBombCommand.cs" />
     <Compile Include="Command\BlockCommand\PreviousBlockCommand.cs" />
     <Compile Include="Command\UseBoomerCommand.cs" />
+    <Compile Include="Detection\DetectCollision.cs" />
     <Compile Include="Detection\GeneralDetection.cs" />
-    <Compile Include="Detection\EnemyBlockDetection.cs" />
-    <Compile Include="Detection\LinkBlockDetection.cs" />
-    <Compile Include="Detection\LinkEnemyDetection.cs" />
-    <Compile Include="Detection\IDetection.cs" />
-    <Compile Include="Detection\LinkProjectileDetection.cs" />
     <Compile Include="Enemy\Aquamentus\Aquamentus.cs" />
     <Compile Include="Enemy\Aquamentus\AquamentusLeftMovingState.cs" />
     <Compile Include="Enemy\Aquamentus\AquamentusRightMovingState.cs" />
@@ -94,6 +91,7 @@
     <Compile Include="Interfaces\IEnemyList.cs" />
     <Compile Include="Interfaces\IEnemy.cs" />
     <Compile Include="Interfaces\IEnemyState.cs" />
+    <Compile Include="LevelLoader.cs" />
     <Compile Include="NPC\MerchantG.cs" />
     <Compile Include="NPC\MerchantGState.cs" />
     <Compile Include="NPC\MerchantP.cs" />
@@ -279,6 +277,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <Content Include="Level1.xml" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
