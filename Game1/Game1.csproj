@@ -64,6 +64,7 @@
     <Compile Include="Command\UseBombCommand.cs" />
     <Compile Include="Command\BlockCommand\PreviousBlockCommand.cs" />
     <Compile Include="Command\UseBoomerCommand.cs" />
+    <Compile Include="Detection\GeneralDetection.cs" />
     <Compile Include="Detection\EnemyBlockDetection.cs" />
     <Compile Include="Detection\LinkBlockDetection.cs" />
     <Compile Include="Detection\LinkEnemyDetection.cs" />
