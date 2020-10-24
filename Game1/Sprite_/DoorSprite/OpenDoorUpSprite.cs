@@ -9,16 +9,13 @@ using Game1.Sprite_;
 using Game1.Interfaces;
 using Game1;
 
-
-
-namespace Game1.Block
+namespace Game1.Sprite_.BlockSprite
 {
-    class BlueFaceBlockSprite : IBlock
+    class OpenDoorUpSprite : IBlock
     {
-
         public Texture2D Texture { get; set; }
         private Rectangle destinationRectangle;
-        public BlueFaceBlockSprite()
+        public OpenDoorUpSprite()
         {
 
         }
@@ -30,14 +27,9 @@ namespace Game1.Block
         public void Draw(SpriteBatch spriteBatch)
         {
 
-
-            Texture = Texture2DStorage.GetBlueFaceBlockSpriteSheet();
-
-
+            Texture = Texture2DStorage.GetOpenDoorUpSpriteSheet();
             Nullable<Rectangle> sourceRectangle = new Rectangle(0, 0, Texture.Width, Texture.Height);
             Rectangle destinationRectangle = new Rectangle(400, 100, Texture.Width / 2, Texture.Height / 2);
-
-
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
 
         }
@@ -45,8 +37,7 @@ namespace Game1.Block
         {
             return destinationRectangle;
         }
-
-
-
     }
 }
+
+

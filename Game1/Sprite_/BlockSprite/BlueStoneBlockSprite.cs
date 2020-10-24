@@ -15,10 +15,10 @@ namespace Game1.Block
     {
 
         public Texture2D Texture { get; set; }
-
+        private Rectangle destinationRectangle;
         public BlueStoneBlockSprite()
         {
-          
+
         }
 
         public void Update()
@@ -34,16 +34,14 @@ namespace Game1.Block
 
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            
+
         }
 
 
-
-
-
-
-
-
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
+        }
 
 
     }

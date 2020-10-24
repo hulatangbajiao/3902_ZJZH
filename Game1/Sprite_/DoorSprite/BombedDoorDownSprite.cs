@@ -10,15 +10,15 @@ using Game1.Interfaces;
 using Game1;
 
 
-
 namespace Game1.Block
 {
-    class BlueFaceBlockSprite : IBlock
+    class BombedDoorDownSprite : IBlock
     {
+
 
         public Texture2D Texture { get; set; }
         private Rectangle destinationRectangle;
-        public BlueFaceBlockSprite()
+        public BombedDoorDownSprite()
         {
 
         }
@@ -30,10 +30,7 @@ namespace Game1.Block
         public void Draw(SpriteBatch spriteBatch)
         {
 
-
-            Texture = Texture2DStorage.GetBlueFaceBlockSpriteSheet();
-
-
+            Texture = Texture2DStorage.GetBombedDoorDownSpriteSheet();
             Nullable<Rectangle> sourceRectangle = new Rectangle(0, 0, Texture.Width, Texture.Height);
             Rectangle destinationRectangle = new Rectangle(400, 100, Texture.Width / 2, Texture.Height / 2);
 
@@ -41,10 +38,17 @@ namespace Game1.Block
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
 
         }
+
+
         public Rectangle GetRectangle()
         {
             return destinationRectangle;
         }
+
+
+
+
+
 
 
 
