@@ -88,6 +88,8 @@
     <Compile Include="Enemy\BlueOct\BlueOctRightMovingState.cs" />
     <Compile Include="Enemy\BlueOct\BlueOctUpMovingState.cs" />
     <Compile Include="Enemy\EnemyList.cs" />
+    <Compile Include="Interfaces\IDoor.cs" />
+    <Compile Include="Interfaces\IDoorList.cs" />
     <Compile Include="Interfaces\IEnemyList.cs" />
     <Compile Include="Interfaces\IEnemy.cs" />
     <Compile Include="Interfaces\IEnemyState.cs" />
@@ -222,6 +224,7 @@
     <Compile Include="Sprite_\ProjectileSprite\Boomer\BoomerSprite.cs" />
     <Compile Include="Projectile\FireBall.cs" />
     <Compile Include="Sprite_\ProjectileSprite\Fireball\FireBallSprite.cs" />
+    <Compile Include="Sprite_\RoomExteriorSprite.cs" />
     <Compile Include="Sprite_\UseItemSprite\DownUseItemSprite.cs" />
     <Compile Include="Sprite_\UseItemSprite\LeftUseItemSprite.cs" />
     <Compile Include="Sprite_\UseItemSprite\RightUseItemSprite.cs" />
