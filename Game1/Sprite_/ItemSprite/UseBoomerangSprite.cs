@@ -11,7 +11,7 @@ using Game1;
 
 namespace Game1.ItemsClasses
 {
-    class UseBoomerangSprite : Iitem
+    class UseBoomerangSprite : IItemSprite
     {
 
         public Texture2D Texture { get; set; }
@@ -30,7 +30,7 @@ namespace Game1.ItemsClasses
 
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
 
             Texture = Texture2DStorage.GetBoomerangSpriteSheet();
@@ -39,7 +39,7 @@ namespace Game1.ItemsClasses
 
 
             Nullable<Rectangle> sourceRectangle = new Rectangle(0, 0, width, height);
-            Rectangle destinationRectangle = new Rectangle(450, 150, width / 2, height / 2);
+            Rectangle destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, width / 2, height / 2);
 
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);

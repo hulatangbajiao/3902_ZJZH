@@ -8,19 +8,11 @@ using System.Threading.Tasks;
 
 namespace Game1.Interfaces
 {
-    public interface IItem
+    interface IItemSprite
     {
-        
-        Vector2 Position { get; set; }
-        
-        bool exist { get; set; }
+        Texture2D Texture { get; set; }
+
         void Update();
-        void Draw(SpriteBatch spriteBatch);
+        void Draw(SpriteBatch spriteBatch, Vector2 Position);
     }
 }
-
-
-
-
-
-

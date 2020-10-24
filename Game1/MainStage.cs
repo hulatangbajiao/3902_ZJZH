@@ -138,7 +138,6 @@ namespace Game1
 
             spriteBatch.End();
             base.Draw(gameTime);
-
         }
 
         public void Restart()

@@ -11,7 +11,7 @@ namespace Game1
 {
     public class ProjectileFactory : IProjectileFactory
     {
-        private List<IProjectile> ProjectileList { get; set; }
+        public List<IProjectile> ProjectileList { get; set; }
 
         public ProjectileFactory(MainStage game)
         {
@@ -24,10 +24,10 @@ namespace Game1
 
         }
 
-        public void AddArrow(Vector2 position, Vector2 direction) 
+        public void AddArrow(Vector2 position, Vector2 direction)
         {
             ProjectileList.Add(new Arrow(position, direction));
-        
+
         }
 
         public void AddBomb(Vector2 position, Vector2 direction)
@@ -46,6 +46,7 @@ namespace Game1
             ProjectileList.Add(new FireBall(position, direction));
 
         }
+
 
 
         public void Update()
