@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game1
+namespace Game1.Interfaces
 {
     public interface IProjectileFactory
     {
-        
+        List<IProjectile> ProjectileList { get; set; }
         void Initialize();
         void AddArrow(Vector2 position, Vector2 direction);
         void AddBomb(Vector2 position, Vector2 direction);
