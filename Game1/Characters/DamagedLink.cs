@@ -13,10 +13,10 @@ namespace Game1
         ILink decoratedLink;
         int timer = 20;
 
+        public int Item { get; set; }
         public ILinkState State { get; set; }
 
         public Vector2 Position { get; set; }
-
         public DamagedLink(Link decoratedLink, MainStage game)
         {
             this.decoratedLink = decoratedLink;
@@ -40,7 +40,7 @@ namespace Game1
 
             //method needs to be added
         }
-        
+
         public void RemoveDecorator()
         {
             game.Link = decoratedLink;//parameter needs to be added
@@ -50,20 +50,20 @@ namespace Game1
         {
         }
         //if 'w'key is being pressed for a long time(more than once in one Update cycle), link will be animated and move up in y axis.
-       
+
         public void MoveDown()
         {
         }
 
-        
+
         public void MoveLeft()
         {
         }
-        
+
         public void MoveRight()
         {
         }
-       
+
 
         public void Attack()
         {
@@ -75,13 +75,9 @@ namespace Game1
 
         }
 
-        public void UseItem()
+        public void UseItem(int Item)
         {
-        }
-
-        public void Reset()
-        {
-            // Not required yet...?
         }
     }
 }
+

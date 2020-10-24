@@ -10,7 +10,8 @@ namespace Game1
     public interface ILink
     {
         ILinkState State { get; set; }
-
+        int Item { get; set; }
+        
         void TakeDamage();
         void MoveLeft();
         void MoveUp();
@@ -20,8 +21,6 @@ namespace Game1
         void Stop();
         void Attack();
         void Update();
-        void UseItem();
-
-        void Reset();
+        void UseItem(int Item);
     }
 }

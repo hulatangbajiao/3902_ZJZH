@@ -25,10 +25,10 @@ namespace Game1.Sprite_
             if (currentFrame == totalFrame)
                 currentFrame = 0;
 
-            GlobalDefinitions.Position.X = GlobalDefinitions.Position.X + (float)1; //change the y axis position of Link
-            if (GlobalDefinitions.Position.X == 0)
+            GlobalDefinitions.Position.X = GlobalDefinitions.Position.X + (float)5; //change the y axis position of Link
+            if (GlobalDefinitions.Position.X == GlobalDefinitions.GraphicsWidth)
             {
-                GlobalDefinitions.Position.X = (float)GlobalDefinitions.GraphicsWidth;
+                GlobalDefinitions.Position.X = 0;
             }
 
         }
@@ -41,7 +41,7 @@ namespace Game1.Sprite_
             if (currentFrame < 5)
             {
                 sourceRectangle = new Rectangle(0, 0, 96, 96);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);//I don't understand why the width of destinationRectangle has to be like this.
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96); 
             }
 
 

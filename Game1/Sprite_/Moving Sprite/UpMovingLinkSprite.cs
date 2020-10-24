@@ -25,10 +25,10 @@ namespace Game1
             if (currentFrame == totalFrame)
                 currentFrame = 0;
 
-            GlobalDefinitions.Position.Y = GlobalDefinitions.Position.Y - (float)1; //change the y axis position of Link
+            GlobalDefinitions.Position.Y = GlobalDefinitions.Position.Y - (float)5; //change the y axis position of Link
             if (GlobalDefinitions.Position.Y == 0)
             {
-                GlobalDefinitions.Position.Y = (float)GlobalDefinitions.GraphicsHeight;
+                GlobalDefinitions.Position.Y = GlobalDefinitions.GraphicsHeight;
             }
 
         }
@@ -41,7 +41,7 @@ namespace Game1
             if (currentFrame < 5)
             {
                 sourceRectangle = new Rectangle(0, 0, 96, 96);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);//I don't understand why the width of destinationRectangle has to be like this.
+                destinationRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96); 
             }
 
 

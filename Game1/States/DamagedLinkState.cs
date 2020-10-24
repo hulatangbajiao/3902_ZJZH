@@ -1,4 +1,6 @@
-﻿namespace Game1
+﻿using Microsoft.Xna.Framework.Graphics;
+
+namespace Game1
 {
     internal class DamagedLinkState : ILinkState
     {
@@ -14,28 +16,28 @@
 
         public void TakeDamage()
         {
-            
+
         }
         public void MoveUp()
         {
         }
-        
+
 
         public void MoveDown()
         {
 
         }
 
-        
+
         public void MoveLeft()
         {
         }
-        
+
 
         public void MoveRight()
         {
         }
-       
+
         public void Stop()
         {
 
@@ -52,6 +54,11 @@
         }
         public void UseItem()
         {
+        }
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            GetSprite.Draw(spriteBatch);
+
         }
     }
 }
