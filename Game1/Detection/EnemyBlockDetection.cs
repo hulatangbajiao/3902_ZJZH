@@ -1,4 +1,5 @@
 ﻿using Game1.Collision;
+using Game1.Enemy_NPC;
 using Game1.Interfaces;
 using Microsoft.Xna.Framework;
 using System;
@@ -21,7 +22,7 @@ namespace Game1.Detection
         }
         public void update()
         {
-            foreach (IEnemy enemy in enemyList)
+            foreach (IEnemy enemy in enemyList.enemyList)
             {
                 foreach (IBlock block in blockList.blockList)
                 {
