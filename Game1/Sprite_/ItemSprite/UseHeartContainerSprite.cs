@@ -15,10 +15,11 @@ namespace Game1.ItemsClasses
     {
         public Texture2D Texture { get; set; }
 
+        private Rectangle destinationRectangle;
 
         public UseHeartContainerSprite()
         {
-           
+
 
         }
 
@@ -43,7 +44,10 @@ namespace Game1.ItemsClasses
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
-
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
+        }
 
     }
 }

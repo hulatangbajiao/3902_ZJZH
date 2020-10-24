@@ -11,15 +11,16 @@ using Game1;
 
 namespace Game1.ItemsClasses
 {
-    class UseMapSprite: Iitem
+    class UseMapSprite : Iitem
     {
 
         public Texture2D Texture { get; set; }
 
+        private Rectangle destinationRectangle;
 
         public UseMapSprite()
         {
-            
+
 
         }
 
@@ -46,7 +47,10 @@ namespace Game1.ItemsClasses
         }
 
 
-
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
+        }
 
 
 

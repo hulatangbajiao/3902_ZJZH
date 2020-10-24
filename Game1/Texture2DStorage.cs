@@ -56,6 +56,37 @@ namespace Game1
         private static Texture2D BlueFaceBlockSpriteSheet;
         private static Texture2D BlueStoneBlockSpriteSheet;
 
+        private static Texture2D BombedDoorUpSpriteSheet;
+        private static Texture2D BombedDoorDownSpriteSheet;
+        private static Texture2D BombedDoorLeftSpriteSheet;
+        private static Texture2D BombedDoorRightSpriteSheet;
+
+        private static Texture2D LockedDoorUpSpriteSheet;
+        private static Texture2D LockedDoorDownSpriteSheet;
+        private static Texture2D LockedDoorLeftSpriteSheet;
+        private static Texture2D LockedDoorRightSpriteSheet;
+
+        private static Texture2D OpenDoorUpSpriteSheet;
+        private static Texture2D OpenDoorDownSpriteSheet;
+        private static Texture2D OpenDoorLeftSpriteSheet;
+        private static Texture2D OpenDoorRightSpriteSheet;
+
+        private static Texture2D ShutDoorUpSpriteSheet;
+        private static Texture2D ShutDoorDownSpriteSheet;
+        private static Texture2D ShutDoorLeftSpriteSheet;
+        private static Texture2D ShutDoorRightSpriteSheet;
+
+        private static Texture2D WallUpSpriteSheet;
+        private static Texture2D WallDownSpriteSheet;
+        private static Texture2D WallLeftSpriteSheet;
+        private static Texture2D WallRightSpriteSheet;
+
+        private static Texture2D BrickTileSpriteSheet;
+        private static Texture2D GapTileSpriteSheet;
+        private static Texture2D LadderTileSpriteSheet;
+        private static Texture2D StairsSpriteSheet;
+        private static Texture2D FireSpriteSheet;
+
         private static Texture2D UpOctorokSpriteSheet;
         private static Texture2D DownOctorokSpriteSheet;
         private static Texture2D LeftOctorokSpriteSheet;
@@ -161,10 +192,43 @@ namespace Game1
             HeartSpriteSheet = content.Load<Texture2D>("images/Item/Heart");
             RupeeSpriteSheet = content.Load<Texture2D>("images/Item/Rupy");
             TriforceSpriteSheet = content.Load<Texture2D>("images/Item/Triforce");
-
+            //block
             BlueBlockSpriteSheet = content.Load<Texture2D>("images/Block/BlueBlock");
             BlueFaceBlockSpriteSheet = content.Load<Texture2D>("images/Block/BlueFaceBlock");
             BlueStoneBlockSpriteSheet = content.Load<Texture2D>("images/Block/BlueStoneBlock");
+            BrickTileSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorUp");
+            GapTileSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorDown");
+            LadderTileSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorLeft");
+            StairsSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorRight");
+            FireSpriteSheet = content.Load<Texture2D>("images/Block/Fire");
+
+            //Doors
+            BombedDoorUpSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorUp");
+            BombedDoorDownSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorDown");
+            BombedDoorLeftSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorLeft");
+            BombedDoorRightSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorRight");
+
+            LockedDoorUpSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorUp");
+            LockedDoorDownSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorDown");
+            LockedDoorLeftSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorLeft");
+            LockedDoorRightSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorRight");
+
+            OpenDoorUpSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorUp");
+            OpenDoorDownSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorDown");
+            OpenDoorLeftSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorLeft");
+            OpenDoorRightSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorRight");
+
+            ShutDoorUpSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorUp");
+            ShutDoorDownSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorDown");
+            ShutDoorLeftSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorLeft");
+            ShutDoorRightSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorRight");
+
+            WallUpSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorUp");
+            WallDownSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorDown");
+            WallLeftSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorLeft");
+            WallRightSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorRight");
+
+            //enemy
 
             UpOctorokSpriteSheet = content.Load<Texture2D>("images/Enemy/Octorok/OctorokUp");
             DownOctorokSpriteSheet = content.Load<Texture2D>("images/Enemy/Octorok/OctorokDown");
@@ -405,7 +469,7 @@ namespace Game1
         {
             return TriforceSpriteSheet;
         }
-
+        //blocks
         public static Texture2D GetBlueBlockSpriteSheet()
         {
             return BlueBlockSpriteSheet;
@@ -418,6 +482,113 @@ namespace Game1
         {
             return BlueStoneBlockSpriteSheet;
         }
+
+        public static Texture2D GetBrickTileSpriteSheet()
+        {
+            return BrickTileSpriteSheet;
+        }
+        public static Texture2D GetGapTileSpriteSheet()
+        {
+            return GapTileSpriteSheet;
+        }
+        public static Texture2D GetLadderTileSpriteSheet()
+        {
+            return LadderTileSpriteSheet;
+        }
+        public static Texture2D GetStairsSpriteSheet()
+        {
+            return StairsSpriteSheet;
+        }
+
+        public static Texture2D GetFireSpriteSheet()
+        {
+            return FireSpriteSheet;
+        }
+        //Doors
+        public static Texture2D GetBombedDoorUpSpriteSheet()
+        {
+            return BombedDoorUpSpriteSheet;
+        }
+        public static Texture2D GetBombedDoorDownSpriteSheet()
+        {
+            return BombedDoorDownSpriteSheet;
+        }
+        public static Texture2D GetBombedDoorLeftSpriteSheet()
+        {
+            return BombedDoorLeftSpriteSheet;
+        }
+        public static Texture2D GetBombedDoorRightSpriteSheet()
+        {
+            return BombedDoorRightSpriteSheet;
+        }
+        public static Texture2D GetLockedDoorUpSpriteSheet()
+        {
+            return LockedDoorUpSpriteSheet;
+        }
+        public static Texture2D GetLockedDoorDownSpriteSheet()
+        {
+            return LockedDoorDownSpriteSheet;
+        }
+        public static Texture2D GetLockedDoorLeftSpriteSheet()
+        {
+            return LockedDoorLeftSpriteSheet;
+        }
+        public static Texture2D GetLockedDoorRightSpriteSheet()
+        {
+            return LockedDoorRightSpriteSheet;
+        }
+
+        public static Texture2D GetOpenDoorUpSpriteSheet()
+        {
+            return OpenDoorUpSpriteSheet;
+        }
+        public static Texture2D GetOpenDoorDownSpriteSheet()
+        {
+            return OpenDoorDownSpriteSheet;
+        }
+        public static Texture2D GetOpenDoorLeftSpriteSheet()
+        {
+            return OpenDoorLeftSpriteSheet;
+        }
+        public static Texture2D GetOpenDoorRightSpriteSheet()
+        {
+            return OpenDoorRightSpriteSheet;
+        }
+
+        public static Texture2D GetShutDoorUpSpriteSheet()
+        {
+            return ShutDoorUpSpriteSheet;
+        }
+        public static Texture2D GetShutDoorDownSpriteSheet()
+        {
+            return ShutDoorDownSpriteSheet;
+        }
+        public static Texture2D GetShutDoorLeftSpriteSheet()
+        {
+            return ShutDoorLeftSpriteSheet;
+        }
+        public static Texture2D GetShutDoorRightSpriteSheet()
+        {
+            return ShutDoorRightSpriteSheet;
+        }
+
+        public static Texture2D GetWallUpSpriteSheet()
+        {
+            return WallUpSpriteSheet;
+        }
+        public static Texture2D GetWallDownSpriteSheet()
+        {
+            return WallDownSpriteSheet;
+        }
+        public static Texture2D GetWallLeftSpriteSheet()
+        {
+            return WallLeftSpriteSheet;
+        }
+        public static Texture2D GetWallRightSpriteSheet()
+        {
+            return WallRightSpriteSheet;
+        }
+
 
         public static Texture2D GetUpMovingOctorokSpriteSheet()
         {

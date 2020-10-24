@@ -12,14 +12,15 @@ using Game1;
 
 namespace Game1.ItemsClasses
 {
-    class UseBowSprite: Iitem
+    class UseBowSprite : Iitem
     {
         public Texture2D Texture { get; set; }
+        private Rectangle destinationRectangle;
 
 
         public UseBowSprite()
         {
-         
+
 
         }
 
@@ -45,6 +46,9 @@ namespace Game1.ItemsClasses
             spriteBatch.End();
         }
 
-
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
+        }
     }
 }
