@@ -16,11 +16,12 @@ namespace Game1.ItemsClasses
 
 
         public Texture2D Texture { get; set; }
+        private Rectangle destinationRectangle;
 
 
         public UseBombSprite()
         {
-            
+
 
         }
 
@@ -34,7 +35,7 @@ namespace Game1.ItemsClasses
         {
 
 
-            
+
 
 
             Texture = Texture2DStorage.GetItemBombSpriteSheet();
@@ -48,6 +49,9 @@ namespace Game1.ItemsClasses
             spriteBatch.End();
         }
 
-
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
+        }
     }
 }

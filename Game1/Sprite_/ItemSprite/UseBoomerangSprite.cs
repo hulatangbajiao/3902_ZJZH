@@ -11,15 +11,16 @@ using Game1;
 
 namespace Game1.ItemsClasses
 {
-    class UseBoomerangSprite: Iitem
+    class UseBoomerangSprite : Iitem
     {
 
         public Texture2D Texture { get; set; }
 
+        private Rectangle destinationRectangle;
 
         public UseBoomerangSprite()
         {
-            
+
 
         }
 
@@ -43,6 +44,10 @@ namespace Game1.ItemsClasses
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
+        }
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
         }
 
     }

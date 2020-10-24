@@ -29,10 +29,11 @@ namespace TextureAtlas
 
         private int x = 450;
         private int y = 150;
+        private Rectangle destinationRectangle;
 
         public UseFairySprite()
         {
-            
+
             Rows = 1;
             Columns = 2;
             currentFrame = 0;
@@ -82,12 +83,17 @@ namespace TextureAtlas
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle(x, y, width/2, height/2);
+            Rectangle destinationRectangle = new Rectangle(x, y, width / 2, height / 2);
 
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
 
+        }
+
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
         }
     }
 }

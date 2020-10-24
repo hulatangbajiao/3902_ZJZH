@@ -12,14 +12,14 @@ using Game1;
 
 namespace Game1.ItemsClasses
 {
-    class UseArrowSprite: Iitem
+    class UseArrowSprite : Iitem
     {
         public Texture2D Texture { get; set; }
-
+        private Rectangle destinationRectangle;
 
         public UseArrowSprite()
         {
-            
+
 
         }
 
@@ -44,7 +44,10 @@ namespace Game1.ItemsClasses
             spriteBatch.End();
         }
 
-
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
+        }
 
 
     }

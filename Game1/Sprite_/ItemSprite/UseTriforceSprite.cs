@@ -20,10 +20,11 @@ namespace Game1.ItemsClasses
         private int totalFrames;
         private int x = 450;
         private int y = 150;
+        private Rectangle destinationRectangle;
 
         public UseTriforceSprite()
         {
-            
+
             Rows = 1;
             Columns = 2;
             currentFrame = 0;
@@ -55,7 +56,10 @@ namespace Game1.ItemsClasses
             spriteBatch.End();
         }
 
-
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
+        }
 
 
 
