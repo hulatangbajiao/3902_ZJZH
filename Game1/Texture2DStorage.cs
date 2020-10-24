@@ -137,12 +137,16 @@ namespace Game1
         
         private static Texture2D LinkUseItemSpriteSheet;
 
+        private static Texture2D RoomExteriorSpriteSheet;
+
         // More private static Texture2D fields follow
         // ...
 
         // static classes have no constructor, but we need a method to initialize the Texture2D fieldsw
         public static void LoadAllTextures(ContentManager content)
         {
+            RoomExteriorSpriteSheet = content.Load<Texture2D>("images/RoomExterior");
+
             UpIdleLinkSpriteSheet = content.Load<Texture2D>("images/UpIdle");
             UpMovingLinkSpriteSheet = content.Load<Texture2D>("images/UpMoving");
             UpUseItemSpriteSheet = content.Load<Texture2D>("images/UseItemWeapon/UseItemWeaponBack");
@@ -292,6 +296,12 @@ namespace Game1
         {
             // unload all the Texture2Ds - not needed for the scope of this project
         }
+
+        public static Texture2D GetRoomExteriorSpriteSheet()
+        {
+            return RoomExteriorSpriteSheet;
+        }
+
 
         public static Texture2D GetDamagedLinkSpriteSheet()
         {

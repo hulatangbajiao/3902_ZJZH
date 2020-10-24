@@ -20,8 +20,8 @@ namespace Game1.ItemsClasses
         private int totalFrames;
         private int x = 450;
         private int y = 150;
+        private int maxTime;
         private Rectangle destinationRectangle;
-
         public UseTriforceSprite()
         {
 
@@ -33,7 +33,12 @@ namespace Game1.ItemsClasses
 
         public void Update()
         {
-            currentFrame++;
+            maxTime++;
+            if (maxTime > 10)
+            {
+                currentFrame++;
+                maxTime = 0;
+            }
             if (currentFrame == totalFrames)
                 currentFrame = 0;
 
@@ -60,7 +65,6 @@ namespace Game1.ItemsClasses
         {
             return destinationRectangle;
         }
-
 
 
     }
