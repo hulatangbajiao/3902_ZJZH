@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace Game1.Collision
 {
-    class LinkProjectileCollisonHandler : IHandler
+    class EnemyProjectileCollisonHandler : IHandler
     {
         
         private ICollision side;
         private IEnemy enemy;
         private IProjectile projectile;
 
-        public LinkProjectileCollisonHandler(IEnemy enemy, IProjectile projectile, ICollision side)
+        public EnemyProjectileCollisonHandler(IEnemy enemy, IProjectile projectile, ICollision side)
         {
             this.enemy = enemy;
             this.projectile = projectile;
@@ -25,20 +25,10 @@ namespace Game1.Collision
 
         public void Execute()
         {
-            
-            if (side == ICollision.Bottom)
+            if (side != ICollision.Null)
             {
-                
-            } else if (side == ICollision.Left)
-            {
-                
-            } else if (side == ICollision.Right)
-            {
-                
-            } else if (side == ICollision.Top)
-            {
-                
-            } 
+                enemy.exist = false;
+            }
         }
     }
 }

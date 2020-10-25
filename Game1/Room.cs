@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Game1.Enemy_NPC;
+using Game1.Interfaces;
+using System.Collections.Generic;
 
 namespace Game1
 {

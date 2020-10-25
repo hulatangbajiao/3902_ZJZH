@@ -11,7 +11,6 @@ namespace Game1.Collision
 {
     class EnemyBlockCollisionHandler : IHandler
     {
-
         private ICollision side;
         private IEnemy enemy;
         private IBlock block;
