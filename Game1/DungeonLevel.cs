@@ -15,7 +15,7 @@ namespace Game1
 
         public DungeonLevel(ILink link, int levelNum)
         {
-            LevelLoader1 = new LevelLoader(1);
+            LevelLoader1 = new LevelLoader();
             Map = new Map();
             Link = link;
             Rooms = new List<IRoom>();
