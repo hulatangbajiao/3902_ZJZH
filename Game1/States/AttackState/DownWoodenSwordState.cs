@@ -8,6 +8,7 @@ namespace Game1
         public ILink Link { get; set; }
         MainStage game;
         public ISprite GetSprite { get; set; }
+
         public DownWoodenSwordState(ILink link, MainStage game)
         {
             this.Link = link;

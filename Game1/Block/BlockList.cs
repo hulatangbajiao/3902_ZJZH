@@ -9,7 +9,7 @@ using Game1.Sprite_;
 using Game1.Interfaces;
 using Game1;
 using TextureAtlas;
-using Game1.Sprite_.BlockSprite;
+
 
 namespace Game1.Block
 {
@@ -28,35 +28,7 @@ namespace Game1.Block
             blockList.Add(new BlueFaceBlockSprite());
             blockList.Add(new BlueStoneBlockSprite());
 
-            blockList.Add(new BombedDoorUpSprite());
-            blockList.Add(new BombedDoorDownSprite());
-            blockList.Add(new BombedDoorLeftSprite());
-            blockList.Add(new BombedDoorRightSprite());
 
-            blockList.Add(new BrickTileSprite());
-            blockList.Add(new GapTileSprite());
-            blockList.Add(new LadderTileSprite());
-
-            blockList.Add(new LockedDoorDownSprite());
-            blockList.Add(new LockedDoorUpSprite());
-            blockList.Add(new LockedDoorLeftSprite());
-            blockList.Add(new LockedDoorRightSprite());
-
-            blockList.Add(new OpenDoorDownSprite());
-            blockList.Add(new OpenDoorLeftSprite());
-            blockList.Add(new OpenDoorRightSprite());
-            blockList.Add(new OpenDoorUpSprite());
-
-            blockList.Add(new ShutDoorUpSprite());
-            blockList.Add(new ShutDoorDownSprite());
-            blockList.Add(new ShutDoorLeftSprite());
-            blockList.Add(new ShutDoorRightSprite());
-
-            blockList.Add(new StairsSprite());
-            blockList.Add(new WallUpSprite());
-            blockList.Add(new WallDownSprite());
-            blockList.Add(new WallLeftSprite());
-            blockList.Add(new WallRightSprite());
         }
 
 

@@ -11,7 +11,7 @@ using Game1;
 
 namespace Game1.ItemsClasses
 {
-    class UseRupeeSprite : Iitem
+    class UseRupeeSprite : IItemSprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
@@ -20,11 +20,11 @@ namespace Game1.ItemsClasses
         private int totalFrames;
         private int x = 450;
         private int y = 150;
+        private int maxTime;
         private Rectangle destinationRectangle;
-
         public UseRupeeSprite()
         {
-            
+
             Rows = 1;
             Columns = 2;
             currentFrame = 0;
@@ -33,14 +33,19 @@ namespace Game1.ItemsClasses
 
         public void Update()
         {
-            currentFrame++;
+            maxTime++;
+            if (maxTime > 10)
+            {
+                currentFrame++;
+                maxTime = 0;
+            }
             if (currentFrame == totalFrames)
                 currentFrame = 0;
 
 
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
             Texture = Texture2DStorage.GetRupeeSpriteSheet();
             int width = Texture.Width / Columns;
@@ -49,18 +54,18 @@ namespace Game1.ItemsClasses
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle(x, y, width / 2, height / 2);
+            Rectangle destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, width / 2, height / 2);
 
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
 
-
         public Rectangle GetRectangle()
         {
             return destinationRectangle;
         }
+
 
     }
 }

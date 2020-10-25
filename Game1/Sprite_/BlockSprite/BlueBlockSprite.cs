@@ -19,7 +19,7 @@ namespace Game1.Block
         private Rectangle destinationRectangle;
         public BlueBlockSprite()
         {
-            
+
         }
 
         public void Update()
@@ -30,13 +30,13 @@ namespace Game1.Block
         {
 
             Texture = Texture2DStorage.GetBlueBlockSpriteSheet();
-     
+
             Nullable<Rectangle> sourceRectangle = new Rectangle(0, 0, Texture.Width, Texture.Height);
             Rectangle destinationRectangle = new Rectangle(400, 100, Texture.Width / 2, Texture.Height / 2);
 
-            
+
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            
+
         }
 
         public Rectangle GetRectangle()

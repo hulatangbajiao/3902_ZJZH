@@ -1,6 +1,7 @@
 ﻿using Game1.Block;
 using Game1.Controller;
 using Game1.Detection;
+using Game1.Interfaces;
 using Game1.ItemsClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -15,7 +16,11 @@ namespace Game1
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
+
         private List<IController> controllers;
+
+
+
 
         /// <summary>
         /// Active sprite. Exposed as a class property
@@ -33,7 +38,6 @@ namespace Game1
         public IItemList ItemList { get; set; }
         public ILinkState[] Linkstates { get; }
         public EnemyList Enemylist { get; set; }
-        public EnemyBlockDetection Enemyblockdetection { get; set; }
 
         public MainStage()
         {
@@ -50,19 +54,11 @@ namespace Game1
             this.ItemList = new ItemList();
             this.Enemylist = new EnemyList(this);
 
-            this.Enemyblockdetection = new EnemyBlockDetection(Enemylist, BlockList);
+
             controllers = new List<IController>
             {
                 new KeyboardController(this)
             };
-        }
-
-        /// <summary>
-        /// Reset all sprites to a known state
-        /// </summary>
-        public void ResetState()
-        {
-            Link.Reset();
         }
 
         /// <summary>
@@ -79,6 +75,7 @@ namespace Game1
             this.IsFixedTimeStep = false;
             graphics.SynchronizeWithVerticalRetrace = false;
             this.ProjectileFactory.Initialize();
+
 
             // Create instances and register commands
             base.Initialize();
@@ -109,7 +106,7 @@ namespace Game1
 
         /// <summary>
         /// Allows the game to run logic such as updating the world,
-        /// checking for Collisions, gathering input, and playing audio.
+        /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
@@ -123,9 +120,7 @@ namespace Game1
             this.ItemList.Update(this);
             Link.Update();
             this.Enemylist.Update(this);
-            this.Enemyblockdetection.update();
             base.Update(gameTime);
-           
         }
 
         /// <summary>
@@ -145,5 +140,18 @@ namespace Game1
             spriteBatch.End();
             base.Draw(gameTime);
         }
+
+        public void Restart()
+        {
+            this.Link.State = new UpIdleState(this.Link, this);
+            GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
+            this.ProjectileFactory = new ProjectileFactory(this);
+            this.BlockList = new BlockList();
+            this.ItemList = new ItemList();
+            this.Enemylist = new EnemyList(this);
+            Initialize();
+        }
+
+
     }
 }

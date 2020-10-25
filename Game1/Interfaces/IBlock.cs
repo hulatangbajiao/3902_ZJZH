@@ -6,14 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game1.Interfaces
+namespace Game1
 {
     public interface IBlock
     {
+        Vector2 Position { get; set; }
+        bool exist { get; set; }
         void Update();
-
         void Draw(SpriteBatch spriteBatch);
-
+        Rectangle GetRectangle();
 
 
 

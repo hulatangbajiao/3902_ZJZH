@@ -17,9 +17,9 @@ using System.Runtime.InteropServices;
 using System.Xml.Schema;
 
 
-namespace TextureAtlas
+namespace Game1
 {
-    class UseFairySprite : Iitem
+    public class UseFairySprite : IItemSprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
@@ -33,7 +33,7 @@ namespace TextureAtlas
 
         public UseFairySprite()
         {
-            
+
             Rows = 1;
             Columns = 2;
             currentFrame = 0;
@@ -48,33 +48,12 @@ namespace TextureAtlas
                 currentFrame = 0;
             }
 
-            Random rdm = new Random();
-            if (x >= 800)
-            {
-                x = x - rdm.Next(60, 110);
-            }
-            else if (x <= 0)
-            {
-                x = x + rdm.Next(60, 110);
-            }
-            else if (y >= 360)
-            {
-                y = y - rdm.Next(60, 110);
-            }
-            else if (y <= 0)
-            {
-                y = y + rdm.Next(60, 110);
-            }
-            else
-            {
-                x = x + rdm.Next(-15, 15);
-                y = y + rdm.Next(-10, 10);
-            }
+            
 
 
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
             Texture = Texture2DStorage.GetFairySpriteSheet();
             int width = Texture.Width / Columns;
@@ -83,7 +62,7 @@ namespace TextureAtlas
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle(x, y, width/2, height/2);
+            Rectangle destinationRectangle = new Rectangle(x + (int)Position.X, x + (int)Position.Y, width / 2, height / 2);
 
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);

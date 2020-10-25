@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game1.Interfaces
+namespace Game1
 {
-    interface IProjectile
+    public interface IProjectile
     {
         IProjectileSprite GetSprite { get; set; }
         Vector2 Position { get; set; }

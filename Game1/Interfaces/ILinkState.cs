@@ -1,10 +1,12 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1
 {
     public interface ILinkState
     {
         ISprite GetSprite { get; set; }
+
         void TakeDamage();
         void MoveLeft();
         void MoveUp();

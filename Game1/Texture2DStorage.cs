@@ -133,11 +133,11 @@ namespace Game1
         private static Texture2D MerchantGSpriteSheet;
         private static Texture2D FireBallSpriteSheet;
 
-   
 
-
-        //private static Texture2D DamagedLinkSpriteSheet;
+        
         private static Texture2D LinkUseItemSpriteSheet;
+
+        private static Texture2D RoomExteriorSpriteSheet;
 
         // More private static Texture2D fields follow
         // ...
@@ -145,6 +145,8 @@ namespace Game1
         // static classes have no constructor, but we need a method to initialize the Texture2D fieldsw
         public static void LoadAllTextures(ContentManager content)
         {
+            RoomExteriorSpriteSheet = content.Load<Texture2D>("images/RoomExterior");
+
             UpIdleLinkSpriteSheet = content.Load<Texture2D>("images/UpIdle");
             UpMovingLinkSpriteSheet = content.Load<Texture2D>("images/UpMoving");
             UpUseItemSpriteSheet = content.Load<Texture2D>("images/UseItemWeapon/UseItemWeaponBack");
@@ -174,7 +176,7 @@ namespace Game1
             BombSpriteSheet = content.Load<Texture2D>("images/projectile/Bomb");
             BoomerSpriteSheet = content.Load<Texture2D>("images/projectile/Boomerang");
 
-      
+            DamagedLinkSpriteSheet = content.Load<Texture2D>("images/DamagedLink");
 
             //Items
             ArrowSpriteSheet = content.Load<Texture2D>("images/Item/Arrow");
@@ -194,42 +196,44 @@ namespace Game1
             HeartSpriteSheet = content.Load<Texture2D>("images/Item/Heart");
             RupeeSpriteSheet = content.Load<Texture2D>("images/Item/Rupy");
             TriforceSpriteSheet = content.Load<Texture2D>("images/Item/Triforce");
-
-            //Blocks
+            //block
             BlueBlockSpriteSheet = content.Load<Texture2D>("images/Block/BlueBlock");
             BlueFaceBlockSpriteSheet = content.Load<Texture2D>("images/Block/BlueFaceBlock");
             BlueStoneBlockSpriteSheet = content.Load<Texture2D>("images/Block/BlueStoneBlock");
-            BombedDoorUpSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorUp");
-            BombedDoorDownSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorDown") ;
-            BombedDoorLeftSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorLeft");
-            BombedDoorRightSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorRight");
-
-            LockedDoorUpSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorUp");
-            LockedDoorDownSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorDown");
-            LockedDoorLeftSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorLeft");
-            LockedDoorRightSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorRight");
-
-            OpenDoorUpSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorUp");
-            OpenDoorDownSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorDown");
-            OpenDoorLeftSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorLeft");
-            OpenDoorRightSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorRight");
-
-            ShutDoorUpSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorUp");
-            ShutDoorDownSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorDown");
-            ShutDoorLeftSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorLeft");
-            ShutDoorRightSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorRight");
-
-            WallUpSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorUp");
-            WallDownSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorDown");
-            WallLeftSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorLeft");
-            WallRightSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorRight");
-
             BrickTileSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorUp");
             GapTileSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorDown");
             LadderTileSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorLeft");
             StairsSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorRight");
             FireSpriteSheet = content.Load<Texture2D>("images/Block/Fire");
+
+            //Doors
+            BombedDoorUpSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorUp");
+            BombedDoorDownSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorDown");
+            BombedDoorLeftSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorLeft");
+            BombedDoorRightSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorRight");
+
+            LockedDoorUpSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorUp");
+            LockedDoorDownSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorDown");
+            LockedDoorLeftSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorLeft");
+            LockedDoorRightSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorRight");
+
+            OpenDoorUpSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorUp");
+            OpenDoorDownSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorDown");
+            OpenDoorLeftSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorLeft");
+            OpenDoorRightSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorRight");
+
+            ShutDoorUpSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorUp");
+            ShutDoorDownSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorDown");
+            ShutDoorLeftSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorLeft");
+            ShutDoorRightSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorRight");
+
+            WallUpSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorUp");
+            WallDownSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorDown");
+            WallLeftSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorLeft");
+            WallRightSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorRight");
+
             //enemy
+
             UpOctorokSpriteSheet = content.Load<Texture2D>("images/Enemy/Octorok/OctorokUp");
             DownOctorokSpriteSheet = content.Load<Texture2D>("images/Enemy/Octorok/OctorokDown");
             LeftOctorokSpriteSheet = content.Load<Texture2D>("images/Enemy/Octorok/OctorokLeft");
@@ -293,11 +297,16 @@ namespace Game1
             // unload all the Texture2Ds - not needed for the scope of this project
         }
 
+        public static Texture2D GetRoomExteriorSpriteSheet()
+        {
+            return RoomExteriorSpriteSheet;
+        }
+
+
         public static Texture2D GetDamagedLinkSpriteSheet()
         {
             return DamagedLinkSpriteSheet;
         }
-    
 
         public static Texture2D GetUpIdleLinkSpriteSheet()
         {
@@ -403,7 +412,7 @@ namespace Game1
         {
             return RightWoodenArrowSpriteSheet;
         }
-        //items
+
         public static Texture2D GetBombSpriteSheet()
         {
             return BombSpriteSheet;
@@ -484,6 +493,28 @@ namespace Game1
             return BlueStoneBlockSpriteSheet;
         }
 
+        public static Texture2D GetBrickTileSpriteSheet()
+        {
+            return BrickTileSpriteSheet;
+        }
+        public static Texture2D GetGapTileSpriteSheet()
+        {
+            return GapTileSpriteSheet;
+        }
+        public static Texture2D GetLadderTileSpriteSheet()
+        {
+            return LadderTileSpriteSheet;
+        }
+        public static Texture2D GetStairsSpriteSheet()
+        {
+            return StairsSpriteSheet;
+        }
+
+        public static Texture2D GetFireSpriteSheet()
+        {
+            return FireSpriteSheet;
+        }
+        //Doors
         public static Texture2D GetBombedDoorUpSpriteSheet()
         {
             return BombedDoorUpSpriteSheet;
@@ -569,31 +600,6 @@ namespace Game1
         }
 
 
-        public static Texture2D GetBrickTileSpriteSheet()
-        {
-            return BrickTileSpriteSheet;
-        }
-        public static Texture2D GetGapTileSpriteSheet()
-        {
-            return GapTileSpriteSheet;
-        }
-        public static Texture2D GetLadderTileSpriteSheet()
-        {
-            return LadderTileSpriteSheet;
-        }
-        public static Texture2D GetStairsSpriteSheet()
-        {
-            return StairsSpriteSheet;
-        }
-
-        public static Texture2D GetFireSpriteSheet()
-        {
-            return FireSpriteSheet;
-        }
-
-
-
-        //enemies
         public static Texture2D GetUpMovingOctorokSpriteSheet()
         {
             return UpOctorokSpriteSheet;
@@ -770,7 +776,8 @@ namespace Game1
         {
             return MerchantGSpriteSheet;
         }
-    
+       
+
         public static Texture2D GetLinkUseItemSpriteSheet()
         {
             return LinkUseItemSpriteSheet;
