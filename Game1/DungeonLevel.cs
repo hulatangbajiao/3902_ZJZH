@@ -13,7 +13,7 @@ namespace Game1
         public IRoom CurrentRoom { get; set; }
         private List<Rectangle> doors;
 
-        public DungeonLevel(ILink link, int levelNum)
+        public DungeonLevel(ILink link)
         {
             LevelLoader1 = new LevelLoader();
             Map = new Map();
