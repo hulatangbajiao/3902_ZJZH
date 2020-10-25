@@ -40,9 +40,9 @@ namespace Game1
             HasOther = false;
         }
 
-        public void Initialize(IPlayer player, List<IEnemy> enemies, List<IItem> receivedItems, List<IItem> obtainedItems, List<IBlock> blocks)
+        public void Initialize(ILink link, List<IEnemy> enemies, List<IItem> receivedItems, List<IItem> obtainedItems, List<IBlock> blocks)
         {
-            Player = player;
+            Link = link;
             Enemies.AddRange(enemies);
             ReceivedItems.AddRange(receivedItems);
             ObtainedItems.AddRange(obtainedItems);
