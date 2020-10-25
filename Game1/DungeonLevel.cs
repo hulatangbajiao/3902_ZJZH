@@ -28,14 +28,7 @@ namespace Game1
                 CurrentRoom = Rooms[0];
             }
 
-            foreach (IRoom room in Rooms)
-            {
-                
-                room.Boundary = new List<IBlock>
-                {
-
-                };
-            }
+           
 
             doors = new List<Rectangle>
             {
