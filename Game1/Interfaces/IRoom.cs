@@ -1,5 +1,4 @@
-﻿using Game1.Enemy_NPC;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
 namespace Game1.Interfaces
@@ -8,8 +7,8 @@ namespace Game1.Interfaces
     {
         ILink Link { get; set; }
         List<IEnemy> Enemies { get; set; }
-        List<Iitem> ReceivedItems { get; set; }
-        List<Iitem> ObtainedItems { get; set; }
+        List<IItem> ReceivedItems { get; set; }
+        List<IItem> ObtainedItems { get; set; }
         List<IProjectile> Projectiles { get; set; }
         List<IBlock> Block { get; set; }
         List<IBlock> Wall { get; set; }
@@ -26,7 +25,7 @@ namespace Game1.Interfaces
         IRoom Other { get; set; }
         bool HasOther { get; set; }
 
-        void Initialize(ILink link, List<IEnemy> enemies, List<Iitem> ReceivedItems, List<Iitem> ObtainedItems, List<IBlock> blocks);
+        void Initialize(ILink link, List<IEnemy> enemies, List<IItem> ReceivedItems, List<IItem> ObtainedItems, List<IBlock> blocks);
         void Update();
         void Draw(SpriteBatch spriteBatch);
     }

@@ -42,29 +42,29 @@ namespace Game1.Level
                         switch (enemyName)
                         {
                             case "Aquamentus":
-                                room.Enemies.Add(new Aquamentus((1,0),position));
+                                room.Enemies.Add(new Aquamentus(new Vector2(1,0),position));
                                 break;
 
                             case "BlueBat":
-                                room.Enemies.Add(new BlueBat((1,0), position));
+                                room.Enemies.Add(new BlueBat(new Vector2(1,0), position));
                                 break;
                             case "BlueGoriya":
-                                room.Enemies.Add(new BlueGoriya((1,0), position));
+                                room.Enemies.Add(new BlueGoriya(new Vector2(1,0), position));
                                 break;
                             case "RedGoriya":
-                                room.Enemies.Add(new RedGoriya((1,0), position));
+                                room.Enemies.Add(new RedGoriya(new Vector2(1,0), position));
                                 break;
                             case "RedBat":
-                                room.Enemies.Add(new RedBat((1,0), position));
+                                room.Enemies.Add(new RedBat(new Vector2(1,0), position));
                                 break;
                             case "Oct":
-                                room.Enemies.Add(new Oct((1,0), position));
+                                room.Enemies.Add(new Oct(new Vector2(1,0), position));
                                 break;
                             case "BlueOct":
-                                room.Enemies.Add(new BlueOct((1,0), position));
+                                room.Enemies.Add(new BlueOct(new Vector2(1,0), position));
                                 break;
                             case "BlueM":
-                                room.Enemies.Add(new BlueM((1,0), position));
+                                room.Enemies.Add(new BlueM(new Vector2(1,0), position));
                                 break;
 
 

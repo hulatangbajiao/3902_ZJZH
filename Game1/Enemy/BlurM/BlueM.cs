@@ -22,13 +22,13 @@ namespace Game1
         public Vector2 Direction { get; set; }
         public int MovingSpeed = 1;
         
-        public BlueM(MainStage game)
+        public BlueM()
         {
             exist = true;
             State = new BlueMUpMovingState(this, game);
-            GlobalDefinitions.BlueMPosition = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
+            
             rand = new Random();
-            this.game = game;
+            
         }
 
 

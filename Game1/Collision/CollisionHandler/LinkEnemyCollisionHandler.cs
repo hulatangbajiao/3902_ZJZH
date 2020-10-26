@@ -1,5 +1,4 @@
 ﻿using Game1.CollisionHandler;
-using Game1.Enemy_NPC;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;

@@ -1,5 +1,5 @@
 ﻿
-using Game1.Enemy_NPC;
+using Game1.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -14,7 +14,6 @@ namespace Game1
     {
 
         public IEnemyState State { get; set; }
-        private MainStage game;
         int count;
         Random rand;
         public bool exist { get; set; }
@@ -24,7 +23,7 @@ namespace Game1
 
         public Aquamentus(Vector2 position, Vector2 direction)
         {
-            State = new AquamentusLeftMovingState(this, game);
+            State = new AquamentusLeftMovingState(this);
             this.Position = position;
             
 

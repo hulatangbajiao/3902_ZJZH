@@ -8,17 +8,27 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1.Sprite_.NPC_Sprite
 {
-    class OldManSprite : DownIdleLinkSprite
+    class OldManSprite : ISprite
     {
+        private Rectangle destinationRectangle;
         public OldManSprite()
         {
         }
-        public override void Draw(SpriteBatch spriteBatch)
+        public void Update()
+        {
+
+        }
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
             Rectangle sourceRectangle = new Rectangle(0, 0, 96, 96);
-            Rectangle destinationRectangle = new Rectangle((int)GlobalDefinitions.OctPosition.X, (int)GlobalDefinitions.OctPosition.Y, 96, 96);
+            destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, 96, 96);
             //use texture2dStorage to get the texture2d of the sprite
             spriteBatch.Draw(Texture2DStorage.GetOldManSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
+        }
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
+
         }
     }
 }

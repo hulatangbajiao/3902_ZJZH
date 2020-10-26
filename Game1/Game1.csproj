@@ -71,7 +71,6 @@
     <Compile Include="Collision\Detection\GeneralDetection.cs" />
     <Compile Include="Command\RoomCommand\PreviousRoomCommand.cs" />
     <Compile Include="Controller\MouseController.cs" />
-    <Compile Include="DungeonLevel.cs" />
     <Compile Include="Enemy\Aquamentus\Aquamentus.cs" />
     <Compile Include="Enemy\Aquamentus\AquamentusLeftMovingState.cs" />
     <Compile Include="Enemy\Aquamentus\AquamentusRightMovingState.cs" />
@@ -102,7 +101,7 @@
     <Compile Include="Interfaces\IItemSprite.cs" />
     <Compile Include="Interfaces\ILevel.cs" />
     <Compile Include="Interfaces\IMap.cs" />
-    <Compile Include="IRoom.cs" />
+    <Compile Include="Interfaces\IRoom.cs" />
     <Compile Include="ItemsClasses\ItemTriForce.cs" />
     <Compile Include="ItemsClasses\ItemRupee.cs" />
     <Compile Include="ItemsClasses\ItemMap.cs" />
@@ -117,14 +116,10 @@
     <Compile Include="ItemsClasses\ItemBomb.cs" />
     <Compile Include="ItemsClasses\ItemArrow.cs" />
     <Compile Include="ItemsClasses\ItemFactory.cs" />
-    <Compile Include="LevelLoader.cs" />
-    <Compile Include="Map.cs" />
-    <Compile Include="NPC\MerchantG.cs" />
-    <Compile Include="NPC\MerchantGState.cs" />
-    <Compile Include="NPC\MerchantP.cs" />
-    <Compile Include="NPC\MerchantPState.cs" />
-    <Compile Include="NPC\MerchantR.cs" />
-    <Compile Include="NPC\MerchantRState.cs" />
+    <Compile Include="Level\DungeonLevel.cs" />
+    <Compile Include="Level\LevelLoader.cs" />
+    <Compile Include="Level\Map.cs" />
+    <Compile Include="Level\Room.cs" />
     <Compile Include="Enemy\Oct\Oct.cs" />
     <Compile Include="Enemy\Oct\OctDownMovingState.cs" />
     <Compile Include="Enemy\Oct\OctLeftMovingState.cs" />
@@ -154,7 +149,6 @@
     <Compile Include="Projectile\Boomer.cs" />
     <Compile Include="Interfaces\IProjectileFactory.cs" />
     <Compile Include="Projectile\ProjectileFactory.cs" />
-    <Compile Include="Room.cs" />
     <Compile Include="Sprite_\AttackSprite\DownWoodenSwordLinkSprite.cs" />
     <Compile Include="Sprite_\AttackSprite\LeftWoodenSwordLinkSprite.cs" />
     <Compile Include="Sprite_\AttackSprite\RightWoodenSwordLinkSprite.cs" />
@@ -232,11 +226,7 @@
     <Compile Include="Sprite_\MapSprite.cs" />
     <Compile Include="Sprite_\Moving Sprite\LeftMovingLinkSprite.cs" />
     <Compile Include="Sprite_\Moving Sprite\UpMovingLinkSprite.cs" />
-    <Compile Include="Sprite_\NPCSprite\MerchantGSprite.cs" />
-    <Compile Include="Sprite_\NPCSprite\MerchantPSprite.cs" />
-    <Compile Include="Sprite_\NPCSprite\MerchantRSprite.cs" />
     <Compile Include="Sprite_\NPCSprite\OldManSprite.cs" />
-    <Compile Include="Sprite_\NPCSprite\OldWomanSprite.cs" />
     <Compile Include="Sprite_\ProjectileSprite\Arrow\DownArrowSprite.cs" />
     <Compile Include="Sprite_\ProjectileSprite\Arrow\LeftArrowSprite.cs" />
     <Compile Include="Sprite_\ProjectileSprite\Arrow\RightArrowSprite.cs" />
@@ -298,7 +288,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
-    <Content Include="Level1.xml" />
+    <Content Include="XML\LevelRooms.xml" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
