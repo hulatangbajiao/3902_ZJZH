@@ -68,7 +68,7 @@ namespace Game1
 
         public void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
         {
-            foreach (Iitem item in ReceivedItems)
+            foreach (IItem item in ReceivedItems)
             {
                 item.Draw(spriteBatch);
             }

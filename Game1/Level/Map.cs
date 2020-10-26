@@ -8,7 +8,7 @@ namespace Game1.Level
     class Map : IMap
     {
         public Rectangle DestinationRectangle { get; set; }
-        public ISprite MapSprite { get; set; }
+        public MapSprite MapSprite { get; set; }
         const int ROOM_WIDTH = GlobalDefinitions.RoomWidth, ROOM_HEIGHT = GlobalDefinitions.RoomHeight;
 
         public Map()

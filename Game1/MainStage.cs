@@ -43,6 +43,10 @@ namespace Game1
 
             graphics.PreferredBackBufferWidth = GlobalDefinitions.GraphicsWidth;
             graphics.PreferredBackBufferHeight = GlobalDefinitions.GraphicsHeight;
+
+            this.Link = new Link(this);
+            this.ProjectileFactory = new ProjectileFactory(this);
+
             this.dungeonlevel = new DungeonLevel(this.Link);
 
             controllers = new List<IController>
@@ -135,6 +139,7 @@ namespace Game1
             this.Link.State = new UpIdleState(this.Link, this);
             GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
             this.ProjectileFactory = new ProjectileFactory(this);
+
             this.dungeonlevel = new DungeonLevel(this.Link);
             Initialize();
         }
