@@ -8,6 +8,15 @@ namespace Game1.Command
 {
     class PreviousRoomCommand : ICommand
     {
-        private 
+        private List<IRoom> RoomList;
+        public PreviousRoomCommand(List<IRoom> RoomList)
+        {
+            this.RoomList = RoomList;
+        }
+        public void Execute()
+        {
+            RoomList.MoveToPrev();
+        }
     }
+    
 }

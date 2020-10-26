@@ -16,10 +16,5 @@ namespace Game1.Command
         {
             game.Restart();
         }
-
-        public void Stop()
-        {
-            // Do nothing
-        }
     }
 }

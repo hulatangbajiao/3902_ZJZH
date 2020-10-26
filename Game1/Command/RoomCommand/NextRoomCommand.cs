@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Game1.Command
 {
-    class NextRoomCommand
+    class NextRoomCommand : ICommand
     {
+        private List<IRoom> RoomList;
+        public NextRoomCommand(List<IRoom> RoomList)
+        {
+            this.RoomList = RoomList;
+        }
+        public void Execute()
+        {
+            RoomList.MoveToNext();
+        }
     }
 }

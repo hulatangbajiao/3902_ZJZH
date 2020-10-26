@@ -20,10 +20,6 @@ namespace Game1.Command
             Link.MoveRight();
             
         }
-        public void Stop()
-        {
-            Link.Stop();
-        }
     }
    
 }

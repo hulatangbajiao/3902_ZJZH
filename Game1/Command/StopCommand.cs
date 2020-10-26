@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Game1.Command
 {
-    class LeftMovingCommand : ICommand
+    class StopCommand : ICommand
     {
-        private ILink Link;
-
-        public LeftMovingCommand(ILink Link)
+        public ILink Link;
+        public StopCommand(ILink Link)
         {
             this.Link = Link;
-        }
 
+        }
         public void Execute()
         {
-            Link.MoveLeft();
+            Link.Stop();
         }
+
     }
 }

@@ -28,12 +28,6 @@ namespace Game1.Command
 
             Link.UseItem(2);
         }
-
-        public void Stop()
-        {
-            Link.Stop();
-
-        }
     }
    
 }
