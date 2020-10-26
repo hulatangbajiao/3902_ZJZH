@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Block\UnpassableBlock.cs" />
     <Compile Include="Block\BlockFactory.cs" />
+    <Compile Include="Collision\CollisionHandler\LinkReceivedItemCollisionHandler.cs" />
+    <Compile Include="Collision\CollisionHandler\LinkObtainedItemCollisionHandler.cs" />
     <Compile Include="Collision\CollisionHandler\EnemyBlockCollisionHandler.cs" />
     <Compile Include="Collision\CollisionHandler\Ihandler.cs" />
     <Compile Include="Collision\CollisionHandler\EnemyProjectileCollisonHandler.cs" />
@@ -94,6 +96,7 @@
     <Compile Include="Interfaces\IEnemy.cs" />
     <Compile Include="Interfaces\IEnemyState.cs" />
     <Compile Include="Interfaces\IItemSprite.cs" />
+    <Compile Include="IRoom.cs" />
     <Compile Include="ItemsClasses\ItemTriForce.cs" />
     <Compile Include="ItemsClasses\ItemRupee.cs" />
     <Compile Include="ItemsClasses\ItemMap.cs" />
@@ -108,6 +111,7 @@
     <Compile Include="ItemsClasses\ItemBomb.cs" />
     <Compile Include="ItemsClasses\ItemArrow.cs" />
     <Compile Include="ItemsClasses\ItemFactory.cs" />
+    <Compile Include="LevelLoader.cs" />
     <Compile Include="NPC\MerchantG.cs" />
     <Compile Include="NPC\MerchantGState.cs" />
     <Compile Include="NPC\MerchantP.cs" />
@@ -148,6 +152,7 @@
     <Compile Include="Projectile\Boomer.cs" />
     <Compile Include="Interfaces\IProjectileFactory.cs" />
     <Compile Include="Projectile\ProjectileFactory.cs" />
+    <Compile Include="Room.cs" />
     <Compile Include="Sprite_\AttackSprite\DownWoodenSwordLinkSprite.cs" />
     <Compile Include="Sprite_\AttackSprite\LeftWoodenSwordLinkSprite.cs" />
     <Compile Include="Sprite_\AttackSprite\RightWoodenSwordLinkSprite.cs" />
@@ -291,6 +296,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <Content Include="Level1.xml" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
