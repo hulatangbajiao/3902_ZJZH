@@ -3,27 +3,19 @@ using System.Collections.Generic;
 using System.Xml;
 
 
-namespace Team4_LegendOfZelda.ILevel_Classes
+namespace Game1
 {
     class LevelLoader
     {
         private XmlDocument LevelXml;
 
 
-        public LevelLoader(int levelNum)
+        public LevelLoader()
         {
             LevelXml = new XmlDocument();
-            switch (levelNum)
-            {
-                case 0:
-                    break;
-                case 1:
+            
                     LevelXml.Load("Level1.xml");
-                    break;
-                default:
-                    break;
-            }
-
+         
 
         }
 

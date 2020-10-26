@@ -14,9 +14,6 @@ namespace Game1
         bool exist { get; set; }
         void Update();
         void Draw(SpriteBatch spriteBatch);
-
-
-
-
+        Rectangle GetRectangle();
     }
 }
