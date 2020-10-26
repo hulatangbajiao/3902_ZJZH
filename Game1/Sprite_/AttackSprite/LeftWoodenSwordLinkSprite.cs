@@ -13,7 +13,7 @@ namespace Game1
         private int currentFrame = 0;
         private int totalFrame = 12;
         private ILink Link;
-
+        private Rectangle destinationRectangle;
         public LeftWoodenSwordLinkSprite(MainStage game)
         {
             Link = game.Link;
@@ -26,10 +26,10 @@ namespace Game1
 
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
             Rectangle sourceRectangle;
-            Rectangle destinationRectangle;
+            
 
             if (currentFrame < 3)
             {
@@ -57,6 +57,10 @@ namespace Game1
             {
                 Link.State.Stop();
             }
+        }
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
         }
     }
 }

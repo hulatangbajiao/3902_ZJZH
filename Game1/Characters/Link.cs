@@ -67,6 +67,9 @@ namespace Game1
             State.Update();
         }
 
-
+        public Rectangle GetRectangle() 
+        {
+            return State.GetSprite.GetRectangle();
+        }
     }
 }

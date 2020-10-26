@@ -11,7 +11,7 @@ using Game1;
 
 namespace Game1.ItemsClasses
 {
-    class UseBombSprite : IItemSprite
+    class UseBombSprite : ISprite
     {
 
 

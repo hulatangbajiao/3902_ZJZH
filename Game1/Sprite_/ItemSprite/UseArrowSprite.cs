@@ -12,7 +12,7 @@ using Game1;
 
 namespace Game1.ItemsClasses
 {
-    class UseArrowSprite : IItemSprite
+    class UseArrowSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         private Rectangle destinationRectangle;

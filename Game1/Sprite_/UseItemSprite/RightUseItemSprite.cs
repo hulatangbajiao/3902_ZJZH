@@ -10,7 +10,7 @@ namespace Game1
 {
     public class RightUseItemSprite : ISprite
     {
-
+        private Rectangle destinationRectangle;
 
         public RightUseItemSprite()
         {
@@ -23,10 +23,10 @@ namespace Game1
 
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
             Rectangle sourceRectangle;
-            Rectangle destinationRectangle;
+            
             Texture2D texture = Texture2DStorage.GetRightUseItemLinkSpriteSheet();
 
 
@@ -35,6 +35,10 @@ namespace Game1
 
 
             spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.White);//use Texture2DStorage class to load texture2D
+        }
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
         }
     }
 }

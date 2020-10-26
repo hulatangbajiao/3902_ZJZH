@@ -11,7 +11,7 @@ using Game1;
 
 namespace Game1.Sprite_.BlockSprite
 {
-    class OpenDoorLeftSprite : IBlock
+    class OpenDoorLeftSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         private Rectangle destinationRectangle;
@@ -24,7 +24,7 @@ namespace Game1.Sprite_.BlockSprite
         {
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
 
             Texture = Texture2DStorage.GetOpenDoorLeftSpriteSheet();

@@ -11,7 +11,7 @@ using Game1;
 
 namespace Game1.ItemsClasses
 {
-    class UseTriforceSprite : IItemSprite
+    class UseTriforceSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }

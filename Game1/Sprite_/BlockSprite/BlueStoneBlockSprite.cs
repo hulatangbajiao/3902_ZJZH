@@ -11,7 +11,7 @@ using Game1;
 
 namespace Game1.Block
 {
-    class BlueStoneBlockSprite : IBlock
+    class BlueStoneBlockSprite : ISprite
     {
 
         public Texture2D Texture { get; set; }
@@ -25,7 +25,7 @@ namespace Game1.Block
         {
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
 
             Texture = Texture2DStorage.GetBlueStoneBlockSpriteSheet();

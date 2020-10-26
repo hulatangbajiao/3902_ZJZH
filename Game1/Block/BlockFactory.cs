@@ -24,10 +24,18 @@ namespace Game1
 
         }
 
-        public void AddUnpassableBlock(Vector2 position)
+        public void AddBlock(IBlock block)
         {
-            BlockList.Add(new UnpassableBlock(position));
+            BlockList.Add(block);
 
+        }
+        public void Draw(SpriteBatch spritebatch)
+        {
+
+            foreach (IBlock block in BlockList)
+            {
+                block.Draw(spritebatch);
+            }
         }
 
         

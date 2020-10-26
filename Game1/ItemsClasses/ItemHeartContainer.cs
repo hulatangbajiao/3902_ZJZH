@@ -12,7 +12,7 @@ namespace Game1
 {
     public class ItemHeartContainer : IItem
     {
-        private IItemSprite GetSprite { get; set; }
+        private ISprite GetSprite { get; set; }
         public Vector2 Position { get; set; }
 
 
@@ -48,7 +48,10 @@ namespace Game1
             }
         }
 
-
+        public Rectangle GetRectangle()
+        {
+            return this.GetSprite.GetRectangle();
+        }
     }
 }
 

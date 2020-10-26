@@ -22,5 +22,6 @@ namespace Game1
         void Attack();
         void Update();
         void UseItem(int Item);
+        Rectangle GetRectangle();
     }
 }

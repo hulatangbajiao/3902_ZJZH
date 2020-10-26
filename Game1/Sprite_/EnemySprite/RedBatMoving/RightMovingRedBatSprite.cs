@@ -12,7 +12,7 @@ namespace Game1.Sprite_.Enemy_Sprite.OctMoving
     {
         private int currentFrame = 0;
         private int totalFrame = 10;
-
+        private Rectangle destinationRectangle;
         public RightMovingRedBatSprite()
         {
         }
@@ -22,13 +22,9 @@ namespace Game1.Sprite_.Enemy_Sprite.OctMoving
             if (currentFrame == totalFrame)
                 currentFrame = 0;
 
-            GlobalDefinitions.OctPosition.X = GlobalDefinitions.OctPosition.X + (float)1; //change the y axis position of Link
-            if (GlobalDefinitions.OctPosition.X == GlobalDefinitions.GraphicsWidth)
-            {
-                GlobalDefinitions.OctPosition.X = 0;
-            }
+            
         }
-        public  void Draw(SpriteBatch spriteBatch)
+        public  void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
@@ -36,16 +32,20 @@ namespace Game1.Sprite_.Enemy_Sprite.OctMoving
             if (currentFrame < 5)
             {
                 sourceRectangle = new Rectangle(0, 0, 96, 96);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.OctPosition.X, (int)GlobalDefinitions.OctPosition.Y, 96, 96);
+                destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, 96, 96);
             }
 
 
             else
             {
                 sourceRectangle = new Rectangle(0, 96, 96, 192);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.OctPosition.X, (int)GlobalDefinitions.OctPosition.Y, 96, 192);
+                destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, 96, 192);
             }
             spriteBatch.Draw(Texture2DStorage.GetRightMovingRedBatSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
+        }
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
         }
     }
 }

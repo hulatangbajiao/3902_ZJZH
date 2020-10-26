@@ -13,7 +13,7 @@ namespace Game1
 {
     public class ItemFairy : IItem
     {
-        private IItemSprite GetSprite { get; set; }
+        private ISprite GetSprite { get; set; }
         private int x, y;
         public Vector2 Position { get; set; }
 
@@ -74,7 +74,10 @@ namespace Game1
             }
         }
 
-
+        public Rectangle GetRectangle()
+        {
+            return this.GetSprite.GetRectangle();
+        }
     }
 }
 
