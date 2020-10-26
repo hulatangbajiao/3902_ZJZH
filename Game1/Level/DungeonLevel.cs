@@ -14,9 +14,10 @@ namespace Game1.Level
         public List<IRoom> Rooms { get; set; }
         public IRoom CurrentRoom { get; set; }
         private List<Rectangle> doors;
-
+        public DetectCollision DetectCollision { get; set; }
         public DungeonLevel(ILink link)
         {
+            DetectCollision = new DetectCollision();
             LevelLoader1 = new LevelLoader();
             Map = new Map();
             Link = link;
@@ -110,7 +111,11 @@ namespace Game1.Level
         public void Update()
         {
             CurrentRoom.Update();
-
+            DetectCollision.LinkBlockDetection(Link, CurrentRoom.Block);
+            DetectCollision.LinkEnemyDetection(Link, CurrentRoom.Enemies);
+            DetectCollision.LinkReceivedItemDetection(Link, CurrentRoom.ReceivedItems);
+            DetectCollision.LinkObtainedItemDetection(Link, CurrentRoom.ObtainedItems);
+            DetectCollision.EnemyBlockDetection(CurrentRoom.Enemies, CurrentRoom.Block);
             if (Link.GetRectangle.Intersects(doors[0]))
             {
                 North();
