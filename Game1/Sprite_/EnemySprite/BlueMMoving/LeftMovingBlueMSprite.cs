@@ -12,7 +12,7 @@ namespace Game1.Sprite_.Enemy_Sprite.OctMoving
     {
         private int currentFrame = 0;
         private int totalFrame = 10;
-
+        private Rectangle destinationRectangle;
         public LeftMovingBlueMSprite()
         {
         }
@@ -23,32 +23,32 @@ namespace Game1.Sprite_.Enemy_Sprite.OctMoving
             if (currentFrame == totalFrame)
                 currentFrame = 0;
 
-            GlobalDefinitions.BlueMPosition.X = GlobalDefinitions.BlueMPosition.X - (float)1; //change the y axis position of Link
-            if (GlobalDefinitions.BlueMPosition.X == GlobalDefinitions.GraphicsHeight)
-            {
-                GlobalDefinitions.BlueMPosition.X = 0;
-            }
+            
         }
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch,Vector2 Position)
         {
             Rectangle sourceRectangle;
-            Rectangle destinationRectangle;
+            
 
             if (currentFrame < 5)
             {
                 sourceRectangle = new Rectangle(0, 0, 96, 96);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.BlueMPosition.X, (int)GlobalDefinitions.BlueMPosition.Y, 96, 96);
+                destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, 96, 96);
             }
 
 
             else
             {
                 sourceRectangle = new Rectangle(100, 0, 192, 96);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.BlueMPosition.X, (int)GlobalDefinitions.BlueMPosition.Y, 192, 96);
+                destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, 192, 96);
             }
 
             spriteBatch.Draw(Texture2DStorage.GetLeftMovingBlueMSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
 
+        }
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
         }
     }
 }

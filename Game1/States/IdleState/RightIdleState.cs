@@ -72,7 +72,7 @@ namespace Game1
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            GetSprite.Draw(spriteBatch);
+            GetSprite.Draw(spriteBatch, GlobalDefinitions.Position);
 
         }
     }

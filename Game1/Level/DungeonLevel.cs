@@ -14,10 +14,9 @@ namespace Game1.Level
         public List<IRoom> Rooms { get; set; }
         public IRoom CurrentRoom { get; set; }
         private List<Rectangle> doors;
-        public DetectCollision DetectCollision { get; set; }
+
         public DungeonLevel(ILink link)
         {
-            DetectCollision = new DetectCollision();
             LevelLoader1 = new LevelLoader();
             Map = new Map();
             Link = link;
@@ -32,10 +31,10 @@ namespace Game1.Level
             {
                 room.Boundary = new List<IBlock>
                 {
-                    new Block(0,0),
-                    new Block(0, GlobalDefinitions.Boundary/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth),
-                    new Block(GlobalDefinitions.GraphicsWidth - GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth, GlobalDefinitions.Boundary/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth),
-                    new Block(0, GlobalDefinitions.GraphicsHeight - GlobalDefinitions.Boundary/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight)
+                    new BoundaryLong(new Vector2(0,0)),
+                    new BoundaryShort(new Vector2(0, GlobalDefinitions.Boundary/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth)),
+                    new BoundaryShort(new Vector2(GlobalDefinitions.GraphicsWidth - GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth, GlobalDefinitions.Boundary/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth)),
+                    new BoundaryLong(new Vector2(0, GlobalDefinitions.GraphicsHeight - GlobalDefinitions.Boundary/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight))
                 };
             }
 
@@ -69,7 +68,7 @@ namespace Game1.Level
             {
                 Map.North();
                 CurrentRoom = CurrentRoom.North;
-                Link.GetRectangle = new Rectangle(doors[2].X, doors[2].Y - Link.GetRectangle.Height, Link.GetRectangle.Width, Link.GetRectangle.Height);
+                GlobalDefinitions.Position = new Vector2(doors[2].X, doors[2].Y - Link.GetRectangle().Height);
             }
         }
 
@@ -79,7 +78,7 @@ namespace Game1.Level
             {
                 Map.East();
                 CurrentRoom = CurrentRoom.East;
-                Link.GetRectangle = new Rectangle(doors[3].X + doors[3].Width, doors[3].Y, Link.GetRectangle.Width, Link.GetRectangle.Height);
+                GlobalDefinitions.Position = new Vector2(doors[3].X + doors[3].Width, doors[3].Y);
             }
         }
 
@@ -89,7 +88,7 @@ namespace Game1.Level
             {
                 Map.South();
                 CurrentRoom = CurrentRoom.South;
-                Link.GetRectangle = new Rectangle(doors[0].X, doors[0].Y + doors[0].Height, Link.GetRectangle.Width, Link.GetRectangle.Height);
+                GlobalDefinitions.Position = new Vector2(doors[0].X, doors[0].Y + doors[0].Height);
             }
         }
 
@@ -99,7 +98,7 @@ namespace Game1.Level
             {
                 Map.West();
                 CurrentRoom = CurrentRoom.West;
-                Link.GetRectangle = new Rectangle(doors[1].X - Link.GetRectangle.Width, doors[1].Y, Link.GetRectangle.Width, Link.GetRectangle.Height);
+                GlobalDefinitions.Position = new Vector2(doors[1].X - Link.GetRectangle().Width, doors[1].Y);
             }
         }
 
@@ -111,24 +110,20 @@ namespace Game1.Level
         public void Update()
         {
             CurrentRoom.Update();
-            DetectCollision.LinkBlockDetection(Link, CurrentRoom.Block);
-            DetectCollision.LinkEnemyDetection(Link, CurrentRoom.Enemies);
-            DetectCollision.LinkReceivedItemDetection(Link, CurrentRoom.ReceivedItems);
-            DetectCollision.LinkObtainedItemDetection(Link, CurrentRoom.ObtainedItems);
-            DetectCollision.EnemyBlockDetection(CurrentRoom.Enemies, CurrentRoom.Block);
-            if (Link.GetRectangle.Intersects(doors[0]))
+
+            if (Link.GetRectangle().Intersects(doors[0]))
             {
                 North();
             }
-            else if (Link.GetRectangle.Intersects(doors[1]))
+            else if (Link.GetRectangle().Intersects(doors[1]))
             {
                 East();
             }
-            else if (Link.GetRectangle.Intersects(doors[2]))
+            else if (Link.GetRectangle().Intersects(doors[2]))
             {
                 South();
             }
-            else if (Link.GetRectangle.Intersects(doors[3]))
+            else if (Link.GetRectangle().Intersects(doors[3]))
             {
                 West();
             }

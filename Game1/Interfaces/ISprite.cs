@@ -11,11 +11,10 @@ namespace Game1
 {
     public interface ISprite
     {
-        Rectangle SourceRectangle { get; set; }
-        Rectangle DestinationRectangle { get; set; }
         void Update();
 
-        void Draw(SpriteBatch spriteBatch);
+        void Draw(SpriteBatch spriteBatch, Vector2 Position);
+        Rectangle GetRectangle();
 
     }
 }

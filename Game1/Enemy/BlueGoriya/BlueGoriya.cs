@@ -1,5 +1,6 @@
-﻿using Game1.Enemy_NPC;
+﻿
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,16 +13,21 @@ namespace Game1
     {
 
         public IEnemyState State { get; set; }
-        private MainStage game;
         int count;
         Random rand;
+        public bool exist { get; set; }
+        public Vector2 Position { get; set; }
+        public Vector2 Direction { get; set; }
+        public int MovingSpeed = 1;
 
-        public BlueGoriya(MainStage game)
+        public BlueGoriya(Vector2 position, Vector2 direction)
         {
-            State = new BlueGoriyaUpMovingState(this, game);
-            GlobalDefinitions.BlueGoriyaPosition = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
+            State = new BlueGoriyaLeftMovingState(this);
+            this.Position = position;
+
+
             rand = new Random();
-            this.game = game;
+
         }
 
 
@@ -60,12 +66,12 @@ namespace Game1
             State.Update();
 
             count++;
-            if (count > GlobalDefinitions.phaseChangingSpeed)
+            if (count > 50)
             {
                 switch (rand.Next(0, 5))
                 {
                     case 0:
-                        State.MoveUp();
+                        State.MoveRight();
                         break;
                     case 1:
                         State.MoveDown();
@@ -74,7 +80,7 @@ namespace Game1
                         State.MoveLeft();
                         break;
                     case 3:
-                        State.MoveRight();
+                        State.MoveUp();
                         break;
                     case 4:
                         State.BreatheFire();
@@ -90,7 +96,18 @@ namespace Game1
             }
         }
 
+        public void Draw(SpriteBatch spritebatch)
+        {
+            if (exist)
+            {
+                State.Draw(spritebatch, this.Position);
+            }
+        }
 
+        public Rectangle GetRectangle()
+        {
+            return this.State.GetRectangle();
+        }
 
 
     }

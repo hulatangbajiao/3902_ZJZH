@@ -13,7 +13,7 @@ namespace Game1
     {
         public List<IProjectile> ProjectileList { get; set; }
 
-        public ProjectileFactory(MainStage game)
+        public ProjectileFactory(MainStage mainStage)
         {
             
         }

@@ -1,8 +1,11 @@
-﻿namespace Game1
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
+namespace Game1
 {
     public interface IEnemyState
     {
-        ISprite GetSprite { get; set; }
+        
 
         void MoveUp();
         void MoveDown();
@@ -10,5 +13,7 @@
         void MoveRight();
         void Update();
         void BreatheFire();
+        void Draw(SpriteBatch spriteBatch, Vector2 Position);
+        Rectangle GetRectangle();
     }
 }

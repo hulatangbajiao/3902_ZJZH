@@ -41,6 +41,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Block\BoundaryLong.cs" />
+    <Compile Include="Block\BoundaryShort.cs" />
     <Compile Include="Block\UnpassableBlock.cs" />
     <Compile Include="Block\BlockFactory.cs" />
     <Compile Include="Collision\CollisionHandler\LinkReceivedItemCollisionHandler.cs" />
@@ -50,10 +52,10 @@
     <Compile Include="Collision\CollisionHandler\EnemyProjectileCollisonHandler.cs" />
     <Compile Include="Collision\CollisionHandler\LinkEnemyCollisionHandler.cs" />
     <Compile Include="Collision\CollisionHandler\LinkBlockCollisionHandler.cs" />
+    <Compile Include="Collision\Detection\GeneralDeterctionIntersect.cs" />
     <Compile Include="Collision\ICollision.cs" />
+    <Compile Include="Command\StopCommand.cs" />
     <Compile Include="Command\GameCommand\DamagedCommand.cs" />
-    <Compile Include="Command\ItemCommand\PreviousItemCommand.cs" />
-    <Compile Include="Command\ItemCommand\NextItemCommand.cs" />
     <Compile Include="Command\MovingCommand\DownMovingCommand.cs" />
     <Compile Include="Command\GameCommand\QuitGameCommand.cs" />
     <Compile Include="Command\GameCommand\ResetGameCommand.cs" />
@@ -87,15 +89,19 @@
     <Compile Include="Enemy\BlueOct\BlueOctLeftMovingState.cs" />
     <Compile Include="Enemy\BlueOct\BlueOctRightMovingState.cs" />
     <Compile Include="Enemy\BlueOct\BlueOctUpMovingState.cs" />
-    <Compile Include="Enemy\EnemyList.cs" />
-    <Compile Include="Interfaces\IBlockFactory.cs" />
+    <Compile Include="Enemy\EnemyFactory.cs" />
+    <Compile Include="Enemy\EnemyProjectile\EnemyArrow.cs" />
+    <Compile Include="Enemy\EnemyProjectile\EnemyFireBall.cs" />
+    <Compile Include="Block\IBlockFactory.cs" />
+    <Compile Include="Enemy\IEnemy.cs" />
+    <Compile Include="Enemy\IEnemyFactory.cs" />
+    <Compile Include="Enemy\IEnemyState.cs" />
     <Compile Include="Interfaces\IDoor.cs" />
     <Compile Include="Interfaces\IDoorList.cs" />
-    <Compile Include="Interfaces\IEnemyList.cs" />
-    <Compile Include="Interfaces\IEnemy.cs" />
-    <Compile Include="Interfaces\IEnemyState.cs" />
     <Compile Include="Interfaces\IItemSprite.cs" />
-    <Compile Include="IRoom.cs" />
+    <Compile Include="Interfaces\ILevel.cs" />
+    <Compile Include="Interfaces\IMap.cs" />
+    <Compile Include="Interfaces\IRoom.cs" />
     <Compile Include="ItemsClasses\ItemTriForce.cs" />
     <Compile Include="ItemsClasses\ItemRupee.cs" />
     <Compile Include="ItemsClasses\ItemMap.cs" />
@@ -110,22 +116,15 @@
     <Compile Include="ItemsClasses\ItemBomb.cs" />
     <Compile Include="ItemsClasses\ItemArrow.cs" />
     <Compile Include="ItemsClasses\ItemFactory.cs" />
-    <Compile Include="LevelLoader.cs" />
-    <Compile Include="NPC\MerchantG.cs" />
-    <Compile Include="NPC\MerchantGState.cs" />
-    <Compile Include="NPC\MerchantP.cs" />
-    <Compile Include="NPC\MerchantPState.cs" />
-    <Compile Include="NPC\MerchantR.cs" />
-    <Compile Include="NPC\MerchantRState.cs" />
+    <Compile Include="Level\DungeonLevel.cs" />
+    <Compile Include="Level\LevelLoader.cs" />
+    <Compile Include="Level\Map.cs" />
+    <Compile Include="Level\Room.cs" />
     <Compile Include="Enemy\Oct\Oct.cs" />
     <Compile Include="Enemy\Oct\OctDownMovingState.cs" />
     <Compile Include="Enemy\Oct\OctLeftMovingState.cs" />
     <Compile Include="Enemy\Oct\OctRightMovingState.cs" />
     <Compile Include="Enemy\Oct\OctUpmovingState.cs" />
-    <Compile Include="NPC\OldMan.cs" />
-    <Compile Include="NPC\OldManState.cs" />
-    <Compile Include="NPC\OldWoman.cs" />
-    <Compile Include="NPC\OldWomanState.cs" />
     <Compile Include="Enemy\BlueGoriya\BlueGoriya.cs" />
     <Compile Include="Enemy\RedBat\RedBat.cs" />
     <Compile Include="Enemy\RedGoriya\RedGoriya.cs" />
@@ -141,17 +140,15 @@
     <Compile Include="Enemy\BlueGoriya\BlueGoriyaUpMovingState.cs" />
     <Compile Include="Enemy\RedBat\RedBatUpMovingState.cs" />
     <Compile Include="Enemy\RedGoriya\RedGoriyaUpMovingState.cs" />
-    <Compile Include="Interfaces\IBlock.cs" />
-    <Compile Include="Interfaces\IItemFactory.cs" />
-    <Compile Include="Interfaces\IItem.cs" />
+    <Compile Include="Block\IBlock.cs" />
+    <Compile Include="ItemsClasses\IItemFactory.cs" />
+    <Compile Include="ItemsClasses\IItem.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
-    <Compile Include="Interfaces\IProjectileSprite.cs" />
     <Compile Include="Projectile\Arrow.cs" />
     <Compile Include="Projectile\Bomb.cs" />
     <Compile Include="Projectile\Boomer.cs" />
     <Compile Include="Interfaces\IProjectileFactory.cs" />
     <Compile Include="Projectile\ProjectileFactory.cs" />
-    <Compile Include="Room.cs" />
     <Compile Include="Sprite_\AttackSprite\DownWoodenSwordLinkSprite.cs" />
     <Compile Include="Sprite_\AttackSprite\LeftWoodenSwordLinkSprite.cs" />
     <Compile Include="Sprite_\AttackSprite\RightWoodenSwordLinkSprite.cs" />
@@ -226,13 +223,10 @@
     <Compile Include="Sprite_\ItemSprite\UseMapSprite.cs" />
     <Compile Include="Sprite_\ItemSprite\UseRupeeSprite.cs" />
     <Compile Include="Sprite_\ItemSprite\UseTriforceSprite.cs" />
+    <Compile Include="Sprite_\MapSprite.cs" />
     <Compile Include="Sprite_\Moving Sprite\LeftMovingLinkSprite.cs" />
     <Compile Include="Sprite_\Moving Sprite\UpMovingLinkSprite.cs" />
-    <Compile Include="Sprite_\NPCSprite\MerchantGSprite.cs" />
-    <Compile Include="Sprite_\NPCSprite\MerchantPSprite.cs" />
-    <Compile Include="Sprite_\NPCSprite\MerchantRSprite.cs" />
     <Compile Include="Sprite_\NPCSprite\OldManSprite.cs" />
-    <Compile Include="Sprite_\NPCSprite\OldWomanSprite.cs" />
     <Compile Include="Sprite_\ProjectileSprite\Arrow\DownArrowSprite.cs" />
     <Compile Include="Sprite_\ProjectileSprite\Arrow\LeftArrowSprite.cs" />
     <Compile Include="Sprite_\ProjectileSprite\Arrow\RightArrowSprite.cs" />
@@ -273,7 +267,6 @@
     <Compile Include="Interfaces\ISprite.cs" />
     <Compile Include="GlobalDefinitions.cs" />
     <Compile Include="Interfaces\ILinkState.cs" />
-    <Compile Include="Interfaces\IPlayer.cs" />
     <Compile Include="Characters\Link.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
     <Compile Include="Command\ICommand.cs" />
@@ -295,7 +288,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
-    <Content Include="Level1.xml" />
+    <Content Include="XML\LevelRooms.xml" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />

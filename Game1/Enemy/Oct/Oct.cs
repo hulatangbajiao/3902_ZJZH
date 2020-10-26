@@ -1,5 +1,6 @@
-﻿using Game1.Enemy_NPC;
+﻿
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,15 +16,19 @@ namespace Game1
         private MainStage game;
         int count;
         Random rand;
+        public bool exist { get; set; }
+        public Vector2 Position { get; set; }
+        public Vector2 Direction { get; set; }
+        public int MovingSpeed = 1;
 
-        public Oct(MainStage game)
+
+        public Oct(Vector2 Position, Vector2 Direction)
         {
             State = new OctUpMovingState(this, game);
-            GlobalDefinitions.OctPosition = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
+            this.Position = Position;
             rand = new Random();
-            this.game = game;
-        }
 
+        }
 
 
         public void MoveUp()
@@ -90,7 +95,14 @@ namespace Game1
             }
         }
 
-        
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            this.State.Draw(spriteBatch, Position);
+        }
+        public Rectangle GetRectangle()
+        {
+            return this.State.GetRectangle();
+        }
 
 
     }

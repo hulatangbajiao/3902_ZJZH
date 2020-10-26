@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Game1.Sprite_;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1.Interfaces
@@ -6,7 +7,7 @@ namespace Game1.Interfaces
     public interface IMap
     {
         Rectangle DestinationRectangle { get; set; }
-        ISprite MapSprite { get; set; }
+        MapSprite MapSprite { get; set; }
 
         void North();
         void East();

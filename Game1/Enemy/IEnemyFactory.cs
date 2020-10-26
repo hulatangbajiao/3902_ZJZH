@@ -1,4 +1,4 @@
-﻿using Game1.Enemy_NPC;
+﻿
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game1.Interfaces
+namespace Game1
 {
-    public interface IEnemyList
+    public interface IEnemyFactory
     {
-        List<IEnemy> enemyList { get; set; }
-        void MoveToPrev();
-        void MoveToNext();
-        void Update(Game game);
+        List<IEnemy> EnemyList { get; set; }
+        void Initialize();
+
+        void AddEnemy(IEnemy enemy);
+        void Update();
         void Draw(SpriteBatch spriteBatch);
     }
 }

@@ -10,12 +10,13 @@ namespace Game1
 {
     public interface IProjectile
     {
-        IProjectileSprite GetSprite { get; set; }
+        ISprite GetSprite { get; set; }
         Vector2 Position { get; set; }
         Vector2 Direction { get; set; }
         int Velocity { get; set; }
         bool exist { get; set; }
         void Update();
         void Draw(SpriteBatch spriteBatch);
+        Rectangle GetRectangle();
     }
 }

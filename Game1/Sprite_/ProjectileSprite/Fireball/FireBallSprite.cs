@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Game1
 {
-    public class FireBallSprite : IProjectileSprite
+    public class FireBallSprite : ISprite
     {
-
+        private Rectangle destinationRectangle;
 
         public FireBallSprite()
         {
@@ -27,7 +27,7 @@ namespace Game1
         public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
             Rectangle sourceRectangle;
-            Rectangle destinationRectangle;
+            
             Texture2D Texture = Texture2DStorage.GetFireBallSpriteSheet();
 
 
@@ -41,5 +41,10 @@ namespace Game1
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);//use Texture2DStorage class to load texture2D
         }
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
+        }
+
     }
 }
