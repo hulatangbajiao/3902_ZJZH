@@ -11,7 +11,7 @@ namespace Game1
 {
     public class FireBall : IProjectile
     {
-        public IProjectileSprite GetSprite { get; set; }
+        public ISprite GetSprite { get; set; }
         public Vector2 Position { get; set; }
         public Vector2 Direction { get; set; }
         public int Velocity { get; set; }
@@ -53,7 +53,10 @@ namespace Game1
                 GetSprite.Draw(spriteBatch, Position);
             }
         }
-
+        public Rectangle GetRectangle()
+        {
+            return this.GetSprite.GetRectangle();
+        }
 
     }
 }

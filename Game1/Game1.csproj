@@ -41,6 +41,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Block\BoundaryLong.cs" />
+    <Compile Include="Block\BoundaryShort.cs" />
     <Compile Include="Block\UnpassableBlock.cs" />
     <Compile Include="Block\BlockFactory.cs" />
     <Compile Include="Collision\CollisionHandler\LinkReceivedItemCollisionHandler.cs" />
@@ -88,10 +90,10 @@
     <Compile Include="Enemy\BlueOct\BlueOctLeftMovingState.cs" />
     <Compile Include="Enemy\BlueOct\BlueOctRightMovingState.cs" />
     <Compile Include="Enemy\BlueOct\BlueOctUpMovingState.cs" />
-    <Compile Include="Enemy\EnemyList.cs" />
-    <Compile Include="ILevel.cs" />
-    <Compile Include="IMap.cs" />
-    <Compile Include="Interfaces\IBlockFactory.cs" />
+    <Compile Include="Enemy\EnemyFactory.cs" />
+    <Compile Include="Enemy\EnemyProjectile\EnemyArrow.cs" />
+    <Compile Include="Enemy\EnemyProjectile\EnemyFireBall.cs" />
+    <Compile Include="Block\IBlockFactory.cs" />
     <Compile Include="Interfaces\IDoor.cs" />
     <Compile Include="Interfaces\IDoorList.cs" />
     <Compile Include="Interfaces\IEnemyList.cs" />
@@ -126,10 +128,6 @@
     <Compile Include="Enemy\Oct\OctLeftMovingState.cs" />
     <Compile Include="Enemy\Oct\OctRightMovingState.cs" />
     <Compile Include="Enemy\Oct\OctUpmovingState.cs" />
-    <Compile Include="NPC\OldMan.cs" />
-    <Compile Include="NPC\OldManState.cs" />
-    <Compile Include="NPC\OldWoman.cs" />
-    <Compile Include="NPC\OldWomanState.cs" />
     <Compile Include="Enemy\BlueGoriya\BlueGoriya.cs" />
     <Compile Include="Enemy\RedBat\RedBat.cs" />
     <Compile Include="Enemy\RedGoriya\RedGoriya.cs" />
@@ -145,11 +143,10 @@
     <Compile Include="Enemy\BlueGoriya\BlueGoriyaUpMovingState.cs" />
     <Compile Include="Enemy\RedBat\RedBatUpMovingState.cs" />
     <Compile Include="Enemy\RedGoriya\RedGoriyaUpMovingState.cs" />
-    <Compile Include="Interfaces\IBlock.cs" />
-    <Compile Include="Interfaces\IItemFactory.cs" />
-    <Compile Include="Interfaces\IItem.cs" />
+    <Compile Include="Block\IBlock.cs" />
+    <Compile Include="ItemsClasses\IItemFactory.cs" />
+    <Compile Include="ItemsClasses\IItem.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
-    <Compile Include="Interfaces\IProjectileSprite.cs" />
     <Compile Include="Projectile\Arrow.cs" />
     <Compile Include="Projectile\Bomb.cs" />
     <Compile Include="Projectile\Boomer.cs" />
@@ -305,7 +302,9 @@
     <MonoGameContentReference Include="Content\Content.mgcb" />
     <None Include="app.manifest" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="NPC\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

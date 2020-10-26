@@ -78,6 +78,10 @@ namespace Game1
         public void UseItem(int Item)
         {
         }
+        public Rectangle GetRectangle()
+        {
+            return State.GetSprite.GetRectangle();
+        }
     }
 }
 

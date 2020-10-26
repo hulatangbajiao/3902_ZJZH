@@ -19,7 +19,7 @@ using System.Xml.Schema;
 
 namespace Game1
 {
-    public class UseFairySprite : IItemSprite
+    public class UseFairySprite : ISprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
@@ -62,7 +62,7 @@ namespace Game1
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle(x + (int)Position.X, x + (int)Position.Y, width / 2, height / 2);
+            destinationRectangle = new Rectangle(x + (int)Position.X, x + (int)Position.Y, width / 2, height / 2);
 
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);

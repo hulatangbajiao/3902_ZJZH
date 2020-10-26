@@ -47,9 +47,8 @@ namespace Game1.Detection
                 {
                     Rectangle linkRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);
                     Rectangle EnemyRectangle = enemy.GetRectangle();
-                    Rectangle intersectRectangle = new GeneralDeterctionIntersect(linkRectangle, BlockRectangle).GetRectangle();
                     ICollision side = new GeneralDetection(linkRectangle, EnemyRectangle).ifCollision();
-                    IHandler LinkEnemyCollisionHandler = new LinkEnemyCollisionHandler(enemy, link, side, intersectRectangle);
+                    IHandler LinkEnemyCollisionHandler = new LinkEnemyCollisionHandler(enemy, link, side);
                     LinkEnemyCollisionHandler.Execute();
                 }
             }
@@ -63,9 +62,8 @@ namespace Game1.Detection
             {
                 Rectangle linkRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);
                 Rectangle ItemRectangle = item.GetRectangle();
-                Rectangle intersectRectangle = new GeneralDeterctionIntersect(linkRectangle, BlockRectangle).GetRectangle();
                 ICollision side = new GeneralDetection(linkRectangle, ItemRectangle).ifCollision();
-                IHandler LinkReceivedItemCollision = new LinkReceivedItemCollisionHandler(link, item, side, intersectRectangle);
+                IHandler LinkReceivedItemCollision = new LinkReceivedItemCollisionHandler(link, item, side);
                 LinkReceivedItemCollision.Execute();
             }
         }

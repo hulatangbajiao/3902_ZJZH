@@ -13,7 +13,7 @@ namespace Game1.Sprite_
 {
     class RoomExteriorSprite : ISprite
     {
-
+        private Rectangle destinationRectangle;
 
         public Texture2D Texture { get; set; }
 
@@ -26,18 +26,22 @@ namespace Game1.Sprite_
         {
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
 
             Texture = Texture2DStorage.GetRoomExteriorSpriteSheet();
 
 
             Nullable<Rectangle> sourceRectangle = new Rectangle(0, 0, Texture.Width, Texture.Height);
-            Rectangle destinationRectangle = new Rectangle(0, 0, Texture.Width * 6, Texture.Height * 6);
+            destinationRectangle = new Rectangle(0, 0, Texture.Width * 6, Texture.Height * 6);
 
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
 
+        }
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
         }
 
 

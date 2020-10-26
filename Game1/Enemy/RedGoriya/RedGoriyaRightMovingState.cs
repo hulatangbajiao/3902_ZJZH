@@ -1,6 +1,7 @@
 ﻿using Game1.Sprite_.Enemy_Sprite.OctMoving;
 using Game1.Sprite_.Enemy_Sprite.RedGoriyaMoving;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1
 {
@@ -46,12 +47,20 @@ namespace Game1
         public void Update()
         {
             GetSprite.Update();
+            RedGoriya.Position = RedGoriya.Position + new Vector2(1, 0) * RedGoriya.MovingSpeed;
         }
         public void BreatheFire()
         {
-            this.game.ProjectileFactory.AddArrow(GlobalDefinitions.RedGoriyaPosition, new Vector2(1, 0));
+            
         }
-
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
+        {
+            this.GetSprite.Draw(spriteBatch, Position);
+        }
+        public Rectangle GetRectangle()
+        {
+            return this.GetSprite.GetRectangle();
+        }
 
     }
 }

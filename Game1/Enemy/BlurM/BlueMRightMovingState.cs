@@ -1,5 +1,6 @@
 ﻿using Game1.Sprite_.Enemy_Sprite.OctMoving;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1
 {
@@ -43,10 +44,19 @@ namespace Game1
         public void Update()
         {
             GetSprite.Update();
+            BlueM.Position = BlueM.Position + new Vector2(1, 0) * BlueM.MovingSpeed;
         }
         public void BreatheFire()
         {
-            this.game.ProjectileFactory.AddArrow(GlobalDefinitions.BlueMPosition, new Vector2(1, 0));
+            
+        }
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
+        {
+            this.GetSprite.Draw(spriteBatch, Position);
+        }
+        public Rectangle GetRectangle()
+        {
+            return this.GetSprite.GetRectangle();
         }
 
 

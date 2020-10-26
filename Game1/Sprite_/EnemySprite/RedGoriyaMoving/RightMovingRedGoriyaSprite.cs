@@ -12,7 +12,7 @@ namespace Game1.Sprite_.Enemy_Sprite.RedGoriyaMoving
     {
         private int currentFrame = 0;
         private int totalFrame = 10;
-
+        private Rectangle destinationRectangle;
         public RightMovingRedGoriyaSprite()
         {
         }
@@ -22,13 +22,9 @@ namespace Game1.Sprite_.Enemy_Sprite.RedGoriyaMoving
             if (currentFrame == totalFrame)
                 currentFrame = 0;
 
-            GlobalDefinitions.OctPosition.X = GlobalDefinitions.OctPosition.X + (float)1; //change the y axis position of Link
-            if (GlobalDefinitions.OctPosition.X == GlobalDefinitions.GraphicsWidth)
-            {
-                GlobalDefinitions.OctPosition.X = 0;
-            }
+            
         }
-        public  void Draw(SpriteBatch spriteBatch)
+        public  void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
@@ -36,16 +32,20 @@ namespace Game1.Sprite_.Enemy_Sprite.RedGoriyaMoving
             if (currentFrame < 5)
             {
                 sourceRectangle = new Rectangle(0, 0, 96, 96);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.OctPosition.X, (int)GlobalDefinitions.OctPosition.Y, 96, 96);
+                destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, 96, 96);
             }
 
 
             else
             {
                 sourceRectangle = new Rectangle(100, 0, 192, 97);
-                destinationRectangle = new Rectangle((int)GlobalDefinitions.OctPosition.X, (int)GlobalDefinitions.OctPosition.Y, 192, 97);
+                destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, 192, 97);
             }
             spriteBatch.Draw(Texture2DStorage.GetRightMovingRedGoriyaSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
+        }
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
         }
     }
 }
