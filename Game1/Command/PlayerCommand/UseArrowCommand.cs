@@ -8,13 +8,6 @@ namespace Game1.Command
 {
     class UseArrowCommand : ICommand
     {
-
-        private IPlayer player;
-
-        public UseArrowCommand(IPlayer Link)
-        {
-            player = Link;
-        }
         private ILink Link;
 
         public UseArrowCommand(ILink Link)
@@ -27,12 +20,6 @@ namespace Game1.Command
         {
 
             Link.UseItem(1);
-        }
-
-        public void Stop()
-        {
-            Link.Stop();
-
         }
     }
    
