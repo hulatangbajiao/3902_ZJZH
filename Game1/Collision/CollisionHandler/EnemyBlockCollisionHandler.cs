@@ -1,5 +1,4 @@
 ﻿using Game1.CollisionHandler;
-using Game1.Enemy_NPC;
 using Game1.Interfaces;
 using Microsoft.Xna.Framework;
 using System;
@@ -29,19 +28,19 @@ namespace Game1.Collision
         {
             if (side == ICollision.Left)
             {
-                enemy.position.X = enemy.position.X - intersectRectangle.Width;
+                enemy.Position = enemy.Position - new Vector2(1, 0) * intersectRectangle.Width;
                 enemy.State.MoveLeft();
             }
             else if (side == ICollision.Right)
             {
-                enemy.position.X = enemy.position.X + intersectRectangle.Width;
+                enemy.Position = enemy.Position + new Vector2(1, 0) * intersectRectangle.Width;
                 enemy.State.MoveRight();
             }
             else if (side == ICollision.Bottom) {
-                enemy.position.Y = enemy.position.Y + intersectRectangle.Height;
+                enemy.Position = enemy.Position + new Vector2(0, 1) * intersectRectangle.Height;
                 enemy.State.MoveDown();
             } else if (side == ICollision.Top) {
-                enemy.position.Y = enemy.position.Y - intersectRectangle.Height;
+                enemy.Position = enemy.Position - new Vector2(0, 1) * intersectRectangle.Height;
                 enemy.State.MoveUp();
             }
         }

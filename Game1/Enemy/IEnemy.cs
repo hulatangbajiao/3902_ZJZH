@@ -11,7 +11,9 @@ namespace Game1
     public interface IEnemy
     {
         IEnemyState State { get; set; }
-
+        Vector2 Position { get; set; }
+        Vector2 Direction { get; set; }
+        bool exist { get; set; }
         void MoveUp();
         void MoveDown();
         void MoveLeft();
@@ -19,5 +21,6 @@ namespace Game1
         void Update();
         void Draw(SpriteBatch spritebatch);
         Rectangle GetRectangle();
+       
     }
 }

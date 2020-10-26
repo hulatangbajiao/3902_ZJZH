@@ -1,4 +1,4 @@
-﻿using Game1.Enemy_NPC;
+﻿
 using Game1.Interfaces;
 using System.Collections.Generic;
 
@@ -8,8 +8,8 @@ namespace Game1
     {
         public ILink Link { get; set; }
         public List<IEnemy> Enemies { get; set; }
-        public List<Iitem> ReceivedItems { get; set; }
-        public List<Iitem> ObtainedItems { get; set; }
+        public List<IItem> ReceivedItems { get; set; }
+        public List<IItem> ObtainedItems { get; set; }
         public List<IProjectile> Projectiles { get; set; }
         public List<IBlock> Block { get; set; }
         public List<IBlock> Wall { get; set; }
@@ -29,8 +29,8 @@ namespace Game1
         public Room()
         {
             Enemies = new List<IEnemy>();
-            ReceivedItems = new List<Iitem>();
-            ObtainedItems = new List<Iitem>();
+            ReceivedItems = new List<IItem>();
+            ObtainedItems = new List<IItem>();
             Projectiles = new List<IProjectile>();
             Block = new List<IBlock>();
             Boundary = new List<IBlock>();
@@ -42,7 +42,7 @@ namespace Game1
             HasOther = false;
         }
 
-        public void Initialize(ILink link, List<IEnemy> enemies, List<Iitem> receivedItems, List<Iitem> obtainedItems, List<IBlock> blocks)
+        public void Initialize(ILink link, List<IEnemy> enemies, List<IItem> receivedItems, List<IItem> obtainedItems, List<IBlock> blocks)
         {
             Link = link;
             Enemies.AddRange(enemies);
@@ -73,7 +73,7 @@ namespace Game1
                 item.Draw(spriteBatch);
             }
 
-            foreach (Iitem item in ObtainedItems)
+            foreach (IItem item in ObtainedItems)
             {
                 item.Draw(spriteBatch);
             }

@@ -8,14 +8,12 @@ namespace Game1
     internal class AquamentusLeftMovingState : IEnemyState
     {
         private Aquamentus Aquamentus;
-        private MainStage game;
         private ISprite GetSprite { get; set; }
-
-        public AquamentusLeftMovingState(Aquamentus Aquamentus, MainStage game)
+       
+        public AquamentusLeftMovingState(Aquamentus Aquamentus)
 
         {
             this.Aquamentus = Aquamentus;
-            this.game = game;
             GetSprite = new LeftMovingAquamentusSprite();
 
         }
@@ -39,7 +37,7 @@ namespace Game1
 
         public void MoveRight()
         {
-            Aquamentus.State = new AquamentusRightMovingState(Aquamentus, game);
+            Aquamentus.State = new AquamentusRightMovingState(Aquamentus);
 
         }
 

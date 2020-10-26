@@ -21,7 +21,7 @@ namespace Game1.Collision.CollisionHandler
         private IItem item;
         private ILink Link;
       
-        public LinkItemCollisionHandler(ILink link, IItem item, ICollision side)
+        public LinkReceivedItemCollisionHandler(ILink link, IItem item, ICollision side)
         {
             this.Link = link;
             this.item = item;

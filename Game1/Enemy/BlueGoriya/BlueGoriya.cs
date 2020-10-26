@@ -13,7 +13,6 @@ namespace Game1
     {
 
         public IEnemyState State { get; set; }
-        private MainStage game;
         int count;
         Random rand;
         public bool exist { get; set; }
@@ -23,7 +22,7 @@ namespace Game1
 
         public BlueGoriya(Vector2 position, Vector2 direction)
         {
-            State = new BlueGoriyaLeftMovingState(this, game);
+            State = new BlueGoriyaLeftMovingState(this);
             this.Position = position;
 
 
