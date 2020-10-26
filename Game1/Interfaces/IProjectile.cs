@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Game1.Interfaces
 {
-    interface IProjectile
+    public interface IProjectile
     {
         IProjectileSprite GetSprite { get; set; }
         Vector2 Position { get; set; }
