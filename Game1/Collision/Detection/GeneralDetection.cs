@@ -18,10 +18,10 @@ namespace Game1.Detection
             this.rectangle1 = rectangle1;
             this.rectangle2 = rectagle2;
         }
+
         public ICollision ifCollision()
         {
-            Rectangle ifCollision = new Rectangle();
-            ifCollision = Rectangle.Intersect(rectangle1, rectangle2);
+            Rectangle ifCollision = Rectangle.Intersect(rectangle1, rectangle2);
 
             if (!ifCollision.IsEmpty)
             {
@@ -36,7 +36,7 @@ namespace Game1.Detection
                 }
                 else if (ifCollision.Height < ifCollision.Width && rectangle1.Y > rectangle2.Y)
                 {
-                    return ICollision.Bottom
+                    return ICollision.Bottom;
                 }
                 else if (ifCollision.Height < ifCollision.Width && rectangle1.Y < rectangle2.Y)
                 {

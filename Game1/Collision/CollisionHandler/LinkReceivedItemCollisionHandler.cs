@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game1.Detection
+namespace Game1.Collision.CollisionHandler
 {
-    class LinkEnemyDetectionIDetection
+    class LinkReceivedItemCollisionHandler
     {
-        public void update()
-        {
-
-        }
     }
 }

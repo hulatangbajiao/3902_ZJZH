@@ -43,33 +43,33 @@
   <ItemGroup>
     <Compile Include="Block\UnpassableBlock.cs" />
     <Compile Include="Block\BlockFactory.cs" />
-    <Compile Include="CollisionHandler\EnemyBlockCollisionHandler.cs" />
-    <Compile Include="CollisionHandler\LinkProjectileCollisonHandler.cs" />
-    <Compile Include="CollisionHandler\LinkEnemyCollisionHandler.cs" />
-    <Compile Include="CollisionHandler\LinkBlockCollisionHandler.cs" />
+    <Compile Include="Collision\CollisionHandler\LinkReceivedItemCollisionHandler.cs" />
+    <Compile Include="Collision\CollisionHandler\LinkObtainedItemCollisionHandler.cs" />
+    <Compile Include="Collision\CollisionHandler\EnemyBlockCollisionHandler.cs" />
+    <Compile Include="Collision\CollisionHandler\Ihandler.cs" />
+    <Compile Include="Collision\CollisionHandler\EnemyProjectileCollisonHandler.cs" />
+    <Compile Include="Collision\CollisionHandler\LinkEnemyCollisionHandler.cs" />
+    <Compile Include="Collision\CollisionHandler\LinkBlockCollisionHandler.cs" />
     <Compile Include="Collision\ICollision.cs" />
-    <Compile Include="Command\DamagedCommand.cs" />
+    <Compile Include="Command\GameCommand\DamagedCommand.cs" />
     <Compile Include="Command\EnemyCommand\PreviousEnemyCommand.cs" />
     <Compile Include="Command\EnemyCommand\NextEnemyCommand.cs" />
     <Compile Include="Command\ItemCommand\PreviousItemCommand.cs" />
     <Compile Include="Command\ItemCommand\NextItemCommand.cs" />
-    <Compile Include="Command\Moving command\DownMovingCommand.cs" />
+    <Compile Include="Command\MovingCommand\DownMovingCommand.cs" />
     <Compile Include="Command\BlockCommand\NextBlockCommand.cs" />
-    <Compile Include="Command\QuitGameCommand.cs" />
-    <Compile Include="Command\ResetGameCommand.cs" />
-    <Compile Include="Command\Moving command\LeftMovingCommand.cs" />
-    <Compile Include="Command\Moving command\RightMovingCommand.cs" />
-    <Compile Include="Command\Moving command\UpMovingCommand.cs" />
-    <Compile Include="Command\StandingWoodenSwordCommand.cs" />
-    <Compile Include="Command\UseArrowCommand.cs" />
-    <Compile Include="Command\UseBombCommand.cs" />
+    <Compile Include="Command\GameCommand\QuitGameCommand.cs" />
+    <Compile Include="Command\GameCommand\ResetGameCommand.cs" />
+    <Compile Include="Command\MovingCommand\LeftMovingCommand.cs" />
+    <Compile Include="Command\MovingCommand\RightMovingCommand.cs" />
+    <Compile Include="Command\MovingCommand\UpMovingCommand.cs" />
+    <Compile Include="Command\PlayerCommand\StandingWoodenSwordCommand.cs" />
+    <Compile Include="Command\PlayerCommand\UseArrowCommand.cs" />
+    <Compile Include="Command\PlayerCommand\UseBombCommand.cs" />
     <Compile Include="Command\BlockCommand\PreviousBlockCommand.cs" />
-    <Compile Include="Command\UseBoomerCommand.cs" />
-    <Compile Include="Detection\EnemyBlockDetection.cs" />
-    <Compile Include="Detection\LinkBlockDetection.cs" />
-    <Compile Include="Detection\LinkEnemyDetection.cs" />
-    <Compile Include="Detection\IDetection.cs" />
-    <Compile Include="Detection\LinkProjectileDetection.cs" />
+    <Compile Include="Command\PlayerCommand\UseBoomerCommand.cs" />
+    <Compile Include="Collision\Detection\DetectCollision.cs" />
+    <Compile Include="Collision\Detection\GeneralDetection.cs" />
     <Compile Include="Enemy\Aquamentus\Aquamentus.cs" />
     <Compile Include="Enemy\Aquamentus\AquamentusLeftMovingState.cs" />
     <Compile Include="Enemy\Aquamentus\AquamentusRightMovingState.cs" />
@@ -96,6 +96,7 @@
     <Compile Include="Interfaces\IEnemy.cs" />
     <Compile Include="Interfaces\IEnemyState.cs" />
     <Compile Include="Interfaces\IItemSprite.cs" />
+    <Compile Include="IRoom.cs" />
     <Compile Include="ItemsClasses\ItemTriForce.cs" />
     <Compile Include="ItemsClasses\ItemRupee.cs" />
     <Compile Include="ItemsClasses\ItemMap.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="ItemsClasses\ItemBomb.cs" />
     <Compile Include="ItemsClasses\ItemArrow.cs" />
     <Compile Include="ItemsClasses\ItemFactory.cs" />
+    <Compile Include="LevelLoader.cs" />
     <Compile Include="NPC\MerchantG.cs" />
     <Compile Include="NPC\MerchantGState.cs" />
     <Compile Include="NPC\MerchantP.cs" />
@@ -150,6 +152,7 @@
     <Compile Include="Projectile\Boomer.cs" />
     <Compile Include="Interfaces\IProjectileFactory.cs" />
     <Compile Include="Projectile\ProjectileFactory.cs" />
+    <Compile Include="Room.cs" />
     <Compile Include="Sprite_\AttackSprite\DownWoodenSwordLinkSprite.cs" />
     <Compile Include="Sprite_\AttackSprite\LeftWoodenSwordLinkSprite.cs" />
     <Compile Include="Sprite_\AttackSprite\RightWoodenSwordLinkSprite.cs" />
@@ -293,6 +296,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <Content Include="Level1.xml" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />

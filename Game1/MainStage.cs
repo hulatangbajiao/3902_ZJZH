@@ -1,6 +1,7 @@
 ﻿using Game1.Block;
 using Game1.Controller;
 using Game1.Detection;
+using Game1.Interfaces;
 using Game1.ItemsClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;

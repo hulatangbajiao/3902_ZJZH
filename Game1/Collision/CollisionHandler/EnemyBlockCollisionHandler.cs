@@ -1,4 +1,5 @@
-﻿using Game1.Enemy_NPC;
+﻿using Game1.CollisionHandler;
+using Game1.Enemy_NPC;
 using Game1.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,9 +9,8 @@ using System.Threading.Tasks;
 
 namespace Game1.Collision
 {
-    class EnemyBlockCollisionHandler 
+    class EnemyBlockCollisionHandler : IHandler
     {
-        
         private ICollision side;
         private IEnemy enemy;
         private IBlock block;
@@ -26,17 +26,18 @@ namespace Game1.Collision
         {
             if (side == ICollision.Left)
             {
-                enemy.moveLeft();
-            } else if (side == ICollision.Right)
+                enemy.State.MoveLeft();
+            }
+            else if (side == ICollision.Right)
             {
-                enemy.moveRight();
-            } else if (side == ICollision.Bottom)
-            {
-                enemy.movedown();
-            } else if (side == ICollision.Top)
-            {
-                enemy.moveUp();
-            } 
+                enemy.State.MoveRight();
+            }
+            else if (side == ICollision.Bottom) {
+                enemy.State.MoveDown();
+            } else if (side == ICollision.Top) {
+                enemy.State.MoveUp();
+            }
         }
     }
 }
+

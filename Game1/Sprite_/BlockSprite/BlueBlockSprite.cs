@@ -13,8 +13,6 @@ namespace Game1.Block
 {
     class BlueBlockSprite : IBlock
     {
-
-
         public Texture2D Texture { get; set; }
         private Rectangle destinationRectangle;
         public BlueBlockSprite()
