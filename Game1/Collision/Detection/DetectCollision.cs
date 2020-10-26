@@ -28,10 +28,11 @@ namespace Game1.Detection
             this.BlockList = BlockList;
             foreach (IBlock block in BlockList)
             {
-                Rectangle linkRectangle = link.GetRectangle();
+                Rectangle linkRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96); ;
                 Rectangle BlockRectangle = block.GetRectangle();
+                Rectangle intersectRectangle = new GeneralDeterctionIntersect(linkRectangle, BlockRectangle).GetRectangle();
                 ICollision side = new GeneralDetection(linkRectangle, BlockRectangle).ifCollision();
-                IHandler LinkBlockCollisionHandler = new LinkBlockCollisionHandler(link, block, side);
+                IHandler LinkBlockCollisionHandler = new LinkBlockCollisionHandler(link, block, side, intersectRectangle);
                 LinkBlockCollisionHandler.Execute();
             }
         }
@@ -44,10 +45,11 @@ namespace Game1.Detection
             {
                 if (enemy.exist)
                 {
-                    Rectangle linkRectangle = link.GetRectangle();
+                    Rectangle linkRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);
                     Rectangle EnemyRectangle = enemy.GetRectangle();
+                    Rectangle intersectRectangle = new GeneralDeterctionIntersect(linkRectangle, BlockRectangle).GetRectangle();
                     ICollision side = new GeneralDetection(linkRectangle, EnemyRectangle).ifCollision();
-                    IHandler LinkEnemyCollisionHandler = new LinkEnemyCollisionHandler(enemy, link, side);
+                    IHandler LinkEnemyCollisionHandler = new LinkEnemyCollisionHandler(enemy, link, side, intersectRectangle);
                     LinkEnemyCollisionHandler.Execute();
                 }
             }
@@ -59,10 +61,11 @@ namespace Game1.Detection
             this.ReceivedItemList = ReceivedItemList;
             foreach (IItem item in ReceivedItemList)
             {
-                Rectangle linkRectangle = link.GetRectangle();
+                Rectangle linkRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);
                 Rectangle ItemRectangle = item.GetRectangle();
+                Rectangle intersectRectangle = new GeneralDeterctionIntersect(linkRectangle, BlockRectangle).GetRectangle();
                 ICollision side = new GeneralDetection(linkRectangle, ItemRectangle).ifCollision();
-                IHandler LinkReceivedItemCollision = new LinkReceivedItemCollisionHandler(link, item, side);
+                IHandler LinkReceivedItemCollision = new LinkReceivedItemCollisionHandler(link, item, side, intersectRectangle);
                 LinkReceivedItemCollision.Execute();
             }
         }
@@ -73,10 +76,11 @@ namespace Game1.Detection
             this.ObtainedItemList = ObtainedItemList;
             foreach (IItem item in ObtainedItemList)
             {
-                Rectangle linkRectangle = link.GetRectangle();
+                Rectangle linkRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);
                 Rectangle ItemRectangle = item.GetRectangle();
+                Rectangle intersectRectangle = new GeneralDeterctionIntersect(linkRectangle, BlockRectangle).GetRectangle();
                 ICollision side = new GeneralDetection(linkRectangle, ItemRectangle).ifCollision();
-                IHandler LinkObtainedItemCollision = new LinkObtainedItemCollisionHandler(link, item, side);
+                IHandler LinkObtainedItemCollision = new LinkObtainedItemCollisionHandler(link, item, side, intersectRectangle);
                 LinkObtainedItemCollision.Execute();
             }
         }
@@ -93,8 +97,9 @@ namespace Game1.Detection
                     {
                         Rectangle EnemyRectangle = enemy.GetRectangle();
                         Rectangle BlockRectangle = block.GetRectangle();
+                        Rectangle intersectRectangle = new GeneralDeterctionIntersect(linkRectangle, BlockRectangle).GetRectangle();
                         ICollision side = new GeneralDetection(EnemyRectangle, BlockRectangle).ifCollision();
-                        IHandler EnemyBlockCollisionHandler = new EnemyBlockCollisionHandler(enemy, block, side);
+                        IHandler EnemyBlockCollisionHandler = new EnemyBlockCollisionHandler(enemy, block, side, intersectRectangle);
                         EnemyBlockCollisionHandler.Execute();
                     }
                 }

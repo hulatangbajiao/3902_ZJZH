@@ -11,7 +11,6 @@ namespace Game1.Collision
 {
     class EnemyProjectileCollisonHandler : IHandler
     {
-        
         private ICollision side;
         private IEnemy enemy;
         private IProjectile projectile;
@@ -28,6 +27,7 @@ namespace Game1.Collision
             if (side != ICollision.Null)
             {
                 enemy.exist = false;
+                projectile.exist = false;
             }
         }
     }
