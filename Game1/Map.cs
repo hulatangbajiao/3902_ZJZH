@@ -1,4 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Game1.Interfaces;
+using Game1.ItemsClasses;
+using Game1.Sprite_;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1
@@ -6,13 +9,13 @@ namespace Game1
     class Map : IMap
     {
         public Rectangle DestinationRectangle { get; set; }
-        public ISprite MapSprite { get; set; }
+        public MapSprite MapSprite { get; set; }
         const int ROOM_WIDTH = 256, ROOM_HEIGHT = 176;//need to fix
 
         public Map()
         {
             DestinationRectangle = new Rectangle(0, 0, GlobalDefinitions.GraphicsWidth, GlobalDefinitions.GraphicsHeight);
-            MapSprite = ;//need to know about the factory
+            MapSprite = new MapSprite();//need to know about the factory
         }
 
 

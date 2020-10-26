@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Game1.Interfaces;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
@@ -41,43 +42,43 @@ namespace Game1
 
        
 
-        private void North()
+        public void North()
         {
             if (CurrentRoom.HasNorth)
             {
                 Map.North();
                 CurrentRoom = CurrentRoom.North;
-                Link.DestinationRectangle = new Rectangle(doors[2].X, doors[2].Y - Link.DestinationRectangle.Height, Link.DestinationRectangle.Width, Link.DestinationRectangle.Height);
+                GlobalDefinitions.Position = new Vector2(doors[2].X, doors[2].Y - Link.GetRectangle().Height);
             }
         }
 
-        private void East()
+        public void East()
         {
             if (CurrentRoom.HasEast)
             {
                 Map.East();
                 CurrentRoom = CurrentRoom.East;
-                Link.DestinationRectangle = new Rectangle(doors[3].X + doors[3].Width, doors[3].Y, Link.DestinationRectangle.Width, Link.DestinationRectangle.Height);
+                GlobalDefinitions.Position = new Vector2(doors[3].X + doors[3].Width, doors[3].Y);
             }
         }
 
-        private void South()
+        public void South()
         {
             if (CurrentRoom.HasSouth)
             {
                 Map.South();
                 CurrentRoom = CurrentRoom.South;
-                Link.DestinationRectangle = new Rectangle(doors[0].X, doors[0].Y + doors[0].Height, Link.DestinationRectangle.Width, Link.DestinationRectangle.Height);
+                GlobalDefinitions.Position = new Vector2(doors[0].X, doors[0].Y + doors[0].Height);
             }
         }
 
-        private void West()
+        public void West()
         {
             if (CurrentRoom.HasWest)
             {
                 Map.West();
                 CurrentRoom = CurrentRoom.West;
-                Link.DestinationRectangle = new Rectangle(doors[1].X - Link.DestinationRectangle.Width, doors[1].Y, Link.DestinationRectangle.Width, Link.DestinationRectangle.Height);
+                GlobalDefinitions.Position = new Vector2(doors[1].X - Link.GetRectangle().Width, doors[1].Y);
             }
         }
 
@@ -90,19 +91,19 @@ namespace Game1
         {
             CurrentRoom.Update();
 
-            if (Link.DestinationRectangle.Intersects(doors[0]))
+            if (Link.GetRectangle().Intersects(doors[0]))
             {
                 North();
             }
-            else if (Link.DestinationRectangle.Intersects(doors[1]))
+            else if (Link.GetRectangle().Intersects(doors[1]))
             {
                 East();
             }
-            else if (Link.DestinationRectangle.Intersects(doors[2]))
+            else if (Link.GetRectangle().Intersects(doors[2]))
             {
                 South();
             }
-            else if (Link.DestinationRectangle.Intersects(doors[3]))
+            else if (Link.GetRectangle().Intersects(doors[3]))
             {
                 West();
             }

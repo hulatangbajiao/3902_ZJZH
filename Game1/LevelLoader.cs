@@ -142,11 +142,11 @@ namespace Game1
                         {
                             case "NoneMoveableBlock":
                                 //room.Block.Add(new Block(false, new Rectangle((int)position.X, (int)position.Y, 48, 48), MapAndHUDSpriteFactory.Instance.CreateSignleBlock()));
-                                room.Block.Add(new Block(position)));
+                                room.Block.Add(new Block(position));
                                 break;
 
                             case "River":
-                                room.Block.Add(new BlueBlock(position)));
+                                room.Block.Add(new BlueBlock(position));
                                 break;
                         }
                     }

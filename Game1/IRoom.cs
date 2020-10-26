@@ -1,4 +1,6 @@
-﻿namespace Game1
+﻿using Game1.Interfaces;
+
+namespace Game1
 {
     public interface IRoom
     {

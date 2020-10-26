@@ -1,4 +1,5 @@
-﻿using Game1.Interfaces;
+﻿using Game1.Enemy_NPC;
+using Game1.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;

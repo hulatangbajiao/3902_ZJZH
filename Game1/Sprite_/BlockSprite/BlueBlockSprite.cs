@@ -24,18 +24,13 @@ namespace Game1.Block
         {
         }
 
-        public void Draw(SpriteBatch spriteBatch,Vector2 Position)
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
 
             Texture = Texture2DStorage.GetBlueBlockSpriteSheet();
 
             Nullable<Rectangle> sourceRectangle = new Rectangle(0, 0, Texture.Width, Texture.Height);
-<<<<<<< HEAD
-            Rectangle destinationRectangle = new Rectangle((int)Position.X,(int)Position.Y, Texture.Width / 2, Texture.Height / 2);
-=======
-            destinationRectangle = new Rectangle(400, 100, Texture.Width / 2, Texture.Height / 2);
->>>>>>> master
-
+            destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, Texture.Width / 2, Texture.Height / 2);
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
 
