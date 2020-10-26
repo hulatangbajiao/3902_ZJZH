@@ -52,10 +52,10 @@
     <Compile Include="Collision\CollisionHandler\EnemyProjectileCollisonHandler.cs" />
     <Compile Include="Collision\CollisionHandler\LinkEnemyCollisionHandler.cs" />
     <Compile Include="Collision\CollisionHandler\LinkBlockCollisionHandler.cs" />
+    <Compile Include="Collision\Detection\GeneralDeterctionIntersect.cs" />
     <Compile Include="Collision\ICollision.cs" />
+    <Compile Include="Command\StopCommand.cs" />
     <Compile Include="Command\GameCommand\DamagedCommand.cs" />
-    <Compile Include="Command\ItemCommand\PreviousItemCommand.cs" />
-    <Compile Include="Command\ItemCommand\NextItemCommand.cs" />
     <Compile Include="Command\MovingCommand\DownMovingCommand.cs" />
     <Compile Include="Command\GameCommand\QuitGameCommand.cs" />
     <Compile Include="Command\GameCommand\ResetGameCommand.cs" />
@@ -71,6 +71,7 @@
     <Compile Include="Collision\Detection\GeneralDetection.cs" />
     <Compile Include="Command\RoomCommand\PreviousRoomCommand.cs" />
     <Compile Include="Controller\MouseController.cs" />
+    <Compile Include="DungeonLevel.cs" />
     <Compile Include="Enemy\Aquamentus\Aquamentus.cs" />
     <Compile Include="Enemy\Aquamentus\AquamentusLeftMovingState.cs" />
     <Compile Include="Enemy\Aquamentus\AquamentusRightMovingState.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="ItemsClasses\ItemArrow.cs" />
     <Compile Include="ItemsClasses\ItemFactory.cs" />
     <Compile Include="LevelLoader.cs" />
+    <Compile Include="Map.cs" />
     <Compile Include="NPC\MerchantG.cs" />
     <Compile Include="NPC\MerchantGState.cs" />
     <Compile Include="NPC\MerchantP.cs" />
