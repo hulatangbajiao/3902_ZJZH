@@ -10,6 +10,7 @@ namespace Game1.Controller
 
         public MouseController(MainStage instance)
         {
+            RoomPreviousCommand
             
         }
 

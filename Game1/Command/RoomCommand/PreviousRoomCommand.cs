@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Game1.Command
 {
-    class PreviousRoomCommand
+    class PreviousRoomCommand : ICommand
     {
+        private 
     }
 }
