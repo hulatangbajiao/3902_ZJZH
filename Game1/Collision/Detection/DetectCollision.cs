@@ -1,5 +1,5 @@
 ﻿using Game1.Collision;
-using Game1.CollisionHandler;
+using Game1.Collision.CollisionHandler;
 using Game1.Enemy_NPC;
 using Game1.Interfaces;
 using Microsoft.Xna.Framework;
@@ -28,9 +28,10 @@ namespace Game1.Detection
             List < IBlock > BlockList = BlockFactory.BlockList;
             foreach (IBlock block in BlockList)
             {
-                Rectangle linkRectangle = new Rectangle();
+
+                Rectangle linkRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);
                 Rectangle BlockRectangle = block.GetRectangle();
-                Rectangle intersectRectangle = new GeneralDeterctionIntersect(linkRectangle, ItemRectangle).GetRectangle();
+                Rectangle intersectRectangle = new GeneralDeterctionIntersect(linkRectangle, BlockRectangle).GetRectangle();
                 ICollision side = new GeneralDetection(linkRectangle, BlockRectangle).ifCollision();
                 IHandler LinkBlockCollisionHandler = new LinkBlockCollisionHandler(link, block, side,intersectRectangle);
                 LinkBlockCollisionHandler.Execute();
@@ -61,7 +62,7 @@ namespace Game1.Detection
             {
                 if (item.exist)
                 {
-                    Rectangle linkRectangle = new Rectangle();
+                    Rectangle linkRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);
                     Rectangle ItemRectangle = item.GetRectangle();
                     ICollision side = new GeneralDetection(linkRectangle, ItemRectangle).ifCollision();
                     IHandler LinkItemCollision = new LinkItemCollisionHandler(link, item, side);

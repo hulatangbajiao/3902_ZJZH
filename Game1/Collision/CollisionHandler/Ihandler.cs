@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game1.CollisionHandler
+namespace Game1.Collision.CollisionHandler
 {
     public interface IHandler
     {

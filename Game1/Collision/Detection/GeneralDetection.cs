@@ -21,7 +21,7 @@ namespace Game1.Detection
         }
         public ICollision ifCollision()
         {
-            Rectangle intersectionRectangle = new Rectangle();
+          
             intersectionRectangle = Rectangle.Intersect(rectangle1, rectangle2);
 
 

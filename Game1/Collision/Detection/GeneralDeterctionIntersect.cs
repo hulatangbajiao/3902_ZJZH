@@ -23,7 +23,7 @@ namespace Game1.Detection
 
         public Rectangle GetRectangle()
         {
-            Rectangle intersectionRectangle = new Rectangle();
+           
             intersectionRectangle = Rectangle.Intersect(rectangle1, rectangle2);
            
             return intersectionRectangle;
