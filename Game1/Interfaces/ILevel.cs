@@ -1,4 +1,4 @@
-﻿using Game1.Level;
+﻿using Game1;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 

@@ -223,6 +223,7 @@
     <Compile Include="Sprite_\ItemSprite\UseMapSprite.cs" />
     <Compile Include="Sprite_\ItemSprite\UseRupeeSprite.cs" />
     <Compile Include="Sprite_\ItemSprite\UseTriforceSprite.cs" />
+    <Compile Include="Sprite_\MapSprite.cs" />
     <Compile Include="Sprite_\Moving Sprite\LeftMovingLinkSprite.cs" />
     <Compile Include="Sprite_\Moving Sprite\UpMovingLinkSprite.cs" />
     <Compile Include="Sprite_\NPCSprite\OldManSprite.cs" />

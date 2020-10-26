@@ -24,7 +24,7 @@ namespace Game1.Block
         {
         }
 
-        public void Draw(SpriteBatch spriteBatch,Vector2 Position)
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
 
             Texture = Texture2DStorage.GetBlueBlockSpriteSheet();

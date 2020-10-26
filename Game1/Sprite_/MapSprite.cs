@@ -11,7 +11,7 @@ using Game1;
 
 namespace Game1.Sprite_
 {
-    public class MapSprite : ISprite
+    public class MapSprite
     {
 
 
@@ -29,7 +29,7 @@ namespace Game1.Sprite_
         {
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Rectangle DestnationRectangle)
         {
 
             Texture = Texture2DStorage.GetFullMapSpriteSheet();

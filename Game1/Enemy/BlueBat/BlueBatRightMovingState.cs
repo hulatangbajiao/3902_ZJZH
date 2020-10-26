@@ -9,7 +9,6 @@ namespace Game1
         private BlueBat BlueBat;
         private MainStage game;
         private ISprite GetSprite { get; set; }
-
         public BlueBatRightMovingState(BlueBat BlueBat, MainStage game)
 
         {
