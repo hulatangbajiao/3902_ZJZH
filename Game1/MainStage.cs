@@ -1,6 +1,7 @@
 ﻿using Game1.Block;
 using Game1.Controller;
 using Game1.Detection;
+using Game1.Interfaces;
 using Game1.ItemsClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -33,10 +34,9 @@ namespace Game1
         /// </summary>
         //Projectile Factory
         public IProjectileFactory ProjectileFactory { get; set; }
-        public IBlockList BlockList { get; set; }
-        public IItemList ItemList { get; set; }
+        
         public ILinkState[] Linkstates { get; }
-        public EnemyList Enemylist { get; set; }
+        
 
         public MainStage()
         {
@@ -49,9 +49,7 @@ namespace Game1
 
             this.Link = new Link(this);
             this.ProjectileFactory = new ProjectileFactory(this);
-            this.BlockList = new BlockList();
-            this.ItemList = new ItemList();
-            this.Enemylist = new EnemyList(this);
+            
 
 
             controllers = new List<IController>
@@ -115,10 +113,9 @@ namespace Game1
                 controller.Update();
             }
             this.ProjectileFactory.Update();
-            this.BlockList.Update(this);
-            this.ItemList.Update(this);
+            
             Link.Update();
-            this.Enemylist.Update(this);
+            
             base.Update(gameTime);
         }
 
@@ -129,11 +126,10 @@ namespace Game1
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            this.ItemList.Draw(spriteBatch);
+            
             spriteBatch.Begin();
             this.ProjectileFactory.Draw(spriteBatch);
-            this.BlockList.Draw(spriteBatch);
-            this.Enemylist.Draw(spriteBatch);
+            
             Link.State.Draw(spriteBatch);
 
             spriteBatch.End();
@@ -145,9 +141,7 @@ namespace Game1
             this.Link.State = new UpIdleState(this.Link, this);
             GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
             this.ProjectileFactory = new ProjectileFactory(this);
-            this.BlockList = new BlockList();
-            this.ItemList = new ItemList();
-            this.Enemylist = new EnemyList(this);
+            
             Initialize();
         }
 

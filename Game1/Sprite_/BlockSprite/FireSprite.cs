@@ -11,7 +11,7 @@ using Game1;
 
 namespace Game1.Sprite_.BlockSprite
 {
-    class FireSprite : IBlock
+    class FireSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
@@ -40,7 +40,7 @@ namespace Game1.Sprite_.BlockSprite
 
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
             Texture = Texture2DStorage.GetFireSpriteSheet();
             int width = Texture.Width / Columns;

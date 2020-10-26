@@ -11,7 +11,7 @@ using Game1;
 
 namespace Game1.ItemsClasses
 {
-    class UseClockSprite : IItemSprite
+    class UseClockSprite : ISprite
 
     {
         public Texture2D Texture { get; set; }

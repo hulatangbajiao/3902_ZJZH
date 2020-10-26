@@ -12,7 +12,7 @@ using Game1;
 
 namespace Game1.Block
 {
-    class BombedDoorDownSprite : IBlock
+    class BombedDoorDownSprite : ISprite
     {
 
 
@@ -27,7 +27,7 @@ namespace Game1.Block
         {
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
 
             Texture = Texture2DStorage.GetBombedDoorDownSpriteSheet();

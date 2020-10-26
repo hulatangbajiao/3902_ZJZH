@@ -11,7 +11,7 @@ using Game1;
 
 namespace Game1.ItemsClasses
 {
-    class UseMapSprite : IItemSprite
+    class UseMapSprite : ISprite
     {
 
         public Texture2D Texture { get; set; }

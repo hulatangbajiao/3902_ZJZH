@@ -12,7 +12,8 @@ namespace Game1
     {
         void Update();
 
-        void Draw(SpriteBatch spriteBatch);
+        void Draw(SpriteBatch spriteBatch, Vector2 Position);
+        Rectangle GetRectangle();
 
     }
 }

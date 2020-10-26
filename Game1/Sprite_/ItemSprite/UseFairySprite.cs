@@ -19,7 +19,7 @@ using System.Xml.Schema;
 
 namespace Game1
 {
-    public class UseFairySprite : IItemSprite
+    public class UseFairySprite : ISprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
