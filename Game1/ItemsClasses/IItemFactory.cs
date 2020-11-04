@@ -12,6 +12,7 @@ namespace Game1
     public interface IItemFactory
     {
         List<IItem> ItemList { get; set; }
+        void Initialize();
         void AddItemArrow(Vector2 position);
         void AddItemBomb(Vector2 position);
         void AddItemBoomer(Vector2 position);

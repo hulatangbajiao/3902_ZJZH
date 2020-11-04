@@ -1,5 +1,4 @@
 ﻿
-
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -22,9 +21,9 @@ namespace Game1
         public int MovingSpeed = 1;
         
 
-        public BlueBat(Vector2 Position, Vector2 Direction)
+        public BlueBat(Vector2 Position, Vector2 Direction, IEnemyFactory factory)
         {
-            State = new BlueBatUpMovingState(this, game);
+            State = new BlueBatUpMovingState(this, factory);
             this.Position = Position;
             rand = new Random();
            

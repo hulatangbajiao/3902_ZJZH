@@ -5,8 +5,8 @@ namespace Game1
 {
     public interface IEnemyState
     {
-        
 
+        IEnemyFactory factory { get; set; }
         void MoveUp();
         void MoveDown();
         void MoveLeft();

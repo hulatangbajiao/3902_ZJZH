@@ -1,5 +1,4 @@
 ﻿
-using Game1.Interfaces;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -14,6 +13,7 @@ namespace Game1
     {
 
         public IEnemyState State { get; set; }
+        
         int count;
         Random rand;
         public bool exist { get; set; }
@@ -21,9 +21,9 @@ namespace Game1
         public Vector2 Direction { get; set; }
         public int MovingSpeed = 1;
 
-        public Aquamentus(Vector2 position, Vector2 direction)
+        public Aquamentus(Vector2 position, Vector2 direction, IEnemyFactory factory)
         {
-            State = new AquamentusLeftMovingState(this);
+            State = new AquamentusLeftMovingState(this, factory);
             this.Position = position;
             
 

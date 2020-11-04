@@ -7,26 +7,26 @@ namespace Game1
     internal class BlueMLeftMovingState : IEnemyState
     {
         private BlueM BlueM;
-        private MainStage game;
+        public IEnemyFactory factory { get; set; }
         public ISprite GetSprite { get; set; }
 
-        public BlueMLeftMovingState(BlueM bluem, MainStage game)
+        public BlueMLeftMovingState(BlueM bluem, IEnemyFactory factory)
         {
             this.BlueM = bluem;
-            this.game = game;
+            this.factory = factory;
             GetSprite = new LeftMovingBlueMSprite();
         }
 
         public void MoveUp()
         {
-            BlueM.State = new BlueMUpMovingState(BlueM, game);
+            BlueM.State = new BlueMUpMovingState(BlueM, factory);
 
         }
         //if 'w'key is being pressed for a long time(more than once in one Update cycle), Oct will be animated and move up in y axis.
 
         public void MoveDown()
         {
-            BlueM.State = new BlueMDownMovingState(BlueM, game);
+            BlueM.State = new BlueMDownMovingState(BlueM, factory);
 
         }
 
@@ -38,7 +38,7 @@ namespace Game1
 
         public void MoveRight()
         {
-            BlueM.State = new BlueMRightMovingState(BlueM, game);
+            BlueM.State = new BlueMRightMovingState(BlueM, factory);
 
         }
 
@@ -49,7 +49,7 @@ namespace Game1
         }
         public void BreatheFire()
         {
-            
+            factory.AddEnemy(new EnemyArrow(BlueM.Position, new Vector2(-1, 0), factory));
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 Position)

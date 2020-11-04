@@ -8,21 +8,21 @@ namespace Game1
     internal class RedGoriyaDownMovingState : IEnemyState
     {
         private RedGoriya RedGoriya;
-        private MainStage game;
+        public IEnemyFactory factory { get; set; }
         public ISprite GetSprite { get; set; }
 
-        public RedGoriyaDownMovingState(RedGoriya redgoriya, MainStage game)
+        public RedGoriyaDownMovingState(RedGoriya redgoriya, IEnemyFactory factory)
 
         {
             this.RedGoriya = redgoriya;
-            this.game = game;
+            this.factory = factory;
             GetSprite = new DownMovingRedGoriyaSprite();
 
         }
 
         public void MoveUp()
         {
-            RedGoriya.State = new RedGoriyaUpMovingState(RedGoriya, game);
+            RedGoriya.State = new RedGoriyaUpMovingState(RedGoriya, factory);
 
         }
         //if 'w'key is being pressed for a long time(more than once in one Update cycle), Oct will be animated and move up in y axis.
@@ -35,14 +35,14 @@ namespace Game1
 
         public void MoveLeft()
         {
-            RedGoriya.State = new RedGoriyaLeftMovingState(RedGoriya, game);
+            RedGoriya.State = new RedGoriyaLeftMovingState(RedGoriya, factory);
 
         }
 
 
         public void MoveRight()
         {
-            RedGoriya.State = new RedGoriyaRightMovingState(RedGoriya, game);
+            RedGoriya.State = new RedGoriyaRightMovingState(RedGoriya, factory);
 
         }
 
@@ -53,7 +53,7 @@ namespace Game1
         }
         public void BreatheFire()
         {
-            
+            factory.AddEnemy(new EnemyFireBall(RedGoriya.Position, new Vector2(0, 1), factory));
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {

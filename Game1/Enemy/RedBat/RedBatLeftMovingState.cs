@@ -7,28 +7,28 @@ namespace Game1
     internal class RedBatLeftMovingState : IEnemyState
     {
         private RedBat RedBat;
-        private MainStage game;
+        public IEnemyFactory factory { get; set; }
         public ISprite GetSprite { get; set; }
 
-        public RedBatLeftMovingState(RedBat redBat, MainStage game)
+        public RedBatLeftMovingState(RedBat redBat, IEnemyFactory factory)
 
         {
             this.RedBat = redBat;
-            this.game = game;
+            this.factory = factory;
             GetSprite = new LeftMovingRedBatSprite();
 
         }
 
         public void MoveUp()
         {
-            RedBat.State = new RedBatUpMovingState(RedBat, game);
+            RedBat.State = new RedBatUpMovingState(RedBat, factory);
 
         }
         //if 'w'key is being pressed for a long time(more than once in one Update cycle), Oct will be animated and move up in y axis.
 
         public void MoveDown()
         {
-            RedBat.State = new RedBatDownMovingState(RedBat, game);
+            RedBat.State = new RedBatDownMovingState(RedBat, factory);
 
         }
 
@@ -40,7 +40,7 @@ namespace Game1
 
         public void MoveRight()
         {
-            RedBat.State = new RedBatRightMovingState(RedBat, game);
+            RedBat.State = new RedBatRightMovingState(RedBat, factory);
 
         }
 

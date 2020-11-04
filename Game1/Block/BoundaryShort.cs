@@ -35,7 +35,7 @@ namespace Game1
 
         public Rectangle GetRectangle()
         {
-            return new Rectangle((int)Position.X, (int)Position.Y, (int)(GlobalDefinitions.Boundary / GlobalDefinitions.RoomWidth * GlobalDefinitions.GraphicsWidth), GlobalDefinitions.GraphicsHeight);
+            return new Rectangle((int)Position.X, (int)Position.Y, (int)((float)GlobalDefinitions.Boundary / (float)GlobalDefinitions.RoomWidth * GlobalDefinitions.GraphicsWidth), GlobalDefinitions.GraphicsHeight);
         }
     }
 }

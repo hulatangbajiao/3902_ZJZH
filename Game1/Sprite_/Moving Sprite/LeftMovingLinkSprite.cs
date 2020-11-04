@@ -24,10 +24,7 @@ namespace Game1.Sprite_
                 currentFrame = 0;
 
             GlobalDefinitions.Position.X = GlobalDefinitions.Position.X - (float)5; //change the y axis position of Link
-            if (GlobalDefinitions.Position.X == 0)
-            {
-                GlobalDefinitions.Position.X = (float)GlobalDefinitions.GraphicsWidth;
-            }
+            
 
         }
 

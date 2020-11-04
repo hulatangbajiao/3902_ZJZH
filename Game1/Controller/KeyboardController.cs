@@ -57,14 +57,16 @@ namespace Game1.Controller
 
             if (OnceKeyArray.Contains<Keys>(lastPressedKey))
             {
-                new StopCommand(this.instance.Link);
+                ICommand command = new StopCommand(this.instance.Link);
+                command.Execute();
             }
             else if (AttackArray.Contains<Keys>(lastPressedKey))
             {
             }
             else if (keyArray.Contains<Keys>(lastPressedKey) && (!currentKeyState.IsKeyDown(lastPressedKey)))
             {
-                new StopCommand(this.instance.Link);
+                ICommand command = new StopCommand(this.instance.Link);
+                command.Execute();
             }
 
             foreach (Keys key in keyArray)
@@ -73,7 +75,7 @@ namespace Game1.Controller
 
                 if (OnceKeyArray.Contains<Keys>(key))
                 {
-                    if (currentKeyState.IsKeyDown(key) && !previousKeyState.IsKeyDown(key) && currentKeyState.IsKeyUp(lastPressedKey))
+                    if (currentKeyState.IsKeyDown(key) && !previousKeyState.IsKeyDown(key))
                     {
                         controllerMappings[key]?.Execute();
                         lastPressedKey = key;
@@ -91,7 +93,7 @@ namespace Game1.Controller
                 }
                 else if (keyArray.Contains<Keys>(key))
                 {
-                    if (currentKeyState.IsKeyDown(key))
+                    if (currentKeyState.IsKeyDown(key) && currentKeyState.IsKeyUp(lastPressedKey))
 
                     {
                         controllerMappings[key]?.Execute();

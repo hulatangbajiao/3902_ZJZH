@@ -13,7 +13,7 @@ namespace Game1
     {
 
         public IEnemyState State { get; set; }
-        private MainStage game;
+        
         int count;
         Random rand;
         public bool exist { get; set; }
@@ -21,12 +21,12 @@ namespace Game1
         public Vector2 Direction { get; set; }
         public int MovingSpeed = 1;
 
-        public BlueOct(MainStage game)
+        public BlueOct(Vector2 Position, Vector2 Direction, IEnemyFactory factory)
         {
-            State = new BlueOctUpMovingState(this, game);
+            State = new BlueOctUpMovingState(this, factory);
             this.Position = Position;
             rand = new Random();
-            this.game = game;
+            
         }
 
 

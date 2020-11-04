@@ -201,37 +201,38 @@ namespace Game1
             BlueBlockSpriteSheet = content.Load<Texture2D>("images/Block/BlueBlock");
             BlueFaceBlockSpriteSheet = content.Load<Texture2D>("images/Block/BlueFaceBlock");
             BlueStoneBlockSpriteSheet = content.Load<Texture2D>("images/Block/BlueStoneBlock");
-            BrickTileSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorUp");
-            GapTileSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorDown");
-            LadderTileSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorLeft");
-            StairsSpriteSheet = content.Load<Texture2D>("images/Block/BombedDoorRight");
+            BrickTileSpriteSheet = content.Load<Texture2D>("images/Block/BrickTile");
+            GapTileSpriteSheet = content.Load<Texture2D>("images/Block/GapTile");
+            LadderTileSpriteSheet = content.Load<Texture2D>("images/Block/LadderTile");
+            StairsSpriteSheet = content.Load<Texture2D>("images/Block/Stairs");
             FireSpriteSheet = content.Load<Texture2D>("images/Block/Fire");
 
             //Doors
-            BombedDoorUpSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorUp");
+            
             BombedDoorDownSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorDown");
             BombedDoorLeftSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorLeft");
             BombedDoorRightSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorRight");
+            BombedDoorUpSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorRight");
 
-            LockedDoorUpSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorUp");
-            LockedDoorDownSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorDown");
-            LockedDoorLeftSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorLeft");
-            LockedDoorRightSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorRight");
+            LockedDoorUpSpriteSheet = content.Load<Texture2D>("images/Door/LockedDoorUp");
+            LockedDoorDownSpriteSheet = content.Load<Texture2D>("images/Door/LockedDoorDown");
+            LockedDoorLeftSpriteSheet = content.Load<Texture2D>("images/Door/LockedDoorLeft");
+            LockedDoorRightSpriteSheet = content.Load<Texture2D>("images/Door/LockedDoorRight");
 
-            OpenDoorUpSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorUp");
-            OpenDoorDownSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorDown");
-            OpenDoorLeftSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorLeft");
-            OpenDoorRightSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorRight");
+            OpenDoorUpSpriteSheet = content.Load<Texture2D>("images/Door/OpenDoorUp");
+            OpenDoorDownSpriteSheet = content.Load<Texture2D>("images/Door/OpenDoorDown");
+            OpenDoorLeftSpriteSheet = content.Load<Texture2D>("images/Door/OpenDoorLeft");
+            OpenDoorRightSpriteSheet = content.Load<Texture2D>("images/Door/OpenDoorRight");
 
-            ShutDoorUpSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorUp");
-            ShutDoorDownSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorDown");
-            ShutDoorLeftSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorLeft");
-            ShutDoorRightSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorRight");
+            ShutDoorUpSpriteSheet = content.Load<Texture2D>("images/Door/ShutDoorUp");
+            ShutDoorDownSpriteSheet = content.Load<Texture2D>("images/Door/ShutDoorDown");
+            ShutDoorLeftSpriteSheet = content.Load<Texture2D>("images/Door/ShutDoorLeft");
+            ShutDoorRightSpriteSheet = content.Load<Texture2D>("images/Door/ShutDoorRight");
 
-            WallUpSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorUp");
-            WallDownSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorDown");
-            WallLeftSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorLeft");
-            WallRightSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorRight");
+            WallUpSpriteSheet = content.Load<Texture2D>("images/Door/WallUp");
+            WallDownSpriteSheet = content.Load<Texture2D>("images/Door/WallDown");
+            WallLeftSpriteSheet = content.Load<Texture2D>("images/Door/WallLeft");
+            WallRightSpriteSheet = content.Load<Texture2D>("images/Door/WallRight");
 
             //enemy
 

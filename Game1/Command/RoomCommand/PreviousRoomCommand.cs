@@ -1,4 +1,5 @@
 ﻿using Game1.Interfaces;
+using Game1.Level;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,23 @@ namespace Game1.Command
 {
     class PreviousRoomCommand : ICommand
     {
-        private List<IRoom> RoomList;
-        public PreviousRoomCommand(List<IRoom> RoomList)
+        private DungeonLevel dungeonLevel;
+        public PreviousRoomCommand(DungeonLevel dungeonLevel)
         {
-            this.RoomList = RoomList;
+            this.dungeonLevel = dungeonLevel;
         }
         public void Execute()
         {
-            RoomList.MoveToPrev();
+            List<IRoom> roomList = dungeonLevel.Rooms;
+            IRoom currentRoom = dungeonLevel.CurrentRoom;
+            int index = roomList.IndexOf(currentRoom);
+            if (index != 0)
+            {
+                currentRoom = roomList[index--];
+            } else
+            {
+                currentRoom = roomList[roomList.Count-1];
+            }
         }
     }
     

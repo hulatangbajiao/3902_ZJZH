@@ -3,10 +3,11 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using Game1.Block;
+using Game1.Detection;
 
 namespace Game1.Level
 {
-    class DungeonLevel : ILevel
+    public class DungeonLevel : ILevel
     {
         public LevelLoader LevelLoader1 { get; set; }
         public IMap Map { get; set; }
@@ -14,15 +15,17 @@ namespace Game1.Level
         public List<IRoom> Rooms { get; set; }
         public IRoom CurrentRoom { get; set; }
         private List<Rectangle> doors;
-
-        public DungeonLevel(ILink link)
+        public DetectCollision DetectCollision { get; set; }
+        private MainStage game;
+        public DungeonLevel(MainStage game)
         {
-            LevelLoader1 = new LevelLoader();
+            this.game = game;
+            LevelLoader1 = new LevelLoader(game.enemyFactory);
             Map = new Map();
-            Link = link;
+            Link = game.Link;
             Rooms = new List<IRoom>();
             CurrentRoom = new Room();
-
+            DetectCollision = new DetectCollision();
             Rooms = LevelLoader1.LoadRooms(Link);
 
             CurrentRoom = Rooms[0];
@@ -32,31 +35,33 @@ namespace Game1.Level
                 room.Boundary = new List<IBlock>
                 {
                     new BoundaryLong(new Vector2(0,0)),
-                    new BoundaryShort(new Vector2(0, GlobalDefinitions.Boundary/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth)),
-                    new BoundaryShort(new Vector2(GlobalDefinitions.GraphicsWidth - GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth, GlobalDefinitions.Boundary/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth)),
-                    new BoundaryLong(new Vector2(0, GlobalDefinitions.GraphicsHeight - GlobalDefinitions.Boundary/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight))
+                    new BoundaryShort(new Vector2(0, (int)((float)GlobalDefinitions.Boundary/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth))),
+                    new BoundaryShort(new Vector2(GlobalDefinitions.GraphicsWidth - (int)((float)GlobalDefinitions.Boundary/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth), (int)((float)GlobalDefinitions.Boundary/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth))),
+                    new BoundaryLong(new Vector2(0, GlobalDefinitions.GraphicsHeight - (int)((float)GlobalDefinitions.Boundary/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight)))
                 };
+
+                room.Block.AddRange(room.Boundary);
             }
 
 
             doors = new List<Rectangle>
             {
-                new Rectangle((int)(GlobalDefinitions.GraphicsWidth*0.5 - GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth*0.5), 
+                new Rectangle((int)(GlobalDefinitions.GraphicsWidth*0.5 - (float)GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth*0.5), 
                                 0,
-                                 GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth,
-                                 GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight), // North, 0
-                new Rectangle(GlobalDefinitions.GraphicsWidth - GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth, 
-                               (int)(GlobalDefinitions.GraphicsHeight*0.5 - GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight*0.5),
-                               GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth,
-                               GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight), // East, 1
-                new Rectangle((int)(GlobalDefinitions.GraphicsWidth*0.5 - GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth*0.5),
-                                GlobalDefinitions.GraphicsHeight - GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight,
-                                 GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth,
-                                 GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight), // South, 2
+                                 (int)((float)GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth),
+                                 (int)((float)GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight)), // North, 0
+                new Rectangle(GlobalDefinitions.GraphicsWidth - (int)((float)GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth), 
+                               (int)(GlobalDefinitions.GraphicsHeight*0.5 - (float)GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight*0.5),
+                               (int)((float)GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth),
+                               (int)((float)GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight)), // East, 1
+                new Rectangle((int)(GlobalDefinitions.GraphicsWidth*0.5 - (float)GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth*0.5),
+                                GlobalDefinitions.GraphicsHeight - (int)((float)GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight),
+                                 (int)((float)GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth),
+                                 (int)((float)GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight)), // South, 2
                 new Rectangle(0,
-                               (int)(GlobalDefinitions.GraphicsHeight*0.5 - GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight*0.5),
-                               GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth,
-                               GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight)  // West, 3
+                               (int)(GlobalDefinitions.GraphicsHeight*0.5 - (float)GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight*0.5),
+                               (int)((float)GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth),
+                               (int)((float)GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight))  // West, 3
             };
         }
 
@@ -129,6 +134,12 @@ namespace Game1.Level
             {
                 West();
             }
+            DetectCollision.linkBlockDetection(this.Link, CurrentRoom.Block);
+            DetectCollision.LinkEnemyDetection(this.Link, CurrentRoom.Enemies);
+            DetectCollision.linkReceivedItemDetection(this.Link, CurrentRoom.ReceivedItems);
+            DetectCollision.linkObtainedItemDetection(this.Link, CurrentRoom.ObtainedItems);
+            DetectCollision.EnemyBlockDetection(CurrentRoom.Enemies, CurrentRoom.Block);
+            DetectCollision.EnemyProjectileDetection(CurrentRoom.Enemies, this.game.ProjectileFactory);
         }
 
         public void Draw(SpriteBatch spriteBatch)

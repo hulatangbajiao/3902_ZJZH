@@ -19,7 +19,7 @@ namespace Game1
         public bool exist { get; set; }
 
 
-        public EnemyFireBall(Vector2 Position, Vector2 direction)
+        public EnemyFireBall(Vector2 Position, Vector2 direction, IEnemyFactory factory)
         {
 
 

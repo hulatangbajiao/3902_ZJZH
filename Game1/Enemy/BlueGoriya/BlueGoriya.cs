@@ -1,5 +1,4 @@
 ﻿
-
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -14,6 +13,7 @@ namespace Game1
     {
 
         public IEnemyState State { get; set; }
+        private MainStage game;
         int count;
         Random rand;
         public bool exist { get; set; }
@@ -21,9 +21,9 @@ namespace Game1
         public Vector2 Direction { get; set; }
         public int MovingSpeed = 1;
 
-        public BlueGoriya(Vector2 position, Vector2 direction)
+        public BlueGoriya(Vector2 position, Vector2 direction, IEnemyFactory factory)
         {
-            State = new BlueGoriyaLeftMovingState(this);
+            State = new BlueGoriyaLeftMovingState(this, factory);
             this.Position = position;
 
 

@@ -1,4 +1,5 @@
-﻿using Game1.Interfaces;
+﻿using Game1;
+using Game1.Interfaces;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.Xml;
@@ -9,13 +10,12 @@ namespace Game1.Level
     public class LevelLoader
     {
         private XmlDocument LevelXml;
-
-
-        public LevelLoader()
+        private IEnemyFactory enemyFactory;
+        public LevelLoader(IEnemyFactory enemyFactory)
         {
             LevelXml = new XmlDocument();
-
-            LevelXml.Load("Level1.xml");
+            this.enemyFactory = enemyFactory;
+            LevelXml.Load("C:/Users/15132/Desktop/3902_ZJZH-master-complete/3902_ZJZH-master/Game1/LevelRooms.xml");
 
 
         }
@@ -38,33 +38,33 @@ namespace Game1.Level
                         string enemyName = enemyNode["ObjectType"].InnerText;
                         float columnNum = float.Parse(enemyNode["ColumnNum"].InnerText);
                         float rowNum = float.Parse(enemyNode["RowNum"].InnerText);
-                        Vector2 position = new Vector2(columnNum * 48, rowNum * 48);
+                        Vector2 position = new Vector2(columnNum * GlobalDefinitions.BlockLength+GlobalDefinitions.Boundary+66, rowNum * GlobalDefinitions.BlockLength+GlobalDefinitions.Boundary+66);
                         switch (enemyName)
                         {
                             case "Aquamentus":
-                                room.Enemies.Add(new Aquamentus(new Vector2(1,0),position));
+                                room.Enemies.Add(new Aquamentus(position, new Vector2(1, 0), enemyFactory));
                                 break;
 
                             case "BlueBat":
-                                room.Enemies.Add(new BlueBat(new Vector2(1,0), position));
+                                room.Enemies.Add(new BlueBat(position, new Vector2(1, 0), enemyFactory));
                                 break;
                             case "BlueGoriya":
-                                room.Enemies.Add(new BlueGoriya(new Vector2(1,0), position));
+                                room.Enemies.Add(new BlueGoriya(position, new Vector2(1, 0), enemyFactory));
                                 break;
                             case "RedGoriya":
-                                room.Enemies.Add(new RedGoriya(new Vector2(1,0), position));
+                                room.Enemies.Add(new RedGoriya( position, new Vector2(1, 0), enemyFactory));
                                 break;
                             case "RedBat":
-                                room.Enemies.Add(new RedBat(new Vector2(1,0), position));
+                                room.Enemies.Add(new RedBat( position, new Vector2(1, 0), enemyFactory));
                                 break;
                             case "Oct":
-                                room.Enemies.Add(new Oct(new Vector2(1,0), position));
+                                room.Enemies.Add(new Oct(position,new Vector2(1,0), enemyFactory));
                                 break;
                             case "BlueOct":
-                                room.Enemies.Add(new BlueOct(new Vector2(1,0), position));
+                                room.Enemies.Add(new BlueOct( position, new Vector2(1, 0), enemyFactory));
                                 break;
                             case "BlueM":
-                                room.Enemies.Add(new BlueM(new Vector2(1,0), position));
+                                room.Enemies.Add(new BlueM(position,new Vector2(1,0),  enemyFactory));
                                 break;
 
 
@@ -80,7 +80,7 @@ namespace Game1.Level
                         string itemName = itemNode["ObjectType"].InnerText;
                         float columnNum = float.Parse(itemNode["ColumnNum"].InnerText);
                         float rowNum = float.Parse(itemNode["RowNum"].InnerText);
-                        Vector2 position = new Vector2(columnNum * 48, rowNum * 48);
+                        Vector2 position = new Vector2(columnNum * GlobalDefinitions.BlockLength+66+GlobalDefinitions.Boundary, rowNum * GlobalDefinitions.BlockLength+GlobalDefinitions.Boundary+66);
                         switch (itemName)
                         {
                             case "Arrow":
@@ -119,9 +119,6 @@ namespace Game1.Level
                             case "Key":
                                 room.ObtainedItems.Add(new ItemKey(position));
                                 break;
-
-
-
                             case "Triforce":
                                 room.ReceivedItems.Add(new ItemTriforce(position));
                                 break;
@@ -138,7 +135,7 @@ namespace Game1.Level
                         string BlockName = blockNode["ObjectType"].InnerText;
                         float columnNum = float.Parse(blockNode["ColumnNum"].InnerText);
                         float rowNum = float.Parse(blockNode["RowNum"].InnerText);
-                        Vector2 position = new Vector2(columnNum * 50, rowNum * 50);
+                        Vector2 position = new Vector2(columnNum * GlobalDefinitions.BlockLength+GlobalDefinitions.Boundary+66, rowNum * GlobalDefinitions.BlockLength+GlobalDefinitions.Boundary+66);
                         switch (BlockName)
                         {
                             case "NoneMoveableBlock":

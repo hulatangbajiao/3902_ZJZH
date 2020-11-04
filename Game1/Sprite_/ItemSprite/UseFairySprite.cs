@@ -64,9 +64,9 @@ namespace Game1
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
             destinationRectangle = new Rectangle(x + (int)Position.X, x + (int)Position.Y, width / 2, height / 2);
 
-            spriteBatch.Begin();
+            
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
+            
 
         }
 

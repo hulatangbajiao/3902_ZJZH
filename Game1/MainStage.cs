@@ -1,8 +1,8 @@
 ﻿using Game1.Block;
 using Game1.Controller;
-using Game1.Detection;
 using Game1.Interfaces;
 using Game1.ItemsClasses;
+using Game1.Level;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -17,7 +17,7 @@ namespace Game1
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
         private List<IController> controllers;
-        private DungeonLevel dungeonlevel;
+        public DungeonLevel dungeonlevel { get; set; }
 
         /// <summary>
         /// Active sprite. Exposed as a class property
@@ -31,7 +31,9 @@ namespace Game1
         /// </summary>
         //Projectile Factory
         public IProjectileFactory ProjectileFactory { get; set; }
-        
+        public IEnemyFactory enemyFactory { get; set; }
+        public IItemFactory itemFactory { get; set; }
+        public IBlockFactory blockFactory { get; set; }
         public ILinkState[] Linkstates { get; }
         
 
@@ -46,14 +48,16 @@ namespace Game1
 
             this.Link = new Link(this);
             this.ProjectileFactory = new ProjectileFactory(this);
-
-            this.dungeonlevel = new DungeonLevel(this.Link);
+            this.blockFactory = new BlockFactory(this);
+            this.enemyFactory = new EnemyFactory(this);
+            this.itemFactory = new ItemFactory(this);
+            this.dungeonlevel = new DungeonLevel(this);
 
             controllers = new List<IController>
             {
-                new KeyboardController(this)
+                new KeyboardController(this), new MouseController(this)
             };
-            new MouseController(this);
+            
         }
 
         /// <summary>
@@ -70,7 +74,9 @@ namespace Game1
             this.IsFixedTimeStep = false;
             graphics.SynchronizeWithVerticalRetrace = false;
             this.ProjectileFactory.Initialize();
-
+            this.blockFactory.Initialize();
+            this.enemyFactory.Initialize();
+            this.itemFactory.Initialize();
             // Create instances and register commands
             base.Initialize();
         }
@@ -126,10 +132,12 @@ namespace Game1
             GraphicsDevice.Clear(Color.CornflowerBlue);
             
             spriteBatch.Begin();
-            this.ProjectileFactory.Draw(spriteBatch);
             
-            Link.State.Draw(spriteBatch);
+
+
             this.dungeonlevel.Draw(spriteBatch);
+            Link.State.Draw(spriteBatch);
+            this.ProjectileFactory.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
         }
@@ -139,8 +147,7 @@ namespace Game1
             this.Link.State = new UpIdleState(this.Link, this);
             GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
             this.ProjectileFactory = new ProjectileFactory(this);
-
-            this.dungeonlevel = new DungeonLevel(this.Link);
+            this.dungeonlevel = new DungeonLevel(this);
             Initialize();
         }
 
