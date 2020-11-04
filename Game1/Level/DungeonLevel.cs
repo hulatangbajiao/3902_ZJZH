@@ -69,6 +69,7 @@ namespace Game1.Level
                 Map.North();
                 CurrentRoom = CurrentRoom.North;
                 GlobalDefinitions.Position = new Vector2(doors[2].X, doors[2].Y - Link.GetRectangle().Height);
+
             }
         }
 
@@ -89,6 +90,7 @@ namespace Game1.Level
                 Map.South();
                 CurrentRoom = CurrentRoom.South;
                 GlobalDefinitions.Position = new Vector2(doors[0].X, doors[0].Y + doors[0].Height);
+
             }
         }
 

@@ -16,11 +16,8 @@ namespace Game1
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-
         private List<IController> controllers;
-
-
-
+        private DungeonLevel dungeonlevel;
 
         /// <summary>
         /// Active sprite. Exposed as a class property
@@ -49,13 +46,14 @@ namespace Game1
 
             this.Link = new Link(this);
             this.ProjectileFactory = new ProjectileFactory(this);
-            
 
+            this.dungeonlevel = new DungeonLevel(this.Link);
 
             controllers = new List<IController>
             {
                 new KeyboardController(this)
             };
+            new MouseController(this);
         }
 
         /// <summary>
@@ -72,7 +70,6 @@ namespace Game1
             this.IsFixedTimeStep = false;
             graphics.SynchronizeWithVerticalRetrace = false;
             this.ProjectileFactory.Initialize();
-
 
             // Create instances and register commands
             base.Initialize();
@@ -117,6 +114,7 @@ namespace Game1
             Link.Update();
             
             base.Update(gameTime);
+            this.dungeonlevel.Update();
         }
 
         /// <summary>
@@ -131,7 +129,7 @@ namespace Game1
             this.ProjectileFactory.Draw(spriteBatch);
             
             Link.State.Draw(spriteBatch);
-
+            this.dungeonlevel.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
         }
@@ -141,7 +139,8 @@ namespace Game1
             this.Link.State = new UpIdleState(this.Link, this);
             GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
             this.ProjectileFactory = new ProjectileFactory(this);
-            
+
+            this.dungeonlevel = new DungeonLevel(this.Link);
             Initialize();
         }
 
