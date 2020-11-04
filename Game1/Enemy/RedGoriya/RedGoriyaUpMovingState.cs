@@ -8,14 +8,14 @@ namespace Game1
     internal class RedGoriyaUpMovingState : IEnemyState
     {
         private RedGoriya RedGoriya;
-        private MainStage game;
+        public IEnemyFactory factory { get; set; }
         public ISprite GetSprite { get; set; }
 
-        public RedGoriyaUpMovingState(RedGoriya redgoriya, MainStage game)
+        public RedGoriyaUpMovingState(RedGoriya redgoriya, IEnemyFactory factory)
 
         {
             this.RedGoriya = redgoriya;
-            this.game = game;
+            this.factory = factory;
             GetSprite = new UpMovingRedGoriyaSprite();
 
         }
@@ -27,20 +27,20 @@ namespace Game1
 
         public void MoveDown()
         {
-            RedGoriya.State = new RedGoriyaDownMovingState(RedGoriya, game);
+            RedGoriya.State = new RedGoriyaDownMovingState(RedGoriya, factory);
 
         }
 
 
         public void MoveLeft()
         {
-            RedGoriya.State = new RedGoriyaLeftMovingState(RedGoriya, game);
+            RedGoriya.State = new RedGoriyaLeftMovingState(RedGoriya, factory);
         }
 
 
         public void MoveRight()
         {
-            RedGoriya.State = new RedGoriyaRightMovingState(RedGoriya, game);
+            RedGoriya.State = new RedGoriyaRightMovingState(RedGoriya, factory);
         }
 
         public void Update()
@@ -50,7 +50,7 @@ namespace Game1
         }
         public void BreatheFire()
         {
-            
+            factory.AddEnemy(new EnemyFireBall(RedGoriya.Position, new Vector2(0, -1), factory));
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {

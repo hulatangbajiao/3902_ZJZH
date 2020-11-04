@@ -29,19 +29,19 @@ namespace Game1.Collision
             if (side == ICollision.Left)
             {
                 enemy.Position = enemy.Position - new Vector2(1, 0) * intersectRectangle.Width;
-                enemy.State.MoveLeft();
+             
             }
             else if (side == ICollision.Right)
             {
                 enemy.Position = enemy.Position + new Vector2(1, 0) * intersectRectangle.Width;
-                enemy.State.MoveRight();
+               
             }
             else if (side == ICollision.Bottom) {
                 enemy.Position = enemy.Position + new Vector2(0, 1) * intersectRectangle.Height;
-                enemy.State.MoveDown();
+               
             } else if (side == ICollision.Top) {
                 enemy.Position = enemy.Position - new Vector2(0, 1) * intersectRectangle.Height;
-                enemy.State.MoveUp();
+            
             }
         }
     }

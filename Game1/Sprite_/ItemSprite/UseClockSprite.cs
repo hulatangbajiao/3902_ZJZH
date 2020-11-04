@@ -41,9 +41,8 @@ namespace Game1.ItemsClasses
             Nullable<Rectangle> sourceRectangle = new Rectangle(0, 0, width, height);
             destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, width / 2, height / 2);
 
-            spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
+            
         }
 
         public Rectangle GetRectangle()

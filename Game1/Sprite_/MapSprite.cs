@@ -22,20 +22,20 @@ namespace Game1.Sprite_
 
         public MapSprite()
         {
-
+            SourceRectangle = new Rectangle(GlobalDefinitions.RoomWidth*2, GlobalDefinitions.RoomHeight*5, GlobalDefinitions.RoomWidth, GlobalDefinitions.RoomHeight);
         }
 
         public void Update()
         {
         }
 
-        public void Draw(SpriteBatch spriteBatch, Rectangle DestnationRectangle)
+        public void Draw(SpriteBatch spriteBatch)
         {
 
             Texture = Texture2DStorage.GetFullMapSpriteSheet();
 
 
-            SourceRectangle = new Rectangle(0, (int)0.29276 * GlobalDefinitions.GraphicsHeight, (int)0.119070 * GlobalDefinitions.GraphicsWidth, (int)0.144737 * GlobalDefinitions.GraphicsHeight);
+            
             DestinationRectangle = new Rectangle(0, 0, GlobalDefinitions.GraphicsWidth, GlobalDefinitions.GraphicsHeight);
 
 

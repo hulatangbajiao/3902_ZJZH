@@ -1,5 +1,4 @@
 ﻿
-
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -14,7 +13,7 @@ namespace Game1
     {
 
         public IEnemyState State { get; set; }
-        private MainStage game;
+        
         int count;
         Random rand;
         public bool exist { get; set; }
@@ -22,11 +21,11 @@ namespace Game1
         public Vector2 Direction { get; set; }
         public int MovingSpeed = 1;
         
-        public BlueM()
+        public BlueM(Vector2 Position, Vector2 Direction, IEnemyFactory factory)
         {
             exist = true;
-            State = new BlueMUpMovingState(this, game);
-            
+            State = new BlueMUpMovingState(this, factory);
+            this.Position = Position;
             rand = new Random();
             
         }

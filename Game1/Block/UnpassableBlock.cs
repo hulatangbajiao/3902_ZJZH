@@ -22,7 +22,7 @@ namespace Game1
         public UnpassableBlock(Vector2 Position)
         {
 
-            this.GetSprite = new BlueBlockSprite();
+            this.GetSprite = new BlueStoneBlockSprite();
             this.Position = Position;
             
             exist = true;

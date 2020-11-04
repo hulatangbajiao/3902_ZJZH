@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using Game1.Collision.CollisionHandler;
 namespace Game1.Detection
 {
-    class DetectCollision
+    public class DetectCollision
     {
         public ILink link;
         public List<IBlock> BlockList;
@@ -49,7 +49,7 @@ namespace Game1.Detection
                     Rectangle intersectRectangle = new GeneralDeterctionIntersect(linkRectangle, EnemyRectangle).GetRectangle();
 
                     ICollision side = new GeneralDetection(linkRectangle, EnemyRectangle).ifCollision();
-                    IHandler LinkEnemyCollisionHandler = new LinkEnemyCollisionHandler(enemy, link, side);
+                    IHandler LinkEnemyCollisionHandler = new LinkEnemyCollisionHandler(enemy, link, side, intersectRectangle);
                     LinkEnemyCollisionHandler.Execute();
                 }
             }
@@ -87,6 +87,7 @@ namespace Game1.Detection
         {
             this.EnemyList = EnemyList;
             this.BlockList = BlockList;
+            ICollision side = ICollision.Null;
             foreach (IEnemy enemy in EnemyList)
             {
                 if (enemy.exist)
@@ -96,7 +97,7 @@ namespace Game1.Detection
                         Rectangle EnemyRectangle = enemy.GetRectangle();
                         Rectangle BlockRectangle = block.GetRectangle();
                         Rectangle intersectRectangle = new GeneralDeterctionIntersect(EnemyRectangle, BlockRectangle).GetRectangle();
-                        ICollision side = new GeneralDetection(EnemyRectangle, BlockRectangle).ifCollision();
+                         side = new GeneralDetection(EnemyRectangle, BlockRectangle).ifCollision();
                         IHandler EnemyBlockCollisionHandler = new EnemyBlockCollisionHandler(enemy, block, side, intersectRectangle);
                         EnemyBlockCollisionHandler.Execute();
                     }

@@ -54,6 +54,10 @@
     <Compile Include="Collision\CollisionHandler\LinkBlockCollisionHandler.cs" />
     <Compile Include="Collision\Detection\GeneralDeterctionIntersect.cs" />
     <Compile Include="Collision\ICollision.cs" />
+    <Compile Include="Command\RoomCommand\EastRoomCommand.cs" />
+    <Compile Include="Command\RoomCommand\NorthRoomCommand.cs" />
+    <Compile Include="Command\RoomCommand\SouthRoomCommand.cs" />
+    <Compile Include="Command\RoomCommand\WestRoomCommand.cs" />
     <Compile Include="Command\StopCommand.cs" />
     <Compile Include="Command\GameCommand\DamagedCommand.cs" />
     <Compile Include="Command\MovingCommand\DownMovingCommand.cs" />
@@ -288,13 +292,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
-    <Content Include="XML\LevelRooms.xml" />
+    <Content Include="LevelRooms.xml" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
     <None Include="app.manifest" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="XML\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

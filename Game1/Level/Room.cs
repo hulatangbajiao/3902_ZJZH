@@ -1,5 +1,6 @@
 ﻿
 using Game1.Interfaces;
+using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
 namespace Game1
@@ -66,8 +67,14 @@ namespace Game1
 
         }
 
-        public void Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch)
         {
+            foreach (IBlock block in Block)
+            {
+
+                block.Draw(spriteBatch);
+
+            }
             foreach (IItem item in ReceivedItems)
             {
                 item.Draw(spriteBatch);
@@ -88,12 +95,7 @@ namespace Game1
             }
 
 
-            foreach (IBlock block in Block)
-            {
-              
-                block.Draw(spriteBatch);
-                
-            }
+          
         }
     }
 }

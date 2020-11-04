@@ -13,7 +13,7 @@ namespace Game1
     {
 
         public IEnemyState State { get; set; }
-        private MainStage game;
+        
         int count;
         Random rand;
         public bool exist { get; set; }
@@ -22,9 +22,9 @@ namespace Game1
         public int MovingSpeed = 1;
 
 
-        public RedBat(Vector2 Position, Vector2 Direction)
+        public RedBat(Vector2 Position, Vector2 Direction, IEnemyFactory factory)
         {
-            State = new RedBatUpMovingState(this, game);
+            State = new RedBatUpMovingState(this, factory);
             this.Position = Position;
             rand = new Random();
 

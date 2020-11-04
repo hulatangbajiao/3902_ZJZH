@@ -12,7 +12,6 @@ namespace Game1
     {
         IEnemyState State { get; set; }
         Vector2 Position { get; set; }
-        Vector2 Direction { get; set; }
         bool exist { get; set; }
         void MoveUp();
         void MoveDown();
@@ -21,6 +20,5 @@ namespace Game1
         void Update();
         void Draw(SpriteBatch spritebatch);
         Rectangle GetRectangle();
-       
     }
 }

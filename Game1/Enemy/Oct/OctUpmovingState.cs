@@ -7,13 +7,13 @@ namespace Game1
     internal class OctUpMovingState : IEnemyState
     {
         private Oct Oct;
-        private MainStage game;
+        public IEnemyFactory factory { get; set; }
         public ISprite GetSprite { get; set; }
 
-        public OctUpMovingState(Oct oct, MainStage game)
+        public OctUpMovingState(Oct oct, IEnemyFactory factory)
         {
             this.Oct = oct;
-            this.game = game;
+            this.factory = factory;
             GetSprite = new UpMovingOctSprite();
 
         }
@@ -25,20 +25,20 @@ namespace Game1
 
         public void MoveDown()
         {
-            Oct.State = new OctDownMovingState(Oct, game);
+            Oct.State = new OctDownMovingState(Oct, factory);
 
         }
 
 
         public void MoveLeft()
         {
-            Oct.State = new OctLeftMovingState(Oct, game);
+            Oct.State = new OctLeftMovingState(Oct, factory);
         }
 
 
         public void MoveRight()
         {
-            Oct.State = new OctRightMovingState(Oct, game);
+            Oct.State = new OctRightMovingState(Oct, factory);
         }
 
         public void Update()
@@ -48,7 +48,7 @@ namespace Game1
         }
         public void BreatheFire()
         {
-            
+            factory.AddEnemy(new EnemyFireBall(Oct.Position, new Vector2(0, -1), factory));
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 Position)

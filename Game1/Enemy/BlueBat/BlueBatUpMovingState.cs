@@ -7,14 +7,14 @@ namespace Game1
     internal class BlueBatUpMovingState : IEnemyState
     {
         private BlueBat BlueBat;
-        private MainStage game;
+        public IEnemyFactory factory { get; set; }
         private ISprite GetSprite { get; set; }
 
-        public BlueBatUpMovingState(BlueBat BlueBat, MainStage game)
+        public BlueBatUpMovingState(BlueBat BlueBat, IEnemyFactory factory)
 
         {
             this.BlueBat = BlueBat;
-            this.game = game;
+            this.factory = factory;
             GetSprite = new UpMovingBlueBatSprite();
 
         }
@@ -28,20 +28,20 @@ namespace Game1
 
         public void MoveDown()
         {
-            BlueBat.State = new BlueBatDownMovingState(BlueBat, game);
+            BlueBat.State = new BlueBatDownMovingState(BlueBat, factory);
         }
 
 
         public void MoveLeft()
         {
-            BlueBat.State = new BlueBatLeftMovingState(BlueBat, game);
+            BlueBat.State = new BlueBatLeftMovingState(BlueBat, factory);
 
         }
 
 
         public void MoveRight()
         {
-            BlueBat.State = new BlueBatRightMovingState(BlueBat, game);
+            BlueBat.State = new BlueBatRightMovingState(BlueBat, factory);
 
         }
 

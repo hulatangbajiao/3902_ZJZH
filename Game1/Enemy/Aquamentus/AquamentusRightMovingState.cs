@@ -8,12 +8,15 @@ namespace Game1
     internal class AquamentusRightMovingState : IEnemyState
     {
         private Aquamentus Aquamentus;
+        private MainStage game;
+        public IEnemyFactory factory { get; set; }
         private ISprite GetSprite { get; set; }
 
-        public AquamentusRightMovingState(Aquamentus Aquamentus)
+        public AquamentusRightMovingState(Aquamentus Aquamentus, IEnemyFactory factory)
 
         {
             this.Aquamentus = Aquamentus;
+            this.factory = factory;
             GetSprite = new RightMovingAquamentusSprite();
 
         }
@@ -32,7 +35,7 @@ namespace Game1
 
         public void MoveLeft()
         {
-            Aquamentus.State = new AquamentusLeftMovingState(Aquamentus, game);
+            Aquamentus.State = new AquamentusLeftMovingState(Aquamentus, factory);
         }
 
 
@@ -49,8 +52,10 @@ namespace Game1
         }
         public void BreatheFire()
         {
-            
 
+            factory.AddEnemy(new EnemyFireBall(Aquamentus.Position, new Vector2(0, -1), factory));
+            factory.AddEnemy(new EnemyFireBall(Aquamentus.Position, new Vector2(1, -1), factory));
+            factory.AddEnemy(new EnemyFireBall(Aquamentus.Position, new Vector2(-1, -1), factory));
 
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 Position)
