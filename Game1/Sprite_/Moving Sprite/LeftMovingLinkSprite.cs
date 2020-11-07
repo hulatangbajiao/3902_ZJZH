@@ -12,7 +12,7 @@ namespace Game1.Sprite_
     {
         private int currentFrame = 0;
         private int totalFrame = 10;
-
+        private Rectangle destinationRectangle;
         public LeftMovingLinkSprite()
         {
         }
@@ -24,14 +24,11 @@ namespace Game1.Sprite_
                 currentFrame = 0;
 
             GlobalDefinitions.Position.X = GlobalDefinitions.Position.X - (float)5; //change the y axis position of Link
-            if (GlobalDefinitions.Position.X == 0)
-            {
-                GlobalDefinitions.Position.X = (float)GlobalDefinitions.GraphicsWidth;
-            }
+            
 
         }
 
-        public virtual void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
             Rectangle sourceRectangle;
             Rectangle destinationRectangle;
@@ -50,6 +47,10 @@ namespace Game1.Sprite_
             }
 
             spriteBatch.Draw(Texture2DStorage.GetLeftMovingLinkSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);//use Texture2DStorage class to load texture2D
+        }
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
         }
     }
 }

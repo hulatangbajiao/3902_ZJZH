@@ -8,13 +8,6 @@ namespace Game1.Command
 {
     class UseBoomerCommand : ICommand
     {
-
-        private IPlayer player;
-
-        public UseBoomerCommand(IPlayer Link)
-        {
-            player = Link;
-        }
         private ILink Link;
 
         public UseBoomerCommand(ILink Link)
@@ -27,12 +20,6 @@ namespace Game1.Command
         {
 
             Link.UseItem(3);
-        }
-
-        public void Stop()
-        {
-            Link.Stop();
-
         }
     }
    

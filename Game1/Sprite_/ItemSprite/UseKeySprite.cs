@@ -11,7 +11,7 @@ using Game1;
 
 namespace Game1.ItemsClasses
 {
-    class UseKeySprite : IItemSprite
+    class UseKeySprite : ISprite
     {
         public Texture2D Texture { get; set; }
 
@@ -38,11 +38,11 @@ namespace Game1.ItemsClasses
 
 
             Nullable<Rectangle> sourceRectangle = new Rectangle(0, 0, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, width / 2, height / 2);
+            destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, width , height );
 
-            spriteBatch.Begin();
+            
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
+            
         }
 
         public Rectangle GetRectangle()

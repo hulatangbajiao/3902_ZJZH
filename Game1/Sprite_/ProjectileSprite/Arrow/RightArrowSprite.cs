@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Game1
 {
-    public class RightArrowSprite : IProjectileSprite
+    public class RightArrowSprite : ISprite
     {
-        
 
+        private Rectangle destinationRectangle;
         public RightArrowSprite()
         {
 
@@ -27,7 +27,7 @@ namespace Game1
         public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
             Rectangle sourceRectangle;
-            Rectangle destinationRectangle;
+            
             Texture2D Texture = Texture2DStorage.GetRightWoodenArrowSpriteSheet();
 
 
@@ -40,6 +40,10 @@ namespace Game1
            
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);//use Texture2DStorage class to load texture2D
+        }
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
         }
     }
 }

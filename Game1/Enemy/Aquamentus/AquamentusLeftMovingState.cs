@@ -1,20 +1,22 @@
 ﻿using Game1.Sprite_.Enemy_Sprite.AquamentusMoving;
 using Game1.Sprite_.Enemy_Sprite.OctMoving;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1
 {
     internal class AquamentusLeftMovingState : IEnemyState
     {
         private Aquamentus Aquamentus;
-        private MainStage game;
-        public ISprite GetSprite { get; set; }
+        public IEnemyFactory factory { get; set; }
+        private ISprite GetSprite { get; set; }
+        
 
-        public AquamentusLeftMovingState(Aquamentus Aquamentus, MainStage game)
+        public AquamentusLeftMovingState(Aquamentus Aquamentus, IEnemyFactory factory)
 
         {
             this.Aquamentus = Aquamentus;
-            this.game = game;
+            this.factory = factory;
             GetSprite = new LeftMovingAquamentusSprite();
 
         }
@@ -38,23 +40,30 @@ namespace Game1
 
         public void MoveRight()
         {
-            Aquamentus.State = new AquamentusRightMovingState(Aquamentus, game);
+            Aquamentus.State = new AquamentusRightMovingState(Aquamentus, factory);
 
         }
 
         public void Update()
         {
             GetSprite.Update();
+            Aquamentus.Position = Aquamentus.Position + new Vector2(-1,0) * Aquamentus.MovingSpeed;
         }
         public void BreatheFire()
         {
-            this.game.ProjectileFactory.AddFireBall(GlobalDefinitions.AquamentusPosition, new Vector2(-1, 0));
-            this.game.ProjectileFactory.AddFireBall(GlobalDefinitions.AquamentusPosition, new Vector2(-1, 1));
-            this.game.ProjectileFactory.AddFireBall(GlobalDefinitions.AquamentusPosition, new Vector2(-1, -1));
-
+            factory.AddEnemy(new EnemyFireBall(Aquamentus.Position, new Vector2(0, -1), factory));
+            factory.AddEnemy(new EnemyFireBall(Aquamentus.Position, new Vector2(1, -1), factory));
+            factory.AddEnemy(new EnemyFireBall(Aquamentus.Position, new Vector2(-1, -1), factory));
 
         }
-
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
+        {
+            this.GetSprite.Draw(spriteBatch, Position);
+        }
+        public Rectangle GetRectangle()
+        {
+            return this.GetSprite.GetRectangle();
+        }
 
     }
 }

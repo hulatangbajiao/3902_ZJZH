@@ -12,7 +12,7 @@ namespace Game1
     {
         private int currentFrame = 0;
         private int totalFrame = 10;
-
+        private Rectangle destinationRectangle;
         public UpMovingLinkSprite()
         {
             
@@ -26,17 +26,14 @@ namespace Game1
                 currentFrame = 0;
 
             GlobalDefinitions.Position.Y = GlobalDefinitions.Position.Y - (float)5; //change the y axis position of Link
-            if (GlobalDefinitions.Position.Y == 0)
-            {
-                GlobalDefinitions.Position.Y = GlobalDefinitions.GraphicsHeight;
-            }
+            
 
         }
 
-        public virtual void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
             Rectangle sourceRectangle;
-            Rectangle destinationRectangle;
+            
 
             if (currentFrame < 5)
             {
@@ -52,6 +49,10 @@ namespace Game1
             }
 
             spriteBatch.Draw(Texture2DStorage.GetUpMovingLinkSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);//use Texture2DStorage class to load texture2D
+        }
+        public Rectangle GetRectangle()
+        {
+            return destinationRectangle;
         }
     }
 }

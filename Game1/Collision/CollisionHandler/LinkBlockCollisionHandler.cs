@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using Game1.Sprite_;
 using Game1.Collision;
 using Microsoft.Xna.Framework;
+using Game1.CollisionHandler;
 
 namespace Game1.Collision.CollisionHandler
 {
-    class LinkBlockCollisionHandler :IHandler
+    class LinkBlockCollisionHandler:IHandler
     {
         private ICollision side;
         private IBlock block;

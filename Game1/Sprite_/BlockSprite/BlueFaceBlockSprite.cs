@@ -13,7 +13,7 @@ using Game1;
 
 namespace Game1.Block
 {
-    class BlueFaceBlockSprite : IBlock
+    class BlueFaceBlockSprite : ISprite
     {
 
         public Texture2D Texture { get; set; }
@@ -27,7 +27,7 @@ namespace Game1.Block
         {
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
 
 
@@ -35,8 +35,7 @@ namespace Game1.Block
 
 
             Nullable<Rectangle> sourceRectangle = new Rectangle(0, 0, Texture.Width, Texture.Height);
-             destinationRectangle = new Rectangle(400, 100, Texture.Width / 2, Texture.Height / 2);
-
+            destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, Texture.Width , Texture.Height );
 
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
 

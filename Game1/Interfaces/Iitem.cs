@@ -16,8 +16,6 @@ namespace Game1.Interfaces
         bool exist { get; set; }
         void Update();
         void Draw(SpriteBatch spriteBatch);
-        Rectangle GetRectangle();
-
     }
 }
 

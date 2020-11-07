@@ -1,6 +1,5 @@
 ﻿using Game1.Collision;
-using Game1.Collision.CollisionHandler;
-using Game1.Enemy_NPC;
+using Game1.CollisionHandler;
 using Game1.Interfaces;
 using Microsoft.Xna.Framework;
 using System;
@@ -8,105 +7,125 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Game1.Collision.CollisionHandler;
 namespace Game1.Detection
 {
-    class DetectCollision
+    public class DetectCollision
     {
         public ILink link;
-        public IBlockFactory BlockFactory;
-        public IEnemyFactory EnemyFactory;
+        public List<IBlock> BlockList;
+        public List<IEnemy> EnemyList;
         public IProjectileFactory projectileFactory;
-        public IItemFactory itemFactory;
+        public List<IItem> ReceivedItemList;
+        public List<IItem> ObtainedItemList;
         public DetectCollision()
         {
         }
-        public void LinkBlockDetection(ILink link, IBlockFactory BlockFactory)
+        public void linkBlockDetection(ILink link, List<IBlock> BlockList)
         {
             this.link = link;
-            this.BlockFactory = BlockFactory;
-            List < IBlock > BlockList = BlockFactory.BlockList;
+            this.BlockList = BlockList;
             foreach (IBlock block in BlockList)
             {
-
-                Rectangle linkRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);
+                Rectangle linkRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96); ;
                 Rectangle BlockRectangle = block.GetRectangle();
                 Rectangle intersectRectangle = new GeneralDeterctionIntersect(linkRectangle, BlockRectangle).GetRectangle();
                 ICollision side = new GeneralDetection(linkRectangle, BlockRectangle).ifCollision();
-                IHandler LinkBlockCollisionHandler = new LinkBlockCollisionHandler(link, block, side,intersectRectangle);
+                IHandler LinkBlockCollisionHandler = new LinkBlockCollisionHandler(link, block, side, intersectRectangle);
                 LinkBlockCollisionHandler.Execute();
-            } 
-        }
-
-        public void LinkEnemyDetection(ILink link, IEnemyFactory EnemyFactory)
-        {
-            this.link = link;
-            this.EnemyFactory = EnemyFactory;
-            List<IEnemy> EnemyList = EnemyFactory.EnemyList();
-            foreach (IEnemy enemy in EnemyList)
-            {
-                Rectangle linkRectangle = new Rectangle();
-                Rectangle EnemyRectangle = enemy.GetRectangle();
-                ICollision side = new GeneralDetection(linkRectangle, EnemyRectangle).ifCollision();
-                IHandler LinkEnemyCollisionHandler =  new LinkEnemyCollisionHandler(link, enemy, side);
-                LinkEnemyCollisionHandler.Execute();
             }
         }
 
-        public void LinkItemDetection(ILink link, IItemFactory itemFactory)
+        public void LinkEnemyDetection(ILink link, List<IEnemy> EnemyList)
         {
             this.link = link;
-            this.itemFactory = itemFactory;
-            List<IItem> itemList = itemFactory.ItemList;
-            foreach (IItem item in itemList)
+            this.EnemyList = EnemyList;
+            foreach (IEnemy enemy in EnemyList)
             {
-                if (item.exist)
+                if (enemy.exist)
                 {
                     Rectangle linkRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);
-                    Rectangle ItemRectangle = item.GetRectangle();
-                    ICollision side = new GeneralDetection(linkRectangle, ItemRectangle).ifCollision();
-                    IHandler LinkItemCollision = new LinkItemCollisionHandler(link, item, side);
-                    LinkItemCollision.Execute();
+                    Rectangle EnemyRectangle = enemy.GetRectangle();
+                    Rectangle intersectRectangle = new GeneralDeterctionIntersect(linkRectangle, EnemyRectangle).GetRectangle();
+
+                    ICollision side = new GeneralDetection(linkRectangle, EnemyRectangle).ifCollision();
+                    IHandler LinkEnemyCollisionHandler = new LinkEnemyCollisionHandler(enemy, link, side, intersectRectangle);
+                    LinkEnemyCollisionHandler.Execute();
                 }
             }
         }
 
-        public void EnemyBlockDetection(IEnemyFactory EnemyFactory, IBlockFactory BlockFactory)
+        public void linkReceivedItemDetection(ILink link, List<IItem> ReceivedItemList)
         {
-            this.EnemyFactory = EnemyFactory;
-            this.BlockFactory = BlockFactory;
-            List<IEnemy> EnemyList = EnemyFactory.EnemyList;
-            List<IBlock> BlockList = BlockFactory.BlockList;
+            this.link = link;
+            this.ReceivedItemList = ReceivedItemList;
+            foreach (IItem item in ReceivedItemList)
+            {
+                Rectangle linkRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);
+                Rectangle ItemRectangle = item.GetRectangle();
+                ICollision side = new GeneralDetection(linkRectangle, ItemRectangle).ifCollision();
+                IHandler LinkReceivedItemCollision = new LinkReceivedItemCollisionHandler(link, item, side);
+                LinkReceivedItemCollision.Execute();
+            }
+        }
+
+        public void linkObtainedItemDetection(ILink link, List<IItem> ObtainedItemList)
+        {
+            this.link = link;
+            this.ObtainedItemList = ObtainedItemList;
+            foreach (IItem item in ObtainedItemList)
+            {
+                Rectangle linkRectangle = new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);
+                Rectangle ItemRectangle = item.GetRectangle();
+                ICollision side = new GeneralDetection(linkRectangle, ItemRectangle).ifCollision();
+                IHandler LinkObtainedItemCollision = new LinkObtainedItemCollisionHandler(link, item, side);
+                LinkObtainedItemCollision.Execute();
+            }
+        }
+
+        public void EnemyBlockDetection(List<IEnemy> EnemyList, List<IBlock> BlockList)
+        {
+            this.EnemyList = EnemyList;
+            this.BlockList = BlockList;
+            ICollision side = ICollision.Null;
             foreach (IEnemy enemy in EnemyList)
             {
-                foreach (IBlock block in BlockList)
+                if (enemy.exist)
                 {
-                    Rectangle EnemyRectangle = enemy.GetRectangle();
-                    Rectangle BlockRectangle = block.GetRectangle();
-                    ICollision side = new GeneralDetection(EnemyRectangle, BlockRectangle).ifCollision();
-                    IHandler EnemyBlockCollisionHandler = new EnemyBlockCollisionHandler(enemy, block, side);
-                    EnemyBlockCollisionHandler.Execute();
+                    foreach (IBlock block in BlockList)
+                    {
+                        Rectangle EnemyRectangle = enemy.GetRectangle();
+                        Rectangle BlockRectangle = block.GetRectangle();
+                        Rectangle intersectRectangle = new GeneralDeterctionIntersect(EnemyRectangle, BlockRectangle).GetRectangle();
+                         side = new GeneralDetection(EnemyRectangle, BlockRectangle).ifCollision();
+                        IHandler EnemyBlockCollisionHandler = new EnemyBlockCollisionHandler(enemy, block, side, intersectRectangle);
+                        EnemyBlockCollisionHandler.Execute();
+                    }
                 }
+
             }
-            
+
         }
 
-        public void EnemyProjectileDetection(IEnemyFactory EnemyFactory, IProjectileFactory projectileFactory)
+        public void EnemyProjectileDetection(List<IEnemy> EnemyList, IProjectileFactory projectileFactory)
         {
-            this.EnemyFactory = EnemyFactory;
+            this.EnemyList = EnemyList;
             this.projectileFactory = projectileFactory;
-            List<IEnemy> EnemyList = EnemyFactory.EnemyList;
             List<IProjectile> projectileList = projectileFactory.ProjectileList;
             foreach (IEnemy enemy in EnemyList)
             {
-                foreach (IProjectile projectile in projectileList)
+                if (enemy.exist)
                 {
-                    Rectangle EnemyRectangle = Enemy.GetRectangle();
-                    Rectangle projectileRectangle = projectile.GetRectangle();
-                    ICollision side = new GeneralDetection(EnemyRectangle, projectileRectangle).ifCollision();
-                    IHandler EnemyProjectileCollisionHandler = new EnemyProjectileCollisionHandler(enemy, projectile, side);
-                    EnemyProjectileCollisionHandler.Execute();
+                    foreach (IProjectile projectile in projectileList)
+                    {
+                        Rectangle EnemyRectangle = enemy.GetRectangle();
+                        Rectangle projectileRectangle = projectile.GetRectangle();
+                        ICollision side = new GeneralDetection(EnemyRectangle, projectileRectangle).ifCollision();
+                        IHandler EnemyProjectileCollision = new EnemyProjectileCollisonHandler(enemy, projectile, side);
+                        EnemyProjectileCollision.Execute();
+                    }
                 }
+
             }
 
         }

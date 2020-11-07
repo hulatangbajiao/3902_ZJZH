@@ -11,7 +11,7 @@ using Game1;
 
 namespace Game1.Sprite_.BlockSprite
 {
-    class FireSprite : IBlock
+    class FireSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
@@ -40,7 +40,7 @@ namespace Game1.Sprite_.BlockSprite
 
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
             Texture = Texture2DStorage.GetFireSpriteSheet();
             int width = Texture.Width / Columns;
@@ -49,7 +49,7 @@ namespace Game1.Sprite_.BlockSprite
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-             destinationRectangle = new Rectangle(x, y, width / 2, height / 2);
+            destinationRectangle = new Rectangle(x, y, width / 2, height / 2);
 
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);

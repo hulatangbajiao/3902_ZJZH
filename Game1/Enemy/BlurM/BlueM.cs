@@ -1,5 +1,6 @@
-﻿using Game1.Enemy_NPC;
+﻿
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,16 +13,21 @@ namespace Game1
     {
 
         public IEnemyState State { get; set; }
-        private MainStage game;
+        
         int count;
         Random rand;
-
-        public BlueM(MainStage game)
+        public bool exist { get; set; }
+        public Vector2 Position { get; set; }
+        public Vector2 Direction { get; set; }
+        public int MovingSpeed = 1;
+        
+        public BlueM(Vector2 Position, Vector2 Direction, IEnemyFactory factory)
         {
-            State = new BlueMUpMovingState(this, game);
-            GlobalDefinitions.BlueMPosition = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
+            exist = true;
+            State = new BlueMUpMovingState(this, factory);
+            this.Position = Position;
             rand = new Random();
-            this.game = game;
+            
         }
 
 
@@ -89,6 +95,19 @@ namespace Game1
                 count = 0;
             }
         }
+        public void Draw(SpriteBatch spritebatch)
+        {
+            if (exist)
+            {
+                State.Draw(spritebatch, this.Position);
+            }
+        }
+
+        public Rectangle GetRectangle()
+        {
+            return this.State.GetRectangle();
+        }
+
 
 
 

@@ -1,5 +1,6 @@
 ﻿using Game1.Sprite_.Enemy_Sprite.OctMoving;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1
 {
@@ -7,20 +8,21 @@ namespace Game1
     {
         private BlueBat BlueBat;
         private MainStage game;
-        public ISprite GetSprite { get; set; }
+        public IEnemyFactory factory { get; set; }
+        private ISprite GetSprite { get; set; }
 
-        public BlueBatDownMovingState(BlueBat BlueBat, MainStage game)
+        public BlueBatDownMovingState(BlueBat BlueBat, IEnemyFactory factory)
 
         {
             this.BlueBat = BlueBat;
-            this.game = game;
+            this.factory = factory;
             GetSprite = new DownMovingBlueBatSprite();
 
         }
 
         public void MoveUp()
         {
-            BlueBat.State = new BlueBatUpMovingState(BlueBat, game);
+            BlueBat.State = new BlueBatUpMovingState(BlueBat, factory);
 
         }
         //if 'w'key is being pressed for a long time(more than once in one Update cycle), Oct will be animated and move up in y axis.
@@ -33,26 +35,34 @@ namespace Game1
 
         public void MoveLeft()
         {
-            BlueBat.State = new BlueBatLeftMovingState(BlueBat, game);
+            BlueBat.State = new BlueBatLeftMovingState(BlueBat, factory);
 
         }
 
 
         public void MoveRight()
         {
-            BlueBat.State = new BlueBatRightMovingState(BlueBat, game);
+            BlueBat.State = new BlueBatRightMovingState(BlueBat, factory);
 
         }
 
         public void Update()
         {
             GetSprite.Update();
+            BlueBat.Position = BlueBat.Position + new Vector2(0, 1) * BlueBat.MovingSpeed;
         }
         public void BreatheFire()
         {
-            this.game.ProjectileFactory.AddArrow(GlobalDefinitions.BlueBatPosition, new Vector2(0, 1));
+            
+            
         }
-
-
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
+        {
+            this.GetSprite.Draw(spriteBatch, Position);
+        }
+        public Rectangle GetRectangle()
+        {
+            return this.GetSprite.GetRectangle();
+        }
     }
 }

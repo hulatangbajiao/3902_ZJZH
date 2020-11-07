@@ -1,6 +1,7 @@
 ﻿using Game1.Command;
 using Microsoft.Xna.Framework.Graphics;
 
+
 namespace Game1
 {
     public class UpMovingState : ILinkState
@@ -65,7 +66,7 @@ namespace Game1
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            GetSprite.Draw(spriteBatch);
+            GetSprite.Draw(spriteBatch, GlobalDefinitions.Position);
 
         }
     }

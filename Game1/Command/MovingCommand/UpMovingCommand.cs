@@ -19,10 +19,5 @@ namespace Game1.Command
         {
             Link.MoveUp();
         }
-
-        public void Stop()
-        {
-            Link.Stop();
-        }
     }
 }

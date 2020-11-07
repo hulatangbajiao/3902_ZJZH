@@ -11,7 +11,7 @@ using Game1;
 
 namespace Game1.Sprite_.BlockSprite
 {
-    class GapTileSprite : IBlock
+    class GapTileSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         private Rectangle destinationRectangle;
@@ -24,12 +24,12 @@ namespace Game1.Sprite_.BlockSprite
         {
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
 
             Texture = Texture2DStorage.GetGapTileSpriteSheet();
             Nullable<Rectangle> sourceRectangle = new Rectangle(0, 0, Texture.Width, Texture.Height);
-             destinationRectangle = new Rectangle(400, 100, Texture.Width / 2, Texture.Height / 2);
+            destinationRectangle = new Rectangle(400, 100, Texture.Width / 2, Texture.Height / 2);
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
 
         }

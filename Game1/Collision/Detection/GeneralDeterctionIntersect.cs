@@ -19,20 +19,12 @@ namespace Game1.Detection
             this.rectangle1 = rectangle1;
             this.rectangle2 = rectagle2;
         }
-       
 
         public Rectangle GetRectangle()
         {
-           
             intersectionRectangle = Rectangle.Intersect(rectangle1, rectangle2);
-           
             return intersectionRectangle;
-              
-           
         }
-
-
-     
     }
 }
 

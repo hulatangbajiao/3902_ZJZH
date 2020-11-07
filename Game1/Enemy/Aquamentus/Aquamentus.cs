@@ -1,5 +1,6 @@
-﻿using Game1.Enemy_NPC;
+﻿
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,16 +13,22 @@ namespace Game1
     {
 
         public IEnemyState State { get; set; }
-        private MainStage game;
+        
         int count;
         Random rand;
+        public bool exist { get; set; }
+        public Vector2 Position { get; set; }
+        public Vector2 Direction { get; set; }
+        public int MovingSpeed = 1;
 
-        public Aquamentus(MainStage game)
+        public Aquamentus(Vector2 position, Vector2 direction, IEnemyFactory factory)
         {
-            State = new AquamentusLeftMovingState(this, game);
-            GlobalDefinitions.AquamentusPosition = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
+            State = new AquamentusLeftMovingState(this, factory);
+            this.Position = position;
+            
+
             rand = new Random();
-            this.game = game;
+            
         }
 
 
@@ -60,7 +67,7 @@ namespace Game1
             State.Update();
 
             count++;
-            if (count > GlobalDefinitions.phaseChangingSpeed)
+            if (count > 50)
             {
                 switch (rand.Next(0, 5))
                 {
@@ -90,7 +97,18 @@ namespace Game1
             }
         }
 
+        public void Draw(SpriteBatch spritebatch)
+        {
+            if (exist)
+            {
+                State.Draw(spritebatch, this.Position);
+            }
+        }
 
+        public Rectangle GetRectangle()
+        {
+            return this.State.GetRectangle();
+        }
 
 
     }

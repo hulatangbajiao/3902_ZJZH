@@ -11,7 +11,7 @@ using Game1;
 
 namespace Game1.ItemsClasses
 {
-    class UseRupeeSprite : IItemSprite
+    class UseRupeeSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         public int Rows { get; set; }
@@ -54,11 +54,10 @@ namespace Game1.ItemsClasses
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, width / 2, height / 2);
+            destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, width , height );
 
-            spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
+            
         }
 
         public Rectangle GetRectangle()

@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,8 @@ namespace Game1
     {
         void Update();
 
-        void Draw(SpriteBatch spriteBatch);
+        void Draw(SpriteBatch spriteBatch, Vector2 Position);
+        Rectangle GetRectangle();
 
     }
 }
