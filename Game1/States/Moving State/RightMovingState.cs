@@ -1,4 +1,5 @@
 ﻿using Game1.Command;
+using Game1.Sprite;
 using Game1.Sprite_;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -13,7 +14,8 @@ namespace Game1
         {
             this.Link = link;
             this.game = game;
-            GetSprite = new RightMovingLinkSprite();
+            //GetSprite = new RightMovingLinkSprite();
+            GetSprite = new CoreSprite(Texture2DStorage.GetRightMovingLinkSpriteSheet(), 96, 96, 2);
 
         }
         //link has already faced up so no code for MoveUp()
