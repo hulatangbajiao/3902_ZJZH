@@ -248,9 +248,13 @@
     <Compile Include="Sprite_\UseItemSprite\LeftUseItemSprite.cs" />
     <Compile Include="Sprite_\UseItemSprite\RightUseItemSprite.cs" />
     <Compile Include="Sprite_\UseItemSprite\UpUseItemSprite.cs" />
+    <Compile Include="States\AttackState\DownWhiteSwordState.cs" />
     <Compile Include="States\AttackState\DownWoodenSwordState.cs" />
+    <Compile Include="States\AttackState\LeftWhiteSwordState.cs" />
     <Compile Include="States\AttackState\LeftWoodenSwordState.cs" />
+    <Compile Include="States\AttackState\RightWhiteSwordState.cs" />
     <Compile Include="States\AttackState\RightWoodenSwordState.cs" />
+    <Compile Include="States\AttackState\UpWhiteSwordState.cs" />
     <Compile Include="States\AttackState\UpWoodenSwordState.cs" />
     <Compile Include="States\DamagedLinkState.cs" />
     <Compile Include="Sprite_\DamgedLinkSprite.cs" />
