@@ -15,7 +15,7 @@ namespace Game1.Level
         {
             LevelXml = new XmlDocument();
             this.enemyFactory = enemyFactory;
-            LevelXml.Load("C:/Users/15132/Desktop/3902_ZJZH_Sprint3/Game1/LevelRooms.xml");
+            LevelXml.Load(@"../../../../LevelRooms.xml");
 
 
         }

@@ -11,7 +11,7 @@ namespace Game1.Sprite_.Enemy_Sprite.AquamentusMoving
     class RightMovingAquamentusSprite : ISprite
     {
         private int currentFrame = 0;
-        private int totalFrame = 20;
+        private int totalFrame = 80;
         private Rectangle destinationRectangle;
         public RightMovingAquamentusSprite()
         {
@@ -31,17 +31,17 @@ namespace Game1.Sprite_.Enemy_Sprite.AquamentusMoving
             Rectangle sourceRectangle;
             
 
-            if (currentFrame < 5)
+            if (currentFrame < 20)
             {
                 sourceRectangle = new Rectangle(0, 0, 150, 204);
 
             }
-            else if (5 <= currentFrame && currentFrame < 10)
+            else if (20 <= currentFrame && currentFrame < 40)
             {
                 sourceRectangle = new Rectangle(152, 0, 150, 204);
 
             }
-            else if (10 <= currentFrame && currentFrame < 15)
+            else if (40 <= currentFrame && currentFrame < 60)
             {
                 sourceRectangle = new Rectangle(303, 0, 150, 204);
 

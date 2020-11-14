@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game1.Door
+namespace Game1
 {
     public interface IDoor
     {
@@ -18,7 +18,3 @@ namespace Game1.Door
 
     }
 }
-
-
-
-

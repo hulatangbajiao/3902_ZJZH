@@ -27,7 +27,6 @@ namespace Game1.Sprite_.Enemy_Sprite.OctMoving
         public  void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
             Rectangle sourceRectangle;
-            Rectangle destinationRectangle;
 
             if (currentFrame < 5)
             {
@@ -38,8 +37,8 @@ namespace Game1.Sprite_.Enemy_Sprite.OctMoving
 
             else
             {
-                sourceRectangle = new Rectangle(0, 96, 96, 192);
-                destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, 96, 192);
+                sourceRectangle = new Rectangle(0, 96, 96, 96);
+                destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, 96, 96);
             }
             spriteBatch.Draw(Texture2DStorage.GetRightMovingRedBatSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
         }

@@ -26,7 +26,7 @@ namespace Game1
             State = new BlueGoriyaLeftMovingState(this, factory);
             this.Position = position;
 
-
+            exist = true;
             rand = new Random();
 
         }

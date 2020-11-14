@@ -38,8 +38,8 @@ namespace Game1.Sprite_.Enemy_Sprite.BlueGoriyaMoving
 
             else
             {
-                sourceRectangle = new Rectangle(100, 0, 192, 97);
-                destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, 192, 97);
+                sourceRectangle = new Rectangle(100, 0, 96, 96);
+                destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, 96, 96);
             }
             spriteBatch.Draw(Texture2DStorage.GetRightMovingBlueGoriyaSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
         }

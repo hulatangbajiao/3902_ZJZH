@@ -75,7 +75,6 @@
     <Compile Include="Collision\Detection\GeneralDetection.cs" />
     <Compile Include="Command\RoomCommand\PreviousRoomCommand.cs" />
     <Compile Include="Controller\MouseController.cs" />
-    <Compile Include="Door\IDoor.cs" />
     <Compile Include="Enemy\Aquamentus\Aquamentus.cs" />
     <Compile Include="Enemy\Aquamentus\AquamentusLeftMovingState.cs" />
     <Compile Include="Enemy\Aquamentus\AquamentusRightMovingState.cs" />
@@ -101,6 +100,7 @@
     <Compile Include="Enemy\IEnemy.cs" />
     <Compile Include="Enemy\IEnemyFactory.cs" />
     <Compile Include="Enemy\IEnemyState.cs" />
+    <Compile Include="Factory\ISpriteFactory.cs" />
     <Compile Include="Interfaces\IDoor.cs" />
     <Compile Include="Interfaces\IDoorList.cs" />
     <Compile Include="Interfaces\IItemSprite.cs" />
@@ -149,6 +149,7 @@
     <Compile Include="ItemsClasses\IItemFactory.cs" />
     <Compile Include="ItemsClasses\IItem.cs" />
     <Compile Include="Interfaces\IProjectile.cs" />
+    <Compile Include="Door\IDoor.cs" />
     <Compile Include="Projectile\Arrow.cs" />
     <Compile Include="Projectile\Bomb.cs" />
     <Compile Include="Projectile\Boomer.cs" />

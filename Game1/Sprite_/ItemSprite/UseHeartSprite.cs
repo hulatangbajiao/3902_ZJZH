@@ -54,7 +54,7 @@ namespace Game1.ItemsClasses
             int column = currentFrame % Columns;
 
             Rectangle sourceRectangle = new Rectangle(width * column, height * row, width, height);
-            destinationRectangle = new Rectangle((int)Position.X,(int)Position.Y, width, height);
+            destinationRectangle = new Rectangle((int)Position.X,(int)Position.Y, width , height );
 
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);

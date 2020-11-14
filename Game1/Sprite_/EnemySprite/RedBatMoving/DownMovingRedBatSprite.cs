@@ -28,7 +28,6 @@ namespace Game1.Sprite_.Enemy_Sprite.OctMoving
         public  void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
             Rectangle sourceRectangle;
-            Rectangle destinationRectangle;
 
             if (currentFrame < 5)
             {

@@ -93,11 +93,15 @@ namespace Game1.Controller
                 }
                 else if (keyArray.Contains<Keys>(key))
                 {
-                    if (currentKeyState.IsKeyDown(key) && currentKeyState.IsKeyUp(lastPressedKey))
+                    if (currentKeyState.IsKeyDown(key))
 
                     {
-                        controllerMappings[key]?.Execute();
-                        lastPressedKey = key;
+                        if ((lastPressedKey == key) || ((lastPressedKey != key) && currentKeyState.IsKeyUp(lastPressedKey)))
+                        {
+                            controllerMappings[key]?.Execute();
+                            lastPressedKey = key;
+                        }
+                        
                     }
                 }
             }

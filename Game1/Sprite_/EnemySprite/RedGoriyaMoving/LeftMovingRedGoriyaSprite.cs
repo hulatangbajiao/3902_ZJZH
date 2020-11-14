@@ -29,7 +29,6 @@ namespace Game1.Sprite_.Enemy_Sprite.RedGoriyaMoving
         public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
             Rectangle sourceRectangle;
-            Rectangle destinationRectangle;
 
             if (currentFrame < 5)
             {
@@ -40,8 +39,8 @@ namespace Game1.Sprite_.Enemy_Sprite.RedGoriyaMoving
 
             else
             {
-                sourceRectangle = new Rectangle(100, 0, 192, 96);
-                destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, 192, 96);
+                sourceRectangle = new Rectangle(100, 0, 96, 96);
+                destinationRectangle = new Rectangle((int)Position.X, (int)Position.Y, 96, 96);
             }
 
             spriteBatch.Draw(Texture2DStorage.GetLeftMovingRedGoriyaSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
