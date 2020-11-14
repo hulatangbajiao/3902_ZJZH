@@ -153,9 +153,13 @@
     <Compile Include="Projectile\Boomer.cs" />
     <Compile Include="Interfaces\IProjectileFactory.cs" />
     <Compile Include="Projectile\ProjectileFactory.cs" />
+    <Compile Include="Sprite_\AttackSprite\DownWhiteSwordLinkSprite.cs" />
     <Compile Include="Sprite_\AttackSprite\DownWoodenSwordLinkSprite.cs" />
+    <Compile Include="Sprite_\AttackSprite\LeftWhiteSwordLinkSprite.cs" />
     <Compile Include="Sprite_\AttackSprite\LeftWoodenSwordLinkSprite.cs" />
+    <Compile Include="Sprite_\AttackSprite\RightWhiteSwordLinkSprite.cs" />
     <Compile Include="Sprite_\AttackSprite\RightWoodenSwordLinkSprite.cs" />
+    <Compile Include="Sprite_\AttackSprite\UpWhiteSwordLinkSprite.cs" />
     <Compile Include="Sprite_\AttackSprite\UpWoodenSwordLinkSprite.cs" />
     <Compile Include="Sprite_\BlockSprite\BlueBlockSprite.cs" />
     <Compile Include="Sprite_\BlockSprite\BlueFaceBlockSprite.cs" />

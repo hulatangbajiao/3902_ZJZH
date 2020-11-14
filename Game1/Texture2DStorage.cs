@@ -25,10 +25,16 @@ namespace Game1
         private static Texture2D RightIdleLinkSpriteSheet;
         private static Texture2D RightMovingLinkSpriteSheet;
         private static Texture2D RightUseItemSpriteSheet;
+
         private static Texture2D UpWoodenSwordLinkSpriteSheet;
         private static Texture2D DownWoodenSwordLinkSpriteSheet;
         private static Texture2D LeftWoodenSwordLinkSpriteSheet;
         private static Texture2D RightWoodenSwordLinkSpriteSheet;
+
+        private static Texture2D UpWhiteSwordLinkSpriteSheet;
+        private static Texture2D DownWhiteSwordLinkSpriteSheet;
+        private static Texture2D LeftWhiteSwordLinkSpriteSheet;
+        private static Texture2D RightWhiteSwordLinkSpriteSheet;
 
         private static Texture2D UpWoodenArrowSpriteSheet;
         private static Texture2D DownWoodenArrowSpriteSheet;
@@ -134,7 +140,7 @@ namespace Game1
         private static Texture2D FireBallSpriteSheet;
 
         private static Texture2D FullMapSpriteSheet;
-        
+
         private static Texture2D LinkUseItemSpriteSheet;
 
         private static Texture2D RoomExteriorSpriteSheet;
@@ -164,10 +170,16 @@ namespace Game1
             RightMovingLinkSpriteSheet = content.Load<Texture2D>("images/RightMoving");
             RightUseItemSpriteSheet = content.Load<Texture2D>("images/UseItemWeapon/UseItemWeaponRight");
 
+            // Link Swords
             UpWoodenSwordLinkSpriteSheet = content.Load<Texture2D>("images/UpWoodenSword");
             DownWoodenSwordLinkSpriteSheet = content.Load<Texture2D>("images/DownWoodenSword");
             LeftWoodenSwordLinkSpriteSheet = content.Load<Texture2D>("images/LeftWoodenSword");
             RightWoodenSwordLinkSpriteSheet = content.Load<Texture2D>("images/RightWoodenSword");
+
+            UpWhiteSwordLinkSpriteSheet = content.Load<Texture2D>("images/WhiteSword/UpWhiteSword");
+            DownWhiteSwordLinkSpriteSheet = content.Load<Texture2D>("images/WhiteSword/DownWhiteSword");
+            LeftWhiteSwordLinkSpriteSheet = content.Load<Texture2D>("images/WhiteSword/LeftWhiteSword");
+            RightWhiteSwordLinkSpriteSheet = content.Load<Texture2D>("images/WhiteSword/RightWhiteSword");
 
             UpWoodenArrowSpriteSheet = content.Load<Texture2D>("images/projectile/arrow/UpArrow");
             DownWoodenArrowSpriteSheet = content.Load<Texture2D>("images/projectile/arrow/DownArrow");
@@ -208,7 +220,7 @@ namespace Game1
             FireSpriteSheet = content.Load<Texture2D>("images/Block/Fire");
 
             //Doors
-            
+
             BombedDoorDownSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorDown");
             BombedDoorLeftSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorLeft");
             BombedDoorRightSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorRight");
@@ -380,6 +392,7 @@ namespace Game1
             return RightUseItemSpriteSheet;
         }
 
+        // Link Wood Sword
         public static Texture2D GetUpWoodenSwordLinkSpriteSheet()
         {
             return UpWoodenSwordLinkSpriteSheet;
@@ -398,6 +411,26 @@ namespace Game1
         public static Texture2D GetRightWoodenSwordLinkSpriteSheet()
         {
             return RightWoodenSwordLinkSpriteSheet;
+        }
+        //Link White Swordz
+        public static Texture2D GetUpWhiteSwordLinkSpriteSheet()
+        {
+            return UpWhiteSwordLinkSpriteSheet;
+        }
+
+        public static Texture2D GetDownWhiteSwordLinkSpriteSheet()
+        {
+            return DownWhiteSwordLinkSpriteSheet;
+        }
+
+        public static Texture2D GetLeftWhiteSwordLinkSpriteSheet()
+        {
+            return LeftWhiteSwordLinkSpriteSheet;
+        }
+
+        public static Texture2D GetRightWhiteSwordLinkSpriteSheet()
+        {
+            return RightWhiteSwordLinkSpriteSheet;
         }
 
         public static Texture2D GetUpWoodenArrowSpriteSheet()
@@ -783,7 +816,7 @@ namespace Game1
         {
             return MerchantGSpriteSheet;
         }
-       
+
 
         public static Texture2D GetLinkUseItemSpriteSheet()
         {
