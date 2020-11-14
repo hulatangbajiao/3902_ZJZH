@@ -35,8 +35,8 @@ namespace Game1
         public IItemFactory itemFactory { get; set; }
         public IBlockFactory blockFactory { get; set; }
         public ILinkState[] Linkstates { get; }
-        
 
+        public bool paused { get; set; }
         public MainStage()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -115,12 +115,16 @@ namespace Game1
             {
                 controller.Update();
             }
-            this.ProjectileFactory.Update();
-            
-            Link.Update();
-            
-            base.Update(gameTime);
-            this.dungeonlevel.Update();
+            if (!paused)
+            {
+
+                this.ProjectileFactory.Update();
+
+                Link.Update();
+
+                base.Update(gameTime);
+                this.dungeonlevel.Update();
+            }
         }
 
         /// <summary>
