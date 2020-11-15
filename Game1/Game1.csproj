@@ -100,6 +100,9 @@
     <Compile Include="Enemy\IEnemy.cs" />
     <Compile Include="Enemy\IEnemyFactory.cs" />
     <Compile Include="Enemy\IEnemyState.cs" />
+    <Compile Include="GameOver\GameOver.cs" />
+    <Compile Include="GameOver\Class2.cs" />
+    <Compile Include="GameWin\GameWin.cs" />
     <Compile Include="Interfaces\IDoor.cs" />
     <Compile Include="Interfaces\IDoorList.cs" />
     <Compile Include="Interfaces\IItemSprite.cs" />

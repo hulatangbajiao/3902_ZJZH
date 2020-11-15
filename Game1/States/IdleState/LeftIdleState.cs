@@ -15,8 +15,8 @@ namespace Game1
             this.Link = link;
             this.decoratedLink = (Link)link;
             this.game = game;
-            //GetSprite = new LeftIdleLinkSprite();
-            GetSprite = new CoreSprite(Texture2DStorage.GetLeftIdleLinkSpriteSheet(), 96, 96, 1);
+            GetSprite = new LeftIdleLinkSprite();
+            //GetSprite = new CoreSprite(Texture2DStorage.GetLeftIdleLinkSpriteSheet(), 96, 96, 1);
 
         }
         //link has already faced up so no code for MoveUp()
