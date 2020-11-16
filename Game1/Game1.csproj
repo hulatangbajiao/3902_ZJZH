@@ -55,6 +55,7 @@
     <Compile Include="Collision\CollisionHandler\LinkBlockCollisionHandler.cs" />
     <Compile Include="Collision\Detection\GeneralDeterctionIntersect.cs" />
     <Compile Include="Collision\ICollision.cs" />
+    <Compile Include="Command\GameCommand\PauseGameCommand.cs" />
     <Compile Include="Command\RoomCommand\EastRoomCommand.cs" />
     <Compile Include="Command\RoomCommand\NorthRoomCommand.cs" />
     <Compile Include="Command\RoomCommand\SouthRoomCommand.cs" />
