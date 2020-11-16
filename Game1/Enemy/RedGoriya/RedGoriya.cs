@@ -27,7 +27,7 @@ namespace Game1
             State = new RedGoriyaUpMovingState(this, factory);
             this.Position = Position;
             rand = new Random();
-
+            exist = true;
         }
 
 

@@ -11,7 +11,7 @@ namespace Game1
 {
     public class EnemyArrow : IEnemy
     {
-        private ISprite GetSprite { get; set; }
+        private IGeneralSprite GetSprite { get; set; }
         public Vector2 Position { get; set; }
         public Vector2 Direction { get; set; }
         public int MovingSpeed = 40;
@@ -29,19 +29,19 @@ namespace Game1
             exist = true;
             if (Direction.X == (float)1)
             {
-                GetSprite = new RightArrowSprite();
+                GetSprite = new GeneralSprite(20,50,1);
             }
             else if (Direction.X == (float)-1)
             {
-                GetSprite = new LeftArrowSprite();
+                GetSprite = new GeneralSprite(20,50,1);
             }
             else if (Direction.Y == (float)1)
             {
-                GetSprite = new DownArrowSprite();
+                GetSprite = new GeneralSprite(50,20,1);
             }
             else if (Direction.Y == (float)-1)
             {
-                GetSprite = new UpArrowSprite();
+                GetSprite = new GeneralSprite(50,20,1);
             }
 
         }
@@ -88,7 +88,23 @@ namespace Game1
         {
             if (exist)
             {
-                GetSprite.Draw(spriteBatch, Position);
+                if (Direction.X == (float)1)
+                {
+                    GetSprite.Draw(Texture2DStorage.GetRightWoodenArrowSpriteSheet(),spriteBatch, Position);
+                }
+                else if (Direction.X == (float)-1)
+                {
+                    GetSprite.Draw(Texture2DStorage.GetLeftWoodenArrowSpriteSheet(),spriteBatch, Position);
+                }
+                else if (Direction.Y == (float)1)
+                {
+                    GetSprite.Draw(Texture2DStorage.GetDownWoodenArrowSpriteSheet(),spriteBatch, Position);
+                }
+                else if (Direction.Y == (float)-1)
+                {
+                    GetSprite.Draw(Texture2DStorage.GetUpWoodenArrowSpriteSheet(),spriteBatch, Position);
+                }
+                
             }
         }
         

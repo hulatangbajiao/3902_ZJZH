@@ -1,7 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Rooms total="18">
 	<Room number="1">
-		<Enemies total="0"></Enemies>
+		<Enemies total ="9">
+			<Enemy>
+				<ObjectType>Aquamentus</ObjectType>
+				<ColumnNum>1</ColumnNum>
+				<RowNum>4</RowNum>
+			</Enemy>
+			<Enemy>
+				<ObjectType>BlueBat</ObjectType>
+				<ColumnNum>2</ColumnNum>
+				<RowNum>2</RowNum>
+			</Enemy>
+			<Enemy>
+				<ObjectType>BlueGoriya</ObjectType>
+				<ColumnNum>3</ColumnNum>
+				<RowNum>3</RowNum>
+			</Enemy>
+			<Enemy>
+				<ObjectType>BlueM</ObjectType>
+				<ColumnNum>4</ColumnNum>
+				<RowNum>4</RowNum>
+			</Enemy>
+			<Enemy>
+				<ObjectType>BlueOct</ObjectType>
+				<ColumnNum>3</ColumnNum>
+				<RowNum>4</RowNum>
+			</Enemy>
+			<Enemy>
+				<ObjectType>Oct</ObjectType>
+				<ColumnNum>2</ColumnNum>
+				<RowNum>4</RowNum>
+			</Enemy>
+			<Enemy>
+				<ObjectType>RedBat</ObjectType>
+				<ColumnNum>1</ColumnNum>
+				<RowNum>2</RowNum>
+			</Enemy>
+			<Enemy>
+				<ObjectType>Oct</ObjectType>
+				<ColumnNum>2</ColumnNum>
+				<RowNum>4</RowNum>
+			</Enemy>
+			<Enemy>
+				<ObjectType>RedGoriya</ObjectType>
+				<ColumnNum>6</ColumnNum>
+				<RowNum>4</RowNum>
+			</Enemy>
+		</Enemies>
 		<Items total="0"></Items>
 		<Blocks total ="0"></Blocks>
 		<North>4</North>

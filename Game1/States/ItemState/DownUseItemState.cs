@@ -9,23 +9,18 @@ namespace Game1
     {
         public ILink Link { get; set; }
         MainStage game;
-        public ISprite GetSprite { get; set; }
+        public IGeneralSprite GetSprite { get; set; }
         public IProjectile Arrow { get; set; }
         public DownUseItemState(ILink link, MainStage game)
         {
             this.Link = link;
             this.game = game;
-            GetSprite = new DownUseItemSprite();
+            GetSprite = new GeneralSprite(96,96,1);
             
 
         }
 
-        public void TakeDamage()
-        {
-            game.Link = new DamagedLink((Link)Link, game);
-
-            //remains to be discussed
-        }
+        
         //link has already faced up so no code for MoveUp()
         public void MoveUp()
         {
@@ -72,7 +67,7 @@ namespace Game1
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            GetSprite.Draw(spriteBatch,GlobalDefinitions.Position);
+            GetSprite.Draw(Texture2DStorage.GetDownUseItemLinkSpriteSheet(),spriteBatch,GlobalDefinitions.Position);
             if(Link.Item == 1)
             {
                 this.game.ProjectileFactory.AddArrow(GlobalDefinitions.Position, new Vector2(0, 1));

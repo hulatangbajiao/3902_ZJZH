@@ -8,15 +8,13 @@ using System.Threading.Tasks;
 
 namespace Game1
 {
-    public interface IProjectile
+    public interface IDoor
     {
-        
         Vector2 Position { get; set; }
-        Vector2 Direction { get; set; }
-        int Velocity { get; set; }
         bool exist { get; set; }
         void Update();
         void Draw(SpriteBatch spriteBatch);
         Rectangle GetRectangle();
+
     }
 }

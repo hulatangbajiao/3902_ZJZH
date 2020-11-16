@@ -9,7 +9,9 @@ namespace Game1
 {
     public class Link : ILink
     {
-
+        private int timer = 0;
+        private bool damaging = false;
+        private Vector2 damageDirection = new Vector2(0, 0);
         public ILinkState State { get; set; }
         public int Item { get; set; }
         public Link(MainStage game)
@@ -19,9 +21,13 @@ namespace Game1
             GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
         }
 
-        public void TakeDamage()
+        public void TakeDamage(Vector2 DamageDirection)
         {
-            State.TakeDamage();
+            damageDirection = DamageDirection;
+            damaging = true;
+            timer = 20;
+
+            //remains to be discussed
         }
 
         public void MoveUp()
@@ -64,12 +70,32 @@ namespace Game1
 
         public void Update()
         {
-            State.Update();
+            if (timer > 0)
+            {
+                timer--;
+                State.GetSprite.ChangeColor();
+            }
+            else
+            {
+               State.GetSprite.color = Color.White;
+            }
+            if (timer < 16)
+            {
+                damaging = false;
+            }
+            if (!damaging)
+            {
+                State.Update();
+            }
+            else
+            {
+                GlobalDefinitions.Position -= 30 * damageDirection;
+            }
         }
 
         public Rectangle GetRectangle() 
         {
-            return State.GetSprite.GetRectangle();
+            return new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);
         }
     }
 }

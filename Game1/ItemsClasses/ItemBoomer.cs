@@ -1,5 +1,4 @@
 ﻿using Game1.Interfaces;
-using Game1.ItemsClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -12,7 +11,7 @@ namespace Game1
 {
     public class ItemBoomer : IItem
     {
-        private ISprite GetSprite { get; set; }
+        private IGeneralSprite GetSprite { get; set; }
         public Vector2 Position { get; set; }
 
 
@@ -28,7 +27,7 @@ namespace Game1
             
             exist = true;
             
-            GetSprite = new UseBoomerangSprite();
+            GetSprite = new GeneralSprite(40,60,1);
             
 
         }
@@ -44,7 +43,7 @@ namespace Game1
         {
             if (exist)
             {
-                GetSprite.Draw(spriteBatch, Position);
+                GetSprite.Draw(Texture2DStorage.GetBoomerangSpriteSheet(),spriteBatch, Position);
             }
         }
 

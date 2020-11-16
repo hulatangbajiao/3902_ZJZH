@@ -24,7 +24,6 @@ namespace Game1.Controller
             //Use 'q' to quit and 'r' to reset the program back to its initial state.
             controllerMappings.Add(Keys.Q, new QuitGameCommand(instance));
             controllerMappings.Add(Keys.R, new ResetGameCommand(instance));
-            controllerMappings.Add(Keys.P, new PauseGameCommand(instance));
 
             // Link
             //Arrow and "wasd" keys should move Link and change his facing direction.
@@ -94,11 +93,15 @@ namespace Game1.Controller
                 }
                 else if (keyArray.Contains<Keys>(key))
                 {
-                    if (currentKeyState.IsKeyDown(key) && currentKeyState.IsKeyUp(lastPressedKey))
+                    if (currentKeyState.IsKeyDown(key))
 
                     {
-                        controllerMappings[key]?.Execute();
-                        lastPressedKey = key;
+                        if ((lastPressedKey == key) || ((lastPressedKey != key) && currentKeyState.IsKeyUp(lastPressedKey)))
+                        {
+                            controllerMappings[key]?.Execute();
+                            lastPressedKey = key;
+                        }
+                        
                     }
                 }
             }

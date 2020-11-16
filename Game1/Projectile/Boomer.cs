@@ -13,7 +13,7 @@ namespace Game1
     {
         
 
-        public ISprite GetSprite { get; set; }
+        private IGeneralSprite GetSprite { get; set; }
         public Vector2 Position { get; set; }
         public Vector2 Direction { get; set; }
         public int Velocity { get; set; }
@@ -30,7 +30,7 @@ namespace Game1
             Velocity = 30;
             exist = true;
             
-            GetSprite = new BoomerSprite();
+            GetSprite = new GeneralSprite(48,48,3);
             
             
 
@@ -65,7 +65,7 @@ namespace Game1
         {
             if (exist)
             {
-                GetSprite.Draw(spriteBatch, Position);
+                GetSprite.Draw(Texture2DStorage.GetBoomerSpriteSheet(),spriteBatch, Position);
             }
         }
 

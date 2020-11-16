@@ -54,9 +54,9 @@ namespace Game1
 
         public void Update()
         {
-            foreach (IEnemy enemy in Enemies)
+            for (int i = 0; i < Enemies.Count; i++)
             {
-                enemy.Update();
+                Enemies[i].Update();
             }
 
 

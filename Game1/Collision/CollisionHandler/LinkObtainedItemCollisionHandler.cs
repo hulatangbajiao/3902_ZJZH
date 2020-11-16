@@ -1,5 +1,4 @@
 ﻿using Game1.Collision.CollisionHandler;
-using Game1.ItemsClasses;
 using Game1.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -32,14 +31,8 @@ namespace Game1.Collision.CollisionHandler
         {
             if (side !=ICollision.Null)
             {
-                if (item.exist != false)
-                {
-                    if (item is ItemRupee)
-                        AudioFactory.Instance.PlayPickUpRupeeSound();
-                    else
-                        AudioFactory.Instance.PlayPickUpItemSound();
-                }
                 item.exist = false;
+
             }
 
 

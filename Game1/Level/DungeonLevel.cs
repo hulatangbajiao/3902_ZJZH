@@ -84,7 +84,7 @@ namespace Game1.Level
             {
                 Map.East();
                 CurrentRoom = CurrentRoom.East;
-                GlobalDefinitions.Position = new Vector2(doors[3].X + doors[3].Width, doors[3].Y);
+                GlobalDefinitions.Position = new Vector2(doors[3].X + doors[3].Width+20, doors[3].Y);
             }
         }
 
@@ -105,7 +105,7 @@ namespace Game1.Level
             {
                 Map.West();
                 CurrentRoom = CurrentRoom.West;
-                GlobalDefinitions.Position = new Vector2(doors[1].X - Link.GetRectangle().Width, doors[1].Y);
+                GlobalDefinitions.Position = new Vector2(doors[1].X - Link.GetRectangle().Width-20, doors[1].Y);
             }
         }
 
@@ -117,20 +117,21 @@ namespace Game1.Level
         public void Update()
         {
             CurrentRoom.Update();
+            Rectangle linkRectangle = Link.GetRectangle();
 
-            if (Link.GetRectangle().Intersects(doors[0]))
+            if (linkRectangle.Intersects(doors[0]))
             {
                 North();
             }
-            else if (Link.GetRectangle().Intersects(doors[1]))
+            else if (linkRectangle.Intersects(doors[1]))
             {
                 East();
             }
-            else if (Link.GetRectangle().Intersects(doors[2]))
+            else if (linkRectangle.Intersects(doors[2]))
             {
                 South();
             }
-            else if (Link.GetRectangle().Intersects(doors[3]))
+            else if (linkRectangle.Intersects(doors[3]))
             {
                 West();
             }
