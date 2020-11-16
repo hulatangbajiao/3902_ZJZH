@@ -55,6 +55,7 @@
     <Compile Include="Collision\CollisionHandler\LinkBlockCollisionHandler.cs" />
     <Compile Include="Collision\Detection\GeneralDeterctionIntersect.cs" />
     <Compile Include="Collision\ICollision.cs" />
+    <Compile Include="Command\GameCommand\PauseGameCommand.cs" />
     <Compile Include="Command\RoomCommand\EastRoomCommand.cs" />
     <Compile Include="Command\RoomCommand\NorthRoomCommand.cs" />
     <Compile Include="Command\RoomCommand\SouthRoomCommand.cs" />
@@ -154,9 +155,13 @@
     <Compile Include="Projectile\Boomer.cs" />
     <Compile Include="Interfaces\IProjectileFactory.cs" />
     <Compile Include="Projectile\ProjectileFactory.cs" />
+    <Compile Include="Sprite_\AttackSprite\DownWhiteSwordLinkSprite.cs" />
     <Compile Include="Sprite_\AttackSprite\DownWoodenSwordLinkSprite.cs" />
+    <Compile Include="Sprite_\AttackSprite\LeftWhiteSwordLinkSprite.cs" />
     <Compile Include="Sprite_\AttackSprite\LeftWoodenSwordLinkSprite.cs" />
+    <Compile Include="Sprite_\AttackSprite\RightWhiteSwordLinkSprite.cs" />
     <Compile Include="Sprite_\AttackSprite\RightWoodenSwordLinkSprite.cs" />
+    <Compile Include="Sprite_\AttackSprite\UpWhiteSwordLinkSprite.cs" />
     <Compile Include="Sprite_\AttackSprite\UpWoodenSwordLinkSprite.cs" />
     <Compile Include="Sprite_\BlockSprite\BlueBlockSprite.cs" />
     <Compile Include="Sprite_\BlockSprite\BlueFaceBlockSprite.cs" />
@@ -246,9 +251,13 @@
     <Compile Include="Sprite_\UseItemSprite\LeftUseItemSprite.cs" />
     <Compile Include="Sprite_\UseItemSprite\RightUseItemSprite.cs" />
     <Compile Include="Sprite_\UseItemSprite\UpUseItemSprite.cs" />
+    <Compile Include="States\AttackState\DownWhiteSwordState.cs" />
     <Compile Include="States\AttackState\DownWoodenSwordState.cs" />
+    <Compile Include="States\AttackState\LeftWhiteSwordState.cs" />
     <Compile Include="States\AttackState\LeftWoodenSwordState.cs" />
+    <Compile Include="States\AttackState\RightWhiteSwordState.cs" />
     <Compile Include="States\AttackState\RightWoodenSwordState.cs" />
+    <Compile Include="States\AttackState\UpWhiteSwordState.cs" />
     <Compile Include="States\AttackState\UpWoodenSwordState.cs" />
     <Compile Include="States\DamagedLinkState.cs" />
     <Compile Include="Sprite_\DamgedLinkSprite.cs" />
