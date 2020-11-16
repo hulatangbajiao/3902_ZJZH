@@ -1,7 +1,6 @@
 ﻿using Game1.Block;
 using Game1.Controller;
 using Game1.Interfaces;
-using Game1.ItemsClasses;
 using Game1.Level;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -9,8 +8,6 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Media;
 
 namespace Game1
 {
@@ -93,10 +90,8 @@ namespace Game1
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            AudioFactory.Instance.LoadAllAudio(this.Content);
             Texture2DStorage.LoadAllTextures(this.Content);
 
-            AudioFactory.Instance.PlayDungeonBGM();
         }
 
         /// <summary>
@@ -152,7 +147,6 @@ namespace Game1
             GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
             this.ProjectileFactory = new ProjectileFactory(this);
             this.dungeonlevel = new DungeonLevel(this);
-            AudioFactory.Instance.PlayDungeonBGM();
             Initialize();
         }
 
