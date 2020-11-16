@@ -13,6 +13,114 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin Audio/Attack Hit Sound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Attack Hit Sound.wav
+
+#begin Audio/Bomb.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Bomb.wav
+
+#begin Audio/Bow.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Bow.wav
+
+#begin Audio/Discovery Jingle.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Discovery Jingle.wav
+
+#begin Audio/Dying.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Dying.wav
+
+#begin Audio/Item Jingle.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Item Jingle.wav
+
+#begin Audio/Pick Up Bow.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Pick Up Bow.wav
+
+#begin Audio/Pick Up Item.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Pick Up Item.wav
+
+#begin Audio/Pick Up Rupee.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Pick Up Rupee.wav
+
+#begin Audio/Secret Jingle.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Secret Jingle.wav
+
+#begin Audio/Text Drawing.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Text Drawing.wav
+
+#begin Audio/Title BGM.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Audio/Title BGM.mp3
+
+#begin Audio/Title BGM.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Title BGM.wav
+
+#begin Audio/Triforce Pickup.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Triforce Pickup.wav
+
+#begin Audio/Underworld BGM.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Audio/Underworld BGM.mp3
+
+#begin Audio/Underworld BGM.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Underworld BGM.wav
+
+#begin Audio/Unlock Door.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Unlock Door.wav
+
+#begin Audio/Wallmaster Sound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Audio/Wallmaster Sound.wav
+
 #begin images/arrow/DownArrow.png
 /importer:TextureImporter
 /processor:TextureProcessor

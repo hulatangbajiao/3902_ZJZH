@@ -41,6 +41,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Audio\AudioSpriteFactory.cs" />
     <Compile Include="Block\BoundaryLong.cs" />
     <Compile Include="Block\BoundaryShort.cs" />
     <Compile Include="Block\UnpassableBlock.cs" />
