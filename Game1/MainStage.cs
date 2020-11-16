@@ -93,8 +93,9 @@ namespace Game1
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            Texture2DStorage.LoadAllTextures(this.Content);
             AudioFactory.Instance.LoadAllAudio(this.Content);
+            Texture2DStorage.LoadAllTextures(this.Content);
+
             AudioFactory.Instance.PlayDungeonBGM();
         }
 
@@ -151,8 +152,8 @@ namespace Game1
             GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
             this.ProjectileFactory = new ProjectileFactory(this);
             this.dungeonlevel = new DungeonLevel(this);
-            Initialize();
             AudioFactory.Instance.PlayDungeonBGM();
+            Initialize();
         }
 
 
