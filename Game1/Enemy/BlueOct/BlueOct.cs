@@ -26,7 +26,7 @@ namespace Game1
             State = new BlueOctUpMovingState(this, factory);
             this.Position = Position;
             rand = new Random();
-            exist = true;
+            
         }
 
 

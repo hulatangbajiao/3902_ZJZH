@@ -1,4 +1,5 @@
 ﻿using Game1.Interfaces;
+using Game1.ItemsClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -12,7 +13,7 @@ namespace Game1
 {
     public class ItemFairy : IItem
     {
-        private IGeneralSprite GetSprite { get; set; }
+        private ISprite GetSprite { get; set; }
         private int x, y;
         public Vector2 Position { get; set; }
 
@@ -29,7 +30,7 @@ namespace Game1
             
             exist = true;
             
-            GetSprite = new GeneralSprite(20,40,2);
+            GetSprite = new UseFairySprite();
             
 
         }
@@ -69,7 +70,7 @@ namespace Game1
         {
             if (exist)
             {
-                GetSprite.Draw(Texture2DStorage.GetFairySpriteSheet(),spriteBatch, Position);
+                GetSprite.Draw(spriteBatch, Position);
             }
         }
 

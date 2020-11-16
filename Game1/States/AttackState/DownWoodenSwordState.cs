@@ -1,5 +1,4 @@
 ﻿using Game1.Command;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1
@@ -8,18 +7,23 @@ namespace Game1
     {
         public ILink Link { get; set; }
         MainStage game;
-        public IGeneralSprite GetSprite { get; set; }
-        private int timer = 12;
+        public ISprite GetSprite { get; set; }
+
         public DownWoodenSwordState(ILink link, MainStage game)
         {
             this.Link = link;
             this.game = game;
-            GetSprite = new GeneralSprite(96,160,4);
+            GetSprite = new DownWoodenSwordLinkSprite(game);
 
         }
         //link has already faced up so no code for MoveUp()
 
-        
+        public void TakeDamage()
+        {
+            game.Link = new DamagedLink((Link)Link, game);
+
+            //remains to be discussed
+        }
         //Link will move up if 'w' was pressed while pressing 'z'
         public void MoveUp()
         {
@@ -58,17 +62,12 @@ namespace Game1
 
         public void Update()
         {
-            
             GetSprite.Update();
-            timer--;
-            if (timer == 0)
-            {
-                this.Stop();
-            }
+
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            GetSprite.Draw(Texture2DStorage.GetDownWoodenSwordLinkSpriteSheet(),spriteBatch, GlobalDefinitions.Position);
+            GetSprite.Draw(spriteBatch, GlobalDefinitions.Position);
 
         }
     }

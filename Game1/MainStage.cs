@@ -37,8 +37,8 @@ namespace Game1
         public IItemFactory itemFactory { get; set; }
         public IBlockFactory blockFactory { get; set; }
         public ILinkState[] Linkstates { get; }
-        
 
+        public bool paused { get; set; }
         public MainStage()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -93,9 +93,8 @@ namespace Game1
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            AudioFactory.Instance.LoadAllAudio(this.Content);
             Texture2DStorage.LoadAllTextures(this.Content);
-
+            AudioFactory.Instance.LoadAllAudio(this.Content);
             AudioFactory.Instance.PlayDungeonBGM();
         }
 
@@ -119,12 +118,16 @@ namespace Game1
             {
                 controller.Update();
             }
-            this.ProjectileFactory.Update();
-            
-            Link.Update();
-            
-            base.Update(gameTime);
-            this.dungeonlevel.Update();
+            if (!paused)
+            {
+
+                this.ProjectileFactory.Update();
+
+                Link.Update();
+
+                base.Update(gameTime);
+                this.dungeonlevel.Update();
+            }
         }
 
         /// <summary>
@@ -152,8 +155,8 @@ namespace Game1
             GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
             this.ProjectileFactory = new ProjectileFactory(this);
             this.dungeonlevel = new DungeonLevel(this);
-            AudioFactory.Instance.PlayDungeonBGM();
             Initialize();
+            AudioFactory.Instance.PlayDungeonBGM();
         }
 
 

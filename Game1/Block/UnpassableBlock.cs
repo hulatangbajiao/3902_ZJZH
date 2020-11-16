@@ -14,7 +14,7 @@ namespace Game1
     {
         public Vector2 Position { get; set; }
 
-        private IGeneralSprite GetSprite { get; set; }
+        private ISprite GetSprite { get; set; }
 
         public bool exist { get; set; }
         
@@ -22,7 +22,7 @@ namespace Game1
         public UnpassableBlock(Vector2 Position)
         {
 
-            this.GetSprite = new GeneralSprite(96,96,1);
+            this.GetSprite = new BlueStoneBlockSprite();
             this.Position = Position;
             
             exist = true;
@@ -34,7 +34,7 @@ namespace Game1
         }
         public void Draw(SpriteBatch spritebatch) 
         {
-            this.GetSprite.Draw(Texture2DStorage.GetBlueFaceBlockSpriteSheet(),spritebatch, Position);
+            this.GetSprite.Draw(spritebatch, Position);
         }
 
         public Rectangle GetRectangle()

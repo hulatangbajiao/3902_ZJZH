@@ -27,7 +27,7 @@ namespace Game1
             State = new RedBatUpMovingState(this, factory);
             this.Position = Position;
             rand = new Random();
-            exist = true;
+
         }
 
 

@@ -23,7 +23,7 @@ namespace Game1.Collision
 
         public void Execute()
         {
-            if (side != ICollision.Null&&enemy.exist&&projectile.exist)
+            if (side != ICollision.Null)
             {
                 enemy.exist = false;
                 projectile.exist = false;

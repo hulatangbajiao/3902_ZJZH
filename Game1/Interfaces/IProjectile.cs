@@ -10,7 +10,7 @@ namespace Game1
 {
     public interface IProjectile
     {
-        
+        ISprite GetSprite { get; set; }
         Vector2 Position { get; set; }
         Vector2 Direction { get; set; }
         int Velocity { get; set; }

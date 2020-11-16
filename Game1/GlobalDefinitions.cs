@@ -11,9 +11,8 @@ namespace Game1
         public const int RoomWidth = 256;
         public const int RoomHeight = 176;
         public const int Boundary = 30;
-        public const int DoorDepth = 35;
-        public const int DoorWidth = 15;
-        public const int BounceDistance = 50;
+        public const int DoorDepth = 40;
+        public const int DoorWidth = 50;
         public static Vector2 Position;
         //public static Vector2 OctPosition;
         //public static Vector2 BlueOctPosition;

@@ -1,6 +1,5 @@
 ﻿using Game1.Command;
 using Game1.Sprite_;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1
@@ -9,17 +8,22 @@ namespace Game1
     {
         public ILink Link { get; set; }
         MainStage game;
-        public IGeneralSprite GetSprite { get; set; }
+        public ISprite GetSprite { get; set; }
         public DownMovingState(ILink link, MainStage game)
         {
             this.Link = link;
             this.game = game;
-            GetSprite = new GeneralSprite(96,96,2);
+            GetSprite = new DownMovingLinkSprite();
 
         }
         //link has already faced up so no code for MoveUp()
 
-        
+        public void TakeDamage()
+        {
+            game.Link = new DamagedLink((Link)Link, game);
+
+            //remains to be discussed
+        }
         public void MoveUp()
         {
             Link.State = new UpMovingState(Link, game);
@@ -58,11 +62,10 @@ namespace Game1
         public void Update()
         {
             GetSprite.Update();
-            GlobalDefinitions.Position += new Vector2(0, 10);
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            GetSprite.Draw(Texture2DStorage.GetDownMovingLinkSpriteSheet(),spriteBatch, GlobalDefinitions.Position);
+            GetSprite.Draw(spriteBatch, GlobalDefinitions.Position);
 
         }
     }

@@ -11,17 +11,16 @@ namespace Game1
 {
     public class EnemyFactory : IEnemyFactory
     {
-        private MainStage game;
         public List<IEnemy> EnemyList { get; set; }
 
         public EnemyFactory(MainStage game)
         {
-            this.game = game;
+
         }
 
         public void Initialize()
         {
-            EnemyList = game.dungeonlevel.CurrentRoom.Enemies;
+            EnemyList = new List<IEnemy>();
 
         }
 
@@ -31,7 +30,7 @@ namespace Game1
 
         }
 
-
+        
 
         public void Update()
         {

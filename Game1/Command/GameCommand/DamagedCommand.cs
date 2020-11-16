@@ -17,7 +17,7 @@ namespace Game1.Command
 
         public void Execute()
         {
-            Link.TakeDamage(new Microsoft.Xna.Framework.Vector2(0,0));
+            Link.TakeDamage();
         }
     }
 }

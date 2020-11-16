@@ -1,4 +1,4 @@
-﻿
+﻿using Game1.Sprite_.Enemy_Sprite.OctMoving;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -8,13 +8,13 @@ namespace Game1
     {
         private Oct Oct;
         public IEnemyFactory factory { get; set; }
-        public IGeneralSprite GetSprite { get; set; }
+        public ISprite GetSprite { get; set; }
 
         public OctUpMovingState(Oct oct, IEnemyFactory factory)
         {
             this.Oct = oct;
             this.factory = factory;
-            GetSprite = new GeneralSprite(96,96,2);
+            GetSprite = new UpMovingOctSprite();
 
         }
 
@@ -53,7 +53,7 @@ namespace Game1
 
         public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
-            this.GetSprite.Draw(Texture2DStorage.GetUpMovingOctorokSpriteSheet(),spriteBatch, Position);
+            this.GetSprite.Draw(spriteBatch, Position);
         }
         public Rectangle GetRectangle()
         {

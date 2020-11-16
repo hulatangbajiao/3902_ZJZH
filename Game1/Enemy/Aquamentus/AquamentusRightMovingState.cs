@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Game1.Sprite_.Enemy_Sprite.AquamentusMoving;
+using Game1.Sprite_.Enemy_Sprite.OctMoving;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1
@@ -8,14 +10,14 @@ namespace Game1
         private Aquamentus Aquamentus;
         private MainStage game;
         public IEnemyFactory factory { get; set; }
-        private IGeneralSprite GetSprite { get; set; }
+        private ISprite GetSprite { get; set; }
 
         public AquamentusRightMovingState(Aquamentus Aquamentus, IEnemyFactory factory)
 
         {
             this.Aquamentus = Aquamentus;
             this.factory = factory;
-            GetSprite = new GeneralSprite(150, 204, 4);
+            GetSprite = new RightMovingAquamentusSprite();
 
         }
 
@@ -58,7 +60,7 @@ namespace Game1
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
-            this.GetSprite.Draw(Texture2DStorage.GetRightMovingAquamentusSpriteSheet(), spriteBatch, Position);
+            this.GetSprite.Draw(spriteBatch, Position);
         }
         public Rectangle GetRectangle()
         {

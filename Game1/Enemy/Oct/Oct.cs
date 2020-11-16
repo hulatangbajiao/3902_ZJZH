@@ -27,7 +27,7 @@ namespace Game1
             State = new OctUpMovingState(this, factory);
             this.Position = Position;
             rand = new Random();
-            exist = true;
+
         }
 
 
@@ -97,11 +97,7 @@ namespace Game1
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (exist)
-            {
-                this.State.Draw(spriteBatch, Position);
-            }
-            
+            this.State.Draw(spriteBatch, Position);
         }
         public Rectangle GetRectangle()
         {

@@ -8,18 +8,23 @@ namespace Game1
         public ILink Link { get; set; }
         private Link decoratedLink;
         MainStage game;
-        public IGeneralSprite GetSprite { get; set; }
+        public ISprite GetSprite { get; set; }
         public UpIdleState(ILink link, MainStage game)
         {
             this.Link = link;
             this.decoratedLink = (Link)link;
             this.game = game;
-            GetSprite = new GeneralSprite(96,96,1);
+            GetSprite = new UpIdleLinkSprite();
 
         }
         //link has already faced up so no code for MoveUp()
 
-        
+        public void TakeDamage()
+        {
+            game.Link = new DamagedLink(decoratedLink, game);
+
+            //remains to be discussed
+        }
         public void MoveUp()
         {
             Link.State = new UpMovingState(Link, game);
@@ -68,7 +73,7 @@ namespace Game1
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            GetSprite.Draw(Texture2DStorage.GetUpIdleLinkSpriteSheet(),spriteBatch, GlobalDefinitions.Position);
+            GetSprite.Draw(spriteBatch, GlobalDefinitions.Position);
 
         }
     }

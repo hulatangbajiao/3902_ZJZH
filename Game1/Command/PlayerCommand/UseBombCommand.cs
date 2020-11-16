@@ -18,7 +18,7 @@ namespace Game1.Command
 
         public void Execute()
         {
-
+            AudioFactory.Instance.PlayBombSound();
             Link.UseItem(2);
         }
     }

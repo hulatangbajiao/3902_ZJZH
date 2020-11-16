@@ -1,4 +1,5 @@
-﻿
+﻿using Game1.Sprite_.Enemy_Sprite.OctMoving;
+using Game1.Sprite_.Enemy_Sprite.RedGoriyaMoving;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -8,14 +9,14 @@ namespace Game1
     {
         private RedGoriya RedGoriya;
         public IEnemyFactory factory { get; set; }
-        public IGeneralSprite GetSprite { get; set; }
+        public ISprite GetSprite { get; set; }
 
         public RedGoriyaDownMovingState(RedGoriya redgoriya, IEnemyFactory factory)
 
         {
             this.RedGoriya = redgoriya;
             this.factory = factory;
-            GetSprite = new GeneralSprite(96,96,2);
+            GetSprite = new DownMovingRedGoriyaSprite();
 
         }
 
@@ -56,7 +57,7 @@ namespace Game1
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
-            this.GetSprite.Draw(Texture2DStorage.GetDownMovingRedGoriyaSpriteSheet(),spriteBatch, Position);
+            this.GetSprite.Draw(spriteBatch, Position);
         }
         public Rectangle GetRectangle()
         {

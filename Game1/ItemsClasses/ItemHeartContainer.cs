@@ -1,4 +1,5 @@
 ﻿using Game1.Interfaces;
+using Game1.ItemsClasses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -11,7 +12,7 @@ namespace Game1
 {
     public class ItemHeartContainer : IItem
     {
-        private IGeneralSprite GetSprite { get; set; }
+        private ISprite GetSprite { get; set; }
         public Vector2 Position { get; set; }
 
 
@@ -27,7 +28,7 @@ namespace Game1
             
             exist = true;
             
-            GetSprite = new GeneralSprite(96,96,1);
+            GetSprite = new UseHeartContainerSprite();
             
 
         }
@@ -43,7 +44,7 @@ namespace Game1
         {
             if (exist)
             {
-                GetSprite.Draw(Texture2DStorage.GetHeartContainerSpriteSheet(),spriteBatch, Position);
+                GetSprite.Draw(spriteBatch, Position);
             }
         }
 
