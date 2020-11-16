@@ -8,6 +8,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
 
 namespace Game1
 {
@@ -34,8 +36,8 @@ namespace Game1
         public IItemFactory itemFactory { get; set; }
         public IBlockFactory blockFactory { get; set; }
         public ILinkState[] Linkstates { get; }
-        
 
+        public bool paused { get; set; }
         public MainStage()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -91,7 +93,8 @@ namespace Game1
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             Texture2DStorage.LoadAllTextures(this.Content);
-
+            AudioFactory.Instance.LoadAllAudio(this.Content);
+            AudioFactory.Instance.PlayDungeonBGM();
         }
 
         /// <summary>
@@ -114,12 +117,16 @@ namespace Game1
             {
                 controller.Update();
             }
-            this.ProjectileFactory.Update();
-            
-            Link.Update();
-            
-            base.Update(gameTime);
-            this.dungeonlevel.Update();
+            if (!paused)
+            {
+
+                this.ProjectileFactory.Update();
+
+                Link.Update();
+
+                base.Update(gameTime);
+                this.dungeonlevel.Update();
+            }
         }
 
         /// <summary>
@@ -148,6 +155,7 @@ namespace Game1
             this.ProjectileFactory = new ProjectileFactory(this);
             this.dungeonlevel = new DungeonLevel(this);
             Initialize();
+            AudioFactory.Instance.PlayDungeonBGM();
         }
 
 

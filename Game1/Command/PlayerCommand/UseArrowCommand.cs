@@ -18,8 +18,8 @@ namespace Game1.Command
 
         public void Execute()
         {
-
             Link.UseItem(1);
+            AudioFactory.Instance.PlayBowSound();
         }
     }
    

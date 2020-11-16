@@ -18,6 +18,7 @@ namespace Game1.Command
         public void Execute()
         {
             Link.Attack();
+            AudioFactory.Instance.PlayAttackSound();
         }
     }
    
