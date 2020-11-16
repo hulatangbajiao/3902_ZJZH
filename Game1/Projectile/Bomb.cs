@@ -21,23 +21,30 @@ namespace Game1
 
         public Bomb(Vector2 Position, Vector2 direction)
         {
+
+
+            
             Direction = direction;
             this.Position = Position + Direction * 60 + new Vector2(20,20);
             Velocity = 120;
             exist = true;
             
             GetSprite = new BombSprite();
+            
+
         }
 
         public void Update()
         {
+
+
+            
             Velocity--;
             GetSprite.Update();
 
             if (Velocity == 0)
             {
                 exist = false;
-
             }
         }
 
