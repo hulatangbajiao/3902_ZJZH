@@ -26,23 +26,23 @@ namespace Game1.Collision
         {
             if (side == ICollision.Left)
             {
-                GlobalDefinitions.Position.X = GlobalDefinitions.Position.X - intersectRectangle.Width;
-                link.State.TakeDamage();
+                
+                link.TakeDamage(new Vector2(1,0));
             }
             else if (side == ICollision.Right)
             {
-                GlobalDefinitions.Position.X = GlobalDefinitions.Position.X + intersectRectangle.Width;
-                link.State.TakeDamage();
+                
+                link.TakeDamage(new Vector2(-1, 0));
             }
             else if (side == ICollision.Bottom)
             {
-                GlobalDefinitions.Position.Y = GlobalDefinitions.Position.Y + intersectRectangle.Height;
-                link.State.TakeDamage();
+                
+                link.TakeDamage(new Vector2(0, -1));
             }
             else if (side == ICollision.Top)
             {
-                GlobalDefinitions.Position.Y = GlobalDefinitions.Position.Y - intersectRectangle.Height;
-                link.State.TakeDamage();
+                
+                link.TakeDamage(new Vector2(0, 1));
             }
         }
     }

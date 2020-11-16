@@ -1,5 +1,4 @@
 ﻿using Game1.Collision.CollisionHandler;
-using Game1.ItemsClasses;
 using Game1.Interfaces;
 using System;
 using System.Collections.Generic;

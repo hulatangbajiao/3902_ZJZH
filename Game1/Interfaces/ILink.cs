@@ -12,7 +12,7 @@ namespace Game1
         ILinkState State { get; set; }
         int Item { get; set; }
         
-        void TakeDamage();
+        void TakeDamage(Vector2 DamageDirection);
         void MoveLeft();
         void MoveUp();
 

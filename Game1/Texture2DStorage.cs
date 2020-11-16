@@ -139,8 +139,6 @@ namespace Game1
 
         private static Texture2D RoomExteriorSpriteSheet;
 
-        private static SpriteFont font;
-
         // More private static Texture2D fields follow
         // ...
 
@@ -291,7 +289,6 @@ namespace Game1
             DamagedLinkSpriteSheet = content.Load<Texture2D>("images/DamagedLink");
             LinkUseItemSpriteSheet = content.Load<Texture2D>("images/LinkUseItem");
 
-            font = content.Load<SpriteFont>("String");
 
             // More Content.Load calls follow
             //...
@@ -808,11 +805,6 @@ namespace Game1
         public static Texture2D GetFireBallSpriteSheet()
         {
             return FireBallSpriteSheet;
-        }
-
-        public static SpriteFont GetFont()
-        {
-            return font;
         }
     }
 

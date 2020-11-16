@@ -1,7 +1,6 @@
 ﻿using Game1.Block;
 using Game1.Controller;
 using Game1.Interfaces;
-using Game1.ItemsClasses;
 using Game1.Level;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -121,7 +120,6 @@ namespace Game1
             
             base.Update(gameTime);
             this.dungeonlevel.Update();
-            
         }
 
         /// <summary>
@@ -150,11 +148,6 @@ namespace Game1
             this.ProjectileFactory = new ProjectileFactory(this);
             this.dungeonlevel = new DungeonLevel(this);
             Initialize();
-        }
-
-        public void continueGame()
-        {
-            this.dungeonlevel = new DungeonLevel(this);
         }
 
 

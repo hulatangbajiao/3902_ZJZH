@@ -11,7 +11,7 @@ namespace Game1
 {
     public class Arrow : IProjectile
     {
-        public ISprite GetSprite { get; set; }
+        public IGeneralSprite GetSprite { get; set; }
         public Vector2 Position { get; set; }
         public Vector2 Direction { get; set; }
         public int Velocity { get; set; }
@@ -29,19 +29,19 @@ namespace Game1
             exist = true;
             if (Direction.X == (float)1)
             {
-                GetSprite = new RightArrowSprite();
+                GetSprite = new GeneralSprite(70, 30, 1);
             }
             else if (Direction.X == (float)-1)
             {
-                GetSprite = new LeftArrowSprite();
+                GetSprite = new GeneralSprite(70, 30, 1);
             }
             else if (Direction.Y == (float)1)
             {
-                GetSprite = new DownArrowSprite();
+                GetSprite = new GeneralSprite(30, 70, 1);
             }
             else if (Direction.Y == (float)-1)
             {
-                GetSprite = new UpArrowSprite();
+                GetSprite = new GeneralSprite(30, 70, 1);
             }
 
         }
@@ -63,7 +63,22 @@ namespace Game1
         {
             if (exist)
             {
-                GetSprite.Draw(spriteBatch, Position);
+                if (Direction.X == (float)1)
+                {
+                    GetSprite.Draw(Texture2DStorage.GetRightWoodenArrowSpriteSheet(), spriteBatch, Position);
+                }
+                else if (Direction.X == (float)-1)
+                {
+                    GetSprite.Draw(Texture2DStorage.GetLeftWoodenArrowSpriteSheet(), spriteBatch, Position);
+                }
+                else if (Direction.Y == (float)1)
+                {
+                    GetSprite.Draw(Texture2DStorage.GetDownWoodenArrowSpriteSheet(), spriteBatch, Position);
+                }
+                else if (Direction.Y == (float)-1)
+                {
+                    GetSprite.Draw(Texture2DStorage.GetUpWoodenArrowSpriteSheet(), spriteBatch, Position);
+                }
             }
         }
         public Rectangle GetRectangle()

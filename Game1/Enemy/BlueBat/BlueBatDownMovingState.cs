@@ -1,5 +1,4 @@
-﻿using Game1.Sprite_.Enemy_Sprite.OctMoving;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Game1
@@ -9,14 +8,14 @@ namespace Game1
         private BlueBat BlueBat;
         private MainStage game;
         public IEnemyFactory factory { get; set; }
-        private ISprite GetSprite { get; set; }
+        private IGeneralSprite GetSprite { get; set; }
 
         public BlueBatDownMovingState(BlueBat BlueBat, IEnemyFactory factory)
 
         {
             this.BlueBat = BlueBat;
             this.factory = factory;
-            GetSprite = new DownMovingBlueBatSprite();
+            GetSprite = new GeneralSprite(96,96,2);
 
         }
 
@@ -58,7 +57,7 @@ namespace Game1
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
-            this.GetSprite.Draw(spriteBatch, Position);
+            this.GetSprite.Draw(Texture2DStorage.GetUpMovingBlueBatSpriteSheet(), spriteBatch, Position);
         }
         public Rectangle GetRectangle()
         {

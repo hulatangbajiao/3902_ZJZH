@@ -11,7 +11,7 @@ namespace Game1
 {
     public class EnemyFireBall : IEnemy
     {
-        private ISprite GetSprite { get; set; }
+        private IGeneralSprite GetSprite { get; set; }
         public Vector2 Position { get; set; }
         public Vector2 Direction { get; set; }
         public int MovingSpeed = 10;
@@ -28,7 +28,7 @@ namespace Game1
             
             exist = true;
 
-            GetSprite = new FireBallSprite();
+            GetSprite = new GeneralSprite(50,50,1);
 
 
         }
@@ -76,7 +76,7 @@ namespace Game1
         {
             if (exist)
             {
-                GetSprite.Draw(spriteBatch, Position);
+                GetSprite.Draw(Texture2DStorage.GetFireBallSpriteSheet(),spriteBatch, Position);
             }
         }
         public Rectangle GetRectangle()

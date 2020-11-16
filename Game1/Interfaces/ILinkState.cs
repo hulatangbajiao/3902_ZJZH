@@ -5,9 +5,9 @@ namespace Game1
 {
     public interface ILinkState
     {
-        ISprite GetSprite { get; set; }
 
-        void TakeDamage();
+        IGeneralSprite GetSprite { get; set; }
+        
         void MoveLeft();
         void MoveUp();
 
