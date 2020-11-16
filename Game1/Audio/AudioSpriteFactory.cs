@@ -14,6 +14,7 @@ namespace Game1
 {
     public class AudioFactory
     {
+        // List to hold all Sound Effects
         private List<SoundEffect> soundEffect = new List<SoundEffect>();
         private SoundEffect dungeonBGM;
         private SoundEffect titleBGM;
