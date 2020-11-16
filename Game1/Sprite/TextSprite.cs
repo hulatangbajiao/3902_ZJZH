@@ -10,7 +10,7 @@ namespace Game1.Sprite
 {
     class TextSprite : ISprite
     {
-        private SpriteFont font;
+        private SpriteFont font = Texture2DStorage.GetFont();
         private String content;
         
         public TextSprite(String content)

@@ -121,6 +121,7 @@ namespace Game1
             
             base.Update(gameTime);
             this.dungeonlevel.Update();
+            
         }
 
         /// <summary>
@@ -149,6 +150,11 @@ namespace Game1
             this.ProjectileFactory = new ProjectileFactory(this);
             this.dungeonlevel = new DungeonLevel(this);
             Initialize();
+        }
+
+        public void continueGame()
+        {
+            this.dungeonlevel = new DungeonLevel(this);
         }
 
 
