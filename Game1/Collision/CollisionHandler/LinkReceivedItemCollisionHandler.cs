@@ -32,6 +32,13 @@ namespace Game1.Collision.CollisionHandler
         {
             if (side !=ICollision.Null)
             {
+                if (item.exist != false)
+                {
+                    if (item is ItemRupee)
+                        AudioFactory.Instance.PlayPickUpRupeeSound();
+                    else
+                        AudioFactory.Instance.PlayPickUpItemSound();
+                }
                 item.exist = false;
 
             }
