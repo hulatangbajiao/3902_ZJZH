@@ -8,6 +8,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
 
 namespace Game1
 {
@@ -91,6 +93,8 @@ namespace Game1
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             Texture2DStorage.LoadAllTextures(this.Content);
+            AudioFactory.Instance.LoadAllAudio(this.Content);
+            AudioFactory.Instance.PlayDungeonBGM();
 
         }
 
