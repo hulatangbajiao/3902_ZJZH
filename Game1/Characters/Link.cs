@@ -9,14 +9,36 @@ namespace Game1
 {
     public class Link : ILink
     {
-        private int timer = 0;
-        private bool damaging = false;
+        public int BombNumber { get; set; }
+        public int RupeeNumber { get; set; }
+        public int KeyNumber { get; set; }
+        public int TriforceNumber { get; set; }
+        public bool HasBow { get; set; }
+        public bool HasCompass { get; set; }
+        public bool HasBoomer { get; set; }
+        public bool HasMap { get; set; }
+        public int Life { get; set; }
+        public int HeartContainer { get; set; }
+        public int timer { get; set; }
+        public bool damaging { get; set; }
         private Vector2 damageDirection = new Vector2(0, 0);
         public ILinkState State { get; set; }
         public int Item { get; set; }
         public Link(MainStage game)
         {
+            Life = 6;
+            HeartContainer = 3; 
+            BombNumber = 0;
+            RupeeNumber = 0;
+            KeyNumber = 0;
+            TriforceNumber = 0;
+            HasBow = false;
+            HasCompass = false;
+            HasBoomer = false;
+            HasMap = false;
             Item = 0;
+            damaging = false;
+            timer = 0;
             State = new UpIdleState(this, game);
             GlobalDefinitions.Position = new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 2);
         }
@@ -26,7 +48,7 @@ namespace Game1
             damageDirection = DamageDirection;
             damaging = true;
             timer = 20;
-
+             Life--;
             //remains to be discussed
         }
 
@@ -95,7 +117,7 @@ namespace Game1
 
         public Rectangle GetRectangle() 
         {
-            return new Rectangle((int)GlobalDefinitions.Position.X, (int)GlobalDefinitions.Position.Y, 96, 96);
+            return new Rectangle((int)GlobalDefinitions.Position.X+12, (int)GlobalDefinitions.Position.Y+12, 72, 72);
         }
     }
 }

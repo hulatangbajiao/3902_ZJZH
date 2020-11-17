@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game1.GameWin
+namespace Game1.GameState
 {
     class GameWin : IGameState
     {
@@ -20,7 +20,7 @@ namespace Game1.GameWin
         public ISprite QuitSprite { get; set; }
         public IGeneralSprite BlackBackground { get; set; }
 
-        private const int offset = 16;
+        private const int offset = 100;
 
         private String gameWin = "Win";
         private String restart = "Press r to restart the game";
@@ -37,9 +37,9 @@ namespace Game1.GameWin
         public void Draw(SpriteBatch spriteBatch)
         {
             BlackBackground.Draw(Texture2DStorage.GetBlackBackgroundSpriteSheet(), spriteBatch, Position);
-            MessageSprite.Draw(spriteBatch, new Vector2(GlobalDefinitions.GraphicsHeight / 2, GlobalDefinitions.GraphicsWidth / 2));
-            ResetSprite.Draw(spriteBatch, new Vector2(GlobalDefinitions.GraphicsHeight / 2 + offset, GlobalDefinitions.GraphicsWidth / 2));
-            QuitSprite.Draw(spriteBatch, new Vector2(GlobalDefinitions.GraphicsHeight / 2 + 2 * offset, GlobalDefinitions.GraphicsWidth / 2));
+            MessageSprite.Draw(spriteBatch, new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 3));
+            ResetSprite.Draw(spriteBatch, new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 3 + offset));
+            QuitSprite.Draw(spriteBatch, new Vector2(GlobalDefinitions.GraphicsWidth / 2, GlobalDefinitions.GraphicsHeight / 3 + 3 * offset));
         }
     }
 }

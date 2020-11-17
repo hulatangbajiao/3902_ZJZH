@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace Game1.Inventory
 {
-    class InventoryMenu : IMenu
+    public class InventoryMenu : IMenu
     {
         private MainStage game;
 
         private Vector2 Backgroundposition = new Vector2(0,0);
         private Vector2 MovingPosition;
-        private Vector2 SelectionPosition;
+        private Vector2 SelectionPosition = new Vector2(750,270);
         private Vector2 SelectItemPosition = new Vector2(68*6,48*6);
         
         private Vector2 SmallMapPosition = new Vector2(48*6, 112*6);
@@ -53,11 +53,10 @@ namespace Game1.Inventory
             BowSprite = new GeneralSprite(square, square, frame);
             CompassSprite = new GeneralSprite(square, square, frame);
             BoomerSprite = new GeneralSprite(square, square, frame);
-            selectedItem = BombSprite;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 MovingPosition) {
-            Background.Draw(Texture2DStorage.GetInventoryBackgroundSpriteSheet(), spriteBatch, Backgroundposition + MovingPosition);
+            Background.Draw(Texture2DStorage.GetInventoryBackgroundSpriteSheet(), spriteBatch, Backgroundposition);
             
             if (MovingPosition == new Vector2(0,0))
             {
@@ -72,7 +71,7 @@ namespace Game1.Inventory
 
                 if (game.Link.BombNumber > 0)
                 {
-                    BombSprite.Draw(Texture2DStorage.GetBombSpriteSheet(), spriteBatch, BombPosition);
+                    BombSprite.Draw(Texture2DStorage.GetBombSelectSpriteSheet(), spriteBatch, BombPosition);
                 }
 
                 if (game.Link.HasBow)
@@ -85,7 +84,7 @@ namespace Game1.Inventory
                 }
                 if (game.Link.HasBoomer)
                 {
-                    BoomerSprite.Draw(Texture2DStorage.GetBoomerangSpriteSheet(), spriteBatch, BoomerPosition);
+                    BoomerSprite.Draw(Texture2DStorage.GetBoomerSelectSpriteSheet(), spriteBatch, BoomerPosition);
                 }
 
                 if (selectedItem == BombSprite)
@@ -120,7 +119,7 @@ namespace Game1.Inventory
 
         public void selectDown()
         {
-            SelectionPosition.Y = Math.Max(SelectionPosition.Y + square, SelectionRangeLeftBottem.Y);
+            SelectionPosition.Y = Math.Min(SelectionPosition.Y + square, SelectionRangeLeftBottem.Y);
             LinkItem();
         }
 
@@ -143,7 +142,7 @@ namespace Game1.Inventory
 
         public void selectUp()
         {
-            SelectionPosition.Y = Math.Min(SelectionPosition.Y - square, SelectionRangeLeftTop.Y);
+            SelectionPosition.Y = Math.Max(SelectionPosition.Y - square, SelectionRangeLeftTop.Y);
             LinkItem();
         }
         

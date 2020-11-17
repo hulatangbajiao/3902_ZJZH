@@ -14,7 +14,7 @@ namespace Game1
         {
             this.Link = link;
             this.game = game;
-            GetSprite = new GeneralSprite(96,96,2);
+            GetSprite = new GeneralSprite(72, 72, 2);
 
         }
         //link has already faced up so no code for MoveUp()

@@ -17,11 +17,11 @@ namespace Game1
 
 
         public bool exist { get; set; }
+        private MainStage game;
 
-
-        public ItemArrow(Vector2 Position)
+        public ItemArrow(Vector2 Position, MainStage game)
         {
-
+            this.game = game;
 
             this.Position = Position;
             
@@ -31,7 +31,9 @@ namespace Game1
             
 
         }
-
+        public void PickUp()
+        {
+        }
         public void Update()
         {
 

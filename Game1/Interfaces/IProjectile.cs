@@ -15,6 +15,7 @@ namespace Game1
         Vector2 Direction { get; set; }
         int Velocity { get; set; }
         bool exist { get; set; }
+        void Hit();
         void Update();
         void Draw(SpriteBatch spriteBatch);
         Rectangle GetRectangle();

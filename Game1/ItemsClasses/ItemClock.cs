@@ -13,16 +13,16 @@ namespace Game1
     {
         private IGeneralSprite GetSprite { get; set; }
         public Vector2 Position { get; set; }
-
+        private MainStage game;
 
 
         public bool exist { get; set; }
 
 
-        public ItemClock(Vector2 Position)
+        public ItemClock(Vector2 Position, MainStage game)
         {
 
-
+            this.game = game;
             this.Position = Position;
             
             exist = true;
@@ -30,6 +30,13 @@ namespace Game1
             GetSprite = new GeneralSprite(60,60,1);
             
 
+        }
+        public void PickUp()
+        {
+            foreach (IEnemy enemy in game.dungeonlevel.CurrentRoom.Enemies)
+            {
+                enemy.MovingSpeed = 0;
+            }
         }
 
         public void Update()

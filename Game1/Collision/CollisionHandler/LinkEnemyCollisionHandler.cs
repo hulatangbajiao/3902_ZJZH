@@ -24,24 +24,25 @@ namespace Game1.Collision
         }
         public void Execute()
         {
+            
             if (side == ICollision.Left)
             {
-                
+                enemy.Hit();
                 link.TakeDamage(new Vector2(1,0));
             }
             else if (side == ICollision.Right)
             {
-                
+                enemy.Hit();
                 link.TakeDamage(new Vector2(-1, 0));
             }
             else if (side == ICollision.Bottom)
             {
-                
+                enemy.Hit();
                 link.TakeDamage(new Vector2(0, -1));
             }
             else if (side == ICollision.Top)
             {
-                
+                enemy.Hit();
                 link.TakeDamage(new Vector2(0, 1));
             }
         }

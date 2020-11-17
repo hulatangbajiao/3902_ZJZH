@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game1.Interfaces
 {
-    interface IMenu
+    public interface IMenu
     {
         void selected();
         void selectUp();

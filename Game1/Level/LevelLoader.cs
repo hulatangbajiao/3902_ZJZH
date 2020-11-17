@@ -11,8 +11,10 @@ namespace Game1.Level
     {
         private XmlDocument LevelXml;
         private IEnemyFactory enemyFactory;
-        public LevelLoader(IEnemyFactory enemyFactory)
+        private MainStage game;
+        public LevelLoader(IEnemyFactory enemyFactory, MainStage game)
         {
+            this.game = game;
             LevelXml = new XmlDocument();
             this.enemyFactory = enemyFactory;
             LevelXml.Load(@"../../../../LevelRooms.xml");
@@ -84,43 +86,43 @@ namespace Game1.Level
                         switch (itemName)
                         {
                             case "Arrow":
-                                room.ReceivedItems.Add(new ItemArrow(position));
+                                room.ReceivedItems.Add(new ItemArrow(position,game));
                                 break;
                             case "Bomerang":
-                                room.ReceivedItems.Add(new ItemBoomer(position));
+                                room.ReceivedItems.Add(new ItemBoomer(position,game));
                                 break;
                             case "Bomb":
-                                room.ReceivedItems.Add(new ItemBomb(position));
+                                room.ReceivedItems.Add(new ItemBomb(position,game));
                                 break;
 
                             case "Bow":
-                                room.ReceivedItems.Add(new ItemBow(position));
+                                room.ReceivedItems.Add(new ItemBow(position,game));
                                 break;
                             case "Clock":
-                                room.ObtainedItems.Add(new ItemClock(position));
+                                room.ObtainedItems.Add(new ItemClock(position,game));
                                 break;
                             case "Compass":
-                                room.ReceivedItems.Add(new ItemCompass(position));
+                                room.ReceivedItems.Add(new ItemCompass(position,game));
                                 break;
 
                             case "Fairy":
-                                room.ObtainedItems.Add(new ItemFairy(position));
+                                room.ObtainedItems.Add(new ItemFairy(position,game));
                                 break;
                             case "Rupee":
-                                room.ObtainedItems.Add(new ItemRupee(position));
+                                room.ObtainedItems.Add(new ItemRupee(position,game));
                                 break;
 
                             case "Heart":
-                                room.ObtainedItems.Add(new ItemHeart(position));
+                                room.ObtainedItems.Add(new ItemHeart(position,game));
                                 break;
                             case "HeartContainer":
-                                room.ObtainedItems.Add(new ItemHeartContainer(position));
+                                room.ObtainedItems.Add(new ItemHeartContainer(position,game));
                                 break;
                             case "Key":
-                                room.ObtainedItems.Add(new ItemKey(position));
+                                room.ObtainedItems.Add(new ItemKey(position,game));
                                 break;
                             case "Triforce":
-                                room.ReceivedItems.Add(new ItemTriforce(position));
+                                room.ReceivedItems.Add(new ItemTriforce(position,game));
                                 break;
 
                         }

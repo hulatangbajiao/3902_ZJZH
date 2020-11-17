@@ -55,6 +55,7 @@
     <Compile Include="Collision\CollisionHandler\LinkBlockCollisionHandler.cs" />
     <Compile Include="Collision\Detection\GeneralDeterctionIntersect.cs" />
     <Compile Include="Collision\ICollision.cs" />
+    <Compile Include="Command\GameCommand\ResumeGameCommand.cs" />
     <Compile Include="Command\GameCommand\ContinueGameCommand.cs" />
     <Compile Include="Command\GameCommand\PauseGameCommand.cs" />
     <Compile Include="Command\MenuCommand\SelectDownCommand.cs" />
@@ -170,6 +171,7 @@
     <Compile Include="Projectile\Boomer.cs" />
     <Compile Include="Interfaces\IProjectileFactory.cs" />
     <Compile Include="Projectile\ProjectileFactory.cs" />
+    <Compile Include="Projectile\ProjectileWoodenSword.cs" />
     <Compile Include="Sprite_\DoorSprite\BombedDoorDownSprite.cs" />
     <Compile Include="Sprite_\DoorSprite\BombedDoorLeftSprite.cs" />
     <Compile Include="Sprite_\DoorSprite\BombedDoorRightSprite.cs" />

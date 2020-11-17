@@ -15,7 +15,7 @@ namespace Game1.Sprite
         
         public TextSprite(String content)
         {
-            content = this.content;
+            this.content = content;
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 Position)

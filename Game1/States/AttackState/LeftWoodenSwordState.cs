@@ -14,7 +14,8 @@ namespace Game1
         {
             this.Link = link;
             this.game = game;
-            GetSprite = new GeneralSprite(150,96,4);
+            GetSprite = new GeneralSprite(120,72,4);
+            this.game.ProjectileFactory.ProjectileList.Add(new ProjectileWoodenSword(GlobalDefinitions.Position, new Vector2(-1, 0)));
 
         }
         //link has already faced up so no code for MoveUp()
@@ -68,6 +69,7 @@ namespace Game1
         public void Draw(SpriteBatch spriteBatch)
         {
             GetSprite.Draw(Texture2DStorage.GetLeftWoodenSwordLinkSpriteSheet(),spriteBatch, GlobalDefinitions.Position - new Vector2(54,0));
+            
 
         }
     }

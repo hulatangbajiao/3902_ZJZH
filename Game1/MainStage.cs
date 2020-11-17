@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Media;
 using Game1.Inventory;
+using Game1.GameState;
+using Game1.GameState;
 
 namespace Game1
 {
@@ -20,8 +22,14 @@ namespace Game1
         private SpriteBatch spriteBatch;
         private List<IController> controllers;
         public DungeonLevel dungeonlevel { get; set; }
-
-        private InventoryMenu inventoryMenu;
+        private SpriteFont font;
+        public InventoryMenu InventoryMenu { get; set; }
+        public IGameState GameOver { get; set; }
+        public IGameState GameWin { get; set; }
+        public IController gameOverKeybroad { get; set; }
+        public IController gameWinKeybroad { get; set; }
+        public IController MenuKeyBroadController { get; set;}
+        private static IGeneralSprite headSprite = new GeneralSprite(1536, 336, 1);
 
         /// <summary>
         /// Active sprite. Exposed as a class property
@@ -57,12 +65,16 @@ namespace Game1
             this.enemyFactory = new EnemyFactory(this);
             this.itemFactory = new ItemFactory(this);
             this.dungeonlevel = new DungeonLevel(this);
-            this.inventoryMenu = new InventoryMenu(this);
-
+            this.InventoryMenu = new InventoryMenu(this);
+            
             controllers = new List<IController>
             {
                 new KeyboardController(this), new MouseController(this)
             };
+
+             gameOverKeybroad = new KeybroadGameOver(this);
+             gameWinKeybroad = new KeybroadGameWin(this);
+             MenuKeyBroadController = new MenuKeyBroadController(this);
 
         }
 
@@ -100,7 +112,9 @@ namespace Game1
             Texture2DStorage.LoadAllTextures(this.Content);
             AudioFactory.Instance.LoadAllAudio(this.Content);
             AudioFactory.Instance.PlayDungeonBGM();
-
+            font = Content.Load<SpriteFont>("Score");
+            this.GameOver = new GameOver();
+            this.GameWin = new GameWin();
         }
 
         /// <summary>
@@ -118,20 +132,28 @@ namespace Game1
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
-        {
-
-            if (!paused)
+        {   
+            if (!paused && Link.Life > 0 && Link.TriforceNumber == 0)
             {
                 foreach (var controller in controllers)
                 {
                     controller.Update();
                 }
                 this.ProjectileFactory.Update();
-
                 Link.Update();
-
                 base.Update(gameTime);
                 this.dungeonlevel.Update();
+            } else
+            {
+                this.MenuKeyBroadController.Update();
+            }
+            if (Link.Life == 0)
+            {
+                this.gameOverKeybroad.Update();
+            }
+            if (Link.TriforceNumber > 0)
+            {
+                this.gameWinKeybroad.Update();
             }
         }
 
@@ -142,17 +164,33 @@ namespace Game1
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
             spriteBatch.Begin();
-
-
-
             this.dungeonlevel.Draw(spriteBatch);
             Link.State.Draw(spriteBatch);
             this.ProjectileFactory.Draw(spriteBatch);
+            if (paused)
+            {
+                this.InventoryMenu.Draw(spriteBatch, new Vector2(0, 0));
+                
+            }
+            if (Link.Life <= 0)
+            {
+                AudioFactory.Instance.StopPlay();
+                this.GameOver.Draw(spriteBatch);
+            }
+            if (Link.TriforceNumber > 0)
+            {
+                AudioFactory.Instance.StopPlay();
+                this.GameWin.Draw(spriteBatch);
+            }
             spriteBatch.End();
             base.Draw(gameTime);
-            this.inventoryMenu.Draw(spriteBatch, new Vector2(0,0));
+            //spriteBatch.DrawString(font, Link.RupeeNumber.ToString(), new Vector2(720, 1210), Color.White, 0, font.MeasureString(Link.RupeeNumber.ToString()), 3.0f, SpriteEffects.None, 1f);
+            //spriteBatch.DrawString(font, Link.KeyNumber.ToString(), new Vector2(720, 1310), Color.White, 0, font.MeasureString(Link.KeyNumber.ToString()), 3.0f, SpriteEffects.None, 1f);
+            //spriteBatch.DrawString(font, Link.BombNumber.ToString(), new Vector2(720, 1360), Color.White, 0, font.MeasureString(Link.BombNumber.ToString()), 3.0f, SpriteEffects.None, 1f);
+            //spriteBatch.End();
+           
+            
         }
 
         public void Restart()
@@ -162,12 +200,19 @@ namespace Game1
             this.ProjectileFactory = new ProjectileFactory(this);
             this.dungeonlevel = new DungeonLevel(this);
             Initialize();
+            this.Link.Life = 6;
+            this.Link.HeartContainer = 3;
+            this.Link.HasBoomer = false;
+            this.Link.HasBow = false;
+            this.Link.HasCompass = false;
+            this.Link.HasMap = false;
+            AudioFactory.Instance.PlayDungeonBGM();
         }
         public void continueGame()
         {
             this.dungeonlevel = new DungeonLevel(this);
+            this.Link.Life = 6;
+            this.Link.HeartContainer = 3;
         }
-
-
     }
 }

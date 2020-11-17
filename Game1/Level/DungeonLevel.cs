@@ -20,7 +20,7 @@ namespace Game1.Level
         public DungeonLevel(MainStage game)
         {
             this.game = game;
-            LevelLoader1 = new LevelLoader(game.enemyFactory);
+            LevelLoader1 = new LevelLoader(game.enemyFactory,game);
             Map = new Map();
             Link = game.Link;
             Rooms = new List<IRoom>();
@@ -73,7 +73,7 @@ namespace Game1.Level
             {
                 Map.North();
                 CurrentRoom = CurrentRoom.North;
-                GlobalDefinitions.Position = new Vector2(doors[2].X, doors[2].Y - Link.GetRectangle().Height);
+                GlobalDefinitions.Position = new Vector2(doors[2].X, doors[2].Y - Link.GetRectangle().Height-15);
 
             }
         }
@@ -84,7 +84,7 @@ namespace Game1.Level
             {
                 Map.East();
                 CurrentRoom = CurrentRoom.East;
-                GlobalDefinitions.Position = new Vector2(doors[3].X + doors[3].Width+20, doors[3].Y);
+                GlobalDefinitions.Position = new Vector2(doors[3].X + doors[3].Width+15, doors[3].Y);
             }
         }
 
@@ -105,7 +105,7 @@ namespace Game1.Level
             {
                 Map.West();
                 CurrentRoom = CurrentRoom.West;
-                GlobalDefinitions.Position = new Vector2(doors[1].X - Link.GetRectangle().Width-20, doors[1].Y);
+                GlobalDefinitions.Position = new Vector2(doors[1].X - Link.GetRectangle().Width-15, doors[1].Y);
             }
         }
 

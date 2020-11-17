@@ -145,6 +145,10 @@ namespace Game1
         private static Texture2D BombSelectSpritSheet;
         private static Texture2D BoomerSelectSpriteSheet;
 
+        private static Texture2D HeartNoBloodSpriteSheet;
+        private static Texture2D HeartHalfBloodSpriteSheet;
+        private static Texture2D HeartFullBloodSpriteSheet;
+        public static Texture2D HeadExteriorSpriteSheet;
         private static SpriteFont font;
 
         // More private static Texture2D fields follow
@@ -153,6 +157,10 @@ namespace Game1
         // static classes have no constructor, but we need a method to initialize the Texture2D fieldsw
         public static void LoadAllTextures(ContentManager content)
         {
+            HeadExteriorSpriteSheet = content.Load<Texture2D>("images/Head/Head");
+            HeartNoBloodSpriteSheet = content.Load<Texture2D>("images/Head/HeartNoBlood");
+            HeartHalfBloodSpriteSheet = content.Load<Texture2D>("images/Head/HeartHalfBlood");
+            HeartFullBloodSpriteSheet = content.Load<Texture2D>("images/Head/HeartFullBlood");
             FullMapSpriteSheet = content.Load<Texture2D>("images/fullmap");
             RoomExteriorSpriteSheet = content.Load<Texture2D>("images/RoomExterior");
 
@@ -302,7 +310,7 @@ namespace Game1
             BombSelectSpritSheet = content.Load<Texture2D>("images/BombSelect");
             BoomerSelectSpriteSheet = content.Load<Texture2D>("images/BoomerSelect");
 
-            font = content.Load<SpriteFont>("String");
+            font = content.Load<SpriteFont>("Score");
 
             // More Content.Load calls follow
             //...
@@ -848,6 +856,24 @@ namespace Game1
         public static SpriteFont GetFont()
         {
             return font;
+        }
+
+        public static Texture2D GetHeadExteriorSpriteSheet()
+        {
+            return HeadExteriorSpriteSheet;
+        }
+        public static Texture2D GetHeartNoBloodSpriteSheet()
+        {
+            return HeartNoBloodSpriteSheet;
+        }
+        public static Texture2D GetHeartHalfBloodSpriteSheet()
+        {
+            return HeartHalfBloodSpriteSheet;
+        }
+
+        public static Texture2D GetHeartFullBloodSpriteSheet()
+        {
+            return HeartFullBloodSpriteSheet;
         }
     }
 

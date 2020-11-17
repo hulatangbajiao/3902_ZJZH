@@ -33,7 +33,10 @@ namespace Game1
             
 
         }
-
+        public void Hit()
+        {
+            
+        }
         public void Update()
         {
 

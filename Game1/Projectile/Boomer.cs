@@ -35,7 +35,10 @@ namespace Game1
             
 
         }
-
+        public void Hit()
+        {
+            Velocity = -Velocity;
+        }
         public void Update()
         {
 

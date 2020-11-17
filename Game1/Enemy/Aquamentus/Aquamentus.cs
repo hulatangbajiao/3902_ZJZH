@@ -19,19 +19,34 @@ namespace Game1
         public bool exist { get; set; }
         public Vector2 Position { get; set; }
         public Vector2 Direction { get; set; }
-        public int MovingSpeed = 1;
+        public int MovingSpeed { get; set; }
+        private int health = 6;
 
         public Aquamentus(Vector2 position, Vector2 direction, IEnemyFactory factory)
         {
             State = new AquamentusLeftMovingState(this, factory);
             this.Position = position;
             exist = true;
-
+            MovingSpeed = 1;
             rand = new Random();
             
         }
-
-
+        public void Die()
+        { 
+        
+        }
+        public void TakeDamage(Vector2 DamageDirection) 
+        {
+            health--;
+            if (health <= 0)
+            {
+                this.Die();
+            }
+        }
+        public void Hit()
+        {
+            
+        }
 
         public void MoveUp()
         {
@@ -64,36 +79,39 @@ namespace Game1
 
         public void Update()
         {
-            State.Update();
-
-            count++;
-            if (count > 50)
+            if (exist)
             {
-                switch (rand.Next(0, 5))
+                State.Update();
+
+                count++;
+                if (count > 50)
                 {
-                    case 0:
-                        State.MoveRight();
-                        break;
-                    case 1:
-                        State.BreatheFire();
-                        break;
-                    case 2:
-                        State.MoveLeft();
-                        break;
-                    case 3:
-                        State.BreatheFire();
-                        break;
-                    case 4:
-                        State.BreatheFire();
-                        break;
+                    switch (rand.Next(0, 5))
+                    {
+                        case 0:
+                            State.MoveRight();
+                            break;
+                        case 1:
+                            State.BreatheFire();
+                            break;
+                        case 2:
+                            State.MoveLeft();
+                            break;
+                        case 3:
+                            State.BreatheFire();
+                            break;
+                        case 4:
+                            State.BreatheFire();
+                            break;
 
 
 
-                    default:
-                        // Do nothing, this is not supposed to happen
-                        break;
+                        default:
+                            // Do nothing, this is not supposed to happen
+                            break;
+                    }
+                    count = 0;
                 }
-                count = 0;
             }
         }
 

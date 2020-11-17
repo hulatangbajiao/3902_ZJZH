@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game1.GameWin
+namespace Game1.GameState
 {
     class KeybroadGameWin : IController
     {
+        public static Keys lastPressedKey;
         private Dictionary<Keys, ICommand> controllerMappings;
         private MainStage instance;
+        static KeyboardState currentKeyState;
+        static KeyboardState previousKeyState;
         public KeybroadGameWin(MainStage instance)
         {
             this.instance = instance;
@@ -24,12 +27,18 @@ namespace Game1.GameWin
         }
         public void Update()
         {
-            var pressedKeys = Keyboard.GetState().GetPressedKeys();
-
-            foreach (Keys key in pressedKeys)
+            previousKeyState = currentKeyState;
+            currentKeyState = Keyboard.GetState();
+            var keyArray = new Keys[2] { Keys.Q, Keys.R };
+            foreach (Keys key in keyArray)
             {
-                controllerMappings[key]?.Execute();
+                if (currentKeyState.IsKeyDown(key) && !previousKeyState.IsKeyDown(key))
+                {
+                    controllerMappings[key]?.Execute();
+                    lastPressedKey = key;
+                }
             }
+
         }
     }
 }

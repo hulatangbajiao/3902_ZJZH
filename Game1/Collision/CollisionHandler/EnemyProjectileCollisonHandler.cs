@@ -1,5 +1,6 @@
 ﻿using Game1.CollisionHandler;
 using Game1.Interfaces;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,10 +24,30 @@ namespace Game1.Collision
 
         public void Execute()
         {
-            if (side != ICollision.Null&&enemy.exist&&projectile.exist)
+            
+            if (side == ICollision.Left)
             {
-                enemy.exist = false;
-                projectile.exist = false;
+                enemy.TakeDamage(new Vector2(1, 0));
+                projectile.Hit();
+                
+            }
+            else if (side == ICollision.Right)
+            {
+                enemy.TakeDamage(new Vector2(-1, 0));
+                projectile.Hit();
+                
+            }
+            else if (side == ICollision.Bottom)
+            {
+                enemy.TakeDamage(new Vector2(0, -1));
+                projectile.Hit();
+                
+            }
+            else if (side == ICollision.Top)
+            {
+                enemy.TakeDamage(new Vector2(0, 1));
+                projectile.Hit();
+                
             }
         }
     }

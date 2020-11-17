@@ -50,11 +50,12 @@ namespace Game1
         }
         public void BreatheFire()
         {
-
-            factory.AddEnemy(new EnemyFireBall(Aquamentus.Position, new Vector2(0, -1), factory));
-            factory.AddEnemy(new EnemyFireBall(Aquamentus.Position, new Vector2(1, -1), factory));
-            factory.AddEnemy(new EnemyFireBall(Aquamentus.Position, new Vector2(-1, -1), factory));
-
+            if (Aquamentus.exist)
+            {
+                factory.AddEnemy(new EnemyFireBall(Aquamentus.Position, new Vector2(1, 1), factory));
+                factory.AddEnemy(new EnemyFireBall(Aquamentus.Position, new Vector2(1, 0), factory));
+                factory.AddEnemy(new EnemyFireBall(Aquamentus.Position, new Vector2(1, -1), factory));
+            }
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {

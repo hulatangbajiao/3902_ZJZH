@@ -8,12 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game1.GameOver
+namespace Game1.GameState
 {
     class KeybroadGameOver : IController
     {
+        public static Keys lastPressedKey;
         private Dictionary<Keys, ICommand> controllerMappings;
         private MainStage instance;
+        static KeyboardState currentKeyState;
+        static KeyboardState previousKeyState;
         public KeybroadGameOver(MainStage instance)
         {
             this.instance = instance;
@@ -26,11 +29,16 @@ namespace Game1.GameOver
         }
         public void Update()
         {
-            var pressedKeys = Keyboard.GetState().GetPressedKeys();
-
-            foreach (Keys key in pressedKeys)
+            previousKeyState = currentKeyState;
+            currentKeyState = Keyboard.GetState();
+            var keyArray = new Keys[3] { Keys.C, Keys.Q, Keys.R };
+            foreach (Keys key in keyArray)
             {
-                controllerMappings[key]?.Execute();
+                if (currentKeyState.IsKeyDown(key) && !previousKeyState.IsKeyDown(key))
+                {
+                    controllerMappings[key]?.Execute();
+                    lastPressedKey = key;
+                }
             }
         }
     }

@@ -15,7 +15,7 @@ namespace Game1
         {
             this.Link = link;
             this.game = game;
-            GetSprite = new GeneralSprite(96,96,1);
+            GetSprite = new GeneralSprite(72,72,1);
             
 
         }

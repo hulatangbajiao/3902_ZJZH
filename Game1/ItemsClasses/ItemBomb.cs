@@ -13,16 +13,16 @@ namespace Game1
     {
         private IGeneralSprite GetSprite { get; set; }
         public Vector2 Position { get; set; }
-
+        private MainStage game;
 
 
         public bool exist { get; set; }
 
 
-        public ItemBomb(Vector2 Position)
+        public ItemBomb(Vector2 Position, MainStage game)
         {
 
-
+            this.game = game;
             this.Position = Position;
             
             exist = true;
@@ -31,7 +31,10 @@ namespace Game1
             
 
         }
-
+        public void PickUp()
+        {
+            game.Link.BombNumber += 1;
+        }
         public void Update()
         {
 
