@@ -33,7 +33,7 @@ namespace Game1.GameState
             ResetSprite = new TextSprite(restart);
             ContinueSprite = new TextSprite(continueGame);
             QuitSprite = new TextSprite(quit);
-            BlackBackground = new GeneralSprite(1536, 1056, 1);
+            BlackBackground = new GeneralSprite(1536, 1056 + 336, 1);
         }
 
         public void Draw(SpriteBatch spriteBatch)

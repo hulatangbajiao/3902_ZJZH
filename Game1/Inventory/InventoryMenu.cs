@@ -56,7 +56,7 @@ namespace Game1.Inventory
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 MovingPosition) {
-            Background.Draw(Texture2DStorage.GetInventoryBackgroundSpriteSheet(), spriteBatch, Backgroundposition);
+            Background.Draw(Texture2DStorage.GetInventoryBackgroundSpriteSheet(), spriteBatch, Backgroundposition + MovingPosition);
             
             if (MovingPosition == new Vector2(0,0))
             {

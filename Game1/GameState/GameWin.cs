@@ -32,7 +32,7 @@ namespace Game1.GameState
             MessageSprite = new TextSprite(gameWin);
             ResetSprite = new TextSprite(restart);
             QuitSprite = new TextSprite(quit);
-            BlackBackground = new GeneralSprite(1536, 1056, 1);
+            BlackBackground = new GeneralSprite(1536, 1056 + 336, 1);
         }
         public void Draw(SpriteBatch spriteBatch)
         {

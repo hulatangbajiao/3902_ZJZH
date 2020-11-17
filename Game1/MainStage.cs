@@ -29,6 +29,7 @@ namespace Game1
         public IController gameOverKeybroad { get; set; }
         public IController gameWinKeybroad { get; set; }
         public IController MenuKeyBroadController { get; set;}
+        public AudioFactory AudioFactory { get; set; }
         private static IGeneralSprite headSprite = new GeneralSprite(1536, 336, 1);
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Game1
              gameOverKeybroad = new KeybroadGameOver(this);
              gameWinKeybroad = new KeybroadGameWin(this);
              MenuKeyBroadController = new MenuKeyBroadController(this);
-
+            AudioFactory = new AudioFactory();
         }
 
         /// <summary>
@@ -110,8 +111,7 @@ namespace Game1
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             Texture2DStorage.LoadAllTextures(this.Content);
-            AudioFactory.Instance.LoadAllAudio(this.Content);
-            AudioFactory.Instance.PlayDungeonBGM();
+            AudioFactory.LoadAllAudio(this.Content);
             font = Content.Load<SpriteFont>("Score");
             this.GameOver = new GameOver();
             this.GameWin = new GameWin();
@@ -163,6 +163,7 @@ namespace Game1
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+            AudioFactory.PlayDungeonBGM();
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
             this.dungeonlevel.Draw(spriteBatch);
@@ -170,17 +171,17 @@ namespace Game1
             this.ProjectileFactory.Draw(spriteBatch);
             if (paused)
             {
-                this.InventoryMenu.Draw(spriteBatch, new Vector2(0, 0));
+                this.InventoryMenu.Draw(spriteBatch, new Vector2(0,0));
                 
             }
             if (Link.Life <= 0)
             {
-                AudioFactory.Instance.StopPlay();
+                AudioFactory.StopDungeonBG();
                 this.GameOver.Draw(spriteBatch);
             }
             if (Link.TriforceNumber > 0)
             {
-                AudioFactory.Instance.StopPlay();
+                AudioFactory.StopDungeonBG();
                 this.GameWin.Draw(spriteBatch);
             }
             spriteBatch.End();
@@ -206,7 +207,9 @@ namespace Game1
             this.Link.HasBow = false;
             this.Link.HasCompass = false;
             this.Link.HasMap = false;
-            AudioFactory.Instance.PlayDungeonBGM();
+            this.Link.TriforceNumber = 0;
+            AudioFactory = new AudioFactory();
+            AudioFactory.LoadAllAudio(this.Content);
         }
         public void continueGame()
         {

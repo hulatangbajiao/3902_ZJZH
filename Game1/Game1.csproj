@@ -114,6 +114,7 @@
     <Compile Include="GameState\IGameState.cs" />
     <Compile Include="GameState\KeybroadGameOver.cs" />
     <Compile Include="GameState\KeybroadGameWin.cs" />
+    <Compile Include="GlobalDefinitions.cs" />
     <Compile Include="Interfaces\IDoor.cs" />
     <Compile Include="Interfaces\IDoorList.cs" />
     <Compile Include="Interfaces\IItemSprite.cs" />
@@ -219,7 +220,6 @@
     <Compile Include="Texture2DStorage.cs" />
     <Compile Include="Interfaces\ILink.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
-    <Compile Include="GlobalDefinitions.cs" />
     <Compile Include="Interfaces\ILinkState.cs" />
     <Compile Include="Characters\Link.cs" />
     <Compile Include="Controller\KeyboardController.cs" />

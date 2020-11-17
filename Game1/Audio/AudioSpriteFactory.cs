@@ -18,7 +18,6 @@ namespace Game1
         private SoundEffect dungeonBGM;
         private SoundEffect titleBGM;
         private SoundEffectInstance SEInstanceDungeonBGM;
-        private SoundEffectInstance SEInstanceTitleBGM;
 
         private static AudioFactory instance = new AudioFactory();
 
@@ -30,7 +29,7 @@ namespace Game1
             }
         }
 
-        private AudioFactory()
+        public AudioFactory()
         {
         }
 
@@ -54,7 +53,6 @@ namespace Game1
             titleBGM = content.Load<SoundEffect>("Audio\\Title BGM");
             dungeonBGM = content.Load<SoundEffect>("Audio\\Underworld BGM");
             SEInstanceDungeonBGM = dungeonBGM.CreateInstance();
-            SEInstanceTitleBGM = titleBGM.CreateInstance();
         }
 
         public void PlayAttackSound()
@@ -116,22 +114,26 @@ namespace Game1
 
         public void PlayTitleBGM()
         {
-            
+
+            SoundEffectInstance SEInstanceTitleBGM = titleBGM.CreateInstance();
             SEInstanceTitleBGM.IsLooped = true;
             SEInstanceTitleBGM.Volume = 0.5f;
             SEInstanceTitleBGM.Play();
         }
+        public void StopTitleBGM()
+        {
+            SoundEffectInstance SEInstanceTitleBGM = titleBGM.CreateInstance();
+            SEInstanceTitleBGM.Stop();
+
+        }
         public void PlayDungeonBGM()
         {
-            
             SEInstanceDungeonBGM.IsLooped = true;
             SEInstanceDungeonBGM.Volume = 0.5f;
             SEInstanceDungeonBGM.Play();
         }
-        public void StopPlay()
-        {
-            
-            SEInstanceTitleBGM.Stop();
+        public void StopDungeonBG()
+        {   
             SEInstanceDungeonBGM.Stop();
         }
     }

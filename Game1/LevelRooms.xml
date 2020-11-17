@@ -1,55 +1,75 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Rooms total="18">
 	<Room number="1">
-		<Enemies total ="9">
-			<Enemy>
-				<ObjectType>Aquamentus</ObjectType>
-				<ColumnNum>1</ColumnNum>
-				<RowNum>4</RowNum>
-			</Enemy>
-			<Enemy>
-				<ObjectType>BlueBat</ObjectType>
-				<ColumnNum>2</ColumnNum>
-				<RowNum>2</RowNum>
-			</Enemy>
-			<Enemy>
-				<ObjectType>BlueGoriya</ObjectType>
-				<ColumnNum>3</ColumnNum>
-				<RowNum>3</RowNum>
-			</Enemy>
-			<Enemy>
-				<ObjectType>BlueM</ObjectType>
-				<ColumnNum>4</ColumnNum>
-				<RowNum>4</RowNum>
-			</Enemy>
-			<Enemy>
-				<ObjectType>BlueOct</ObjectType>
-				<ColumnNum>3</ColumnNum>
-				<RowNum>4</RowNum>
-			</Enemy>
-			<Enemy>
-				<ObjectType>Oct</ObjectType>
-				<ColumnNum>2</ColumnNum>
-				<RowNum>4</RowNum>
-			</Enemy>
-			<Enemy>
-				<ObjectType>RedBat</ObjectType>
-				<ColumnNum>1</ColumnNum>
-				<RowNum>2</RowNum>
-			</Enemy>
-			<Enemy>
-				<ObjectType>Oct</ObjectType>
-				<ColumnNum>2</ColumnNum>
-				<RowNum>4</RowNum>
-			</Enemy>
-			<Enemy>
-				<ObjectType>RedGoriya</ObjectType>
-				<ColumnNum>6</ColumnNum>
-				<RowNum>4</RowNum>
-			</Enemy>
+		<Enemies total ="0">
+
+
 		</Enemies>
-		<Items total="0"></Items>
-		<Blocks total ="0"></Blocks>
+		<Items total="0">
+			
+		</Items>
+		<Blocks total ="12">
+			<Block>
+				<ObjectType>NoneMoveableBlock</ObjectType>
+				<ColumnNum>2</ColumnNum>
+				<RowNum>2</RowNum>
+			</Block>
+			<Block>
+				<ObjectType>NoneMoveableBlock</ObjectType>
+				<ColumnNum>5</ColumnNum>
+				<RowNum>2</RowNum>
+			</Block>
+			<Block>
+				<ObjectType>NoneMoveableBlock</ObjectType>
+				<ColumnNum>8</ColumnNum>
+				<RowNum>2</RowNum>
+			</Block>
+			<Block>
+				<ObjectType>NoneMoveableBlock</ObjectType>
+				<ColumnNum>11</ColumnNum>
+				<RowNum>2</RowNum>
+			</Block>
+			<Block>
+				<ObjectType>NoneMoveableBlock</ObjectType>
+				<ColumnNum>2</ColumnNum>
+				<RowNum>4</RowNum>
+			</Block>
+			<Block>
+				<ObjectType>NoneMoveableBlock</ObjectType>
+				<ColumnNum>5</ColumnNum>
+				<RowNum>4</RowNum>
+			</Block>
+			<Block>
+				<ObjectType>NoneMoveableBlock</ObjectType>
+				<ColumnNum>8</ColumnNum>
+				<RowNum>4</RowNum>
+			</Block>
+			<Block>
+				<ObjectType>NoneMoveableBlock</ObjectType>
+				<ColumnNum>11</ColumnNum>
+				<RowNum>4</RowNum>
+			</Block>
+			<Block>
+				<ObjectType>NoneMoveableBlock</ObjectType>
+				<ColumnNum>2</ColumnNum>
+				<RowNum>6</RowNum>
+			</Block>
+			<Block>
+				<ObjectType>NoneMoveableBlock</ObjectType>
+				<ColumnNum>5</ColumnNum>
+				<RowNum>6</RowNum>
+			</Block>
+			<Block>
+				<ObjectType>NoneMoveableBlock</ObjectType>
+				<ColumnNum>8</ColumnNum>
+				<RowNum>6</RowNum>
+			</Block>
+			<Block>
+				<ObjectType>NoneMoveableBlock</ObjectType>
+				<ColumnNum>11</ColumnNum>
+				<RowNum>6</RowNum>
+			</Block>
+		</Blocks>
 		<North>4</North>
 		<East>2</East>
 		<South></South>
@@ -57,33 +77,6 @@
 		<Other></Other>
 	</Room>
 	<Room number="2">
-		<Enemies total ="2">
-			<Enemy>
-				<ObjectType>Aquamentus</ObjectType>
-				<ColumnNum>1</ColumnNum>
-				<RowNum>4</RowNum>
-			</Enemy>
-			<Enemy>
-				<ObjectType>Aquamentus</ObjectType>
-				<ColumnNum>2</ColumnNum>
-				<RowNum>2</RowNum>
-			</Enemy>
-		</Enemies>
-		<Items total ="1">
-			<Item>
-				<ObjectType>Key</ObjectType>
-				<ColumnNum>9</ColumnNum>
-				<RowNum>7</RowNum>
-			</Item>
-		</Items>
-		<Blocks total ="0"></Blocks>
-		<North></North>
-		<East></East>
-		<South></South>
-		<West>1</West>
-		<Other></Other>
-	</Room>
-	<Room number="3">
 		<Enemies total="5">
 			<Enemy>
 				<ObjectType>RedGoriya</ObjectType>
@@ -111,11 +104,11 @@
 				<RowNum>2</RowNum>
 			</Enemy>
 		</Enemies>
-		<Items total="1">
+		<Items total ="1">
 			<Item>
 				<ObjectType>Key</ObjectType>
-				<ColumnNum>4</ColumnNum>
-				<RowNum>1</RowNum>
+				<ColumnNum>9</ColumnNum>
+				<RowNum>7</RowNum>
 			</Item>
 		</Items>
 		<Blocks total ="12">
@@ -180,6 +173,83 @@
 				<RowNum>5</RowNum>
 			</Block>
 		</Blocks>
+		<North></North>
+		<East></East>
+		<South></South>
+		<West>1</West>
+		<Other></Other>
+	</Room>
+	<Room number="3">
+		<Enemies total="5">
+			<Enemy>
+				<ObjectType>RedGoriya</ObjectType>
+				<ColumnNum>4</ColumnNum>
+				<RowNum>1</RowNum>
+			</Enemy>
+			<Enemy>
+				<ObjectType>RedGoriya</ObjectType>
+				<ColumnNum>4</ColumnNum>
+				<RowNum>7</RowNum>
+			</Enemy>
+			<Enemy>
+				<ObjectType>RedGoriya</ObjectType>
+				<ColumnNum>7</ColumnNum>
+				<RowNum>3</RowNum>
+			</Enemy>
+			<Enemy>
+				<ObjectType>RedGoriya</ObjectType>
+				<ColumnNum>7</ColumnNum>
+				<RowNum>5</RowNum>
+			</Enemy>
+			<Enemy>
+				<ObjectType>RedGoriya</ObjectType>
+				<ColumnNum>11</ColumnNum>
+				<RowNum>2</RowNum>
+			</Enemy>
+		</Enemies>
+		<Items total="8">
+			<Item>
+				<ObjectType>Key</ObjectType>
+				<ColumnNum>4</ColumnNum>
+				<RowNum>1</RowNum>
+			</Item>
+			<Item>
+				<ObjectType>Bow</ObjectType>
+				<ColumnNum>9</ColumnNum>
+				<RowNum>7</RowNum>
+			</Item>
+			<Item>
+				<ObjectType>Clock</ObjectType>
+				<ColumnNum>8</ColumnNum>
+				<RowNum>7</RowNum>
+			</Item>
+			<Item>
+				<ObjectType>Compass</ObjectType>
+				<ColumnNum>7</ColumnNum>
+				<RowNum>7</RowNum>
+			</Item>
+			<Item>
+				<ObjectType>Rupee</ObjectType>
+				<ColumnNum>6</ColumnNum>
+				<RowNum>7</RowNum>
+			</Item>
+			<Item>
+				<ObjectType>Heart</ObjectType>
+				<ColumnNum>5</ColumnNum>
+				<RowNum>7</RowNum>
+			</Item>
+			<Item>
+				<ObjectType>HeartContainer</ObjectType>
+				<ColumnNum>4</ColumnNum>
+				<RowNum>7</RowNum>
+			</Item>
+			<Item>
+				<ObjectType>Triforce</ObjectType>
+				<ColumnNum>3</ColumnNum>
+				<RowNum>7</RowNum>
+			</Item>
+		</Items>
+		<Blocks total ="0"></Blocks>
 		<North></North>
 		<East>1</East>
 		<South></South>
@@ -346,7 +416,7 @@
 		<Items total="2">
 			<Item>
 				<ObjectType>Clock</ObjectType>
-				<ColumnNum>3</ColumnNum>
+				<ColumnNum>4</ColumnNum>
 				<RowNum>3</RowNum>
 			</Item>
 			<Item>
@@ -623,7 +693,7 @@
 		<Items total="1">
 			<Item>
 				<ObjectType>Rupee</ObjectType>
-				<ColumnNum>3</ColumnNum>
+				<ColumnNum>2</ColumnNum>
 				<RowNum>3</RowNum>
 			</Item>
 		</Items>
@@ -823,6 +893,11 @@
 				<ObjectType>River</ObjectType>
 				<ColumnNum>1</ColumnNum>
 				<RowNum>2</RowNum>
+			</Block>
+			<Block>
+				<ObjectType>River</ObjectType>
+				<ColumnNum>6</ColumnNum>
+				<RowNum>5</RowNum>
 			</Block>
 			<Block>
 				<ObjectType>River</ObjectType>
@@ -1247,12 +1322,12 @@
 			<Block>
 				<ObjectType>NoneMoveableBlock</ObjectType>
 				<ColumnNum>9</ColumnNum>
-				<RowNum>5</RowNum>
+				<RowNum>6</RowNum>
 			</Block>
 			<Block>
 				<ObjectType>NoneMoveableBlock</ObjectType>
 				<ColumnNum>10</ColumnNum>
-				<RowNum>4</RowNum>
+				<RowNum>6</RowNum>
 			</Block>
 		</Blocks>
 		<North></North>
@@ -1396,6 +1471,16 @@
 			</Item>
 		</Items>
 		<Blocks total ="24">
+			<Block>
+				<ObjectType>River</ObjectType>
+				<ColumnNum>9</ColumnNum>
+				<RowNum>6</RowNum>
+			</Block>
+			<Block>
+				<ObjectType>River</ObjectType>
+				<ColumnNum>10</ColumnNum>
+				<RowNum>6</RowNum>
+			</Block>
 			<Block>
 				<ObjectType>River</ObjectType>
 				<ColumnNum>2</ColumnNum>
