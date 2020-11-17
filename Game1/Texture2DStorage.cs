@@ -138,6 +138,14 @@ namespace Game1
         private static Texture2D LinkUseItemSpriteSheet;
 
         private static Texture2D RoomExteriorSpriteSheet;
+        private static Texture2D InventoryBackgroundSpriteSheet;
+        private static Texture2D RedSelectionSpriteSheet;
+
+        private static Texture2D BlackBackgroundSpriteSheet;
+        private static Texture2D BombSelectSpritSheet;
+        private static Texture2D BoomerSelectSpriteSheet;
+
+        private static SpriteFont font;
 
         // More private static Texture2D fields follow
         // ...
@@ -288,7 +296,13 @@ namespace Game1
             FireBallSpriteSheet = content.Load<Texture2D>("images/projectile/flame");
             DamagedLinkSpriteSheet = content.Load<Texture2D>("images/DamagedLink");
             LinkUseItemSpriteSheet = content.Load<Texture2D>("images/LinkUseItem");
+            InventoryBackgroundSpriteSheet = content.Load<Texture2D>("images/InventoryMenuBackGround");
+            RedSelectionSpriteSheet = content.Load<Texture2D>("images/RedSelection");
+            BlackBackgroundSpriteSheet = content.Load<Texture2D>("images/blackbackground");
+            BombSelectSpritSheet = content.Load<Texture2D>("images/BombSelect");
+            BoomerSelectSpriteSheet = content.Load<Texture2D>("images/BoomerSelect");
 
+            font = content.Load<SpriteFont>("String");
 
             // More Content.Load calls follow
             //...
@@ -805,6 +819,35 @@ namespace Game1
         public static Texture2D GetFireBallSpriteSheet()
         {
             return FireBallSpriteSheet;
+        }
+
+        public static Texture2D GetInventoryBackgroundSpriteSheet()
+        {
+            return InventoryBackgroundSpriteSheet;
+        }
+
+        public static Texture2D GetRedSelectionSpriteSheet()
+        {
+            return RedSelectionSpriteSheet;
+        }
+
+        public static Texture2D GetBlackBackgroundSpriteSheet()
+        {
+            return BlackBackgroundSpriteSheet;
+        }
+
+        public static Texture2D GetBombSelectSpriteSheet()
+        {
+            return BombSelectSpritSheet;
+        }
+
+        public static Texture2D GetBoomerSelectSpriteSheet()
+        {
+            return BoomerSelectSpriteSheet;
+        }
+        public static SpriteFont GetFont()
+        {
+            return font;
         }
     }
 

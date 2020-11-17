@@ -18,6 +18,6 @@ namespace Game1
 
         void Draw(Texture2D SpriteSheet, SpriteBatch spriteBatch, Vector2 Position);
         Rectangle GetRectangle();
-
+        void Draw(Func<Texture2D> getInventoryBackgroundSpriteSheet, object spriteBatch);
     }
 }

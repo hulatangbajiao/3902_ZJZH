@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Media;
+using Game1.Inventory;
 
 namespace Game1
 {
@@ -19,6 +20,8 @@ namespace Game1
         private SpriteBatch spriteBatch;
         private List<IController> controllers;
         public DungeonLevel dungeonlevel { get; set; }
+
+        private InventoryMenu inventoryMenu;
 
         /// <summary>
         /// Active sprite. Exposed as a class property
@@ -54,12 +57,13 @@ namespace Game1
             this.enemyFactory = new EnemyFactory(this);
             this.itemFactory = new ItemFactory(this);
             this.dungeonlevel = new DungeonLevel(this);
+            this.inventoryMenu = new InventoryMenu(this);
 
             controllers = new List<IController>
             {
                 new KeyboardController(this), new MouseController(this)
             };
-            
+
         }
 
         /// <summary>
@@ -115,13 +119,13 @@ namespace Game1
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            foreach (var controller in controllers)
-            {
-                controller.Update();
-            }
+
             if (!paused)
             {
-
+                foreach (var controller in controllers)
+                {
+                    controller.Update();
+                }
                 this.ProjectileFactory.Update();
 
                 Link.Update();
@@ -138,9 +142,9 @@ namespace Game1
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            
+
             spriteBatch.Begin();
-            
+
 
 
             this.dungeonlevel.Draw(spriteBatch);
@@ -148,6 +152,7 @@ namespace Game1
             this.ProjectileFactory.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
+            this.inventoryMenu.Draw(spriteBatch, new Vector2(0,0));
         }
 
         public void Restart()
@@ -157,6 +162,10 @@ namespace Game1
             this.ProjectileFactory = new ProjectileFactory(this);
             this.dungeonlevel = new DungeonLevel(this);
             Initialize();
+        }
+        public void continueGame()
+        {
+            this.dungeonlevel = new DungeonLevel(this);
         }
 
 
