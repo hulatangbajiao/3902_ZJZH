@@ -121,7 +121,6 @@
     <Compile Include="Interfaces\IMenu.cs" />
     <Compile Include="Interfaces\IRoom.cs" />
     <Compile Include="Inventory\MenuKeyBroadController.cs" />
-    <Compile Include="Inventory\InventoryDisplayConstant.cs" />
     <Compile Include="Inventory\InventoryMenu.cs" />
     <Compile Include="ItemsClasses\ItemTriForce.cs" />
     <Compile Include="ItemsClasses\ItemRupee.cs" />
@@ -199,6 +198,7 @@
     <Compile Include="Projectile\FireBall.cs" />
     <Compile Include="Sprite_\RoomExteriorSprite.cs" />
     <Compile Include="Sprite_\SpriteFactory.cs" />
+    <Compile Include="Sprite_\TextSprite.cs" />
     <Compile Include="States\AttackState\DownWoodenSwordState.cs" />
     <Compile Include="States\AttackState\LeftWoodenSwordState.cs" />
     <Compile Include="States\AttackState\RightWoodenSwordState.cs" />
