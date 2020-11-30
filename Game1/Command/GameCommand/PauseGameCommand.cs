@@ -17,12 +17,7 @@ namespace Game1.Command
 
         public void Execute()
         {
-            if (game.paused)
-                game.paused = false;
-            else
-            {
                 game.paused = true;
-            }
         }
     }
 }

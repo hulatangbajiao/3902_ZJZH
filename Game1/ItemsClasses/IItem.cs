@@ -12,7 +12,7 @@ namespace Game1.Interfaces
     {
         
         Vector2 Position { get; set; }
-        
+        void PickUp();
         bool exist { get; set; }
         void Update();
         void Draw(SpriteBatch spriteBatch);

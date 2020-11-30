@@ -9,10 +9,13 @@ namespace Game1
         private RedBat RedBat;
         public IEnemyFactory factory { get; set; }
         public IGeneralSprite GetSprite { get; set; }
+        public bool die { get; set; }
+        private int deathtimer = 30;
 
         public RedBatUpMovingState(RedBat redBat, IEnemyFactory factory)
 
         {
+            die = false;
             this.RedBat = redBat;
             this.factory = factory;
             GetSprite = new GeneralSprite(96,96,2);
@@ -45,7 +48,20 @@ namespace Game1
         public void Update()
         {
             GetSprite.Update();
-            RedBat.Position = RedBat.Position + new Vector2(0, -1) * RedBat.MovingSpeed;
+            
+            if (!die)
+            {
+                RedBat.Position = RedBat.Position + new Vector2(0, -1) * RedBat.MovingSpeed;
+            }
+
+            else
+            {
+                deathtimer--;
+            }
+            if (deathtimer == 0)
+            {
+                RedBat.exist = false;
+            }
         }
         public void BreatheFire()
         {
@@ -53,7 +69,15 @@ namespace Game1
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
-            this.GetSprite.Draw(Texture2DStorage.GetUpMovingRedBatSpriteSheet(),spriteBatch, Position);
+            
+            if (!die)
+            {
+                this.GetSprite.Draw(Texture2DStorage.GetUpMovingRedBatSpriteSheet(), spriteBatch, Position);
+            }
+            else
+            {
+                this.GetSprite.Draw(Texture2DStorage.GetDeathSpriteSheet(), spriteBatch, Position);
+            }
         }
         public Rectangle GetRectangle()
         {

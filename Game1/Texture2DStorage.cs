@@ -134,10 +134,30 @@ namespace Game1
         private static Texture2D FireBallSpriteSheet;
 
         private static Texture2D FullMapSpriteSheet;
-        
+
         private static Texture2D LinkUseItemSpriteSheet;
 
         private static Texture2D RoomExteriorSpriteSheet;
+
+        public static Texture2D HeadExteriorSpriteSheet;
+
+        private static Texture2D InventoryExteriorSpriteSheet;
+        private static Texture2D RedSelectionRecSpriteSheet;
+
+        private static Texture2D HeartNoBloodSpriteSheet;
+        private static Texture2D HeartHalfBloodSpriteSheet;
+        private static Texture2D HeartFullBloodSpriteSheet;
+        private static Texture2D DeathSpriteSheet;
+
+        private static Texture2D InventoryBackgroundSpriteSheet;
+        private static Texture2D RedSelectionSpriteSheet;
+
+        private static Texture2D BlackBackgroundSpriteSheet;
+        private static Texture2D BombSelectSpritSheet;
+        private static Texture2D BoomerSelectSpriteSheet;
+
+        private static SpriteFont font;
+
 
         // More private static Texture2D fields follow
         // ...
@@ -145,6 +165,12 @@ namespace Game1
         // static classes have no constructor, but we need a method to initialize the Texture2D fieldsw
         public static void LoadAllTextures(ContentManager content)
         {
+            InventoryExteriorSpriteSheet = content.Load<Texture2D>("images/Inventory/Inventory");
+            RedSelectionRecSpriteSheet = content.Load<Texture2D>("images/Inventory/RedSelectionRec");
+            HeadExteriorSpriteSheet = content.Load<Texture2D>("images/Head/Head");
+            HeartNoBloodSpriteSheet = content.Load<Texture2D>("images/Head/HeartNoBlood");
+            HeartHalfBloodSpriteSheet = content.Load<Texture2D>("images/Head/HeartHalfBlood");
+            HeartFullBloodSpriteSheet = content.Load<Texture2D>("images/Head/HeartFullBlood");
             FullMapSpriteSheet = content.Load<Texture2D>("images/fullmap");
             RoomExteriorSpriteSheet = content.Load<Texture2D>("images/RoomExterior");
 
@@ -208,7 +234,7 @@ namespace Game1
             FireSpriteSheet = content.Load<Texture2D>("images/Block/Fire");
 
             //Doors
-            
+
             BombedDoorDownSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorDown");
             BombedDoorLeftSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorLeft");
             BombedDoorRightSpriteSheet = content.Load<Texture2D>("images/Door/BombedDoorRight");
@@ -289,9 +315,44 @@ namespace Game1
             DamagedLinkSpriteSheet = content.Load<Texture2D>("images/DamagedLink");
             LinkUseItemSpriteSheet = content.Load<Texture2D>("images/LinkUseItem");
 
+            DeathSpriteSheet = content.Load<Texture2D>("images/Death");
+            InventoryBackgroundSpriteSheet = content.Load<Texture2D>("images/InventoryMenuBackGround");
+            RedSelectionSpriteSheet = content.Load<Texture2D>("images/RedSelection");
+            BlackBackgroundSpriteSheet = content.Load<Texture2D>("images/blackbackground");
+            BombSelectSpritSheet = content.Load<Texture2D>("images/BombSelect");
+            BoomerSelectSpriteSheet = content.Load<Texture2D>("images/BoomerSelect");
+
+            font = content.Load<SpriteFont>("Score");
 
             // More Content.Load calls follow
             //...
+        }
+        public static Texture2D GetInventoryExteriorSpriteSheet()
+        {
+            return InventoryExteriorSpriteSheet;
+        }
+
+        public static Texture2D GetRedSelectionRecSpriteSheet()
+        {
+            return RedSelectionRecSpriteSheet;
+        }
+
+        public static Texture2D GetHeadExteriorSpriteSheet()
+        {
+            return HeadExteriorSpriteSheet;
+        }
+        public static Texture2D GetHeartNoBloodSpriteSheet()
+        {
+            return HeartNoBloodSpriteSheet;
+        }
+        public static Texture2D GetHeartHalfBloodSpriteSheet()
+        {
+            return HeartHalfBloodSpriteSheet;
+        }
+
+        public static Texture2D GetHeartFullBloodSpriteSheet()
+        {
+            return HeartFullBloodSpriteSheet;
         }
 
         public static void UnloadAllTextures()
@@ -783,7 +844,7 @@ namespace Game1
         {
             return MerchantGSpriteSheet;
         }
-       
+
 
         public static Texture2D GetLinkUseItemSpriteSheet()
         {
@@ -806,6 +867,41 @@ namespace Game1
         {
             return FireBallSpriteSheet;
         }
+
+        public static Texture2D GetDeathSpriteSheet()
+        {
+            return DeathSpriteSheet;
+        }
+
+        public static Texture2D GetInventoryBackgroundSpriteSheet()
+        {
+            return InventoryBackgroundSpriteSheet;
+        }
+
+        public static Texture2D GetRedSelectionSpriteSheet()
+        {
+            return RedSelectionSpriteSheet;
+        }
+
+        public static Texture2D GetBlackBackgroundSpriteSheet()
+        {
+            return BlackBackgroundSpriteSheet;
+        }
+
+        public static Texture2D GetBombSelectSpriteSheet()
+        {
+            return BombSelectSpritSheet;
+        }
+
+        public static Texture2D GetBoomerSelectSpriteSheet()
+        {
+            return BoomerSelectSpriteSheet;
+        }
+        public static SpriteFont GetFont()
+        {
+            return font;
+        }
+
     }
 
 }

@@ -26,22 +26,23 @@ namespace Game1.Collision
 
         public void Execute()
         {
+            
             if (side == ICollision.Left)
             {
                 enemy.Position = enemy.Position - new Vector2(1, 0) * intersectRectangle.Width;
-             
+                enemy.Hit();
             }
             else if (side == ICollision.Right)
             {
                 enemy.Position = enemy.Position + new Vector2(1, 0) * intersectRectangle.Width;
-               
+                enemy.Hit();
             }
             else if (side == ICollision.Bottom) {
                 enemy.Position = enemy.Position + new Vector2(0, 1) * intersectRectangle.Height;
-               
+                enemy.Hit();
             } else if (side == ICollision.Top) {
                 enemy.Position = enemy.Position - new Vector2(0, 1) * intersectRectangle.Height;
-            
+                enemy.Hit();
             }
         }
     }

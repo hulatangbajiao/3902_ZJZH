@@ -45,7 +45,10 @@ namespace Game1
             }
 
         }
-
+        public void Hit() 
+        {
+            exist = false;
+        }
         public void Update()
         {
             

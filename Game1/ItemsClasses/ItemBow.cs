@@ -14,22 +14,26 @@ namespace Game1
         private IGeneralSprite GetSprite { get; set; }
         public Vector2 Position { get; set; }
 
-
+        private MainStage game;
 
         public bool exist { get; set; }
 
 
-        public ItemBow(Vector2 Position)
+        public ItemBow(Vector2 Position,MainStage game)
         {
 
 
             this.Position = Position;
-            
+            this.game = game;
             exist = true;
             
             GetSprite = new GeneralSprite(48,96,1);
             
 
+        }
+        public void PickUp()
+        {
+            game.Link.HasBow = true;
         }
 
         public void Update()

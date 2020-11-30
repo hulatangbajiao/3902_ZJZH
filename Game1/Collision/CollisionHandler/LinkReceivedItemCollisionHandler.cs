@@ -30,7 +30,7 @@ namespace Game1.Collision.CollisionHandler
 
         public void Execute()
         {
-            if (side !=ICollision.Null)
+            if (side != ICollision.Null && item.exist)
             {
                 if (item.exist != false)
                 {
@@ -40,6 +40,7 @@ namespace Game1.Collision.CollisionHandler
                         AudioFactory.Instance.PlayPickUpItemSound();
                 }
                 item.exist = false;
+                item.PickUp();
 
             }
 

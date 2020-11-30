@@ -13,6 +13,13 @@ namespace Game1
         IEnemyState State { get; set; }
         Vector2 Position { get; set; }
         bool exist { get; set; }
+        int MovingSpeed { get; set; }
+        int timer { get; set; }
+        bool damaging { get; set; }
+        
+        void TakeDamage(Vector2 DamageDirection);
+        void Die();
+        void Hit();
         void MoveUp();
         void MoveDown();
         void MoveLeft();

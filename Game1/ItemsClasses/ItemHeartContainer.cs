@@ -13,15 +13,15 @@ namespace Game1
     {
         private IGeneralSprite GetSprite { get; set; }
         public Vector2 Position { get; set; }
-
+        private MainStage game;
 
 
         public bool exist { get; set; }
 
 
-        public ItemHeartContainer(Vector2 Position)
+        public ItemHeartContainer(Vector2 Position, MainStage game)
         {
-
+            this.game = game;
 
             this.Position = Position;
             
@@ -31,7 +31,12 @@ namespace Game1
             
 
         }
-
+        public void PickUp()
+        {
+            game.Link.HeartContainer += 1;
+            game.Link.Life = game.Link.HeartContainer * 2;
+            
+        }
         public void Update()
         {
 

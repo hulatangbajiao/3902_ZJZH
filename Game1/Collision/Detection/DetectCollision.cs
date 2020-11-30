@@ -40,17 +40,20 @@ namespace Game1.Detection
         {
             this.link = link;
             this.EnemyList = EnemyList;
-            foreach (IEnemy enemy in EnemyList)
+            if (link.timer == 0)
             {
-                if (enemy.exist)
+                foreach (IEnemy enemy in EnemyList)
                 {
-                    Rectangle linkRectangle = link.GetRectangle();
-                    Rectangle EnemyRectangle = enemy.GetRectangle();
-                    Rectangle intersectRectangle = new GeneralDeterctionIntersect(linkRectangle, EnemyRectangle).GetRectangle();
+                    if (enemy.exist)
+                    {
+                        Rectangle linkRectangle = link.GetRectangle();
+                        Rectangle EnemyRectangle = enemy.GetRectangle();
+                        Rectangle intersectRectangle = new GeneralDeterctionIntersect(linkRectangle, EnemyRectangle).GetRectangle();
 
-                    ICollision side = new GeneralDetection(linkRectangle, EnemyRectangle).ifCollision();
-                    IHandler LinkEnemyCollisionHandler = new LinkEnemyCollisionHandler(enemy, link, side, intersectRectangle);
-                    LinkEnemyCollisionHandler.Execute();
+                        ICollision side = new GeneralDetection(linkRectangle, EnemyRectangle).ifCollision();
+                        IHandler LinkEnemyCollisionHandler = new LinkEnemyCollisionHandler(enemy, link, side, intersectRectangle);
+                        LinkEnemyCollisionHandler.Execute();
+                    }
                 }
             }
         }

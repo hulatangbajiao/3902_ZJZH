@@ -7,18 +7,20 @@ namespace Game1
     {
         private Aquamentus Aquamentus;
         public IEnemyFactory factory { get; set; }
-        private IGeneralSprite GetSprite { get; set; }
-        
+        public IGeneralSprite GetSprite { get; set; }
+        public bool die { get; set; }
+        private int deathtimer = 30;
 
         public AquamentusLeftMovingState(Aquamentus Aquamentus, IEnemyFactory factory)
 
         {
+            die = false;
             this.Aquamentus = Aquamentus;
             this.factory = factory;
             GetSprite = new GeneralSprite(150, 204, 4);
 
         }
-
+        
         public void MoveUp()
         {
 
@@ -45,18 +47,37 @@ namespace Game1
         public void Update()
         {
             GetSprite.Update();
-            Aquamentus.Position = Aquamentus.Position + new Vector2(-1,0) * Aquamentus.MovingSpeed;
+            if (!die)
+            {
+                Aquamentus.Position = Aquamentus.Position + new Vector2(-1, 0) * Aquamentus.MovingSpeed;
+            }
+            else {
+                deathtimer--;
+            }
+            if (deathtimer == 0) {
+                Aquamentus.exist = false;
+            }
+            
         }
         public void BreatheFire()
         {
-            factory.AddEnemy(new EnemyFireBall(Aquamentus.Position, new Vector2(0, -1), factory));
-            factory.AddEnemy(new EnemyFireBall(Aquamentus.Position, new Vector2(1, -1), factory));
-            factory.AddEnemy(new EnemyFireBall(Aquamentus.Position, new Vector2(-1, -1), factory));
-
+            if (!die)
+            {
+                factory.AddEnemy(new EnemyFireBall(Aquamentus.Position, new Vector2(-1, 1), factory));
+                factory.AddEnemy(new EnemyFireBall(Aquamentus.Position, new Vector2(-1, -1), factory));
+                factory.AddEnemy(new EnemyFireBall(Aquamentus.Position, new Vector2(-1, 0), factory));
+            }
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
-            this.GetSprite.Draw(Texture2DStorage.GetLeftAquamentusSpriteSheet(), spriteBatch, Position);
+            if (!die)
+            {
+                this.GetSprite.Draw(Texture2DStorage.GetLeftAquamentusSpriteSheet(), spriteBatch, Position);
+            }
+            else 
+            {
+                this.GetSprite.Draw(Texture2DStorage.GetDeathSpriteSheet(), spriteBatch, Position); 
+            }
         }
         public Rectangle GetRectangle()
         {

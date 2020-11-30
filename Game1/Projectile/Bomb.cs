@@ -24,7 +24,7 @@ namespace Game1
 
 
             
-            Direction = direction;
+            Direction = new Vector2(0,0);
             this.Position = Position + Direction * 60 + new Vector2(20,20);
             Velocity = 120;
             exist = true;
@@ -33,7 +33,10 @@ namespace Game1
             
 
         }
-
+        public void Hit()
+        {
+            
+        }
         public void Update()
         {
 

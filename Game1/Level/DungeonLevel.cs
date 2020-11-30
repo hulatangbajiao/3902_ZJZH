@@ -14,22 +14,32 @@ namespace Game1.Level
         public ILink Link { get; set; }
         public List<IRoom> Rooms { get; set; }
         public IRoom CurrentRoom { get; set; }
-        private List<Rectangle> doors;
+        public IRoom TempRoom { get; set; }
+        public List<Rectangle> doors { get; set; }
         public DetectCollision DetectCollision { get; set; }
-        private MainStage game;
+        public MainStage game { get; set; }
+
+
         public DungeonLevel(MainStage game)
         {
             this.game = game;
-            LevelLoader1 = new LevelLoader(game.enemyFactory);
-            Map = new Map();
+
+        }
+
+        public void initialize()
+        {
+
+            LevelLoader1 = new LevelLoader(game.enemyFactory,game);
+            Map = new Map(this);
             Link = game.Link;
             Rooms = new List<IRoom>();
             CurrentRoom = new Room();
             DetectCollision = new DetectCollision();
             Rooms = LevelLoader1.LoadRooms(Link);
-
+            Rooms.Add(new Room());
             CurrentRoom = Rooms[0];
-            
+
+
             foreach (Room room in Rooms)
             {
                 room.Boundary = new List<IBlock>
@@ -46,11 +56,11 @@ namespace Game1.Level
 
             doors = new List<Rectangle>
             {
-                new Rectangle((int)(GlobalDefinitions.GraphicsWidth*0.5 - (float)GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth*0.5), 
+                new Rectangle((int)(GlobalDefinitions.GraphicsWidth*0.5 - (float)GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth*0.5),
                                 0,
                                  (int)((float)GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth),
                                  (int)((float)GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight)), // North, 0
-                new Rectangle(GlobalDefinitions.GraphicsWidth - (int)((float)GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth), 
+                new Rectangle(GlobalDefinitions.GraphicsWidth - (int)((float)GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth),
                                (int)(GlobalDefinitions.GraphicsHeight*0.5 - (float)GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight*0.5),
                                (int)((float)GlobalDefinitions.DoorDepth/GlobalDefinitions.RoomWidth*GlobalDefinitions.GraphicsWidth),
                                (int)((float)GlobalDefinitions.DoorWidth/GlobalDefinitions.RoomHeight*GlobalDefinitions.GraphicsHeight)), // East, 1
@@ -65,47 +75,43 @@ namespace Game1.Level
             };
         }
 
-
-
         public void North()
         {
-            if (CurrentRoom.HasNorth)
+            if (TempRoom.HasNorth)
             {
+
                 Map.North();
-                CurrentRoom = CurrentRoom.North;
-                GlobalDefinitions.Position = new Vector2(doors[2].X, doors[2].Y - Link.GetRectangle().Height);
+                GlobalDefinitions.Position = new Vector2(doors[2].X, doors[2].Y-12-Link.GetRectangle().Height);
+
 
             }
         }
 
         public void East()
         {
-            if (CurrentRoom.HasEast)
+            if (TempRoom.HasEast)
             {
                 Map.East();
-                CurrentRoom = CurrentRoom.East;
-                GlobalDefinitions.Position = new Vector2(doors[3].X + doors[3].Width+20, doors[3].Y);
+                GlobalDefinitions.Position = new Vector2(doors[3].X + doors[3].Width + 20, doors[3].Y);
             }
         }
 
         public void South()
         {
-            if (CurrentRoom.HasSouth)
+            if (TempRoom.HasSouth)
             {
                 Map.South();
-                CurrentRoom = CurrentRoom.South;
-                GlobalDefinitions.Position = new Vector2(doors[0].X, doors[0].Y + doors[0].Height);
+                GlobalDefinitions.Position = new Vector2(doors[0].X, doors[0].Y +12+ doors[0].Height);
 
             }
         }
 
         public void West()
         {
-            if (CurrentRoom.HasWest)
+            if (TempRoom.HasWest)
             {
                 Map.West();
-                CurrentRoom = CurrentRoom.West;
-                GlobalDefinitions.Position = new Vector2(doors[1].X - Link.GetRectangle().Width-20, doors[1].Y);
+                GlobalDefinitions.Position = new Vector2(doors[1].X - Link.GetRectangle().Width - 20, doors[1].Y);
             }
         }
 
@@ -114,39 +120,73 @@ namespace Game1.Level
             // Move to other room
         }
 
-        public void Update()
+        public void Update(GameTime _gameTime)
         {
-            CurrentRoom.Update();
+            if (CurrentRoom != null)
+            {
+                CurrentRoom.Update();
+
+            }
+            Map.Update(_gameTime);
             Rectangle linkRectangle = Link.GetRectangle();
 
             if (linkRectangle.Intersects(doors[0]))
             {
-                North();
+                if (CurrentRoom.HasNorth)
+                {
+                    TempRoom = CurrentRoom;
+                    CurrentRoom = Rooms[Rooms.Count - 1];//switch to the empty room
+                    North();
+                }
             }
             else if (linkRectangle.Intersects(doors[1]))
             {
-                East();
+                if (CurrentRoom.HasEast)
+                {
+                    TempRoom = CurrentRoom;
+                    CurrentRoom = Rooms[Rooms.Count - 1];//switch to the empty room
+                    East();
+                }
             }
             else if (linkRectangle.Intersects(doors[2]))
             {
-                South();
+                if (CurrentRoom.HasSouth)
+                {
+                    TempRoom = CurrentRoom;
+                    CurrentRoom = Rooms[Rooms.Count - 1];//switch to the empty room
+                    South();
+                }
             }
             else if (linkRectangle.Intersects(doors[3]))
             {
-                West();
+                if (CurrentRoom.HasWest)
+                {
+                    TempRoom = CurrentRoom;
+                    CurrentRoom = Rooms[Rooms.Count - 1];//switch to the empty room
+                    West();
+                }
             }
-            DetectCollision.linkBlockDetection(this.Link, CurrentRoom.Block);
-            DetectCollision.LinkEnemyDetection(this.Link, CurrentRoom.Enemies);
-            DetectCollision.linkReceivedItemDetection(this.Link, CurrentRoom.ReceivedItems);
-            DetectCollision.linkObtainedItemDetection(this.Link, CurrentRoom.ObtainedItems);
-            DetectCollision.EnemyBlockDetection(CurrentRoom.Enemies, CurrentRoom.Block);
-            DetectCollision.EnemyProjectileDetection(CurrentRoom.Enemies, this.game.ProjectileFactory);
+            if (CurrentRoom != null)
+            {
+                DetectCollision.linkBlockDetection(this.Link, CurrentRoom.Block);
+                DetectCollision.LinkEnemyDetection(this.Link, CurrentRoom.Enemies);
+                DetectCollision.linkReceivedItemDetection(this.Link, CurrentRoom.ReceivedItems);
+                DetectCollision.linkObtainedItemDetection(this.Link, CurrentRoom.ObtainedItems);
+                DetectCollision.EnemyBlockDetection(CurrentRoom.Enemies, CurrentRoom.Block);
+                DetectCollision.EnemyProjectileDetection(CurrentRoom.Enemies, this.game.ProjectileFactory);
+            }
+
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             Map.Draw(spriteBatch);
-            CurrentRoom.Draw(spriteBatch);
+            if (CurrentRoom != null)
+            {
+                CurrentRoom.Draw(spriteBatch);
+
+            }
         }
     }
 }

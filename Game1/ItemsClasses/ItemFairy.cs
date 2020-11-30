@@ -15,16 +15,16 @@ namespace Game1
         private IGeneralSprite GetSprite { get; set; }
         private int x, y;
         public Vector2 Position { get; set; }
-
+        private MainStage game;
 
 
         public bool exist { get; set; }
 
 
-        public ItemFairy(Vector2 Position)
+        public ItemFairy(Vector2 Position, MainStage game)
         {
 
-
+            this.game = game;
             this.Position = Position;
             
             exist = true;
@@ -33,7 +33,19 @@ namespace Game1
             
 
         }
+        public void PickUp()
+        {
 
+            if (game.Link.HeartContainer * 2 - game.Link.Life > 5)
+            {
+                game.Link.Life += 5;
+
+            }
+            else 
+            {
+                game.Link.Life = game.Link.HeartContainer * 2;
+            }
+        }
         public void Update()
         {
             Random rdm = new Random();
