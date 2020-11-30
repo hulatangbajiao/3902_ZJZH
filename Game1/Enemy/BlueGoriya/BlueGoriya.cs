@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Team4_LegendOfZelda.Random_Number_Generator;
 
 namespace Game1
 {
@@ -21,6 +22,9 @@ namespace Game1
         public Vector2 Direction { get; set; }
         public int MovingSpeed { get; set; }
         private int health = 2;
+        public int timer { get; set; }
+        public bool damaging { get; set; }
+        private Vector2 damageDirection = new Vector2(0, 0);
 
         public BlueGoriya(Vector2 position, Vector2 direction, IEnemyFactory factory)
         {
@@ -29,12 +33,14 @@ namespace Game1
             MovingSpeed = 1;
             exist = true;
             rand = new Random();
-
+            damaging = false;
+            timer = 0;
         }
 
         public void Die()
         {
-
+            this.State.die = true;
+            State.GetSprite = new GeneralSprite(96, 96, 8);
         }
         public void TakeDamage(Vector2 DamageDirection)
         {
@@ -43,6 +49,9 @@ namespace Game1
             {
                 this.Die();
             }
+            damageDirection = DamageDirection;
+            damaging = true;
+            timer = 20;
         }
         public void Hit()
         {
@@ -86,7 +95,7 @@ namespace Game1
                 count++;
                 if (count > 50)
                 {
-                    switch (rand.Next(0, 5))
+                    switch (RandomIntGenerator.Instance.Next(0, 5))
                     {
                         case 0:
                             State.MoveRight();
@@ -119,7 +128,28 @@ namespace Game1
         {
             if (exist)
             {
-                State.Draw(spritebatch, this.Position);
+                State.Draw(spritebatch, Position);
+                if (timer > 0)
+                {
+                    timer--;
+                    State.GetSprite.ChangeColor();
+                }
+                else
+                {
+                    State.GetSprite.color = Color.White;
+                }
+                if (timer < 16)
+                {
+                    damaging = false;
+                }
+                if (!damaging)
+                {
+                    State.Update();
+                }
+                else
+                {
+                    Position -= 30 * damageDirection;
+                }
             }
         }
 

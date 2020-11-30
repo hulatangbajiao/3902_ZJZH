@@ -5,8 +5,9 @@ namespace Game1
 {
     public interface IEnemyState
     {
-
+        IGeneralSprite GetSprite { get; set; }
         IEnemyFactory factory { get; set; }
+        bool die { get; set; }
         void MoveUp();
         void MoveDown();
         void MoveLeft();

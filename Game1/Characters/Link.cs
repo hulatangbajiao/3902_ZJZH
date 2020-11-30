@@ -45,10 +45,11 @@ namespace Game1
 
         public void TakeDamage(Vector2 DamageDirection)
         {
+            Life--;
             damageDirection = DamageDirection;
             damaging = true;
             timer = 20;
-             Life--;
+
             //remains to be discussed
         }
 

@@ -7,11 +7,14 @@ namespace Game1
     {
         private BlueGoriya BlueGoriya;
         public IEnemyFactory factory { get; set; }
-        private IGeneralSprite GetSprite { get; set; }
+        public IGeneralSprite GetSprite { get; set; }
+        public bool die { get; set; }
+        private int deathtimer = 30;
 
         public BlueGoriyaRightMovingState(BlueGoriya Bluegoriya, IEnemyFactory factory)
 
         {
+            die = false;
             this.BlueGoriya = Bluegoriya;
             this.factory = factory;
             GetSprite = new GeneralSprite(96,96,2);
@@ -45,7 +48,20 @@ namespace Game1
         public void Update()
         {
             GetSprite.Update();
-            BlueGoriya.Position = BlueGoriya.Position + new Vector2(1, 0) * BlueGoriya.MovingSpeed;
+            
+            if (!die)
+            {
+                BlueGoriya.Position = BlueGoriya.Position + new Vector2(1, 0) * BlueGoriya.MovingSpeed;
+            }
+
+            else
+            {
+                deathtimer--;
+            }
+            if (deathtimer == 0)
+            {
+                BlueGoriya.exist = false;
+            }
         }
         public void BreatheFire()
         {
@@ -54,7 +70,15 @@ namespace Game1
 
         public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
-            this.GetSprite.Draw(Texture2DStorage.GetRightMovingBlueGoriyaSpriteSheet(),spriteBatch, Position);
+            
+            if (!die)
+            {
+                this.GetSprite.Draw(Texture2DStorage.GetRightMovingBlueGoriyaSpriteSheet(), spriteBatch, Position);
+            }
+            else
+            {
+                this.GetSprite.Draw(Texture2DStorage.GetDeathSpriteSheet(), spriteBatch, Position);
+            }
         }
 
         public Rectangle GetRectangle()

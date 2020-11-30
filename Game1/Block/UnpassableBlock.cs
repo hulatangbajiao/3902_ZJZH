@@ -34,12 +34,13 @@ namespace Game1
         }
         public void Draw(SpriteBatch spritebatch) 
         {
-            this.GetSprite.Draw(Texture2DStorage.GetBlueFaceBlockSpriteSheet(),spritebatch, Position);
+            //this.GetSprite.Draw(Texture2DStorage.GetBlueFaceBlockSpriteSheet(),spritebatch, Position);
+
         }
 
         public Rectangle GetRectangle()
         {
-            return this.GetSprite.GetRectangle();
+            return new Rectangle((int)Position.X, (int)Position.Y, 96,96);
         }
     }
 }

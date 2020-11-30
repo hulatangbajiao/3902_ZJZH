@@ -14,7 +14,7 @@ namespace Game1.Interfaces
         void South();
         void West();
         void Other();
-        void Update();
+        void Update(GameTime _gameTime);
         void Draw(SpriteBatch spriteBatch);
     }
 }

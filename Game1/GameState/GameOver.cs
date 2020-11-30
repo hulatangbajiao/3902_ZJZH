@@ -1,6 +1,7 @@
 ﻿using Game1.GameState;
 using Game1.Interfaces;
 using Game1.Sprite;
+using Game1.Sprite_;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;

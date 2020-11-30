@@ -22,9 +22,9 @@ namespace Game1
         public ItemBow(Vector2 Position,MainStage game)
         {
 
-            this.game = game;
+
             this.Position = Position;
-            
+            this.game = game;
             exist = true;
             
             GetSprite = new GeneralSprite(48,96,1);

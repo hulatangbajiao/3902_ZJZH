@@ -9,9 +9,12 @@ namespace Game1
         private BlueM BlueM;
         public IEnemyFactory factory { get; set; }
         public IGeneralSprite GetSprite { get; set; }
+        public bool die { get; set; }
+        private int deathtimer = 30;
 
         public BlueMRightMovingState(BlueM bluem, IEnemyFactory factory)
         {
+            die = false;
             this.BlueM = bluem;
             this.factory = factory;
             GetSprite = new GeneralSprite(96,96,2);
@@ -44,15 +47,37 @@ namespace Game1
         public void Update()
         {
             GetSprite.Update();
-            BlueM.Position = BlueM.Position + new Vector2(1, 0) * BlueM.MovingSpeed;
+            
+            if (!die)
+            {
+                BlueM.Position = BlueM.Position + new Vector2(1, 0) * BlueM.MovingSpeed;
+            }
+
+            else
+            {
+                deathtimer--;
+            }
+            if (deathtimer == 0)
+            {
+                BlueM.exist = false;
+            }
         }
         public void BreatheFire()
         {
             factory.AddEnemy(new EnemyArrow(BlueM.Position, new Vector2(1, 0), factory));
+            
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 Position)
         {
-            this.GetSprite.Draw(Texture2DStorage.GetRightMovingBlueMSpriteSheet(),spriteBatch, Position);
+            
+            if (!die)
+            {
+                this.GetSprite.Draw(Texture2DStorage.GetRightMovingBlueMSpriteSheet(), spriteBatch, Position);
+            }
+            else
+            {
+                this.GetSprite.Draw(Texture2DStorage.GetDeathSpriteSheet(), spriteBatch, Position);
+            }
         }
         public Rectangle GetRectangle()
         {

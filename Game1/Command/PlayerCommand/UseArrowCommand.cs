@@ -20,6 +20,7 @@ namespace Game1.Command
         {
 
             Link.UseItem(1);
+            AudioFactory.Instance.PlayBowSound();
         }
     }
    

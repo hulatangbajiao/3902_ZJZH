@@ -21,8 +21,8 @@ namespace Game1
 
         public ItemCompass(Vector2 Position, MainStage game)
         {
-            this.game = game;
 
+            this.game = game;
             this.Position = Position;
             
             exist = true;

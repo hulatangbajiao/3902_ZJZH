@@ -6,7 +6,7 @@
 
 		</Enemies>
 		<Items total="0">
-			
+
 		</Items>
 		<Blocks total ="12">
 			<Block>
@@ -883,7 +883,7 @@
 				<RowNum>5</RowNum>
 			</Item>
 		</Items>
-		<Blocks total ="46">
+		<Blocks total ="45">
 			<Block>
 				<ObjectType>River</ObjectType>
 				<ColumnNum>1</ColumnNum>
@@ -999,11 +999,7 @@
 				<ColumnNum>5</ColumnNum>
 				<RowNum>7</RowNum>
 			</Block>
-			<Block>
-				<ObjectType>River</ObjectType>
-				<ColumnNum>6</ColumnNum>
-				<RowNum>7</RowNum>
-			</Block>
+			
 			<Block>
 				<ObjectType>River</ObjectType>
 				<ColumnNum>12</ColumnNum>

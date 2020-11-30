@@ -55,12 +55,12 @@
     <Compile Include="Collision\CollisionHandler\LinkBlockCollisionHandler.cs" />
     <Compile Include="Collision\Detection\GeneralDeterctionIntersect.cs" />
     <Compile Include="Collision\ICollision.cs" />
-    <Compile Include="Command\GameCommand\ResumeGameCommand.cs" />
     <Compile Include="Command\GameCommand\ContinueGameCommand.cs" />
     <Compile Include="Command\GameCommand\PauseGameCommand.cs" />
+    <Compile Include="Command\GameCommand\ResumeGameCommand.cs" />
     <Compile Include="Command\MenuCommand\SelectDownCommand.cs" />
-    <Compile Include="Command\MenuCommand\SelectRightCommand.cs" />
     <Compile Include="Command\MenuCommand\SelectLeftCommand.cs" />
+    <Compile Include="Command\MenuCommand\SelectRightCommand.cs" />
     <Compile Include="Command\MenuCommand\SelectUpCommand.cs" />
     <Compile Include="Command\RoomCommand\EastRoomCommand.cs" />
     <Compile Include="Command\RoomCommand\NorthRoomCommand.cs" />
@@ -114,7 +114,6 @@
     <Compile Include="GameState\IGameState.cs" />
     <Compile Include="GameState\KeybroadGameOver.cs" />
     <Compile Include="GameState\KeybroadGameWin.cs" />
-    <Compile Include="GlobalDefinitions.cs" />
     <Compile Include="Interfaces\IDoor.cs" />
     <Compile Include="Interfaces\IDoorList.cs" />
     <Compile Include="Interfaces\IItemSprite.cs" />
@@ -122,8 +121,8 @@
     <Compile Include="Interfaces\IMap.cs" />
     <Compile Include="Interfaces\IMenu.cs" />
     <Compile Include="Interfaces\IRoom.cs" />
-    <Compile Include="Inventory\MenuKeyBroadController.cs" />
     <Compile Include="Inventory\InventoryMenu.cs" />
+    <Compile Include="Inventory\MenuKeyBroadController.cs" />
     <Compile Include="ItemsClasses\ItemTriForce.cs" />
     <Compile Include="ItemsClasses\ItemRupee.cs" />
     <Compile Include="ItemsClasses\ItemMap.cs" />
@@ -173,6 +172,7 @@
     <Compile Include="Interfaces\IProjectileFactory.cs" />
     <Compile Include="Projectile\ProjectileFactory.cs" />
     <Compile Include="Projectile\ProjectileWoodenSword.cs" />
+    <Compile Include="RandomIntGenerator.cs" />
     <Compile Include="Sprite_\DoorSprite\BombedDoorDownSprite.cs" />
     <Compile Include="Sprite_\DoorSprite\BombedDoorLeftSprite.cs" />
     <Compile Include="Sprite_\DoorSprite\BombedDoorRightSprite.cs" />
@@ -220,6 +220,7 @@
     <Compile Include="Texture2DStorage.cs" />
     <Compile Include="Interfaces\ILink.cs" />
     <Compile Include="Interfaces\ISprite.cs" />
+    <Compile Include="GlobalDefinitions.cs" />
     <Compile Include="Interfaces\ILinkState.cs" />
     <Compile Include="Characters\Link.cs" />
     <Compile Include="Controller\KeyboardController.cs" />
@@ -247,6 +248,7 @@
     <None Include="app.manifest" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="StatusBar\" />
     <Folder Include="XML\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

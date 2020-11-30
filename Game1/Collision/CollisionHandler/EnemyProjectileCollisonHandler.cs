@@ -24,30 +24,40 @@ namespace Game1.Collision
 
         public void Execute()
         {
-            
-            if (side == ICollision.Left)
+            if (enemy.exist && projectile.exist&&(!enemy.damaging))
             {
-                enemy.TakeDamage(new Vector2(1, 0));
-                projectile.Hit();
-                
-            }
-            else if (side == ICollision.Right)
-            {
-                enemy.TakeDamage(new Vector2(-1, 0));
-                projectile.Hit();
-                
-            }
-            else if (side == ICollision.Bottom)
-            {
-                enemy.TakeDamage(new Vector2(0, -1));
-                projectile.Hit();
-                
-            }
-            else if (side == ICollision.Top)
-            {
-                enemy.TakeDamage(new Vector2(0, 1));
-                projectile.Hit();
-                
+                if (side == ICollision.Left)
+                {
+                    enemy.TakeDamage(new Vector2(1, 0));
+                    projectile.Hit();
+                    
+                    
+
+                }
+                else if (side == ICollision.Right)
+                {
+                    enemy.TakeDamage(new Vector2(-1, 0));
+                    projectile.Hit();
+                    
+                    
+
+                }
+                else if (side == ICollision.Bottom)
+                {
+                    enemy.TakeDamage(new Vector2(0, -1));
+                    projectile.Hit();
+                    
+                    
+
+                }
+                else if (side == ICollision.Top)
+                {
+                    enemy.TakeDamage(new Vector2(0, 1));
+                    projectile.Hit();
+                    
+                    
+
+                }
             }
         }
     }

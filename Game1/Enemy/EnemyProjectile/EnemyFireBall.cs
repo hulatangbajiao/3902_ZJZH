@@ -17,6 +17,9 @@ namespace Game1
         public int MovingSpeed { get; set; }
         public IEnemyState State { get; set; }
         public bool exist { get; set; }
+        public int timer { get; set; }
+        public bool damaging { get; set; }
+        private Vector2 damageDirection = new Vector2(0, 0);
 
 
         public EnemyFireBall(Vector2 Position, Vector2 direction, IEnemyFactory factory)
@@ -25,7 +28,8 @@ namespace Game1
             MovingSpeed = 20;
             this.Position = Position + new Vector2(30, 30);
             Direction = direction;
-            
+            damaging = false;
+            timer = 0;
             exist = true;
 
             GetSprite = new GeneralSprite(50,50,1);

@@ -8,10 +8,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Media;
+using Game1;
 using Game1.Inventory;
-using Game1.GameState;
 using Game1.GameState;
 
 namespace Game1
@@ -21,16 +19,22 @@ namespace Game1
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
         private List<IController> controllers;
-        public DungeonLevel dungeonlevel { get; set; }
         private SpriteFont font;
+
         public InventoryMenu InventoryMenu { get; set; }
         public IGameState GameOver { get; set; }
         public IGameState GameWin { get; set; }
         public IController gameOverKeybroad { get; set; }
         public IController gameWinKeybroad { get; set; }
-        public IController MenuKeyBroadController { get; set;}
-        public AudioFactory AudioFactory { get; set; }
+        public IController MenuKeyBroadController { get; set; }
+        
+
+
+        public DungeonLevel dungeonlevel { get; set; }
         private static IGeneralSprite headSprite = new GeneralSprite(1536, 336, 1);
+        private static IGeneralSprite EmptyBloodHeartSprite = new GeneralSprite(48, 48, 1);
+        private static IGeneralSprite HalfBloodHeartSprite = new GeneralSprite(48, 48, 1);
+        private static IGeneralSprite FullBloodHeartSprite = new GeneralSprite(48, 48, 1);
 
         /// <summary>
         /// Active sprite. Exposed as a class property
@@ -50,15 +54,15 @@ namespace Game1
         public ILinkState[] Linkstates { get; }
         public bool paused { get; set; }
 
-
         public MainStage()
         {
+
             graphics = new GraphicsDeviceManager(this);
 
             Content.RootDirectory = "Content";
 
             graphics.PreferredBackBufferWidth = GlobalDefinitions.GraphicsWidth;
-            graphics.PreferredBackBufferHeight = GlobalDefinitions.GraphicsHeight;
+            graphics.PreferredBackBufferHeight = GlobalDefinitions.GraphicsHeightIncludeHead;
 
             this.Link = new Link(this);
             this.ProjectileFactory = new ProjectileFactory(this);
@@ -67,16 +71,16 @@ namespace Game1
             this.itemFactory = new ItemFactory(this);
             this.dungeonlevel = new DungeonLevel(this);
             this.InventoryMenu = new InventoryMenu(this);
-            
+
             controllers = new List<IController>
             {
                 new KeyboardController(this), new MouseController(this)
             };
+            gameOverKeybroad = new KeybroadGameOver(this);
+            gameWinKeybroad = new KeybroadGameWin(this);
+            MenuKeyBroadController = new MenuKeyBroadController(this);
+            
 
-             gameOverKeybroad = new KeybroadGameOver(this);
-             gameWinKeybroad = new KeybroadGameWin(this);
-             MenuKeyBroadController = new MenuKeyBroadController(this);
-            AudioFactory = new AudioFactory();
         }
 
         /// <summary>
@@ -88,6 +92,7 @@ namespace Game1
         protected override void Initialize()
         {
             // Explicitly set mouse visible option to make the game intuitive
+            this.dungeonlevel.initialize();
             this.IsMouseVisible = true;
             this.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / 100.0f);
             this.IsFixedTimeStep = false;
@@ -96,6 +101,7 @@ namespace Game1
             this.blockFactory.Initialize();
             this.enemyFactory.Initialize();
             this.itemFactory.Initialize();
+
             // Create instances and register commands
             base.Initialize();
         }
@@ -110,8 +116,10 @@ namespace Game1
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            AudioFactory.Instance.LoadAllAudio(this.Content);
+            AudioFactory.Instance.PlayDungeonBGM();
             Texture2DStorage.LoadAllTextures(this.Content);
-            AudioFactory.LoadAllAudio(this.Content);
+
             font = Content.Load<SpriteFont>("Score");
             this.GameOver = new GameOver();
             this.GameWin = new GameWin();
@@ -132,7 +140,8 @@ namespace Game1
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
-        {   
+        {
+
             if (!paused && Link.Life > 0 && Link.TriforceNumber == 0)
             {
                 foreach (var controller in controllers)
@@ -142,8 +151,9 @@ namespace Game1
                 this.ProjectileFactory.Update();
                 Link.Update();
                 base.Update(gameTime);
-                this.dungeonlevel.Update();
-            } else
+                this.dungeonlevel.Update(gameTime);
+            }
+            else
             {
                 this.MenuKeyBroadController.Update();
             }
@@ -163,35 +173,123 @@ namespace Game1
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            AudioFactory.PlayDungeonBGM();
+            
             GraphicsDevice.Clear(Color.CornflowerBlue);
+
             spriteBatch.Begin();
+
             this.dungeonlevel.Draw(spriteBatch);
             Link.State.Draw(spriteBatch);
             this.ProjectileFactory.Draw(spriteBatch);
+            headSprite.Draw(Texture2DStorage.HeadExteriorSpriteSheet, spriteBatch, new Vector2(0, 1056));
+
+            
+
+            if (Link.HeartContainer < 8)
+            {
+                for (int i = 0; i < Link.HeartContainer; i++)
+                {
+                    EmptyBloodHeartSprite.Draw(Texture2DStorage.GetHeartNoBloodSpriteSheet(), spriteBatch, new Vector2(1056 + 48 * i, 1248));
+
+                }
+            }
+            else
+            {
+                for (int k = 0; k < 8; k++)
+                {
+                    EmptyBloodHeartSprite.Draw(Texture2DStorage.GetHeartNoBloodSpriteSheet(), spriteBatch, new Vector2(1056 + 48 * k, 1248));
+
+                }
+                for (int j = 0; j < Link.HeartContainer - 8; j++)
+                {
+                    EmptyBloodHeartSprite.Draw(Texture2DStorage.GetHeartNoBloodSpriteSheet(), spriteBatch, new Vector2(1056 + 48 * j, 1296));
+
+                }
+
+            }
+            if (Link.Life < 16)
+            {
+
+                if (Link.Life % 2 == 0)
+                {
+                    for (int i = 0; i < Link.Life / 2; i++)
+                    {
+                        FullBloodHeartSprite.Draw(Texture2DStorage.GetHeartFullBloodSpriteSheet(), spriteBatch, new Vector2(1056 + 48 * i, 1248));
+
+                    }
+
+                }
+                else
+                {
+                    for (int i = 0; i < Link.Life / 2; i++)
+                    {
+                        FullBloodHeartSprite.Draw(Texture2DStorage.GetHeartFullBloodSpriteSheet(), spriteBatch, new Vector2(1056 + 48 * i, 1248));
+
+                    }
+
+                    HalfBloodHeartSprite.Draw(Texture2DStorage.GetHeartHalfBloodSpriteSheet(), spriteBatch, new Vector2(1056 + 48 * (Link.Life / 2), 1248));
+                }
+            }
+            else
+            {
+                if (Link.Life % 2 == 0)
+                {
+                    for (int i = 0; i < 8; i++)
+                    {
+                        FullBloodHeartSprite.Draw(Texture2DStorage.GetHeartFullBloodSpriteSheet(), spriteBatch, new Vector2(1056 + 48 * i, 1248));
+                    }
+                    for (int j = 0; j < Link.Life / 2 - 8; j++)
+                    {
+                        FullBloodHeartSprite.Draw(Texture2DStorage.GetHeartFullBloodSpriteSheet(), spriteBatch, new Vector2(1056 + 48 * j, 1296));
+
+                    }
+
+
+
+                }
+                else
+                {
+                    for (int i = 0; i < Link.Life / 2; i++)
+                    {
+                        FullBloodHeartSprite.Draw(Texture2DStorage.GetHeartFullBloodSpriteSheet(), spriteBatch, new Vector2(1056 + 48 * i, 1248));
+
+                    }
+                    for (int j = 0; j < Link.Life / 2 - 8; j++)
+                    {
+                        FullBloodHeartSprite.Draw(Texture2DStorage.GetHeartFullBloodSpriteSheet(), spriteBatch, new Vector2(1056 + 48 * j, 1296));
+
+                    }
+
+
+                    HalfBloodHeartSprite.Draw(Texture2DStorage.GetHeartHalfBloodSpriteSheet(), spriteBatch, new Vector2(1056 + 48 * ((Link.Life - 16) / 2), 1296));
+                }
+
+
+
+            }
+            
+
+            
+                spriteBatch.DrawString(font, Link.RupeeNumber.ToString(), new Vector2(720, 1210), Color.White, 0, font.MeasureString(Link.RupeeNumber.ToString()), 3.0f, SpriteEffects.None, 1f);
+               spriteBatch.DrawString(font, Link.KeyNumber.ToString(), new Vector2(720, 1310), Color.White, 0, font.MeasureString(Link.KeyNumber.ToString()), 3.0f, SpriteEffects.None, 1f);
+              spriteBatch.DrawString(font, Link.BombNumber.ToString(), new Vector2(720, 1360), Color.White, 0, font.MeasureString(Link.BombNumber.ToString()), 3.0f, SpriteEffects.None, 1f);
             if (paused)
             {
-                this.InventoryMenu.Draw(spriteBatch, new Vector2(0,0));
-                
+                this.InventoryMenu.Draw(spriteBatch, new Vector2(0, 0));
+
             }
             if (Link.Life <= 0)
             {
-                AudioFactory.StopDungeonBG();
+                AudioFactory.Instance.StopDungeonBG();
                 this.GameOver.Draw(spriteBatch);
             }
             if (Link.TriforceNumber > 0)
             {
-                AudioFactory.StopDungeonBG();
+                AudioFactory.Instance.StopDungeonBG();
                 this.GameWin.Draw(spriteBatch);
             }
             spriteBatch.End();
             base.Draw(gameTime);
-            //spriteBatch.DrawString(font, Link.RupeeNumber.ToString(), new Vector2(720, 1210), Color.White, 0, font.MeasureString(Link.RupeeNumber.ToString()), 3.0f, SpriteEffects.None, 1f);
-            //spriteBatch.DrawString(font, Link.KeyNumber.ToString(), new Vector2(720, 1310), Color.White, 0, font.MeasureString(Link.KeyNumber.ToString()), 3.0f, SpriteEffects.None, 1f);
-            //spriteBatch.DrawString(font, Link.BombNumber.ToString(), new Vector2(720, 1360), Color.White, 0, font.MeasureString(Link.BombNumber.ToString()), 3.0f, SpriteEffects.None, 1f);
-            //spriteBatch.End();
-           
-            
         }
 
         public void Restart()
@@ -208,14 +306,15 @@ namespace Game1
             this.Link.HasCompass = false;
             this.Link.HasMap = false;
             this.Link.TriforceNumber = 0;
-            AudioFactory = new AudioFactory();
-            AudioFactory.LoadAllAudio(this.Content);
+            
         }
         public void continueGame()
         {
             this.dungeonlevel = new DungeonLevel(this);
+            this.dungeonlevel.initialize();
             this.Link.Life = 6;
             this.Link.HeartContainer = 3;
         }
+
     }
 }
