@@ -82,6 +82,7 @@
     <Compile Include="Collision\Detection\DetectCollision.cs" />
     <Compile Include="Collision\Detection\GeneralDetection.cs" />
     <Compile Include="Command\RoomCommand\PreviousRoomCommand.cs" />
+    <Compile Include="Controller\GamepadController.cs" />
     <Compile Include="Controller\MouseController.cs" />
     <Compile Include="Enemy\Aquamentus\Aquamentus.cs" />
     <Compile Include="Enemy\Aquamentus\AquamentusLeftMovingState.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="Interfaces\IMenu.cs" />
     <Compile Include="Interfaces\IRoom.cs" />
     <Compile Include="Inventory\InventoryMenu.cs" />
+    <Compile Include="Inventory\MenuGamepadController.cs" />
     <Compile Include="Inventory\MenuKeyBroadController.cs" />
     <Compile Include="ItemsClasses\ItemTriForce.cs" />
     <Compile Include="ItemsClasses\ItemRupee.cs" />

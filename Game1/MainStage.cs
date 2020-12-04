@@ -27,6 +27,7 @@ namespace Game1
         public IController gameOverKeybroad { get; set; }
         public IController gameWinKeybroad { get; set; }
         public IController MenuKeyBroadController { get; set; }
+        public IController MenuGamepadController { get; set; }
         
 
 
@@ -74,12 +75,12 @@ namespace Game1
 
             controllers = new List<IController>
             {
-                new KeyboardController(this), new MouseController(this)
+                new KeyboardController(this), new MouseController(this), new GamepadController(this)
             };
             gameOverKeybroad = new KeybroadGameOver(this);
             gameWinKeybroad = new KeybroadGameWin(this);
             MenuKeyBroadController = new MenuKeyBroadController(this);
-            
+            MenuGamepadController = new MenuGamepadController(this);
 
         }
 
